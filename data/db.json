@@ -1,0 +1,661 @@
+{
+  "leads": [
+    {
+      "id": "l_seed1",
+      "fullName": "Samuel K. Langat",
+      "email": "langat.samuel@riftrealestate.co.ke",
+      "phone": "+254 711 989201",
+      "company": "Rift Valley Housing Developers",
+      "serviceNeeded": "Environmental Impact Assessment (EIA)",
+      "message": "We are organizing a 45-acre residential zoning parcel in Kericho. Looking for a lead NEMA consultant to handle EIA and county statutory clearance proposals.",
+      "status": "New",
+      "date": "2026-06-03T14:30:00Z"
+    },
+    {
+      "id": "l_seed2",
+      "fullName": "Grace Muthoni",
+      "email": "muthoni.g@kilimafoods.org",
+      "phone": "+254 733 440551",
+      "company": "Kilima Agricultural NGO",
+      "serviceNeeded": "Project Monitoring & Evaluation (M&E)",
+      "message": "Need a comprehensive baseline socio-economic research study for our dryland irrigation scheme launch in Homa Bay.",
+      "status": "Contacted",
+      "date": "2026-06-02T09:15:00Z"
+    }
+  ],
+  "applicants": [
+    {
+      "id": "app_seed1",
+      "jobId": "car1",
+      "jobTitle": "Lead Environmental Consultant (EIA & EA Expert)",
+      "fullName": "Dr. Patrick Amoth",
+      "email": "amoth.patrick@outlook.com",
+      "phone": "+254 755 120930",
+      "coverLetter": "I have over 8 years experience leading EIA studies around Lake Victoria Basin and a valid NEMA lead registration. Keen on aligning with HUERI.",
+      "date": "2026-06-01T16:00:00Z"
+    }
+  ],
+  "newsletter": [
+    "investor.relations@eastafricafund.com"
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Resettlement Action Plan (RAP) Makasembo estate multi-storey housing development projects.",
+      "county": "Kisumu",
+      "year": 2020,
+      "industry": "Real Estate",
+      "serviceId": "rap",
+      "client": "Local Authorities Pension Trust (LAPFUND)",
+      "challenge": "Securing human rights and structured compensation guidelines for households being translocated to make way for modern multi-storey housing units.",
+      "solution": "Implemented a full Resettlement Action Plan (RAP) including socio-economic survey validation, stakeholder compensation planning, and grievance settlement cells.",
+      "outcome": "Achieved zero legal stoppages or social friction, securing a transparent transition for affected residents in line with international human-rights best practices.",
+      "location": "Makasembo Estate, Kisumu",
+      "coordinates": {
+        "x": 32,
+        "y": 56
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p2",
+      "title": "EIA Got Ramogi Development projects",
+      "county": "Siaya",
+      "year": 2020,
+      "industry": "Infrastructure",
+      "serviceId": "eia",
+      "client": "County Government of Siaya",
+      "challenge": "The sacred and ecologically sensitive Got Ramogi Forest Reserve faced potential disruption from eco-tourism and regional infrastructure development.",
+      "solution": "Conducted a rigorous Environmental Impact Assessment (EIA) detailing protective buffer zones for indigenous flora, fauna habitats, and cultural heritage sites.",
+      "outcome": "Secured NEMA clearance with strict containment measures, preserving ecological and historic integrity while introducing low-impact eco-tourism avenues.",
+      "location": "Got Ramogi Forest, Siaya",
+      "coordinates": {
+        "x": 25,
+        "y": 49
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p3",
+      "title": "EIA Proposed Multi-Storey housing development project in Makasembo Estate",
+      "county": "Kisumu",
+      "year": 2020,
+      "industry": "Real Estate",
+      "serviceId": "eia",
+      "client": "Local Authorities Pension Trust (LAPFUND)",
+      "challenge": "Mitigating massive stormwater runoff, effluent, and construction dust impacts of a massive multi-family housing development in Kisumu City.",
+      "solution": "Designed a centralized retention pond grid, storm drainage master plans, and custom biological septic systems to handle wastewater load safely.",
+      "outcome": "Obtained NEMA approval. The design served as a benchmark for high-density municipal green architecture in western Kenya.",
+      "location": "Makasembo, Kisumu",
+      "coordinates": {
+        "x": 30,
+        "y": 55
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p4",
+      "title": "Kisumu County Climate Change Vulnerability Assessment",
+      "county": "Kisumu",
+      "year": 2020,
+      "industry": "Environmental Science",
+      "serviceId": "feasibility",
+      "client": "Transparency International and the County Government of Kisumu",
+      "challenge": "Understanding climate adaptation vulnerabilities and financing distribution transparency in flood-prone shoreline and mountainous sub-counties.",
+      "solution": "Conducted a countywide vulnerability survey mapping agricultural loss hotspots, public water stress, and fiscal accountability mechanisms for climate resilience.",
+      "outcome": "The baseline assessment directly shaped the Kisumu County Climate Change Act, triggering institutional green budget auditing.",
+      "location": "Kisumu County Headquarters",
+      "coordinates": {
+        "x": 31,
+        "y": 57
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p5",
+      "title": "Environmental Impact Assessment Report for The Proposed Construction of The Governor’s Residence at Milimani Estate",
+      "county": "Kisumu",
+      "year": 2019,
+      "industry": "Infrastructure",
+      "serviceId": "eia",
+      "client": "County Government of Kisumu",
+      "challenge": "Drafting robust noise, traffic, and landscape conservation measures during excavation in the upscale and historical Milimani suburban ward.",
+      "solution": "Compiled an exhaustive Environmental Impact Assessment restricting construction hours, dictating dust nets, and protecting existing old-growth tree lines.",
+      "outcome": "Successfully acquired NEMA clearance, facilitating a secure and environmentally sound development of the executive compound.",
+      "location": "Milimani Estate, Kisumu",
+      "coordinates": {
+        "x": 29,
+        "y": 56
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p6",
+      "title": "Environmental Impact Assessment Report for The Proposed Construction of The Deputy Governor’s Residence at Milimani Estate",
+      "county": "Kisumu",
+      "year": 2019,
+      "industry": "Infrastructure",
+      "serviceId": "eia",
+      "client": "County Government of Kisumu",
+      "challenge": "Handling neighborhood noise compliance and greywater runoff into local municipal storm channels in Milimani Ward.",
+      "solution": "Implemented baseline noise tests and recommended permeable paving tiles to maximize soil water filtration alongside structural design.",
+      "outcome": "Secured environmental license with continuous localized monitoring parameters, keeping community relationships harmonious.",
+      "location": "Milimani Estate, Kisumu",
+      "coordinates": {
+        "x": 28,
+        "y": 56
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p7",
+      "title": "Environmental Impact Assessment Report for The Proposed Construction of Holo Orucho Water Pan at Holo Village",
+      "county": "Kisumu",
+      "year": 2019,
+      "industry": "Water",
+      "serviceId": "eia",
+      "client": "Under HUERI (East Kano/Wawidhi Ward)",
+      "challenge": "Water pans in clay-rich Nyando basin suffer heavy siltation and can host malaria-carrying stagnant water if improperly designed.",
+      "solution": "Completed comprehensive silt trap design criteria, bio-fencing utilizing indigenous vetiver grass, and deep shoreline profiles.",
+      "outcome": "Constructed water pan became a sustainable sanctuary, providing crucial dry-season water for agricultural irrigation and local livestock.",
+      "location": "Holo Village, Nyando",
+      "coordinates": {
+        "x": 34,
+        "y": 58
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p8",
+      "title": "Environmental Impact Assessment Report for The Proposed Drilling of Kaloo Borehole at Nyabola Area",
+      "county": "Kisumu",
+      "year": 2019,
+      "industry": "Water",
+      "serviceId": "eia",
+      "client": "Under HUERI (North Kabodho Ward)",
+      "challenge": "Ensuring ground water extraction did not tap saline aquifers characteristic of parts of Nyakach or sink water table levels.",
+      "solution": "Supervised electrical profiling alongside a registered hydrogeologist to secure a target sweet-water aquifer lens and set sustainable pumping limits.",
+      "outcome": "Acquired first-pass NEMA drilling license. Kaloo Borehole successfully supplies fresh potable water to 800+ rural households.",
+      "location": "Nyabola Area, Nyakach",
+      "coordinates": {
+        "x": 33,
+        "y": 62
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p9",
+      "title": "Resettlement Action Plan (RAP) studies, Environmental and Social Management Plan (ESMP) Review, Socio-Economic Feasibility Reviews for KUP building and Civil Works project",
+      "county": "Kisumu",
+      "year": 2019,
+      "industry": "Infrastructure",
+      "serviceId": "rap",
+      "client": "Under AWEMAC",
+      "challenge": "Assessing social displacement gaps, livelihood restoration, and community security for massive urban renewal works.",
+      "solution": "Conducted exhaustive door-to-door socio-economic validation surveys, asset assessments, and completed a major structural review of ESMPs.",
+      "outcome": "Approved framework secured safe development paths for urban market infrastructures and municipal civil works with full local consent.",
+      "location": "Kisumu City Center",
+      "coordinates": {
+        "x": 29,
+        "y": 55
+      },
+      "status": "Completed"
+    },
+    {
+      "id": "p10",
+      "title": "Proposed 40MW AC Photovoltaic Solar-Kopere Solar Park Project",
+      "county": "Nandi",
+      "year": 2018,
+      "industry": "Energy",
+      "serviceId": "feasibility",
+      "client": "Under AWEMAC",
+      "challenge": "Massive landscape clearing and glare impacts of a large utility-scale solar array on local ecosystems and nearby agricultural communities.",
+      "solution": "Participated in design reviews and biodiversity mapping, recommending low-height solar racks and eco-buffers of native shrubs.",
+      "outcome": "Secured structural feasibility reports, supporting green energy generation of 40MW into the Kenyan national grid without local friction.",
+      "location": "Kopere Region",
+      "coordinates": {
+        "x": 37,
+        "y": 54
+      },
+      "status": "Completed"
+    }
+  ],
+  "articles": [
+    {
+      "id": "art1",
+      "title": "Navigating NEMA Licensing in Kenya: A Complete Developer's Guide (EMCA Cap 387 Compliance)",
+      "category": "Regulations",
+      "author": "Belindah Nyakinya (NEMA registered Lead Expert)",
+      "date": "May 15, 2026",
+      "excerpt": "Demystify standard filing parameters, expected review timelines, and critical regulatory procedures when processing Environmental Impact Assessments (EIAs) for infrastructure, real estate, and industrial developments under Kenyan law.",
+      "content": "Under the provisions of the Environmental Management and Coordination Act (EMCA) Cap 387 and its subsequent amendments, conducting major developmental activities in Kenya without a valid NEMA license constitutes a critical statutory offense. For modern developers, achieving zero regulatory downtime relies on matching the project's risk profile with its correct environmental study framework.\n\n### Risk-Based Project Categorization (NEMA Guidelines)\nKenya's environmental licensing regime operates on an explicit risk-categorized system:\n\n1. **Low-Risk Projects (Summary Project Reports - SPRs)**: Typically reserved for small-scale commercial, educational, or agricultural facilities. The evaluation is expedited, with statutory feedback mandates lasting between 14 to 30 business days.\n2. **Medium-Risk Projects (Comprehensive Project Reports - CPRs)**: Appended to high-density apartments, water pans, solar generation grids, or district infrastructure. These require targeted public participation cycles and standard review times of 45 to 60 days.\n3. **High-Risk Projects (Full Environmental & Social Impact Assessments - ESIAs)**: Triggered by heavy industrial manufacturing, marine dredging, waste treatment facilities, or thermal energy rigs. These involve extensive modeling, multi-stakeholder workshops, and a mandatory 30-day public disclosure period via the Kenya Gazette.\n\n### Practical Step-by-Step Submission Protocol\n- **Phase 1: Field Mobilization & Lead Expert Engagement**: Work with registered Lead Experts to analyze spatial plans, verify parcel boundaries, and conduct topographic surveys.\n- **Phase 2: Structured Public Mandates**: Disseminate questionnaires to Project-Affected Persons (PAPs) in adjacent properties to log environmental and traffic impact concerns.\n- **Phase 3: Digital Portal Filing**: Submit the formal report with design drawings, ownership titles, and water abstraction permits through the unified NEMA licensing platform.\n- **Phase 4: Site Verification & Review**: NEMA regional compliance officers execute a joint inspection of the site to cross-examine technical statements against physical conditions.\n- **Phase 5: Licensing & Conditional Approvals**: Receipt of the licensed certificate, accompanied by an Environmental Management and Monitoring Plan (EMMP) which must be adhered to throughout construction.",
+      "readTime": "8 min read",
+      "slug": "nema-licensing-kenya-guide"
+    },
+    {
+      "id": "art2",
+      "title": "The Strategic Importance of Resettlement Action Plans (RAP) in East African Infrastructure",
+      "category": "Social Safeguards",
+      "author": "HUERI Social Development Team",
+      "date": "April 28, 2026",
+      "excerpt": "Learn how implementing advanced land census techniques, structured asset valuations, and international-standard livelihood restoration pipelines prevents project delays and respects human rights.",
+      "content": "Large-scale linear infrastructure—such as municipal roads, energy grids, and water supply trunks—underpins economic prosperity across East Africa. However, securing the necessary Right of Way (RoW) routinely requires the acquisition of private land, presenting challenges for both developers and resident communities. Setting up a comprehensive Resettlement Action Plan (RAP) safeguards project timelines while protecting resident households.\n\n### Technical Pillars of a Sustainable RAP Study\n- **Comprehensive Census & Socio-Economic Baselines**: Establishing an immutable 'Cut-Off Date' immediately on commencing surveys. This prevents opportunistic squatter encroachment and documents baseline household sizes, incomes, vulnerabilities, and land tenure options.\n- **Replacement Cost Asset Valuation**: Moving beyond simple depreciated tax values. Our land valuations utilize direct replacement cost calculations—ensuring compensation funds is enough to construct equal or superior structures using modern building materials.\n- **Livelihood Restoration Programs (LRP)**: Disbursing cash compensation alone is rarely sufficient to restore native living standards. Sustainable RAPs integrate micro-enterprise training, agricultural extension resources, soil preservation guidelines, and financial literacy workshops to ensure translocated households build sustainable futures.\n- **Community Grievance Redress Mechanisms (GRM)**: Setting up localized dispute committees led by elected community elders, village administration agents, and legal observers. Resolving conflicts at the village tier prevents lengthy litigation delays.",
+      "readTime": "10 min read",
+      "slug": "resettlement-action-plans-infrastructure"
+    },
+    {
+      "id": "art3",
+      "title": "The Transition from Local Regulatory Compliance to Global ESG Frameworks",
+      "category": "ESG Advocacy",
+      "author": "Consolidated ESG Steering Committee",
+      "date": "March 12, 2026",
+      "excerpt": "Corporate boardrooms in sub-Saharan Africa are looking beyond standard permitting. Discover how aligning environmental, social, and governance matrices unlocks high-value international climate finance.",
+      "content": "For decades, corporate sustainability was treated as a regulatory tickbox: clearing the baseline annual environmental audit, filing workplace safety forms with DOSHS, and avoiding legal complications. Today, global institutional financiers—including the International Finance Corporation (IFC) and African Development Bank (AfDB)—require integrated ESG proof points before capital deployment.\n\n### Core Pillars of Modern Corporate ESG\n- **Environmental Stewardship (E)**: Transitioning from simply managing waste to measuring Scope 1, Scope 2, and Scope 3 carbon intensities. This requires rigorous mapping of operational energy expenditure, water recycling percentages, and circular supply-chain sourcing.\n- **Social Justice & Safety (S)**: Monitoring gender balance, fair-wage labor guidelines, and safe work-site cultures. Companies must prove active community consent through continuous consultation, rather than just on-off public panels during project launches.\n- **Ethical Governance Rules (G)**: Eradicating transactional corruption through audited compliance structures, whistleblowing frameworks, and transparent environmental disclosures. Board-level oversight of climate-related financial risks is now a standard requirement for securing sustainability-linked loans.",
+      "readTime": "7 min read",
+      "slug": "compliance-to-esg-east-africa"
+    },
+    {
+      "id": "art4",
+      "title": "Innovative Groundwater Management and Resistivity Grids in Arid & Semi-Arid Lands (ASAL)",
+      "category": "Hydrogeology",
+      "author": "HUERI Geophysical Division",
+      "date": "February 20, 2026",
+      "excerpt": "Utilizing Vertical Electrical Sounding (VES) and aquifer recharge modeling to map deep sweetened water tables and mitigate drought impact across western and northern Kenya.",
+      "content": "Sustaining agricultural yields and communal stability throughout Kenya's Arid and Semi-Arid Lands (ASAL) requires reliable groundwater access. However, random drilling frequently yields high-salinity wells or dry boreholes, resulting in wasted capital.\n\n### The Science of Geophysical Subsurface Profiling\nTo counter aquifer depletion, HUERI integrates multi-dimensional geophysical exploration profiles:\n\n1. **Vertical Electrical Sounding (VES)**: We pass controlled electrical currents down Schlumberger electrode arrays to measure regional resistivities. This allows us to trace fractured basement rock boundaries, identify water-bearing sand reservoirs, and avoid fossil saline deposits.\n2. **Aquifer Recharge Modeling**: Designing earthworks to divert seasonal rain runoff into dry alluvial basins. This facilitates gradual soil absorption, replenishing aquifer zones and raising nearby community water tables naturally.\n3. **Hybrid Solar Pumping Systems**: Transitioning off variable diesel fuel utilities. Utilizing direct solar pumps cuts operational overheads for community cooperatives and maintains zero carbon footprint under national climate targets.",
+      "readTime": "9 min read",
+      "slug": "groundwater-management-asal-kenya"
+    },
+    {
+      "id": "art5",
+      "title": "Circular Waste Strategies and Nutrient Loading Controls for Lake Victoria Basins",
+      "category": "Waste Management",
+      "author": "Belindah Nyakinya",
+      "date": "January 14, 2026",
+      "excerpt": "Combatting municipal nutrient loading and water-hyacinth blooms by designing decentralized biochemical treatment loops and bio-fertilizer conversion programs.",
+      "content": "The Lake Victoria freshwater basin is facing critical ecological pressures. Rapid urbanization, lakeside industrial development, and informal fishing harbor expansion have elevated biochemical oxygen demand (BOD) and chemical nutrient loading. This combination has sparked expansive algal blooms, threatening fish breeding nurseries and community water supplies.\n\n### Engineering Circular Conservation Loops\nHUERI's environmental engineering teams are designing localized waste diversion models to restore lakebed health:\n\n- **Fish-Offal & Hyacinth Bio-conversion**: Diverting organic waste directly from fish processing beaches. Composting high-protein offal with harvested lake hyacinths yields balanced bio-fertilizers, returning organic nutrients to local agricultural soils.\n- **Decentralized Constructed Wetlands (DCWs)**: Rather than routing industrial greywater directly into lake tributaries, we design engineered wetlands. Utilizing gravel substrates and native wetland water hyacinths, these systems filter out nitrates and phosphates, safeguarding lake water quality.\n- **Communal Plastic Recycling Chains**: Equipping local beach management units (BMUs) with sorting tools. This enables communities to collect and bottle waste plastics for regional recycling centers, reducing plastic macro-pollution in the lake.",
+      "readTime": "11 min read",
+      "slug": "circular-waste-lake-victoria-communities"
+    }
+  ],
+  "services": [
+    {
+      "id": "eia",
+      "title": "Safeguarding Ecosystems: Environmental Impact Assessment (EIA)",
+      "slug": "environmental-impact-assessment",
+      "icon": "ShieldAlert",
+      "shortDescription": "We balance state-of-the-art development with the breathing rhythms of nature, shielding soil, forest, and water systems through comprehensive, NEMA-certified evaluations.",
+      "overview": "Every brick laid or road paved alters the land. We do not just run checklists; we map how major projects interact with local bio-corridors, historical watersheds, and community lifelines. Our assessments translate complex ecology into practical, NEMA-approved guidelines that prevent degradation and foster long-term project viability across East Africa.",
+      "methodology": [
+        "Ecological Footprint Mapping: Defining proposed development boundaries against critical biological assets.",
+        "Baseline Nature Inventories: Rigorous empirical surveys of soil health, air quality, local flora, and aquatic ecosystems.",
+        "Bio-Impact Matrix Scoping: Measuring spatial changes using high-precision modeling to anticipate future stresses.",
+        "Empathetic Stakeholder Dialogue: Gathering resident feedback to honor ancestral ties and municipal concerns.",
+        "Living Management Blueprints (EMMP): Crafting highly actionable environmental monitoring and preservation protocols."
+      ],
+      "deliverables": [
+        "Consolidated EIA Project Narrative",
+        "Comprehensive NEMA-Accredited Study Dossier",
+        "Tailored Environmental Management and Monitoring Plan (EMMP)",
+        "NEMA Environmental Approval Certification"
+      ],
+      "benefits": [
+        "Achieve absolute regulatory safety under EMCA Cap 387.",
+        "Prevent structural conflicts with regional aquifers and biological corridors.",
+        "Secure clean, risk-free backing from green capital and international financiers."
+      ],
+      "caseExamples": [
+        {
+          "client": "Got Ramogi Forest Eco-Tourism Hub",
+          "description": "Executing detailed ecological surveys to establish buffer parameters for eco-lodges within an indigenous forest reserve.",
+          "outcome": "Acquired seamless NEMA clearance safeguarding cultural landmarks and regional flora habitats."
+        }
+      ]
+    },
+    {
+      "id": "ea",
+      "title": "Environmental Auditing & Ecological Health Reviews",
+      "slug": "environmental-auditing",
+      "icon": "ClipboardCheck",
+      "shortDescription": "Annual systematic reviews of operational assets to scale down biological footprint, prevent pollution, and optimize resource efficiency.",
+      "overview": "Ecosystem parameters shift, and physical infrastructure wears under use. Annual Environmental Audits are vital diagnostic checkups for ongoing ventures. We analyze compliance, measure effluent streams, and implement custom circular improvements that ensure long-term harmony with the Kenyan environment.",
+      "methodology": [
+        "Physical Site Reconnaissance: Assessing real-time waste storage, safety boundaries, and energy behaviors.",
+        "Multi-Pathway Sample Testing: Empirical sampling of industrial water runoff, noise propagation, and chimney discharges.",
+        "Staff & Community Dialogues: Partnering with physical operators and nearby households to inspect living quality.",
+        "Systemic Efficiency Identification: Highlighting raw material, power, and water recycling opportunities.",
+        "Compliance Alignment Mapping: Matching ongoing facilities with evolving municipal codes and NEMA rules."
+      ],
+      "deliverables": [
+        "Annual Environmental Compliance Audit Report",
+        "Formal NEMA Submission Acknowledgement",
+        "Optimized Resource Conservation Plan"
+      ],
+      "benefits": [
+        "Mitigate massive administrative fines and liability exposures.",
+        "Optimize water consumption and biological resource usage profiles.",
+        "Establish pristine corporate trust with lakeside community watchboards."
+      ],
+      "caseExamples": [
+        {
+          "client": "Lakeside Industrial Processing Hub",
+          "description": "Post-operational audit focusing on organic waste load discharges near Winam Gulf.",
+          "outcome": "Engineered high-efficiency bio-filters and settling ponds, bringing discharge parameters well below NEMA limits."
+        }
+      ]
+    },
+    {
+      "id": "ehs",
+      "title": "Occupational Wellness & Site Safety Engineering",
+      "slug": "environmental-health-safety",
+      "icon": "HeartPulse",
+      "shortDescription": "Formulating workplace wellness protocols, structural hazard management, and emergency response frameworks aligned with DOSHS rules.",
+      "overview": "To protect the environment is to safeguard the workers who construct our collective future. We transform construction projects and industrial complexes into certified safe spaces. By weaving DOSHS safety regulations directly into daily operations, we achieve zero-accident cultures that respect human lives.",
+      "methodology": [
+        "Multi-Node Site Hazard Identification (HAZID/HAZOP): Highlighting physical and toxic risks at all operational tiers.",
+        "Human-Centric Safety Design: Developing intuitive emergency plans, personal protective layouts, and safe workflows.",
+        "Sustained Workplace Safety Forums: Establishing compliant health councils and leading hands-on training.",
+        "DOSHS Statutory Audits: Systematic review of fire response facilities, first aid stocks, and labor environments."
+      ],
+      "deliverables": [
+        "Technical Site Risk Mitigation Registry",
+        "Emergency Evacuation & First Aid Protocol Manual",
+        "DOSHS-Certified Annual Fire & OSH Audits"
+      ],
+      "benefits": [
+        "Nurture a professional, high-morale workspace that reduces operational downtime.",
+        "Complete statutory compliance, bypassing sudden government closures.",
+        "Strengthen labor relations through transparent occupational safeguards."
+      ],
+      "caseExamples": [
+        {
+          "client": "Rift Geothermal Drilling Rigs",
+          "description": "Directing daily workspace safety and high-pressure steam emergency plans for over 900 heavy labor employees.",
+          "outcome": "Maintained complete zero-fatality records across 1.2 million continuous project hours."
+        }
+      ]
+    },
+    {
+      "id": "rap",
+      "title": "Dignified Resettlement Action Planning (RAP)",
+      "slug": "resettlement-action-planning",
+      "icon": "SquareUserRound",
+      "shortDescription": "Compassionate land acquisition, community asset valuations, and livelihood rebuilding matrices matching international safeguards.",
+      "overview": "While linear infrastructure is vital for regional connectivity, we ensure that civil developments do not displace people’s lives. We design ethical, compassionate Resettlement Action Plans (RAP) that guarantee fair replacement-cost asset valuations, deep stakeholder engagement, and sustainable economic rebuild structures.",
+      "methodology": [
+        "Cadastral Spatial Overlays: Using GIS mapping to register exactly which lands and developments are affected.",
+        "Immutable Community Census: Documenting resident details, structures, and livelihood vulnerabilities immediately on the designated cut-off date.",
+        "Dignified Valuation Modeling: Calculating payouts using direct replacement values, bypassing simple depreciated metrics.",
+        "Elected Grievance Redress Cells: Establishing local community-led dispute panels to find harmony outside courts.",
+        "Sustainable Livelihood Projects (LRP): Sponsoring organic farming links, micro-loans, and formal land title registers."
+      ],
+      "deliverables": [
+        "Comprehensive RAP Social Safeguards Blueprint",
+        "Verified Compensations & Asset Registers",
+        "Operational Grievance Redress System Structure"
+      ],
+      "benefits": [
+        "Avoid project-stalling legal injunctions or communal tension.",
+        "Satisfay the strict funding constraints of global development banks (IFC, World Bank, AfDB).",
+        "Ensure displaced families enter transition phases significantly better off."
+      ],
+      "caseExamples": [
+        {
+          "client": "Makasembo Housing Development (LAPFUND)",
+          "description": "Formulating a step-by-step transitional path for urban families affected by high-density housing developments.",
+          "outcome": "Achieved seamless translocation with zero community friction, providing secure household transitions."
+        }
+      ]
+    },
+    {
+      "id": "me",
+      "title": "Results-Based Advisory, Monitoring & Evaluation",
+      "slug": "monitoring-evaluation",
+      "icon": "TrendingUp",
+      "shortDescription": "Tracking social-environmental indices and project performance milestones through high-integrity data analytics to prove real-world impacts.",
+      "overview": "Every sustainable program deserves clear, indisputable validation. We construct performance evaluation frameworks that allow NGOs, donors, and private investors to trace social-ecological impacts back to their investments, ensuring maximum transparency.",
+      "methodology": [
+        "Theory of Change Co-design: Partnering with regional leaders to define logical steps and success metrics.",
+        "Mobile-GIS Spatial Field Surveys: Leveraging real-time location analytics to map development points.",
+        "Midterm & Endline Structural Evaluations: Reviewing program integrity, fund allocations, and community reactions.",
+        "Econometric Impact Analysis: Advanced data analysis backing socioeconomic performance claims."
+      ],
+      "deliverables": [
+        "Consolidated M&E Manual & Target Registry",
+        "Detailed Midterm & Final Impact Assessment Dossiers",
+        "Public-Facing Interactive Progress Portals"
+      ],
+      "benefits": [
+        "Prove physical project impacts with empirical, verifiable data.",
+        "Cultivate absolute trust among major international foundations and climate donors.",
+        "Correct program errors in real-time before budgets are exhausted."
+      ],
+      "caseExamples": [
+        {
+          "client": "Lakeside Agro-Silviculture Expansion",
+          "description": "Assessing soil organic carbon growth and farming household earnings amongst 5,000 sub-counties.",
+          "outcome": "Scientifically proved a 45% uplift in conservation farming successes, unlocking second-stage donor funding."
+        }
+      ]
+    },
+    {
+      "id": "hydro",
+      "title": "Hydrogeological Mapping & Water Security Surveys",
+      "slug": "hydrogeological-surveys",
+      "icon": "Waves",
+      "shortDescription": "Combining geophysical electrical profiling with recharge modeling to secure potable, high-yield municipal water supplies.",
+      "overview": "Water keeps East African soil alive. Amidst shifting weather patterns, traditional shallow water wells often fail or hit saltwater. HUERI deploys Vertical Electrical Sounding (VES) and modern geophysical resistivity grids to map safe, deep aquifers protected from evaporation, securing licensing from the Water Resources Authority (WRA).",
+      "methodology": [
+        "Multidimensional Res Electrical Profiling: Projecting safe electrical currents through electrode arrays to map subsurface water basins.",
+        "Aquifer Balance Modeling: Factoring in local recharge rates and clay layers to compute sustainable long-term extraction.",
+        "Borehole Siting and Drilling Diagnostics: Inspecting optimal drilling coordinates while strictly avoiding saline structures.",
+        "Water Chemistry Testing: Laboratory evaluations of natural minerals to ensure public safety."
+      ],
+      "deliverables": [
+        "Technical Hydrogeological Assessment Portfolio",
+        "Water Resources Authority Permit Clearances",
+        "Borehole Construction Blueprint & Yield Prognosis"
+      ],
+      "benefits": [
+        "Completely eliminate capital losses from dry borehole drillings.",
+        "Protect sensitive subterranean water tables from toxic saltwater intrusions.",
+        "Establish deep community trust by providing long-term clean water supplies."
+      ],
+      "caseExamples": [
+        {
+          "client": "Nyakach Water Basin Development",
+          "description": "Geophysical profiling to locate clean sweet-water layers within clay-abundant lakeside plains.",
+          "outcome": "Drilled a high-flow borehole yielding 20 cubic meters hourly, supplying potable water to over 1,000 rural residents."
+        }
+      ]
+    },
+    {
+      "id": "feasibility",
+      "title": "Ecological & Financial Feasibility Modeling",
+      "slug": "feasibility-studies",
+      "icon": "MapPin",
+      "shortDescription": "Conducting dynamic environmental, regulatory, and financial evaluations that optimize development layouts prior to ground-break.",
+      "overview": "True sustainability begins before ground-breaking. We inspect technical plans and financial spreadsheets against ecological boundaries, evaluating prospective investments from every angle to direct your capital to project structures that last.",
+      "methodology": [
+        "Socio-Environmental Risk Screenings: Evaluating local zoning limits, soil mechanics, and environmental sensitivities.",
+        "Regulatory Barrier Mapping: Cross-examining proposed projects against local and regional planning codes.",
+        "Financial Capital Models: Stress-testing capital expectations against shifting raw material and environmental resource costs.",
+        "Alternative Layout Comparisons: Constructing site-alternative grids to determine the most cost-efficient, low-impact paths."
+      ],
+      "deliverables": [
+        "Comprehensive Multi-Risk Feasibility Dossier",
+        "Physical Site Planning Comparison Index",
+        "Environmental & Structural Mitigation Register"
+      ],
+      "benefits": [
+        "Avoid costly project planning mistakes before ordering heavy machinery.",
+        "Identify high-value natural assets (like ancient old-growth tree lines) early.",
+        "Win swift banking approvals with high-integrity project planning documentation."
+      ],
+      "caseExamples": [
+        {
+          "client": "Kisumu County Blue Economy Infrastructure",
+          "description": "Assessing socioeconomic viability and environmental risk of community beach development designs.",
+          "outcome": "Optimized tourist layouts to preserve critical fish-breeding reserves, cutting initial capital expenditures by 15%."
+        }
+      ]
+    },
+    {
+      "id": "strategic",
+      "title": "ESG Blueprints & Sustainable Strategic Planning",
+      "slug": "strategic-planning",
+      "icon": "Compass",
+      "shortDescription": "Reimagining traditional business plans into ESG-driven roadmaps that unlock global climate finance and build resilience.",
+      "overview": "Corporate responsibility has moved beyond basic charity. Global funding institutions expect comprehensive ESG performance. We turn regulatory compliance into a competitive, nature-inspired business advantage, helping companies align with planetary boundaries.",
+      "methodology": [
+        "Factual Materiality Scoping: Mapping your precise environmental, social, and corporate governance exposures.",
+        "Scope 1, 2, & 3 Carbon Intensity Auditing: Tracking carbon fuel footprints and mapping renewable alternatives.",
+        "Board-Level Compliance Trainings: Weaving ESG metrics into board agendas and financial reporting lines.",
+        "Sustainable Strategic Roadmaps: Generating detailed, multi-year plans to transition operations smoothly."
+      ],
+      "deliverables": [
+        "5-Year Eco-Resilient Institutional Strategic Blueprint",
+        "Comprehensive Public ESG Disclosure Index",
+        "Circular Supply Chain & Carbon Offsetting Guidelines"
+      ],
+      "benefits": [
+        "Unlock access to premium green capital and sustainability-linked financial credits.",
+        "Safeguard your supply chains against severe climate shifts and water scarcities.",
+        "Build a distinct, resilient brand that draws top modern talent."
+      ],
+      "caseExamples": [
+        {
+          "client": "East African Agriculture Co-operative",
+          "description": "Formulating a climate-smart ESG strategy plan navigating changing rain cycles.",
+          "outcome": "Constructed resilience metrics that attracted $2M in international green micro-finance."
+        }
+      ]
+    },
+    {
+      "id": "waste",
+      "title": "Circular Drainage, Wastewater & Waste Recovery",
+      "slug": "waste-management",
+      "icon": "Trash2",
+      "shortDescription": "Designing zero-waste discharge biological wetlands, bio-filters, and compost loops that mimic nature's cycles.",
+      "overview": "In healthy ecosystems, waste does not exist—one organism's output is another's building block. We design biological wastewater recycling networks, engineered reed beds, and zero-discharge resource recovery platforms that clean effluent streams and generate rich, organic fertilizer.",
+      "methodology": [
+        "Industrial Stream Analysis: Documenting daily waste volumes, organic loads, and toxic composition.",
+        "Organics Diversion Plans: Setting up processes to turn food waste and lake weeds into organic compost.",
+        "Bio-logical Engineering Concept designs: Sketching constructed wetlands and natural reed filters.",
+        "NEMA Effluent App Drafting: Managing strict licensing permissions to secure wastewater discharge approvals."
+      ],
+      "deliverables": [
+        "Decentralized Biological Wastewater Plant Blueprint",
+        "Integrated Waste-to-Resource Strategy Portfolio",
+        "NEMA Effluent Discharge License Clearances"
+      ],
+      "benefits": [
+        "Generate clean recycled water for industrial cooling and local farm irrigation.",
+        "Ensure adjacent lake and soil water tables remain pure.",
+        "Save money by returning recycled organic resources to local farms."
+      ],
+      "caseExamples": [
+        {
+          "client": "Milimani Executive Compounds & Estates",
+          "description": "Designing modern zero-odor biological septic filters and greywater bio-reed systems in historic suburbs.",
+          "outcome": "Completely eliminated sewage odors, recycling 100% of household outflows for garden landscapes."
+        }
+      ]
+    },
+    {
+      "id": "ppp",
+      "title": "Public-Private Partnerships & Collaborative Engagement",
+      "slug": "stakeholder-engagement",
+      "icon": "Users",
+      "shortDescription": "Facilitating open stakeholder dialogues, municipal consensus, and collaborative CSR investment structures.",
+      "overview": "Big development projects thrive when local communities feel deeply included. We facilitate open, transparent dialogue between private companies, local county governments, and communities, building mutual trust and durable public partnerships.",
+      "methodology": [
+        "Socio-Political Community Profiling: Mapping community leadership channels and potential worries.",
+        "Facilitated Stakeholder Town Halls: Leading honest, constructive dialogues that give communities a real voice.",
+        "PPP Framework Mapping: Designing partnership parameters where risks and benefits are shared.",
+        "Targeted CSR Alignment: Creating community support programs that directly address pressing local needs."
+      ],
+      "deliverables": [
+        "Consolidated Local Stakeholder Engagement Plan",
+        "Memorandum of Public-Private Alliance",
+        "Community Grievance Resolution & Tracking Mechanism"
+      ],
+      "benefits": [
+        "Establish deep community trust and lasting social license to operate.",
+        "Minimize project delays caused by community misunderstandings or friction.",
+        "Foster genuine regional growth where development benefits everyone."
+      ],
+      "caseExamples": [
+        {
+          "client": "Lakeside Fishery Infrastructure",
+          "description": "Mediating regional structural plans between municipal boards and local Beach Management Units.",
+          "outcome": "Created a shared fishery maintenance program, ensuring full community support."
+        }
+      ]
+    },
+    {
+      "id": "permits",
+      "title": "Absolute Permitting Facilitation & Regulatory Management",
+      "slug": "licensing-permits",
+      "icon": "FileText",
+      "shortDescription": "Streamlining end-to-end statutory approvals and compliance audits through expert, dedicated liaisons.",
+      "overview": "Do not let paper processes delay your developmental milestones. We guide you through complex regulatory paths, managing critical submissions and compliance relationships with NEMA, DOSHS, and WRA so you can focus on building.",
+      "methodology": [
+        "Consolidated Project Permitting Maps: Charting all required approvals across local and national bodies.",
+        "Technical Review & Folder Diagnostics: Ensuring all technical files meet strict regulatory standards.",
+        "Active Institutional Liaison: Coordinating direct meetings with regulatory inspectors to discuss projects.",
+        "Continuous Compliance Dashboards: Building reminders to manage renewals before licenses expire."
+      ],
+      "deliverables": [
+        "Consolidated Statutory Permitting Registry Plan",
+        "Approved Multi-Agency Certificates (NEMA, DOSHS, WRA)",
+        "Ongoing Compliance Review Checklists"
+      ],
+      "benefits": [
+        "Speed up municipal approval schedules by up to 40%.",
+        "Avoid expensive Stop Work notices and licensing penalties.",
+        "Keep your technical staff focused on core design and construction tasks."
+      ],
+      "caseExamples": [
+        {
+          "client": "Regional Municipal Civil Office",
+          "description": "Securing environmental permits for executive administrative compounds in historic districts.",
+          "outcome": "Acquired all critical regulatory permits within accelerated timelines, with zero legal issues."
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "res1",
+      "title": "HUERI - Comprehensive NEMA EIA Checklist for Real Estate Developers",
+      "category": "Regulatory Toolkits",
+      "description": "An interactive checklist containing document lists, timelines, and pre-screens required to secure building licenses for commercial projects in Kenya.",
+      "downloadCount": 345,
+      "fileSize": "1.2 MB PDF"
+    },
+    {
+      "id": "res2",
+      "title": "Guide: Resettlement Plan Baseline Socio-Economic Survey Methodology",
+      "category": "Socio-Environmental Standards",
+      "description": "A framework guide on designing census forms, tracking affected assets, and setting cutting dates for local road and line developments.",
+      "downloadCount": 189,
+      "fileSize": "2.4 MB PDF"
+    },
+    {
+      "id": "res3",
+      "title": "Sample Environmental Management and Monitoring Plan (EMMP) Template",
+      "category": "Templates & Forms",
+      "description": "An adjustable spreadsheet template matching standard NEMA compliance reporting for ongoing light industrial business setups.",
+      "downloadCount": 512,
+      "fileSize": "750 KB XLSX"
+    },
+    {
+      "id": "res4",
+      "title": "DOSHS Workplace Occupational Health & Safety Compliance Guide",
+      "category": "Workplace Safety",
+      "description": "A quick summary reference card listing requirements for mandatory fire safety audits, safety committee elections, and hazard indicators.",
+      "downloadCount": 228,
+      "fileSize": "1.5 MB PDF"
+    }
+  ]
+}
