@@ -1,0 +1,20 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/admin/
+
+# Googlebot & Bingbot specific directives
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+
+User-agent: Bingbot
+Allow: /
+Allow: /assets/
+
+# Crawl delay & Host
+Crawl-delay: 1
+Host: https://hueri.co.ke
+
+# XML Sitemap
+Sitemap: https://hueri.co.ke/sitemap.xml
