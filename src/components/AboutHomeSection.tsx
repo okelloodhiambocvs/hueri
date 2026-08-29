@@ -19,23 +19,29 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b border-[#E5DFD5] dark:border-slate-800 pb-5">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-              INSTITUTIONAL PURPOSE & AFRICAN MANDATE
+              INSTITUTIONAL PURPOSE & PARTNERSHIP MANDATE
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-stone-900 dark:text-white tracking-tight leading-tight">
               Grounded in African Realities. <br className="hidden sm:inline" />
-              Aligned with Global Standards.
+              Engineered for Global Consortia.
             </h2>
             <p className="text-xs sm:text-sm text-stone-700 dark:text-slate-200 font-sans leading-relaxed font-light">
-              <strong>Hope Urban Environmental and Research Investments Limited (HUERI Limited)</strong> is a premier Kenyan environmental, social, climate, and safety consultancy firm incorporated in 2014 (NEMA Firm Licence: <strong>NEMA/ENVIS/ELi/F0026</strong>). We de-risk major infrastructure, energy, urban, and industrial investments across Africa by ensuring full statutory compliance and international bankability.
+              <strong>Hope Urban Environmental and Research Investments Limited (HUERI Limited)</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm incorporated in 2014 (NEMA Firm Licence: <strong>NEMA/ENVIS/ELi/F0026</strong>). As a preferred in-country delivery and consortium partner, HUERI empowers international engineering primes, development financiers, and public agencies to obtain statutory approvals, ensure rigorous safeguard compliance, resolve land resettlement challenges, and manage project risks across Africa.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <button
+              onClick={() => onNavigate('partnerships')}
+              className="px-3.5 py-1.5 bg-brand-blue-900 hover:bg-brand-blue-800 text-white font-mono font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer border border-blue-700/50"
+            >
+              Consortia Models →
+            </button>
             <button
               onClick={() => onNavigate('about')}
               className="px-3.5 py-1.5 bg-brand-green-700 hover:bg-brand-green-600 active:bg-brand-green-800 text-white font-mono font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer"
             >
-              Explore Full Profile →
+              Full Profile →
             </button>
           </div>
         </div>
@@ -43,9 +49,9 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
         {/* 3 Core Value Proposition Pillars */}
         <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
           
-          {/* Pillar 1: Emerald Theme */}
+            {/* Pillar 1: Emerald Theme */}
           <div 
-            onClick={() => onNavigate('about', 'about-director')}
+            onClick={() => onNavigate('about', 'about-leadership')}
             className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-emerald-500/30 hover:border-emerald-600 hover:bg-emerald-50/50 dark:hover:bg-emerald-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
           >
             <div className="flex items-center justify-between">
@@ -57,13 +63,13 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
               </span>
             </div>
             <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-emerald-800 dark:group-hover:text-emerald-300 transition-colors">
-              Ground-to-Boardroom Fluency
+              Local Realities & Lender Alignment
             </h3>
             <p className="text-xs text-stone-600 dark:text-slate-300 leading-relaxed font-light">
-              We seamlessly connect grassroots community barazas and county administrations with international lender standards (World Bank ESF, IFC Performance Standards, AfDB ISS).
+              We bridge grassroots community consultations and county regulatory dynamics with international financier safeguard frameworks (World Bank ESF, IFC PS 1–8, AfDB ISS).
             </p>
             <div className="pt-2 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 group-hover:underline">
-              Learn Leadership Approach →
+              View Technical Leadership →
             </div>
           </div>
 
@@ -77,14 +83,14 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
                 02
               </span>
               <span className="text-[10px] font-mono uppercase tracking-wider text-blue-700 dark:text-blue-400 font-bold">
-                RISK DE-RISKING
+                SAFEGUARDS & COMPLIANCE
               </span>
             </div>
             <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-300 transition-colors">
-              De-risking & Zero Stoppages
+              Safeguards Delivery & Compliance
             </h3>
             <p className="text-xs text-stone-600 dark:text-slate-300 leading-relaxed font-light">
-              100% track record of securing statutory NEMA approvals and conducting Resettlement Action Plans (RAP) with zero court injunctions and complete grievance resolution.
+              Demonstrated experience in preparing statutory NEMA submissions, structured Resettlement Action Plans (RAP), stakeholder engagement, and project grievance redress mechanisms.
             </p>
             <div className="pt-2 text-xs font-mono font-bold text-blue-700 dark:text-blue-400 group-hover:underline">
               Explore Safeguards Portfolio →
@@ -105,13 +111,13 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
               </span>
             </div>
             <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
-              Defensible Field Sciences
+              Empirical Baseline & Spatial Assessment
             </h3>
             <p className="text-xs text-stone-600 dark:text-slate-300 leading-relaxed font-light">
-              Drone LiDAR, GIS mapping, water catchment limnology, and biodiversity baselines backed by calibrated scientific equipment and registered lead experts.
+              Spatial GIS hazard analysis, water catchment assessments, and ecological screening delivered through HUERI's multidisciplinary team and specialist technical associates.
             </p>
             <div className="pt-2 text-xs font-mono font-bold text-amber-700 dark:text-amber-400 group-hover:underline">
-              View Field Methodologies →
+              View Methodologies & QA/QC →
             </div>
           </div>
 
