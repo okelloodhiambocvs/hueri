@@ -58,13 +58,14 @@ export default function ServicesSection({
       });
   }, []);
 
-  // 5 Practice Pillars
+  // 6 Practice Pillars
   const serviceSections = [
     { id: 'service-pillar-1', label: '1. Statutory Licencing & ESIA', tag: 'Statutory Clearances', desc: 'EMCA Cap 387 EIA/ESIA, Strategic Environmental Assessments (SEA), and official approvals.' },
-    { id: 'service-pillar-2', label: '2. Social Safeguards & Resettlement', tag: 'Social Performance', desc: 'Resettlement Action Plans (RAP), 100% socio-economic census, asset valuation, livelihood restoration & barazas.' },
+    { id: 'service-pillar-2', label: '2. Social Safeguards & Resettlement', tag: 'Social Performance', desc: 'Resettlement Action Plans (RAP), comprehensive socio-economic census, asset valuation, livelihood restoration & barazas.' },
     { id: 'service-pillar-3', label: '3. Climate Resilience & Ecology', tag: 'Climate & Ecology', desc: 'Climate vulnerability profiling, hydrological modeling, biodiversity baselines, and nature-based solutions.' },
     { id: 'service-pillar-4', label: '4. Safety & Compliance Audits', tag: 'Audits & Safety', desc: 'Annual statutory NEMA audits, workplace occupational health & safety (OHS), and hazardous waste monitoring.' },
-    { id: 'service-pillar-5', label: '5. ESG & Lender Standards', tag: 'Lender Bankability', desc: 'World Bank ESF, IFC Performance Standards, AfDB ISS, and lender Environmental & Social Due Diligence (ESDD).' }
+    { id: 'service-pillar-5', label: '5. ESG & Lender Standards', tag: 'Lender Standards', desc: 'World Bank ESF, IFC Performance Standards, AfDB ISS, and lender Environmental & Social Due Diligence (ESDD).' },
+    { id: 'service-pillar-6', label: '6. ESHSRIM Procedures Training', tag: 'Capacity & Certification', desc: 'Professional and organizational capacity building on ESHSRIM procedures, hazard control, and compliance toolkits.' }
   ];
 
   const pillarCategoryMap: Record<string, string> = {
@@ -72,7 +73,8 @@ export default function ServicesSection({
     'service-pillar-2': 'Social',
     'service-pillar-3': 'Climate',
     'service-pillar-4': 'Safety',
-    'service-pillar-5': 'ESG'
+    'service-pillar-5': 'ESG',
+    'service-pillar-6': 'Training'
   };
 
   const handlePillarJump = (pillarId: string) => {
