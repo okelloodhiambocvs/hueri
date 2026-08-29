@@ -40,10 +40,20 @@ import africanPartnerships from '../assets/images/african_partnerships_consortiu
 import kisumuHeadquarters from '../assets/images/kisumu_advisory_headquarters_1787059161420.jpg';
 // @ts-ignore
 import lifecycleAudit from '../assets/images/lifecycle_standards_audit_1787059174057.jpg';
+// @ts-ignore
+import siteConstructionMonitoring from '../assets/images/site_construction_monitoring_1787862948843.jpg';
+// @ts-ignore
+import eshsrimTraining from '../assets/images/eshsrim_training_procedures_1787862969944.jpg';
+// @ts-ignore
+import siteConcreteReinforcement from '../assets/images/site_concrete_reinforcement_1787862986718.jpg';
+// @ts-ignore
+import siteStructuralDeck from '../assets/images/site_structural_deck_concreting_1788000135472.jpg';
+// @ts-ignore
+import siteWorkerLeveling from '../assets/images/site_worker_rebar_leveling_1788000151125.jpg';
 
 export const photoAssets = {
   // Brand & Unique Landing Page Heroes
-  homeHero: lakeVictoriaSafeguards,
+  homeHero: siteStructuralDeck,
   aboutHero: fieldScientists,
   servicesHero: africanRenewableEnergy,
   sectorsHero: sustainableInfrastructure,
@@ -51,7 +61,7 @@ export const photoAssets = {
   partnershipsHero: africanPartnerships,
   lifecycleHero: lifecycleAudit,
 
-  // General Landscape & Practice
+  // General Landscape & Practice & Real Project Sites
   lakeVictoria: lakeVictoriaSafeguards,
   renewableEnergy: africanRenewableEnergy,
   fieldScientists: fieldScientists,
@@ -60,11 +70,16 @@ export const photoAssets = {
   miningReclamation: miningReclamation,
   waterCatchment: waterWetlandCatchment,
   eiaAssessment: eiaSiteAssessment,
-  heroBanner: lakeVictoriaSafeguards,
+  heroBanner: siteStructuralDeck,
   environmentalResearch: fieldScientists,
   solarWindRenewable: africanRenewableEnergy,
   infrastructureRoads: sustainableInfrastructure,
   sustainableMining: miningReclamation,
+  siteConstructionMonitoring: siteConstructionMonitoring,
+  eshsrimTraining: eshsrimTraining,
+  siteConcreteReinforcement: siteConcreteReinforcement,
+  siteStructuralDeck: siteStructuralDeck,
+  siteWorkerLeveling: siteWorkerLeveling,
 
   // Leadership & Team
   leadership: {
@@ -80,7 +95,10 @@ export const photoAssets = {
     lakeResearch: milestoneLakeResearch,
     infrastructureEsmp: milestoneInfrastructure,
     climateVulnerability: milestoneClimate,
-    waterTreatment: milestoneWaterTreatment
+    waterTreatment: milestoneWaterTreatment,
+    constructionMonitoring: siteStructuralDeck,
+    eshsrimTrainingSession: eshsrimTraining,
+    concreteReinforcementSafety: siteWorkerLeveling
   },
 
   // Service Mapping
@@ -88,12 +106,13 @@ export const photoAssets = {
     'eia-esia': eiaSiteAssessment,
     'rap-livelihoods': milestoneBaraza,
     'stakeholder-social': milestoneBaraza,
-    'ohs-safety': fieldScientists,
+    'ohs-safety': siteStructuralDeck,
     'climate-biodiversity': milestoneClimate,
     'esg-sustainability': africanRenewableEnergy,
     'research-surveys': milestoneDrone,
     'waste-pollution': milestoneWaterTreatment,
-    'implementation-supervision': sustainableInfrastructure
+    'implementation-supervision': siteWorkerLeveling,
+    'eshsrim-training': eshsrimTraining
   } as Record<string, string>,
 
   // Sector Mapping
@@ -103,23 +122,25 @@ export const photoAssets = {
     'mining-extractives': miningReclamation,
     'transport-logistics': sustainableInfrastructure,
     'water-sanitation': waterWetlandCatchment,
-    'urban-built-env': urbanPlanningGis,
+    'urban-built-env': siteStructuralDeck,
     'agriculture-nature': milestoneLakeResearch,
     'industry-manufacturing': milestoneWaterTreatment,
     'digital-social': milestoneDrone,
     'carbon-nature-finance': milestoneClimate
   } as Record<string, string>,
 
-  // Projects Mapping
+  // Projects Mapping (Every project has a strictly distinct, accurate photo)
   projects: {
     'p-kdsp': sustainableInfrastructure,
     'p-makasembo': urbanPlanningGis,
     'p-flloca': milestoneClimate,
     'p-wells-energy': fieldScientists,
     'p-kisumu-climate': milestoneLakeResearch,
-    'p-wema-housing': urbanPlanningGis,
+    'p-wema-housing': siteStructuralDeck,
     'p-kisip-ii': milestoneBaraza,
-    'p-kcsap': waterWetlandCatchment
+    'p-kcsap': waterWetlandCatchment,
+    'p-structural-monitoring': siteWorkerLeveling,
+    'p-eshsrim-training': eshsrimTraining
   } as Record<string, string>
 };
 
