@@ -134,7 +134,7 @@ export default function InternationalStandardsSection({ onRequestProposal }: Int
             International Standards & Statutory Frameworks
           </h2>
           <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 font-sans max-w-2xl mx-auto leading-relaxed font-light">
-            Bridging international multilateral financing requirements with African statutory compliance to ensure project bankability and sustainable operation.
+            Bridging international multilateral financing requirements with African statutory compliance to ensure project compliance and sustainability alignment.
           </p>
         </div>
 
