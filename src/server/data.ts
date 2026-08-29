@@ -3,23 +3,29 @@ import fs from 'fs';
 import { 
   initialServices, 
   initialProjects, 
+  initialLeadershipExperience,
   initialArticles, 
   initialResources, 
   initialTeam, 
   initialSectors, 
   initialPartnershipModels, 
-  initialCredentials 
+  initialCredentials,
+  initialQualityAssurance,
+  initialGovernanceTiers
 } from './seedData';
 
 export { 
   initialServices, 
   initialProjects, 
+  initialLeadershipExperience,
   initialArticles, 
   initialResources, 
   initialTeam, 
   initialSectors, 
   initialPartnershipModels, 
-  initialCredentials 
+  initialCredentials,
+  initialQualityAssurance,
+  initialGovernanceTiers
 };
 
 const DATA_DIR = path.join(process.cwd(), 'data');
@@ -30,6 +36,7 @@ export interface Database {
   applicants: any[];
   newsletter: string[];
   projects: any[];
+  leadershipExperience: any[];
   articles: any[];
   services: any[];
   resources: any[];
@@ -40,29 +47,54 @@ export function initDatabase(): Database {
     fs.mkdirSync(DATA_DIR, { recursive: true });
   }
 
-  if (fs.existsSync(DATA_FILE)) {
-    try {
-      const fileData = fs.readFileSync(DATA_FILE, 'utf-8');
-      const loaded = JSON.parse(fileData);
-      return {
-        leads: loaded.leads || [],
-        applicants: loaded.applicants || [],
-        newsletter: loaded.newsletter || [],
-        projects: loaded.projects && loaded.projects.length ? loaded.projects : initialProjects,
-        articles: loaded.articles && loaded.articles.length ? loaded.articles : initialArticles,
-        services: loaded.services && loaded.services.length ? loaded.services : initialServices,
-        resources: loaded.resources && loaded.resources.length ? loaded.resources : initialResources
-      };
-    } catch (e) {
-      console.error('Error reading DB, re-initializing database file: ', e);
-    }
-  }
-
   const fresh: Database = {
-    leads: [],
-    applicants: [],
+    leads: [
+      {
+        id: "l_seed1",
+        fullName: "Samuel K. Langat",
+        email: "langat.samuel@riftrealestate.co.ke",
+        phone: "+254 721 410139",
+        company: "Rift Valley Housing Developers",
+        organization: "Rift Valley Housing Developers",
+        serviceNeeded: "Environmental & Social Assessment (EIA / ESIA)",
+        assignmentNature: "ESIA Study & Statutory NEMA Clearance",
+        projectLocation: "Kericho County, Kenya",
+        inquiryType: "Request a Technical Proposal",
+        message: "We are organizing a 45-acre residential zoning parcel in Kericho. Looking for a lead NEMA consultant firm to handle ESIA and county statutory clearance proposals.",
+        status: "New",
+        date: "2026-06-03T14:30:00Z"
+      },
+      {
+        id: "l_seed2",
+        fullName: "Grace Muthoni",
+        email: "muthoni.g@kilimafoods.org",
+        phone: "+254 733 440551",
+        company: "Kilima Agricultural NGO",
+        organization: "Kilima Agricultural NGO",
+        serviceNeeded: "Research, Surveys, GIS & Development Advisory",
+        assignmentNature: "Baseline Socio-Economic & Environmental Survey",
+        projectLocation: "Homa Bay County, Kenya",
+        inquiryType: "General Enquiry",
+        message: "Need a comprehensive baseline socio-economic research study for our dryland irrigation scheme launch in Homa Bay.",
+        status: "Contacted",
+        date: "2026-06-02T09:15:00Z"
+      }
+    ],
+    applicants: [
+      {
+        id: "app_seed1",
+        jobId: "car1",
+        jobTitle: "Lead Environmental Consultant (EIA & EA Expert)",
+        fullName: "Dr. Patrick Amoth",
+        email: "amoth.patrick@outlook.com",
+        phone: "+254 755 120930",
+        coverLetter: "I have over 8 years experience leading EIA studies around Lake Victoria Basin and a valid NEMA lead registration. Keen on aligning with HUERI.",
+        date: "2026-06-01T16:00:00Z"
+      }
+    ],
     newsletter: ["investor.relations@eastafricafund.com"],
     projects: initialProjects,
+    leadershipExperience: initialLeadershipExperience,
     articles: initialArticles,
     services: initialServices,
     resources: initialResources
