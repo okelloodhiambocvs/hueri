@@ -39,7 +39,7 @@ export default function HomePage({
       num: '02',
       id: 'service-pillar-2',
       title: 'Social Safeguards & Resettlement',
-      desc: 'Resettlement Action Plans (RAP), 100% socio-economic census, asset valuation, livelihood restoration & barazas.',
+      desc: 'Resettlement Action Plans (RAP), socio-economic census, asset valuation, livelihood restoration & barazas.',
       tag: 'Social Performance',
       color: 'blue',
       bgHover: 'hover:bg-blue-50/80 dark:hover:bg-blue-950/40',
@@ -73,7 +73,7 @@ export default function HomePage({
       id: 'service-pillar-5',
       title: 'ESG & Lender Standards',
       desc: 'World Bank ESF, IFC Performance Standards, AfDB ISS, and lender Environmental & Social Due Diligence (ESDD).',
-      tag: 'Lender Bankability',
+      tag: 'Lender Standards',
       color: 'purple',
       bgHover: 'hover:bg-purple-50/80 dark:hover:bg-purple-950/40',
       borderHover: 'hover:border-purple-500',
@@ -138,34 +138,56 @@ export default function HomePage({
 
   const featuredProjects = [
     {
-      id: 'p-kdsp',
-      title: 'Environmental & Social Safeguards Support (KDSP II)',
-      client: 'State Department for Devolution',
-      location: 'National (47 Counties), Kenya',
-      year: '2025–Ongoing',
-      badge: 'Public Sector Governance',
-      image: photoAssets.projects['p-kdsp'],
-      outcome: 'Standardized sub-project screening and safeguards compliance across 47 devolved county governments.'
+      id: 'p-wema-housing',
+      title: 'Multi-Storey Residential Housing Development ESIA',
+      client: 'Wema Magharibi Ltd',
+      role: 'NEMA Lead EIA Consultant Firm',
+      location: 'Kisumu Urban Centre, Kenya',
+      year: '2024–2025',
+      badge: 'Statutory ESIA',
+      status: 'NEMA licence obtained',
+      evidenceSummary: 'NEMA EIA Licence & Approved ESIA Study',
+      image: photoAssets.projects['p-wema-housing'],
+      outcome: 'Formulated comprehensive ESIA study report, civil stormwater plans, and secured official NEMA Environmental Clearance Licence.'
     },
     {
       id: 'p-makasembo',
       title: 'Makasembo Estate Multi-Storey Housing RAP & EIA',
       client: 'Local Authorities Pension Trust (LAPFUND)',
+      role: 'Lead Environmental & Social Safeguards Consultant',
       location: 'Kisumu City, Kenya',
-      year: '2020–Ongoing',
-      badge: 'Urban Resettlement',
+      year: '2020–Present',
+      badge: 'Resettlement (RAP)',
+      status: 'Ongoing',
+      evidenceSummary: 'RAP Technical Dossier & Valuation Schedules',
       image: photoAssets.projects['p-makasembo'],
-      outcome: 'Structured compassionate relocation with 100% grievance resolution and zero court injunctions.'
+      outcome: 'Formulated Resettlement Action Plan (RAP), socio-economic census, asset valuation schedules, and structured community baraza engagement.'
+    },
+    {
+      id: 'p-structural-monitoring',
+      title: 'High-Rise Structural Concrete & OHS Safety Oversight',
+      client: 'Regional Urban Developers Consortium',
+      role: 'Lead EHS & Construction Supervision Consultant',
+      location: 'Western Kenya Region',
+      year: '2024–Present',
+      badge: 'OHS & ESHSRIM',
+      status: 'Active Supervision',
+      evidenceSummary: 'Site Safety Audit Registers & C-ESMP Logs',
+      image: photoAssets.projects['p-structural-monitoring'],
+      outcome: 'Provided real-time contractor environmental, social, health and safety (ESHSRIM) supervision, deck safety audits, and worker PPE compliance.'
     },
     {
       id: 'p-flloca',
       title: 'FLLoCA Climate-Resilient Infrastructure Assessments',
       client: 'County Government of Siaya',
+      role: 'Environmental Safeguards & Screening Consultant',
       location: 'Siaya County, Kenya',
-      year: '2023–Ongoing',
-      badge: 'Climate Resilience',
+      year: '2023–Present',
+      badge: 'Climate Safeguards',
+      status: 'Ongoing',
+      evidenceSummary: 'Sub-Project Screening Registers & ESMPs',
       image: photoAssets.projects['p-flloca'],
-      outcome: 'Verified climate adaptation sub-projects, unlocking vital multilateral funding for local communities.'
+      outcome: 'Conducted environmental screenings, community consultation barazas, and site-specific ESMPs for local climate adaptation infrastructure.'
     }
   ];
 
@@ -190,7 +212,7 @@ export default function HomePage({
             Integrated Advisory Practices
           </h2>
           <p className="text-sm sm:text-base text-stone-600 dark:text-slate-300 font-light leading-relaxed">
-            Consolidated environmental, social, climate, and compliance advisory services engineered for bankability and regulatory excellence across Africa.
+            Consolidated environmental, social, climate, and compliance advisory services engineered for international lender alignment and regulatory excellence across Africa.
           </p>
         </div>
 
@@ -322,18 +344,18 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 5. Featured African Assignments & Case Studies */}
+      {/* 5. Selected Environmental and Social Assignments */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-[#E5DFD5] dark:border-slate-800 pb-5">
           <div className="space-y-1.5">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-              PROVEN RESULTS
+              DEMONSTRATED DELIVERY
             </span>
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-stone-900 dark:text-white tracking-tight">
-              Featured Track Record Across Africa
+              Selected Environmental and Social Assignments
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 dark:text-slate-300 font-light max-w-2xl">
-              Real projects delivered with 100% statutory clearance, zero court injunctions, and full international bankability.
+              Selected track record of statutory EIA clearances, resettlement planning (RAP), climate vulnerability assessments, and compliance audits in Kenya.
             </p>
           </div>
           
@@ -345,7 +367,7 @@ export default function HomePage({
           </button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {featuredProjects.map((proj) => (
             <div 
               key={proj.id}
@@ -373,10 +395,15 @@ export default function HomePage({
                   </div>
                 </div>
 
-                <div className="p-5 space-y-2">
-                  <span className="text-[10px] font-mono text-brand-green-700 dark:text-emerald-400 font-bold block">
-                    Client: {proj.client}
-                  </span>
+                <div className="p-5 space-y-2.5">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono text-brand-green-700 dark:text-emerald-400 font-bold block">
+                      Client: {proj.client}
+                    </span>
+                    <span className="text-[10px] font-mono text-stone-500 dark:text-slate-400 block">
+                      Role: {proj.role}
+                    </span>
+                  </div>
                   <h4 className="font-heading font-extrabold text-base text-stone-900 dark:text-white leading-snug group-hover:text-brand-green-700 dark:group-hover:text-emerald-400 transition-colors">
                     {proj.title}
                   </h4>
@@ -387,17 +414,101 @@ export default function HomePage({
               </div>
 
               <div className="p-5 pt-0">
-                <div className="pt-3 border-t border-[#EDE7DD] dark:border-slate-800 flex items-center justify-between text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
-                  <span>Verified Statutory Delivery</span>
-                  <span>100% Cleared</span>
+                <div className="pt-3 border-t border-[#EDE7DD] dark:border-slate-800 flex items-center justify-between text-[11px] font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                  <span className="truncate pr-2">Evidence: {proj.evidenceSummary}</span>
+                  <span className="shrink-0 text-stone-600 dark:text-slate-400 font-normal">[{proj.status}]</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Dedicated Leadership Experience Callout (KDSP II) */}
+        <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-brand-green-600/30 dark:border-emerald-500/30 space-y-3 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white bg-brand-green-700 dark:bg-emerald-700 px-2.5 py-0.5 rounded-full">
+                Leadership Experience
+              </span>
+              <h4 className="font-heading font-bold text-sm sm:text-base text-stone-900 dark:text-white">
+                National Environmental and Social Safeguards Support – KDSP II
+              </h4>
+            </div>
+            <span className="text-xs font-mono font-bold text-stone-500 dark:text-slate-400">
+              2025–Present
+            </span>
+          </div>
+
+          <p className="text-xs text-stone-600 dark:text-slate-300 font-light leading-relaxed">
+            <strong className="font-semibold text-stone-800 dark:text-slate-200">Contractual Context:</strong> Delivered by HUERI's Founder and Managing Director, Belinda Nyakinya, in her individual professional capacity as an Environmental Safeguards Specialist within the National Programme Coordination Unit (and not as a HUERI Limited corporate contract).
+          </p>
+
+          <p className="text-xs text-stone-600 dark:text-slate-300 font-light leading-relaxed">
+            Technical advisory support encompasses coordinating environmental and social safeguards screening tools, technical backstopping for county Project Implementation Units (PIUs), and sub-project ESMP reviews across 47 devolved county governments.
+          </p>
+
+          <div className="pt-2 flex flex-wrap gap-2 text-[10px] font-mono text-stone-500 dark:text-slate-400 border-t border-[#EDE7DD] dark:border-slate-700">
+            <span>Institution: State Department for Devolution / National Programme Coordination Unit</span>
+            <span>•</span>
+            <span>Scope: 47 Devolved Counties</span>
+            <span>•</span>
+            <span>Status: Ongoing Professional Advisory</span>
+          </div>
+        </div>
+
+        {/* Confidentiality and Permission Disclaimer */}
+        <p className="text-[11px] font-mono text-stone-500 dark:text-slate-400 text-center mt-6">
+          Project information is presented subject to client confidentiality and permission requirements.
+        </p>
       </section>
 
-      {/* 6. Sectors Strip */}
+      {/* 6. Strategic Consortia & International Teaming Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl overflow-hidden bg-[#07162C] border-2 border-emerald-500/30 text-white shadow-xl relative">
+          <div className="grid lg:grid-cols-12 items-center">
+            <div className="lg:col-span-8 p-6 sm:p-8 lg:p-10 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase tracking-wider">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>GLOBAL COLLABORATION & IN-COUNTRY TEAMING</span>
+              </div>
+              <h3 className="font-heading font-black text-2xl sm:text-3xl text-white tracking-tight">
+                Partner with HUERI on African Infrastructure, Energy & Safeguards Tenders
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200 font-sans font-light leading-relaxed max-w-3xl">
+                We regularly partner with international engineering firms, multilateral prime contractors, and regional developers as a trusted local delivery co-lead. We bring NEMA-licensed lead experts, World Bank ESF / IFC PS proficiency, 47-county mobilization capacity, and established community networks to ensure flawless bid compliance and in-situ project delivery.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {[
+                  'Joint Venture & Consortia Submissions',
+                  'In-Country Safeguards Delivery Partner',
+                  'Master Service Agreements (MSA)',
+                  'Rapid Technical Proposal Backstopping'
+                ].map((item, i) => (
+                  <span key={i} className="px-2.5 py-1 rounded-lg bg-white/10 text-emerald-200 font-mono text-[10px] font-semibold border border-white/10">
+                    ✓ {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-span-4 p-6 sm:p-8 lg:p-10 flex flex-col gap-3 justify-center bg-white/5 border-t lg:border-t-0 lg:border-l border-white/10">
+              <button
+                onClick={() => onOpenPartnership ? onOpenPartnership('International Prime Contractor & Consortium Teaming') : onNavigate('partnerships')}
+                className="w-full py-3 px-5 rounded-xl bg-brand-green-600 hover:bg-brand-green-500 text-white font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-lg text-center cursor-pointer border border-emerald-400/40 hover:-translate-y-0.5"
+              >
+                Propose Joint Venture / Teaming →
+              </button>
+              <button
+                onClick={() => onNavigate('partnerships')}
+                className="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-slate-100 font-mono font-bold text-xs uppercase tracking-wider transition-all border border-white/20 text-center cursor-pointer hover:-translate-y-0.5"
+              >
+                Explore 6 Partnership Models
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Sectors Strip */}
       <section className="bg-white dark:bg-slate-900/80 py-10 sm:py-14 border-y border-[#E5DFD5] dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
