@@ -115,8 +115,8 @@ export function generateBrochurePDF(services: Service[]) {
         </div>
 
         <div class="footer">
-          <strong>HUERI Limited Head Office:</strong> Alpha House, 2nd Floor, Wing B, Oginga Odinga Street, Kisumu, Kenya.<br/>
-          Direct Advisory Desk: +254 712 345 678 | info@huerilimited.com | www.huerilimited.com
+          <strong>HUERI Limited Head Office:</strong> Milimani Estate, Kisumu City, Kenya (P.O. Box 7919 - 40100).<br/>
+          Direct Advisory Desk: +254 721 410139 | info@hueriafrica.com | https://www.hueriafrica.com/
         </div>
 
         <script>
