@@ -18,6 +18,8 @@ import esmpInfrastructureImg from '../../assets/images/milestone_infrastructure_
 import climateVulnerabilityImg from '../../assets/images/milestone_climate_vulnerability_1786291850669.jpg';
 // @ts-ignore
 import waterTreatmentImg from '../../assets/images/milestone_water_treatment_1786291862994.jpg';
+// @ts-ignore
+import structuralDeckImg from '../../assets/images/site_structural_deck_concreting_1788000135472.jpg';
 
 export const milestones = [
   {
@@ -67,6 +69,14 @@ export const milestones = [
     description: "Appointed technical advisory body for multiple western Kenya municipal boards, formulating stormwater management drafts and greywater bio-filters.",
     image: waterTreatmentImg,
     theme: "rose"
+  },
+  {
+    year: "2024–2025",
+    tag: "ESHSRIM Supervision",
+    title: "High-Rise Construction Safeguards & OHS Safety Oversight",
+    description: "Deployed resident environmental and occupational safety supervision teams, overseeing contractor C-ESMP compliance, concrete slab safety, and PPE enforcement across high-density urban residential blocks.",
+    image: structuralDeckImg,
+    theme: "amber"
   },
   {
     year: "Present",
