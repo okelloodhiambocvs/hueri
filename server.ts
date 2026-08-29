@@ -17,7 +17,8 @@ import {
   initialTeam, 
   initialSectors, 
   initialPartnershipModels, 
-  initialCredentials 
+  initialCredentials,
+  initialLeadershipExperience 
 } from './src/server/data';
 import {
   setSecurityHeaders,
@@ -34,11 +35,20 @@ import {
   isValidPhone 
 } from './src/utils/security';
 
-let db = initDatabase();
+const db = initDatabase();
 
 async function startServer() {
   const app = express();
   const PORT = 3000;
+
+  // 0. Permanent 301 Redirect for legacy domain (hueri.co.ke) to primary domain (https://www.hueriafrica.com)
+  app.use((req, res, next) => {
+    const host = (req.headers.host || '').toLowerCase();
+    if (host.includes('hueri.co.ke')) {
+      return res.redirect(301, `https://www.hueriafrica.com${req.originalUrl}`);
+    }
+    next();
+  });
 
   // 1. Security Headers & Rate Limiting
   app.use(setSecurityHeaders);
@@ -67,6 +77,10 @@ async function startServer() {
     res.json(db.projects || []);
   });
 
+  app.get('/api/leadership-experience', (_req, res) => {
+    res.json(db.leadershipExperience || initialLeadershipExperience || []);
+  });
+
   app.get('/api/articles', (_req, res) => {
     res.json(db.articles || []);
   });
@@ -92,11 +106,11 @@ async function startServer() {
     res.json(initialTeam);
   });
 
-  // 3. Purified Lead & Consultation Submissions
+  // 3. Purified Lead & Proposal Request Submissions
   app.post('/api/leads', rateLimiter(15, 300000), (req, res) => {
     const raw = req.body || {};
 
-    // Bot detection honeypot: if hidden field is filled, silently return success without storing
+    // Bot detection honeypot
     if (raw.website_hp && String(raw.website_hp).trim().length > 0) {
       return res.status(200).json({ success: true, lead: { id: "l_bot_filtered" } });
     }
@@ -104,16 +118,25 @@ async function startServer() {
     const fullName = sanitizeString(raw.fullName, 100);
     const email = sanitizeEmail(raw.email);
     const phone = sanitizePhone(raw.phone);
-    const company = sanitizeString(raw.company, 120);
+    const organization = sanitizeString(raw.organization || raw.company, 150);
+    const country = sanitizeString(raw.country, 100) || "Kenya";
+    const projectLocation = sanitizeString(raw.projectLocation, 150);
     const serviceNeeded = sanitizeString(raw.serviceNeeded, 150) || "General Advisory / Consultation";
-    const message = sanitizeText(raw.message, 3000);
+    const assignmentNature = sanitizeString(raw.assignmentNature, 200);
+    const procurementRef = sanitizeString(raw.procurementRef, 100);
+    const startDate = sanitizeString(raw.startDate, 50);
+    const proposalDeadline = sanitizeString(raw.proposalDeadline, 50);
+    const preferredResponseMethod = sanitizeString(raw.preferredResponseMethod, 50) || "Email";
+    const inquiryType = sanitizeString(raw.inquiryType, 100) || "Request a Technical Proposal";
+    const message = sanitizeText(raw.message, 4000);
+    const privacyConsent = Boolean(raw.privacyConsent);
 
     if (!fullName || fullName.length < 2) {
       return res.status(400).json({ error: "Full Name is required (minimum 2 characters)." });
     }
 
     if (!email || !isValidEmail(email)) {
-      return res.status(400).json({ error: "A valid corporate or institutional email is required." });
+      return res.status(400).json({ error: "A valid email address is required." });
     }
 
     if (phone && !isValidPhone(phone)) {
@@ -125,9 +148,19 @@ async function startServer() {
       fullName,
       email,
       phone,
-      company,
+      organization,
+      company: organization,
+      country,
+      projectLocation,
       serviceNeeded,
+      assignmentNature,
+      procurementRef,
+      startDate,
+      proposalDeadline,
+      preferredResponseMethod,
+      inquiryType,
       message,
+      privacyConsent,
       status: "New",
       date: new Date().toISOString()
     };
@@ -137,7 +170,6 @@ async function startServer() {
     }
 
     db.leads.unshift(newLead);
-    // Keep max 500 leads in local store to prevent bloat
     if (db.leads.length > 500) {
       db.leads = db.leads.slice(0, 500);
     }
