@@ -11,6 +11,7 @@ export interface Service {
   shortDescription: string;
   overview: string;
   practiceCategory?: string;
+  deliveryModelNote?: string;
   methodology: string[];
   deliverables: string[];
   benefits: string[];
@@ -56,21 +57,62 @@ export interface LifecycleStage {
   internationalStandard?: string;
 }
 
+export type ProjectStatus = 
+  | 'Completed' 
+  | 'Ongoing' 
+  | 'Submitted' 
+  | 'Approved' 
+  | 'NEMA licence obtained' 
+  | 'ESIA approved' 
+  | 'Approval obtained';
+
+export interface ProjectEvidence {
+  type: 'Licence' | 'Report' | 'Audit' | 'Certificate' | 'Letter' | 'Dossier' | 'Other';
+  description: string;
+  referenceNo?: string;
+  isConfidential?: boolean;
+  status: 'Verified' | 'Archived' | 'Available on Request';
+}
+
 export interface Project {
   id: string;
   title: string;
   county: string;
   country?: string;
   year: number | string;
+  assignmentPeriod?: string;
   industry: string;
   serviceId: string;
   client: string;
+  assignmentScope?: string;
+  hueriRole?: string;
+  role?: string;
   challenge: string;
   solution: string;
   outcome: string;
   location: string;
+  keyDeliverables?: string[];
   coordinates: { x: number; y: number };
-  status: 'Completed' | 'Ongoing' | 'Under Review';
+  status: ProjectStatus;
+  evidenceSummary?: string;
+  evidenceItems?: ProjectEvidence[];
+  clientReferenceNote?: string;
+  requiresVerification?: boolean;
+}
+
+export interface LeadershipExperience {
+  id: string;
+  title: string;
+  practitioner: string;
+  role: string;
+  program: string;
+  institution: string;
+  period: string;
+  scope: string;
+  contractualContext?: string;
+  description: string;
+  keyContributions: string[];
+  evidenceNote?: string;
 }
 
 export interface Article {
@@ -97,23 +139,43 @@ export interface Resource {
 export interface Lead {
   id: string;
   fullName: string;
+  organization?: string;
+  company?: string;
   email: string;
-  phone: string;
-  company: string;
-  serviceNeeded: string;
-  inquiryType?: 'Proposal Request' | 'Partnership / Consortium' | 'Subconsultancy' | 'General';
+  phone?: string;
+  country?: string;
+  projectLocation?: string;
+  serviceNeeded?: string;
+  assignmentNature?: string;
+  procurementRef?: string;
+  startDate?: string;
+  proposalDeadline?: string;
+  preferredResponseMethod?: string;
+  inquiryType?: 'General Enquiry' | 'Request a Technical Proposal' | 'Submit a TOR/RFP' | 'Partnership / Consortium' | string;
   message: string;
+  privacyConsent?: boolean;
   status: 'New' | 'Contacted' | 'Proposal Sent' | 'Converted' | 'Archived';
   date: string;
 }
 
 export interface TeamMember {
+  id: string;
   name: string;
   role: string;
+  specialization: string;
+  qualifications: string[];
+  professionalRegistrations?: string[];
+  yearsOfExperience?: string | number;
+  coreExpertise: string[];
+  selectedExperience: string[];
   bio: string;
+  verificationStatus: 'Verified' | 'Subject to CV & Registration Verification' | 'Associate Specialist Roster';
+  isCoreLeadership?: boolean;
+  category: 'Leadership' | 'Social' | 'Environmental' | 'OHS' | 'Engineering' | 'GIS' | 'Biodiversity' | 'Valuation' | 'Research';
   credentials?: string[];
   linkedin?: string;
   email?: string;
+  image?: string;
 }
 
 export interface CorporateCredential {
@@ -122,4 +184,25 @@ export interface CorporateCredential {
   reference: string;
   validity: string;
   status: string;
+  category: 'Statutory Licence' | 'Corporate Registration' | 'Tax & Good Standing' | 'County Permit' | 'Professional Affiliation';
+  verificationNote: string;
+  requiresVerification?: boolean;
+}
+
+export interface QualityAssurancePillar {
+  id: string;
+  pillarNumber: string;
+  title: string;
+  shortDesc: string;
+  details: string[];
+  controls: string[];
+  icon: string;
+}
+
+export interface GovernanceTier {
+  id: string;
+  level: string;
+  title: string;
+  responsibilities: string[];
+  oversightRole: string;
 }
