@@ -19,14 +19,14 @@ export default function OfficeInfoCard() {
         <div className="relative h-48 w-full overflow-hidden bg-slate-900">
           <img 
             src={photoAssets.waterCatchment} 
-            alt="Kisumu Headquarters & Lake Victoria Catchment" 
+            alt="Kisumu Headquarters and Lake Victoria Basin Environmental Setting" 
             className="w-full h-full object-cover opacity-90"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#071a38] via-[#071a38]/40 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
             <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-300 uppercase bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-              AFRICAN HEADQUARTERS • KISUMU
+              KENYA HEADQUARTERS • KISUMU
             </span>
             <span className="text-[10px] font-mono text-white/80">
               EST. 2014
@@ -36,7 +36,7 @@ export default function OfficeInfoCard() {
 
         <div className="p-8 sm:p-10 space-y-6">
           <div className="border-b border-[#EBE5DB] dark:border-slate-800 pb-4">
-            <span className="text-[10px] font-mono font-bold text-brand-green-700 dark:text-brand-green-400 uppercase tracking-widest block mb-1">
+            <span className="text-[10px] font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest block mb-1">
               PHYSICAL HEADQUARTERS
             </span>
             <h3 className="font-heading font-extrabold text-xl text-stone-900 dark:text-white">
@@ -45,7 +45,7 @@ export default function OfficeInfoCard() {
           </div>
 
           <div className="space-y-5 text-xs sm:text-sm">
-            <div className="border-l-3 border-brand-green-700 pl-4 py-1 space-y-1">
+            <div className="border-l-3 border-emerald-600 pl-4 py-1 space-y-1">
               <span className="block text-[10px] font-mono font-bold text-stone-500 dark:text-slate-400 uppercase tracking-wider">
                 Physical & Postal Location
               </span>
@@ -55,42 +55,58 @@ export default function OfficeInfoCard() {
               </p>
             </div>
 
-            <div className="border-l-3 border-blue-700 pl-4 py-1 space-y-1">
+            <div className="border-l-3 border-blue-600 pl-4 py-1 space-y-1">
               <span className="block text-[10px] font-mono font-bold text-stone-500 dark:text-slate-400 uppercase tracking-wider">
-                Direct Telephone Lines
+                Direct Telephone Line
               </span>
               <p className="text-stone-900 dark:text-white font-mono font-bold">
-                <a href="tel:+254721410139" className="hover:underline text-brand-green-700 dark:text-emerald-400">+254 721 410139</a> / <a href="tel:+254711989201" className="hover:underline">+254 711 989201</a>
+                <a href="tel:+254721410139" className="hover:underline text-emerald-700 dark:text-emerald-400">
+                  +254 721 410139
+                </a>
               </p>
               <p className="text-[11px] text-stone-500 dark:text-slate-400 font-sans">
-                Contact: Belinda Nyakinya (Managing Director • Lead Expert #7718)
+                Managing Director: Belinda Nyakinya (NEMA Lead Expert #7718)
               </p>
             </div>
 
-            <div className="border-l-3 border-amber-700 pl-4 py-1 space-y-1">
+            <div className="border-l-3 border-amber-600 pl-4 py-1 space-y-1">
               <span className="block text-[10px] font-mono font-bold text-stone-500 dark:text-slate-400 uppercase tracking-wider">
-                Official Institutional Email
+                Official Department Emails
               </span>
-              <a 
-                href="mailto:hopeenvironment2015@gmail.com" 
-                className="text-brand-green-700 dark:text-emerald-400 hover:underline font-mono font-bold block"
-              >
-                hopeenvironment2015@gmail.com
-              </a>
+              <div className="space-y-1 font-mono text-xs pt-1">
+                <div>
+                  <span className="text-stone-500 dark:text-slate-400 text-[11px]">General: </span>
+                  <a href="mailto:info@hueriafrica.com" className="text-emerald-700 dark:text-emerald-400 hover:underline font-bold">
+                    info@hueriafrica.com
+                  </a>
+                </div>
+                <div>
+                  <span className="text-stone-500 dark:text-slate-400 text-[11px]">Proposals: </span>
+                  <a href="mailto:proposals@hueriafrica.com" className="text-emerald-700 dark:text-emerald-400 hover:underline font-bold">
+                    proposals@hueriafrica.com
+                  </a>
+                </div>
+                <div>
+                  <span className="text-stone-500 dark:text-slate-400 text-[11px]">Partnerships: </span>
+                  <a href="mailto:partnerships@hueriafrica.com" className="text-emerald-700 dark:text-emerald-400 hover:underline font-bold">
+                    partnerships@hueriafrica.com
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* WhatsApp Direct Line */}
           <div className="p-5 bg-[#FAF8F5] dark:bg-slate-800/80 border border-[#E5DFD5] dark:border-slate-700 rounded-2xl space-y-3">
             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block">
-              RAPID ADVISORY CHANNEL
+              DIRECT CONSULTATION CHANNEL
             </span>
             <p className="text-xs text-stone-600 dark:text-slate-300 font-sans leading-relaxed font-light">
-              Need immediate scoping guidance for tenders, TORs, or EIA licences? Connect directly with our lead team.
+              Discuss assignment scoping, statutory timelines, or technical proposals directly with our lead advisory team.
             </p>
             <button
               onClick={handleWhatsAppChat}
-              className="w-full py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-heading font-bold uppercase tracking-wider rounded-xl transition-all shadow-md text-center cursor-pointer"
+              className="w-full py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-heading font-bold uppercase tracking-wider rounded-xl transition-all shadow-md text-center cursor-pointer focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:outline-none"
             >
               CHAT ON WHATSAPP (+254 721 410139)
             </button>
@@ -112,7 +128,7 @@ export default function OfficeInfoCard() {
           STATUTORY REGISTRATION CREDENTIALS
         </h4>
         <p className="text-xs text-slate-300 leading-relaxed font-sans font-light">
-          Firm Licence: <strong className="text-emerald-300 font-mono">NEMA/ENVIS/ELi/F0026</strong>. Registration: <strong className="text-emerald-300 font-mono">NEMA/EIA/RC/1058</strong>. 100% compliant with EMCA CAP 387 and OSHA 2007.
+          Firm Licence: <strong className="text-emerald-300 font-mono">NEMA/ENVIS/ELi/F0026</strong>. Corporate Register: <strong className="text-emerald-300 font-mono">NEMA/EIA/RC/1058</strong>. Incorporation: <strong className="text-emerald-300 font-mono">CPR/2014/168986</strong>. Operating in compliance with EMCA Cap 387 and OSHA 2007.
         </p>
       </div>
     </div>
