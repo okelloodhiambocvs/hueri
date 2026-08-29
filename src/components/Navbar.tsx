@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
+import { Sun, Moon } from 'lucide-react';
 import Logo from './Logo';
 import { useLanguage } from '../LanguageContext';
 
@@ -69,11 +70,14 @@ export default function Navbar({
     }
   };
 
-  // 1. ABOUT US - Includes "Who We Are" and "What We Do"
+  // 1. ABOUT US - Includes all institutional dossiers
   const aboutLinks = [
-    { label: 'Who We Are', sectionId: 'about-purpose' },
-    { label: 'What We Do', sectionId: 'about-objectives' },
-    { label: 'Executive Leadership', sectionId: 'about-director' },
+    { label: 'Who We Are (Purpose)', sectionId: 'about-purpose' },
+    { label: 'Technical Team & Specialists', sectionId: 'about-leadership' },
+    { label: 'Corporate Credentials', sectionId: 'about-credentials' },
+    { label: 'Quality Assurance & QA/QC', sectionId: 'about-qa' },
+    { label: 'Governance & Ethics', sectionId: 'about-governance' },
+    { label: 'Strategic Objectives', sectionId: 'about-objectives' },
     { label: 'Core Guiding Values', sectionId: 'about-values' },
     { label: 'Historic Milestones', sectionId: 'about-milestones' },
     { label: 'Field Operations', sectionId: 'about-field' }
@@ -86,6 +90,7 @@ export default function Navbar({
     { label: 'Climate & Ecology', sectionId: 'service-pillar-3' },
     { label: 'Safety & Audits', sectionId: 'service-pillar-4' },
     { label: 'ESG & Lender Standards', sectionId: 'service-pillar-5' },
+    { label: 'ESHSRIM Training', sectionId: 'service-pillar-6' },
     { label: 'Scoping Estimator', sectionId: 'all' }
   ];
 
@@ -133,7 +138,7 @@ export default function Navbar({
               {language === 'sw' ? 'MWANZO' : 'HOME'}
             </button>
 
-            {/* 2. ABOUT US - No outer card background, only button shapes with green interactivity */}
+            {/* 2. ABOUT US - Refined, sleek dropdown sizing */}
             <div 
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter('about')}
@@ -152,13 +157,13 @@ export default function Navbar({
               </button>
 
               {openDropdown === 'about' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[460px] animate-in fade-in duration-150 z-50">
-                  <div className="grid grid-cols-2 gap-2.5 p-1.5">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[370px] animate-in fade-in duration-150 z-50">
+                  <div className="bg-white/95 dark:bg-[#07162C]/95 backdrop-blur-md rounded-2xl border border-stone-200/90 dark:border-slate-800 shadow-xl p-2 grid grid-cols-2 gap-1.5">
                     {aboutLinks.map((link, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleNavClick('about', link.sectionId)}
-                        className="px-5 py-3.5 text-xs font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-[#07162C] hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-2xl border border-brand-green-600/40 hover:border-brand-green-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-center cursor-pointer"
+                        className="px-3 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-stone-800 dark:text-slate-100 bg-stone-50 dark:bg-slate-900/90 hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-xl border border-stone-200/70 dark:border-slate-800 hover:border-brand-green-600 shadow-sm hover:shadow transition-all duration-150 text-center cursor-pointer min-h-[38px] flex items-center justify-center leading-tight"
                       >
                         {link.label}
                       </button>
@@ -168,7 +173,7 @@ export default function Navbar({
               )}
             </div>
 
-            {/* 3. SERVICE PORTFOLIO - No outer card background, only button shapes with green interactivity */}
+            {/* 3. SERVICE PORTFOLIO - Refined, sleek dropdown sizing */}
             <div 
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter('services')}
@@ -187,13 +192,13 @@ export default function Navbar({
               </button>
 
               {openDropdown === 'services' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[460px] animate-in fade-in duration-150 z-50">
-                  <div className="grid grid-cols-2 gap-2.5 p-1.5">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[370px] animate-in fade-in duration-150 z-50">
+                  <div className="bg-white/95 dark:bg-[#07162C]/95 backdrop-blur-md rounded-2xl border border-stone-200/90 dark:border-slate-800 shadow-xl p-2 grid grid-cols-2 gap-1.5">
                     {serviceLinks.map((link, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleNavClick('services', link.sectionId)}
-                        className="px-5 py-3.5 text-xs font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-[#07162C] hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-2xl border border-brand-green-600/40 hover:border-brand-green-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-center cursor-pointer"
+                        className="px-3 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-stone-800 dark:text-slate-100 bg-stone-50 dark:bg-slate-900/90 hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-xl border border-stone-200/70 dark:border-slate-800 hover:border-brand-green-600 shadow-sm hover:shadow transition-all duration-150 text-center cursor-pointer min-h-[38px] flex items-center justify-center leading-tight"
                       >
                         {link.label}
                       </button>
@@ -203,7 +208,7 @@ export default function Navbar({
               )}
             </div>
 
-            {/* 4. SECTORS WE SERVE - No outer card background, only button shapes with green interactivity */}
+            {/* 4. SECTORS WE SERVE - Refined, sleek dropdown sizing */}
             <div 
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter('sectors')}
@@ -222,13 +227,13 @@ export default function Navbar({
               </button>
 
               {openDropdown === 'sectors' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[460px] animate-in fade-in duration-150 z-50">
-                  <div className="grid grid-cols-2 gap-2.5 p-1.5">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[370px] animate-in fade-in duration-150 z-50">
+                  <div className="bg-white/95 dark:bg-[#07162C]/95 backdrop-blur-md rounded-2xl border border-stone-200/90 dark:border-slate-800 shadow-xl p-2 grid grid-cols-2 gap-1.5">
                     {sectorLinks.map((link, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleNavClick('sectors', link.sectionId)}
-                        className="px-5 py-3.5 text-xs font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-[#07162C] hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-2xl border border-brand-green-600/40 hover:border-brand-green-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-center cursor-pointer"
+                        className="px-3 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-stone-800 dark:text-slate-100 bg-stone-50 dark:bg-slate-900/90 hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-xl border border-stone-200/70 dark:border-slate-800 hover:border-brand-green-600 shadow-sm hover:shadow transition-all duration-150 text-center cursor-pointer min-h-[38px] flex items-center justify-center leading-tight"
                       >
                         {link.label}
                       </button>
@@ -251,15 +256,20 @@ export default function Navbar({
             </button>
           </div>
 
-          {/* Action Controls & Theme Toggle */}
+          {/* Action Controls & Theme Toggle with Sun/Moon Icons */}
           <div className="hidden sm:flex items-center space-x-3">
             {onToggleTheme && (
               <button
                 onClick={onToggleTheme}
-                className="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-slate-800 text-[#07162C] dark:text-white hover:bg-stone-200 dark:hover:bg-slate-700 transition-colors cursor-pointer text-[10px] font-mono font-bold uppercase border border-stone-300/60 dark:border-slate-700"
+                className="w-9 h-9 rounded-xl bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-amber-400 hover:bg-stone-200 dark:hover:bg-slate-700 transition-all cursor-pointer border border-stone-300/60 dark:border-slate-700 shadow-sm flex items-center justify-center focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none"
                 title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+                aria-label={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
               >
-                {theme === 'light' ? 'DARK MODE' : 'LIGHT MODE'}
+                {theme === 'light' ? (
+                  <Moon className="w-4 h-4 text-stone-700" />
+                ) : (
+                  <Sun className="w-4 h-4 text-amber-400" />
+                )}
               </button>
             )}
 
@@ -271,14 +281,20 @@ export default function Navbar({
             </button>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Menu Toggle & Theme Button with Sun/Moon Icons */}
           <div className="flex items-center space-x-2 lg:hidden">
             {onToggleTheme && (
               <button
                 onClick={onToggleTheme}
-                className="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-slate-800 text-[#07162C] dark:text-white text-[10px] font-mono font-bold"
+                className="w-8 h-8 rounded-lg bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-amber-400 transition-colors border border-stone-200 dark:border-slate-700 flex items-center justify-center"
+                title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
+                aria-label={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
               >
-                {theme === 'light' ? 'DARK' : 'LIGHT'}
+                {theme === 'light' ? (
+                  <Moon className="w-3.5 h-3.5 text-stone-700" />
+                ) : (
+                  <Sun className="w-3.5 h-3.5 text-amber-400" />
+                )}
               </button>
             )}
 
@@ -329,12 +345,12 @@ export default function Navbar({
                 </button>
               </div>
               {mobileExpandedSection === 'about' && (
-                <div className="grid grid-cols-1 gap-2 p-2">
+                <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-stone-100/60 dark:bg-slate-900/60 rounded-xl">
                   {aboutLinks.map((item, i) => (
                     <button
                       key={i}
                       onClick={() => handleNavClick('about', item.sectionId)}
-                      className="px-4 py-3 text-xs font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-stone-50 dark:bg-slate-900 border border-brand-green-600/30 rounded-2xl text-left"
+                      className="px-2.5 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-slate-900 border border-brand-green-600/30 hover:border-brand-green-600 rounded-xl text-center min-h-[36px] flex items-center justify-center leading-tight shadow-sm"
                     >
                       {item.label}
                     </button>
@@ -362,12 +378,12 @@ export default function Navbar({
                 </button>
               </div>
               {mobileExpandedSection === 'services' && (
-                <div className="grid grid-cols-1 gap-2 p-2">
+                <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-stone-100/60 dark:bg-slate-900/60 rounded-xl">
                   {serviceLinks.map((item, i) => (
                     <button
                       key={i}
                       onClick={() => handleNavClick('services', item.sectionId)}
-                      className="px-4 py-3 text-xs font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-stone-50 dark:bg-slate-900 border border-brand-green-600/30 rounded-2xl text-left"
+                      className="px-2.5 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-slate-900 border border-brand-green-600/30 hover:border-brand-green-600 rounded-xl text-center min-h-[36px] flex items-center justify-center leading-tight shadow-sm"
                     >
                       {item.label}
                     </button>
@@ -395,12 +411,12 @@ export default function Navbar({
                 </button>
               </div>
               {mobileExpandedSection === 'sectors' && (
-                <div className="grid grid-cols-1 gap-2 p-2">
+                <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-stone-100/60 dark:bg-slate-900/60 rounded-xl">
                   {sectorLinks.map((item, i) => (
                     <button
                       key={i}
                       onClick={() => handleNavClick('sectors', item.sectionId)}
-                      className="px-4 py-3 text-xs font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-stone-50 dark:bg-slate-900 border border-brand-green-600/30 rounded-2xl text-left"
+                      className="px-2.5 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-slate-900 border border-brand-green-600/30 hover:border-brand-green-600 rounded-xl text-center min-h-[36px] flex items-center justify-center leading-tight shadow-sm"
                     >
                       {item.label}
                     </button>
