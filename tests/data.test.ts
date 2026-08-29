@@ -10,8 +10,8 @@ import {
 } from '../src/server/seedData';
 
 describe('Seed Data & Rebranding Integrity', () => {
-  it('contains all 9 core African environmental, social & sustainability practice portfolios', () => {
-    expect(initialServices.length).toBe(9);
+  it('contains all 10 core African environmental, social & sustainability practice portfolios', () => {
+    expect(initialServices.length).toBe(10);
     const serviceIds = initialServices.map(s => s.id);
     expect(serviceIds).toContain('eia-esia');
     expect(serviceIds).toContain('rap-livelihoods');
@@ -22,6 +22,7 @@ describe('Seed Data & Rebranding Integrity', () => {
     expect(serviceIds).toContain('research-surveys');
     expect(serviceIds).toContain('waste-pollution');
     expect(serviceIds).toContain('implementation-supervision');
+    expect(serviceIds).toContain('eshsrim-training');
   });
 
   it('ensures each practice area has detailed methodology, deliverables, and international alignment', () => {
