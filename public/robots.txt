@@ -14,7 +14,7 @@ Allow: /assets/
 
 # Crawl delay & Host
 Crawl-delay: 1
-Host: https://hueri.co.ke
+Host: https://www.hueriafrica.com
 
 # XML Sitemap
-Sitemap: https://hueri.co.ke/sitemap.xml
+Sitemap: https://www.hueriafrica.com/sitemap.xml

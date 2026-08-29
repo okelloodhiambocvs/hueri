@@ -6,56 +6,121 @@
 
   <!-- Home Page -->
   <url>
-    <loc>https://hueri.co.ke/</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://www.hueriafrica.com/</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
+  <!-- About Us & Leadership -->
+  <url>
+    <loc>https://www.hueriafrica.com/about</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hueriafrica.com/team</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Environmental Advisory Services -->
   <url>
-    <loc>https://hueri.co.ke/#services</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://www.hueriafrica.com/services</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
-  <!-- Industry & Infrastructure Sectors -->
+  <!-- Service Subpages -->
   <url>
-    <loc>https://hueri.co.ke/#sectors</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://www.hueriafrica.com/services/esia</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hueriafrica.com/services/environmental-audits</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hueriafrica.com/services/resettlement-action-plans</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hueriafrica.com/services/ohs</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hueriafrica.com/services/climate-resilience</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hueriafrica.com/services/esdd-esg</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hueriafrica.com/services/eshsrim-training</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Industry Sectors -->
+  <url>
+    <loc>https://www.hueriafrica.com/sectors</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Project Lifecycle & Standards -->
+  <url>
+    <loc>https://www.hueriafrica.com/lifecycle</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- African Delivery & Partnerships -->
+  <url>
+    <loc>https://www.hueriafrica.com/partnerships</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Selected Assignments & Track Record -->
+  <url>
+    <loc>https://www.hueriafrica.com/projects</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- Project Lifecycle & International Safeguard Standards (NEMA, WB ESF, IFC PS) -->
-  <url>
-    <loc>https://hueri.co.ke/#lifecycle</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- Global & African Consortium Partnerships -->
-  <url>
-    <loc>https://hueri.co.ke/#partnerships</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Corporate Profile & Executive Leadership -->
-  <url>
-    <loc>https://hueri.co.ke/#about</loc>
-    <lastmod>2026-08-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
   <!-- Official Consultations & Proposal Desk -->
   <url>
-    <loc>https://hueri.co.ke/#contact</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://www.hueriafrica.com/contact</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
