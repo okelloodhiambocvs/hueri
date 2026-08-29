@@ -3,35 +3,42 @@ import React from 'react';
 export default function HumanRightsPolicyTab() {
   return (
     <div className="space-y-6 animate-fadeIn font-sans">
-      <div className="p-4 bg-brand-green-50/60 dark:bg-brand-green-950/20 border border-brand-green-200 dark:border-brand-green-800/40 rounded-2xl">
+      <div className="p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40 rounded-2xl">
         <h4 className="font-heading font-bold text-gray-900 dark:text-white text-sm">
-          Human Rights Safeguards & International Labor Law Charter
+          Labor Standards & Human Rights Commitment
         </h4>
         <p className="text-xs text-gray-600 dark:text-slate-300 mt-1">
-          HUERI LIMITED enforces strict alignment with Article 41 of the Constitution of Kenya 2010, the Employment Act 2007, ILO Core Conventions, and UN Guiding Principles on Business and Human Rights.
+          HUERI Limited upholds fair labor practices, safe working conditions, human dignity, and non-discrimination in alignment with Article 41 of the Constitution of Kenya 2010, the Employment Act 2007, OSHA 2007, and ILO Core Labour Standards.
         </p>
       </div>
 
       <div className="space-y-4 text-xs sm:text-sm">
         <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
-          1. Constitutional Labor Rights (Article 41, Constitution of Kenya 2010)
+          1. Fair Labor & Non-Discrimination
         </h5>
         <p>
-          In compliance with Article 41, every worker engaged directly or indirectly by HUERI LIMITED or recommended within client ESMPs is entitled to fair labor practices, safe working conditions, and reasonable remuneration.
+          Every person engaged by HUERI Limited is entitled to fair remuneration, reasonable working hours, clear contractual terms, and protection from discrimination based on gender, age, ethnicity, disability, religion, or social origin.
         </p>
 
         <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
-          2. Occupational Health & Safety Compliance (OSHA 2007)
+          2. Occupational Health & Safety (OSHA 2007)
         </h5>
         <p>
-          Under OSHA 2007, HUERI LIMITED mandates that field assessment teams, drillers, and site auditors receive comprehensive PPE, emergency safety protocols, and statutory medical coverage.
+          Under OSHA 2007 and World Bank Group EHS guidelines, HUERI Limited enforces comprehensive safety protocols for field teams, environmental surveyors, and drillers, including mandatory PPE, hazard risk assessments, and emergency preparedness.
         </p>
 
         <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
-          3. Prohibition of Child Labor & Forced Labor
+          3. Prohibition of Forced & Child Labor
         </h5>
         <p>
-          HUERI LIMITED strictly prohibits child labor, forced labor, or modern slavery across all operations and supply chains, abiding by ILO Conventions 138 & 182.
+          HUERI Limited strictly prohibits all forms of child labor, forced labor, and human trafficking across our direct operations and supplier/contractor ecosystems, in compliance with ILO Conventions 138 and 182.
+        </p>
+
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+          4. Dignified Resettlement & Land Rights Safeguards
+        </h5>
+        <p>
+          In our social safeguards advisory, we prioritize the protection of property rights (Article 40 of the Constitution of Kenya), participatory community consultation, vulnerable household support, and dignified livelihood restoration.
         </p>
       </div>
     </div>
