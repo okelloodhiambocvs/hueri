@@ -65,7 +65,10 @@ describe('Enterprise Security & Input Purification Suite', () => {
 
   describe('sanitizeEmail & isValidEmail', () => {
     it('validates standard legitimate institutional email formats', () => {
-      expect(isValidEmail('belindah@hueri.co.ke')).toBe(true);
+      expect(isValidEmail('belinda@hueriafrica.com')).toBe(true);
+      expect(isValidEmail('info@hueriafrica.com')).toBe(true);
+      expect(isValidEmail('proposals@hueriafrica.com')).toBe(true);
+      expect(isValidEmail('partnerships@hueriafrica.com')).toBe(true);
       expect(isValidEmail('hopeenvironment2015@gmail.com')).toBe(true);
       expect(isValidEmail('safeguards.lead@african-development-bank.org')).toBe(true);
     });
@@ -79,7 +82,7 @@ describe('Enterprise Security & Input Purification Suite', () => {
     });
 
     it('purifies and normalizes emails safely', () => {
-      expect(sanitizeEmail('  Belindah@HUERI.co.ke  ')).toBe('belindah@hueri.co.ke');
+      expect(sanitizeEmail('  Belinda@HUERIAFRICA.COM  ')).toBe('belinda@hueriafrica.com');
     });
   });
 
@@ -102,15 +105,15 @@ describe('Enterprise Security & Input Purification Suite', () => {
   describe('sanitizePayload & Prototype Pollution Defense', () => {
     it('recursively sanitizes complex form submission payloads', () => {
       const rawPayload = {
-        fullName: '  <script>eval()</script>Belindah Nyakinya  ',
-        email: 'BELINDA@HUERI.CO.KE',
+        fullName: '  <script>eval()</script>Belinda Nyakinya  ',
+        email: 'BELINDA@HUERIAFRICA.COM',
         company: '<b>HUERI LIMITED</b>',
         serviceNeeded: '<a href="javascript:alert(1)">ESIA Permitting</a>',
         message: 'Normal inquiry text'
       };
 
       const sanitized = sanitizePayload(rawPayload);
-      expect(sanitized.fullName).toBe('Belindah Nyakinya');
+      expect(sanitized.fullName).toBe('Belinda Nyakinya');
       expect(sanitized.company).toBe('HUERI LIMITED');
       expect(sanitized.serviceNeeded).toBe('ESIA Permitting');
       expect(sanitized.message).toBe('Normal inquiry text');
