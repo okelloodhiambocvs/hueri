@@ -114,6 +114,43 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           ))}
         </div>
 
+        {/* Pan-African In-Country Partnering Framework */}
+        <div className="bg-white dark:bg-[#07162C] border-2 border-brand-green-600/30 dark:border-emerald-500/30 rounded-3xl p-6 sm:p-8 shadow-md">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="space-y-3 max-w-3xl">
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-1 rounded-full bg-brand-green-50 dark:bg-emerald-950/60 text-brand-green-700 dark:text-emerald-300 font-mono font-bold text-[10px] uppercase border border-brand-green-200 dark:border-emerald-800">
+                  Pan-African Alliance Strategy
+                </span>
+                <span className="text-xs font-mono text-stone-500 dark:text-slate-400">
+                  Regional Collaboration Framework
+                </span>
+              </div>
+              <h3 className="font-heading font-black text-xl sm:text-2xl text-stone-900 dark:text-white">
+                In-Country Teaming with Local African Experts & National Consultancies
+              </h3>
+              <p className="text-xs sm:text-sm text-stone-600 dark:text-slate-300 font-light leading-relaxed">
+                While our direct core track record is rooted in Kenya, HUERI operates on a deliberate <strong className="font-semibold text-stone-800 dark:text-slate-100">Pan-African Partnering Philosophy</strong>. Whenever project opportunities arise across other African countries, our organization is structured to collaborate directly with registered in-country environmental practitioners, local engineering firms, and national lead consultants. This ensures every multi-country assignment combines deep domestic statutory familiarity and local institutional relationships with our rigorous international safeguards compliance (World Bank ESF, IFC PS, AfDB ISS).
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {['Joint-Venture Consortiums', 'In-Country Co-Delivery', 'National Expert Teaming', 'Equitable Workshare Agreements'].map((tag, i) => (
+                  <span key={i} className="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-slate-800 text-stone-700 dark:text-slate-300 font-mono text-[10px] font-semibold">
+                    ✓ {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="shrink-0 w-full lg:w-auto">
+              <button
+                onClick={() => onOpenPartnershipInquiry("Pan-African In-Country Co-Delivery & Expert Alliance")}
+                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-brand-green-600 hover:bg-brand-green-500 text-white font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-md text-center cursor-pointer"
+              >
+                Join African Partner Network →
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* 6 Structured Partnership Models Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {models.map((model, idx) => {
