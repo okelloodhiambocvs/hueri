@@ -43,11 +43,11 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.sh_subtitle': 'Headquartered in Kisumu, Kenya • Serving Africa • Open to Global Partnerships',
 
     // Hero Stats
-    'stat.projects': 'Safeguards Assignments',
-    'stat.sectors': 'Core African Sectors',
-    'stat.counties': 'Counties Supported (KDSP II)',
-    'stat.standards': 'Lender Safeguard Alignments',
-    'hero.live_metrics': 'Demonstrated Operational Capacity & African Footprint',
+    'stat.projects': 'Selected Kenya Assignments',
+    'stat.sectors': 'Core Infrastructure Sectors',
+    'stat.counties': 'Kenyan Counties Reached',
+    'stat.standards': 'Lender Safeguard Frameworks',
+    'hero.live_metrics': 'Operational Experience & Advisory Footprint in Kenya',
 
     // General Words
     'gen.success': 'Success',
@@ -83,11 +83,11 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.sh_subtitle': 'Makao Makuu Kisumu, Kenya • Inahudumia Afrika • Tayari kwa Ubia wa Kimataifa',
 
     // Hero Stats
-    'stat.projects': 'Miradi ya Ulinzi wa Mazingira',
-    'stat.sectors': 'Sekta Kuu za Afrika',
-    'stat.counties': 'Kaunti Zinazoungwa Mkono (KDSP II)',
-    'stat.standards': 'Viwango vya Kimataifa vya Fedha',
-    'hero.live_metrics': 'Uwezo Uliothibitishwa wa Kiutendaji na Nyayo za Kiafrika',
+    'stat.projects': 'Kazi Zilizoteuliwa za Kenya',
+    'stat.sectors': 'Sekta Kuu za Miundombinu',
+    'stat.counties': 'Kaunti za Kenya Zilizofikiwa',
+    'stat.standards': 'Mifumo ya Viwango vya Kimataifa',
+    'hero.live_metrics': 'Uzoefu wa Kiutendaji na Nyayo za Ushauri nchini Kenya',
 
     // General Words
     'gen.success': 'Imefanikiwa',
