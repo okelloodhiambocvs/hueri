@@ -267,7 +267,7 @@ async function startServer() {
   // 6. Production vs Development Frontend Routing
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: { middlewareMode: true, allowedHosts: true },
       appType: "spa"
     });
     app.use(vite.middlewares);

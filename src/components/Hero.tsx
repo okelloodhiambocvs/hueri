@@ -15,7 +15,7 @@ interface HeroProps {
 
 export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership, stats }: HeroProps) {
   return (
-    <section className="relative flex items-center justify-center text-white pt-20 pb-12 sm:pt-24 sm:pb-16 overflow-hidden font-sans">
+    <section className="relative flex items-center justify-center text-white pt-36 pb-16 sm:pt-44 sm:pb-24 lg:pt-48 lg:pb-28 overflow-hidden font-sans">
       
       {/* High-Clarity Photographic Hero Background (Active High-Rise Structural Concrete & Safeguards Oversight) */}
       <div className="absolute inset-0 z-0">
@@ -30,8 +30,14 @@ export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership,
         <div className="absolute inset-0 bg-gradient-to-r from-[#07162C]/90 via-[#07162C]/60 to-[#07162C]/90" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8 mt-4 sm:mt-6">
         
+        {/* Top Credential Badge Creating Generous Spacing from Fixed Header */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-mono tracking-wider uppercase backdrop-blur-md shadow-lg">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>NEMA Registered Firm of Experts • Kisumu & Nairobi</span>
+        </div>
+
         {/* Main Authoritative Headline */}
         <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-white leading-[1.15] drop-shadow-md max-w-4xl mx-auto">
           Your Trusted African Partner for <br className="hidden sm:inline" />
@@ -41,12 +47,12 @@ export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership,
         </h1>
 
         {/* Concise Collaboration-Focused Executive Statement */}
-        <p className="text-sm sm:text-base lg:text-lg text-slate-100 max-w-3xl mx-auto font-sans font-light leading-relaxed drop-shadow-md">
+        <p className="text-base sm:text-lg text-slate-100 max-w-3xl mx-auto font-sans font-light leading-relaxed drop-shadow-md">
           <strong className="font-semibold text-white">HUERI Limited</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm headquartered in Kisumu, Kenya. We collaborate with engineering primes, multilateral financiers (World Bank, IFC, AfDB), EPC contractors, and county governments as an on-the-ground technical delivery partner—securing statutory NEMA approvals, orchestrating land resettlement (RAP), and supervising active site safeguards compliance.
         </p>
 
         {/* Dynamic Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
           <button
             onClick={() => onOpenPartnership ? onOpenPartnership("Strategic Consortium Teaming & In-Country Co-Delivery") : onNavigate('partnerships')}
             className="w-full sm:w-auto px-7 py-3 text-xs font-heading font-bold uppercase tracking-wider text-white bg-brand-green-600 hover:bg-brand-green-500 active:bg-brand-green-700 rounded-xl shadow-lg shadow-brand-green-600/30 hover:-translate-y-0.5 transition-all text-center cursor-pointer border border-emerald-400/40"

@@ -58,6 +58,7 @@ export const photoAssets = {
   servicesHero: africanRenewableEnergy,
   sectorsHero: sustainableInfrastructure,
   contactHero: kisumuHeadquarters,
+  kisumuHeadquarters: kisumuHeadquarters,
   partnershipsHero: africanPartnerships,
   lifecycleHero: lifecycleAudit,
 

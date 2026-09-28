@@ -53,9 +53,6 @@ export function setSecurityHeaders(_req: Request, res: Response, next: NextFunct
   // Prevent MIME type sniffing
   res.setHeader('X-Content-Type-Options', 'nosniff');
   
-  // Protect against clickjacking
-  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-  
   // Enable browser XSS filters
   res.setHeader('X-XSS-Protection', '1; mode=block');
   
@@ -64,10 +61,6 @@ export function setSecurityHeaders(_req: Request, res: Response, next: NextFunct
   
   // Restrict sensitive browser APIs
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()');
-  
-  // Prevent unauthorized script execution & cross-origin leakage
-  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  res.setHeader('Cross-Origin-Resource-Policy', 'same-origin');
 
   next();
 }

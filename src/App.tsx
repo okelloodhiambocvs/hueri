@@ -280,10 +280,9 @@ export default function App() {
       else if (page === 'services') {
         if (sectionId === 'service-pillar-1') targetPath = '/services/esia';
         else if (sectionId === 'service-pillar-2') targetPath = '/services/resettlement-action-plans';
-        else if (sectionId === 'service-pillar-3') targetPath = '/services/climate-resilience';
-        else if (sectionId === 'service-pillar-4') targetPath = '/services/environmental-audits';
+        else if (sectionId === 'service-pillar-3') targetPath = '/services/environmental-audits';
+        else if (sectionId === 'service-pillar-4') targetPath = '/services/climate-resilience';
         else if (sectionId === 'service-pillar-5') targetPath = '/services/esdd-esg';
-        else if (sectionId === 'service-pillar-6') targetPath = '/services/eshsrim-training';
         else targetPath = '/services';
       } else if (page === 'about') {
         if (sectionId === 'about-director') targetPath = '/team';

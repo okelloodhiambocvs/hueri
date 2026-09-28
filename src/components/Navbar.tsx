@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 import Logo from './Logo';
 import { useLanguage } from '../LanguageContext';
@@ -31,9 +31,6 @@ export default function Navbar({
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { language } = useLanguage();
 
   useEffect(() => {
@@ -48,61 +45,13 @@ export default function Navbar({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMouseEnter = (menuKey: string) => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-    }
-    setOpenDropdown(menuKey);
-  };
-
-  const handleMouseLeave = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 200);
-  };
-
   const handleNavClick = (pageId: string, sectionId?: string) => {
     onNavigate(pageId, sectionId);
-    setOpenDropdown(null);
     setMobileMenuOpen(false);
     if (!sectionId) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
-
-  // 1. ABOUT US - Includes all institutional dossiers
-  const aboutLinks = [
-    { label: 'Who We Are (Purpose)', sectionId: 'about-purpose' },
-    { label: 'Technical Team & Specialists', sectionId: 'about-leadership' },
-    { label: 'Corporate Credentials', sectionId: 'about-credentials' },
-    { label: 'Quality Assurance & QA/QC', sectionId: 'about-qa' },
-    { label: 'Governance & Ethics', sectionId: 'about-governance' },
-    { label: 'Strategic Objectives', sectionId: 'about-objectives' },
-    { label: 'Core Guiding Values', sectionId: 'about-values' },
-    { label: 'Historic Milestones', sectionId: 'about-milestones' },
-    { label: 'Field Operations', sectionId: 'about-field' }
-  ];
-
-  // 2. SERVICE PORTFOLIO - Direct shape links with green interactivity
-  const serviceLinks = [
-    { label: 'Statutory ESIA', sectionId: 'service-pillar-1' },
-    { label: 'Social Safeguards & RAP', sectionId: 'service-pillar-2' },
-    { label: 'Climate & Ecology', sectionId: 'service-pillar-3' },
-    { label: 'Safety & Audits', sectionId: 'service-pillar-4' },
-    { label: 'ESG & Lender Standards', sectionId: 'service-pillar-5' },
-    { label: 'ESHSRIM Training', sectionId: 'service-pillar-6' },
-    { label: 'Scoping Estimator', sectionId: 'all' }
-  ];
-
-  // 3. SECTORS WE SERVE - Direct shape links with green interactivity
-  const sectorLinks = [
-    { label: 'Energy & Power', sectionId: 'sector-energy-power' },
-    { label: 'Transport Corridors', sectionId: 'sector-transport-logistics' },
-    { label: 'Water & Sanitation', sectionId: 'sector-water-sanitation' },
-    { label: 'Built Environment', sectionId: 'sector-urban-built-env' },
-    { label: 'Carbon & Nature Finance', sectionId: 'sector-carbon-nature-finance' },
-    { label: 'Mining & Industry', sectionId: 'sector-mining-extractives' }
-  ];
 
   return (
     <nav 
@@ -123,7 +72,7 @@ export default function Navbar({
             <Logo variant="full" theme={theme} iconSize="md" />
           </button>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links - Direct single-page links without dropdowns */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             
             {/* 1. HOME */}
@@ -138,113 +87,41 @@ export default function Navbar({
               {language === 'sw' ? 'MWANZO' : 'HOME'}
             </button>
 
-            {/* 2. ABOUT US - Refined, sleek dropdown sizing */}
-            <div 
-              className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('about')}
-              onMouseLeave={handleMouseLeave}
+            {/* 2. ABOUT US - Direct Link, No Dropdown */}
+            <button
+              onClick={() => handleNavClick('about')}
+              className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 ${
+                currentPage === 'about'
+                  ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold border-b-2 border-brand-green-600 dark:border-emerald-400 pb-0.5'
+                  : 'text-[#07162C] dark:text-white hover:text-brand-green-600 dark:hover:text-emerald-400'
+              }`}
             >
-              <button
-                onClick={() => handleNavClick('about')}
-                className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 ${
-                  currentPage === 'about'
-                    ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold border-b-2 border-brand-green-600 dark:border-emerald-400 pb-0.5'
-                    : 'text-[#07162C] dark:text-white hover:text-brand-green-600 dark:hover:text-emerald-400'
-                }`}
-              >
-                <span>{language === 'sw' ? 'KUHUSU SISI' : 'ABOUT US'}</span>
-                <span className="text-[10px] text-stone-400 font-mono">▾</span>
-              </button>
+              {language === 'sw' ? 'KUHUSU SISI' : 'ABOUT US'}
+            </button>
 
-              {openDropdown === 'about' && (
-                <div className="absolute top-full left-0 pt-2 w-72 animate-in fade-in duration-150 z-50">
-                  <div className="bg-white dark:bg-[#081830] rounded-xl border border-stone-200 dark:border-slate-800 shadow-xl py-2 px-1.5 space-y-0.5">
-                    {aboutLinks.map((link, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleNavClick('about', link.sectionId)}
-                        className="w-full text-left px-3 py-2 text-xs font-sans text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/80 rounded-lg transition-colors flex items-center justify-between group cursor-pointer"
-                      >
-                        <span>{link.label}</span>
-                        <span className="text-stone-300 dark:text-slate-600 group-hover:text-brand-green-600 dark:group-hover:text-emerald-400 text-[10px] transition-colors">→</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* 3. SERVICE PORTFOLIO */}
-            <div 
-              className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('services')}
-              onMouseLeave={handleMouseLeave}
+            {/* 3. OUR SERVICES - Direct Link, No Dropdown */}
+            <button
+              onClick={() => handleNavClick('services')}
+              className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 ${
+                currentPage === 'services'
+                  ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold border-b-2 border-brand-green-600 dark:border-emerald-400 pb-0.5'
+                  : 'text-[#07162C] dark:text-white hover:text-brand-green-600 dark:hover:text-emerald-400'
+              }`}
             >
-              <button
-                onClick={() => handleNavClick('services')}
-                className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 ${
-                  currentPage === 'services'
-                    ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold border-b-2 border-brand-green-600 dark:border-emerald-400 pb-0.5'
-                    : 'text-[#07162C] dark:text-white hover:text-brand-green-600 dark:hover:text-emerald-400'
-                }`}
-              >
-                <span>SERVICE PORTFOLIO</span>
-                <span className="text-[10px] text-stone-400 font-mono">▾</span>
-              </button>
+              OUR SERVICES
+            </button>
 
-              {openDropdown === 'services' && (
-                <div className="absolute top-full left-0 pt-2 w-64 animate-in fade-in duration-150 z-50">
-                  <div className="bg-white dark:bg-[#081830] rounded-xl border border-stone-200 dark:border-slate-800 shadow-xl py-2 px-1.5 space-y-0.5">
-                    {serviceLinks.map((link, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleNavClick('services', link.sectionId)}
-                        className="w-full text-left px-3 py-2 text-xs font-sans text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/80 rounded-lg transition-colors flex items-center justify-between group cursor-pointer"
-                      >
-                        <span>{link.label}</span>
-                        <span className="text-stone-300 dark:text-slate-600 group-hover:text-brand-green-600 dark:group-hover:text-emerald-400 text-[10px] transition-colors">→</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* 4. SECTORS WE SERVE */}
-            <div 
-              className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('sectors')}
-              onMouseLeave={handleMouseLeave}
+            {/* 4. SECTORS WE SERVE - Direct single overview page */}
+            <button
+              onClick={() => handleNavClick('sectors')}
+              className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 ${
+                currentPage === 'sectors'
+                  ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold border-b-2 border-brand-green-600 dark:border-emerald-400 pb-0.5'
+                  : 'text-[#07162C] dark:text-white hover:text-brand-green-600 dark:hover:text-emerald-400'
+              }`}
             >
-              <button
-                onClick={() => handleNavClick('sectors')}
-                className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 ${
-                  currentPage === 'sectors'
-                    ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold border-b-2 border-brand-green-600 dark:border-emerald-400 pb-0.5'
-                    : 'text-[#07162C] dark:text-white hover:text-brand-green-600 dark:hover:text-emerald-400'
-                }`}
-              >
-                <span>SECTORS WE SERVE</span>
-                <span className="text-[10px] text-stone-400 font-mono">▾</span>
-              </button>
-
-              {openDropdown === 'sectors' && (
-                <div className="absolute top-full left-0 pt-2 w-64 animate-in fade-in duration-150 z-50">
-                  <div className="bg-white dark:bg-[#081830] rounded-xl border border-stone-200 dark:border-slate-800 shadow-xl py-2 px-1.5 space-y-0.5">
-                    {sectorLinks.map((link, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleNavClick('sectors', link.sectionId)}
-                        className="w-full text-left px-3 py-2 text-xs font-sans text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/80 rounded-lg transition-colors flex items-center justify-between group cursor-pointer"
-                      >
-                        <span>{link.label}</span>
-                        <span className="text-stone-300 dark:text-slate-600 group-hover:text-brand-green-600 dark:group-hover:text-emerald-400 text-[10px] transition-colors">→</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+              SECTORS WE SERVE
+            </button>
 
             {/* 5. CONTACT & ENQUIRIES */}
             <button
@@ -330,103 +207,40 @@ export default function Navbar({
             </button>
 
             {/* Mobile: About Us */}
-            <div className="space-y-1">
-              <div className="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-slate-800">
-                <button
-                  onClick={() => handleNavClick('about')}
-                  className={`text-left text-sm font-heading font-bold uppercase tracking-wider ${
-                    currentPage === 'about' ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold' : 'text-[#07162C] dark:text-white'
-                  }`}
-                >
-                  ABOUT US
-                </button>
-                <button 
-                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'about' ? null : 'about')}
-                  className="px-2 py-1 text-xs font-mono text-stone-500"
-                >
-                  {mobileExpandedSection === 'about' ? '▲' : '▼'}
-                </button>
-              </div>
-              {mobileExpandedSection === 'about' && (
-                <div className="pl-3 pr-1 py-1 space-y-0.5 border-l-2 border-brand-green-600/40 ml-2">
-                  {aboutLinks.map((item, i) => (
-                    <button
-                      key={i}
-                      onClick={() => handleNavClick('about', item.sectionId)}
-                      className="w-full text-left py-2 px-2.5 text-xs text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/60 rounded-lg transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            <button
+              onClick={() => handleNavClick('about')}
+              className={`text-left py-2.5 px-3 rounded-xl text-sm font-heading font-bold uppercase tracking-wider ${
+                currentPage === 'about'
+                  ? 'text-brand-green-600 dark:text-emerald-400 bg-stone-100 dark:bg-slate-800 font-extrabold'
+                  : 'text-[#07162C] dark:text-white hover:bg-stone-100 dark:hover:bg-slate-800/60'
+              }`}
+            >
+              ABOUT US
+            </button>
 
-            {/* Mobile: Service Portfolio */}
-            <div className="space-y-1">
-              <div className="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-slate-800">
-                <button
-                  onClick={() => handleNavClick('services')}
-                  className={`text-left text-sm font-heading font-bold uppercase tracking-wider ${
-                    currentPage === 'services' ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold' : 'text-[#07162C] dark:text-white'
-                  }`}
-                >
-                  SERVICE PORTFOLIO
-                </button>
-                <button 
-                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'services' ? null : 'services')}
-                  className="px-2 py-1 text-xs font-mono text-stone-500"
-                >
-                  {mobileExpandedSection === 'services' ? '▲' : '▼'}
-                </button>
-              </div>
-              {mobileExpandedSection === 'services' && (
-                <div className="pl-3 pr-1 py-1 space-y-0.5 border-l-2 border-brand-green-600/40 ml-2">
-                  {serviceLinks.map((item, i) => (
-                    <button
-                      key={i}
-                      onClick={() => handleNavClick('services', item.sectionId)}
-                      className="w-full text-left py-2 px-2.5 text-xs text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/60 rounded-lg transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            {/* Mobile: Our Services */}
+            <button
+              onClick={() => handleNavClick('services')}
+              className={`text-left py-2.5 px-3 rounded-xl text-sm font-heading font-bold uppercase tracking-wider ${
+                currentPage === 'services'
+                  ? 'text-brand-green-600 dark:text-emerald-400 bg-stone-100 dark:bg-slate-800 font-extrabold'
+                  : 'text-[#07162C] dark:text-white hover:bg-stone-100 dark:hover:bg-slate-800/60'
+              }`}
+            >
+              OUR SERVICES
+            </button>
 
-            {/* Mobile: Sectors */}
-            <div className="space-y-1">
-              <div className="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-slate-800">
-                <button
-                  onClick={() => handleNavClick('sectors')}
-                  className={`text-left text-sm font-heading font-bold uppercase tracking-wider ${
-                    currentPage === 'sectors' ? 'text-brand-green-600 dark:text-emerald-400 font-extrabold' : 'text-[#07162C] dark:text-white'
-                  }`}
-                >
-                  SECTORS WE SERVE
-                </button>
-                <button 
-                  onClick={() => setMobileExpandedSection(mobileExpandedSection === 'sectors' ? null : 'sectors')}
-                  className="px-2 py-1 text-xs font-mono text-stone-500"
-                >
-                  {mobileExpandedSection === 'sectors' ? '▲' : '▼'}
-                </button>
-              </div>
-              {mobileExpandedSection === 'sectors' && (
-                <div className="pl-3 pr-1 py-1 space-y-0.5 border-l-2 border-brand-green-600/40 ml-2">
-                  {sectorLinks.map((item, i) => (
-                    <button
-                      key={i}
-                      onClick={() => handleNavClick('sectors', item.sectionId)}
-                      className="w-full text-left py-2 px-2.5 text-xs text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/60 rounded-lg transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            {/* Mobile: Sectors We Serve - Direct One-Page Link */}
+            <button
+              onClick={() => handleNavClick('sectors')}
+              className={`text-left py-2.5 px-3 rounded-xl text-sm font-heading font-bold uppercase tracking-wider ${
+                currentPage === 'sectors'
+                  ? 'text-brand-green-600 dark:text-emerald-400 bg-stone-100 dark:bg-slate-800 font-extrabold'
+                  : 'text-[#07162C] dark:text-white hover:bg-stone-100 dark:hover:bg-slate-800/60'
+              }`}
+            >
+              SECTORS WE SERVE
+            </button>
 
             {/* Mobile: Contact */}
             <button

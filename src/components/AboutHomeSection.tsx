@@ -22,7 +22,7 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
               Grounded in African Realities. <br className="hidden sm:inline" />
               Engineered for Global Consortia.
             </h2>
-            <p className="text-xs sm:text-sm text-stone-700 dark:text-slate-200 font-sans leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-stone-700 dark:text-slate-200 font-sans leading-relaxed font-light">
               <strong>Hope Urban Environmental and Research Investments Limited (HUERI Limited)</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm incorporated in 2014 (NEMA Registered Firm of Experts). As a preferred in-country delivery and consortium partner, HUERI empowers international engineering primes, development financiers, and public agencies to obtain statutory approvals, ensure rigorous safeguard compliance, resolve land resettlement challenges, and manage project risks across Africa.
             </p>
           </div>
@@ -30,13 +30,13 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
           <div className="flex flex-wrap items-center gap-2 shrink-0">
             <button
               onClick={() => onNavigate('partnerships')}
-              className="px-3.5 py-1.5 bg-brand-blue-900 hover:bg-brand-blue-800 text-white font-mono font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer border border-blue-700/50"
+              className="px-4 py-2 bg-brand-blue-900 hover:bg-brand-blue-800 text-white font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer border border-blue-700/50"
             >
               Consortia Models →
             </button>
             <button
               onClick={() => onNavigate('about')}
-              className="px-3.5 py-1.5 bg-brand-green-700 hover:bg-brand-green-600 active:bg-brand-green-800 text-white font-mono font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer"
+              className="px-4 py-2 bg-brand-green-700 hover:bg-brand-green-600 active:bg-brand-green-800 text-white font-mono font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer"
             >
               Full Profile →
             </button>
@@ -44,17 +44,17 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
         </div>
 
         {/* Core Value Proposition Pillars */}
-        <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
           
           {/* Pillar 1: Emerald Theme */}
           <div 
             onClick={() => onNavigate('about', 'about-leadership')}
-            className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-emerald-500/30 hover:border-emerald-600 hover:bg-emerald-50/50 dark:hover:bg-emerald-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
+            className="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-800/90 border border-emerald-500/30 hover:border-emerald-600 hover:bg-emerald-50/50 dark:hover:bg-emerald-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
           >
-            <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-emerald-800 dark:group-hover:text-emerald-300 transition-colors">
+            <h3 className="font-heading font-bold text-lg text-stone-900 dark:text-white group-hover:text-emerald-800 dark:group-hover:text-emerald-300 transition-colors">
               Local Realities & Lender Alignment
             </h3>
-            <p className="text-xs text-stone-600 dark:text-slate-300 leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-stone-600 dark:text-slate-300 leading-relaxed font-light">
               We bridge grassroots community consultations and county regulatory dynamics with international financier safeguard frameworks (World Bank ESF, IFC PS 1–8, AfDB ISS).
             </p>
             <div className="pt-2 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 group-hover:underline">
@@ -65,12 +65,12 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
           {/* Pillar 2: Blue Theme */}
           <div 
             onClick={() => onNavigate('services', 'service-pillar-2')}
-            className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-blue-500/30 hover:border-blue-600 hover:bg-blue-50/50 dark:hover:bg-blue-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
+            className="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-800/90 border border-blue-500/30 hover:border-blue-600 hover:bg-blue-50/50 dark:hover:bg-blue-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
           >
-            <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-300 transition-colors">
+            <h3 className="font-heading font-bold text-lg text-stone-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-300 transition-colors">
               Safeguards Delivery & Compliance
             </h3>
-            <p className="text-xs text-stone-600 dark:text-slate-300 leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-stone-600 dark:text-slate-300 leading-relaxed font-light">
               Demonstrated experience in preparing statutory NEMA submissions, structured Resettlement Action Plans (RAP), stakeholder engagement, and project grievance redress mechanisms.
             </p>
             <div className="pt-2 text-xs font-mono font-bold text-blue-700 dark:text-blue-400 group-hover:underline">
@@ -81,12 +81,12 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
           {/* Pillar 3: Amber / Terracotta Theme */}
           <div 
             onClick={() => onNavigate('services', 'service-pillar-3')}
-            className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-amber-500/30 hover:border-amber-600 hover:bg-amber-50/50 dark:hover:bg-amber-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
+            className="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-800/90 border border-amber-500/30 hover:border-amber-600 hover:bg-amber-50/50 dark:hover:bg-amber-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
           >
-            <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+            <h3 className="font-heading font-bold text-lg text-stone-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
               Empirical Baseline & Spatial Assessment
             </h3>
-            <p className="text-xs text-stone-600 dark:text-slate-300 leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-stone-600 dark:text-slate-300 leading-relaxed font-light">
               Spatial GIS hazard analysis, water catchment assessments, and ecological screening delivered through HUERI's multidisciplinary team and specialist technical associates.
             </p>
             <div className="pt-2 text-xs font-mono font-bold text-amber-700 dark:text-amber-400 group-hover:underline">
