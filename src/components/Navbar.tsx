@@ -157,15 +157,16 @@ export default function Navbar({
               </button>
 
               {openDropdown === 'about' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[370px] animate-in fade-in duration-150 z-50">
-                  <div className="bg-white/95 dark:bg-[#07162C]/95 backdrop-blur-md rounded-2xl border border-stone-200/90 dark:border-slate-800 shadow-xl p-2 grid grid-cols-2 gap-1.5">
+                <div className="absolute top-full left-0 pt-2 w-72 animate-in fade-in duration-150 z-50">
+                  <div className="bg-white dark:bg-[#081830] rounded-xl border border-stone-200 dark:border-slate-800 shadow-xl py-2 px-1.5 space-y-0.5">
                     {aboutLinks.map((link, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleNavClick('about', link.sectionId)}
-                        className="px-3 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-stone-800 dark:text-slate-100 bg-stone-50 dark:bg-slate-900/90 hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-xl border border-stone-200/70 dark:border-slate-800 hover:border-brand-green-600 shadow-sm hover:shadow transition-all duration-150 text-center cursor-pointer min-h-[38px] flex items-center justify-center leading-tight"
+                        className="w-full text-left px-3 py-2 text-xs font-sans text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/80 rounded-lg transition-colors flex items-center justify-between group cursor-pointer"
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+                        <span className="text-stone-300 dark:text-slate-600 group-hover:text-brand-green-600 dark:group-hover:text-emerald-400 text-[10px] transition-colors">→</span>
                       </button>
                     ))}
                   </div>
@@ -173,7 +174,7 @@ export default function Navbar({
               )}
             </div>
 
-            {/* 3. SERVICE PORTFOLIO - Refined, sleek dropdown sizing */}
+            {/* 3. SERVICE PORTFOLIO */}
             <div 
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter('services')}
@@ -192,15 +193,16 @@ export default function Navbar({
               </button>
 
               {openDropdown === 'services' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[370px] animate-in fade-in duration-150 z-50">
-                  <div className="bg-white/95 dark:bg-[#07162C]/95 backdrop-blur-md rounded-2xl border border-stone-200/90 dark:border-slate-800 shadow-xl p-2 grid grid-cols-2 gap-1.5">
+                <div className="absolute top-full left-0 pt-2 w-64 animate-in fade-in duration-150 z-50">
+                  <div className="bg-white dark:bg-[#081830] rounded-xl border border-stone-200 dark:border-slate-800 shadow-xl py-2 px-1.5 space-y-0.5">
                     {serviceLinks.map((link, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleNavClick('services', link.sectionId)}
-                        className="px-3 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-stone-800 dark:text-slate-100 bg-stone-50 dark:bg-slate-900/90 hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-xl border border-stone-200/70 dark:border-slate-800 hover:border-brand-green-600 shadow-sm hover:shadow transition-all duration-150 text-center cursor-pointer min-h-[38px] flex items-center justify-center leading-tight"
+                        className="w-full text-left px-3 py-2 text-xs font-sans text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/80 rounded-lg transition-colors flex items-center justify-between group cursor-pointer"
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+                        <span className="text-stone-300 dark:text-slate-600 group-hover:text-brand-green-600 dark:group-hover:text-emerald-400 text-[10px] transition-colors">→</span>
                       </button>
                     ))}
                   </div>
@@ -208,7 +210,7 @@ export default function Navbar({
               )}
             </div>
 
-            {/* 4. SECTORS WE SERVE - Refined, sleek dropdown sizing */}
+            {/* 4. SECTORS WE SERVE */}
             <div 
               className="relative py-2"
               onMouseEnter={() => handleMouseEnter('sectors')}
@@ -227,15 +229,16 @@ export default function Navbar({
               </button>
 
               {openDropdown === 'sectors' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[370px] animate-in fade-in duration-150 z-50">
-                  <div className="bg-white/95 dark:bg-[#07162C]/95 backdrop-blur-md rounded-2xl border border-stone-200/90 dark:border-slate-800 shadow-xl p-2 grid grid-cols-2 gap-1.5">
+                <div className="absolute top-full left-0 pt-2 w-64 animate-in fade-in duration-150 z-50">
+                  <div className="bg-white dark:bg-[#081830] rounded-xl border border-stone-200 dark:border-slate-800 shadow-xl py-2 px-1.5 space-y-0.5">
                     {sectorLinks.map((link, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleNavClick('sectors', link.sectionId)}
-                        className="px-3 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-stone-800 dark:text-slate-100 bg-stone-50 dark:bg-slate-900/90 hover:bg-brand-green-600 hover:text-white dark:hover:bg-brand-green-600 dark:hover:text-white rounded-xl border border-stone-200/70 dark:border-slate-800 hover:border-brand-green-600 shadow-sm hover:shadow transition-all duration-150 text-center cursor-pointer min-h-[38px] flex items-center justify-center leading-tight"
+                        className="w-full text-left px-3 py-2 text-xs font-sans text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/80 rounded-lg transition-colors flex items-center justify-between group cursor-pointer"
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+                        <span className="text-stone-300 dark:text-slate-600 group-hover:text-brand-green-600 dark:group-hover:text-emerald-400 text-[10px] transition-colors">→</span>
                       </button>
                     ))}
                   </div>
@@ -345,12 +348,12 @@ export default function Navbar({
                 </button>
               </div>
               {mobileExpandedSection === 'about' && (
-                <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-stone-100/60 dark:bg-slate-900/60 rounded-xl">
+                <div className="pl-3 pr-1 py-1 space-y-0.5 border-l-2 border-brand-green-600/40 ml-2">
                   {aboutLinks.map((item, i) => (
                     <button
                       key={i}
                       onClick={() => handleNavClick('about', item.sectionId)}
-                      className="px-2.5 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-slate-900 border border-brand-green-600/30 hover:border-brand-green-600 rounded-xl text-center min-h-[36px] flex items-center justify-center leading-tight shadow-sm"
+                      className="w-full text-left py-2 px-2.5 text-xs text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/60 rounded-lg transition-colors"
                     >
                       {item.label}
                     </button>
@@ -378,12 +381,12 @@ export default function Navbar({
                 </button>
               </div>
               {mobileExpandedSection === 'services' && (
-                <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-stone-100/60 dark:bg-slate-900/60 rounded-xl">
+                <div className="pl-3 pr-1 py-1 space-y-0.5 border-l-2 border-brand-green-600/40 ml-2">
                   {serviceLinks.map((item, i) => (
                     <button
                       key={i}
                       onClick={() => handleNavClick('services', item.sectionId)}
-                      className="px-2.5 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-slate-900 border border-brand-green-600/30 hover:border-brand-green-600 rounded-xl text-center min-h-[36px] flex items-center justify-center leading-tight shadow-sm"
+                      className="w-full text-left py-2 px-2.5 text-xs text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/60 rounded-lg transition-colors"
                     >
                       {item.label}
                     </button>
@@ -411,12 +414,12 @@ export default function Navbar({
                 </button>
               </div>
               {mobileExpandedSection === 'sectors' && (
-                <div className="grid grid-cols-2 gap-1.5 p-1.5 bg-stone-100/60 dark:bg-slate-900/60 rounded-xl">
+                <div className="pl-3 pr-1 py-1 space-y-0.5 border-l-2 border-brand-green-600/40 ml-2">
                   {sectorLinks.map((item, i) => (
                     <button
                       key={i}
                       onClick={() => handleNavClick('sectors', item.sectionId)}
-                      className="px-2.5 py-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#07162C] dark:text-white bg-white dark:bg-slate-900 border border-brand-green-600/30 hover:border-brand-green-600 rounded-xl text-center min-h-[36px] flex items-center justify-center leading-tight shadow-sm"
+                      className="w-full text-left py-2 px-2.5 text-xs text-stone-700 dark:text-slate-200 hover:text-brand-green-700 dark:hover:text-emerald-400 hover:bg-stone-50 dark:hover:bg-slate-800/60 rounded-lg transition-colors"
                     >
                       {item.label}
                     </button>

@@ -48,9 +48,6 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E5DFD5] dark:border-slate-800 pb-5">
         <div className="space-y-1.5">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-            TECHNICAL TEAM & SPECIALIST ROSTER
-          </span>
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-stone-900 dark:text-white tracking-tight">
             Leadership & Multidisciplinary Specialists
           </h2>

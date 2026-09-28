@@ -33,7 +33,7 @@ const routeMap: Record<string, RouteInfo> = {
     sectionId: 'all',
     path: '/',
     title: 'HUERI Limited | Environmental & Social Consultants Kenya',
-    desc: 'Hope Urban Environmental and Research Investments Limited (HUERI Limited) is an established Kenya-based environmental, social, health, safety, and sustainability consultancy (NEMA Firm Licence: NEMA/ENVIS/ELi/F0026). We deliver ESIA, statutory environmental audits, resettlement action plans (RAP), and safeguard compliance in Kenya, with capacity to support assignments across Africa through qualified country-specific partnerships.'
+    desc: 'Hope Urban Environmental and Research Investments Limited (HUERI Limited) is an established Kenya-based environmental, social, health, safety, and sustainability consultancy. We deliver ESIA, statutory environmental audits, resettlement action plans (RAP), and safeguard compliance in Kenya, with capacity to support assignments across Africa through qualified partnerships.'
   },
   '/about': {
     page: 'about',

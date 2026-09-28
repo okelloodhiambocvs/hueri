@@ -100,9 +100,6 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           {valueProps.map((val, idx) => (
             <div key={idx} className="bg-white dark:bg-[#071a38] p-4 rounded-2xl border border-gray-200/80 dark:border-slate-800 shadow-sm flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-mono font-bold text-brand-green-600 dark:text-brand-green-400 block mb-1">
-                  Pillar 0{idx + 1}
-                </span>
                 <h4 className="font-heading font-bold text-xs uppercase tracking-wide text-gray-900 dark:text-white mb-1.5">
                   {val.title}
                 </h4>
@@ -151,25 +148,15 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           </div>
         </div>
 
-        {/* 6 Structured Partnership Models Grid */}
+        {/* Structured Partnership Models Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {models.map((model, idx) => {
+          {models.map((model) => {
             return (
               <div
                 key={model.id}
                 className="bg-white dark:bg-[#071a38] p-5 rounded-2xl border border-gray-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg hover:border-brand-green-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-mono font-bold text-brand-blue-900 dark:text-blue-300 bg-brand-blue-50 dark:bg-blue-950/60 px-2.5 py-0.5 rounded-lg">
-                      Structure {idx + 1}
-                    </span>
-
-                    <span className="text-[9px] font-mono font-bold text-brand-green-700 dark:text-brand-green-400 uppercase bg-brand-green-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-brand-green-200 dark:border-emerald-900">
-                      MODEL {idx + 1}
-                    </span>
-                  </div>
-
                   <h3 className="font-heading font-extrabold text-base text-gray-900 dark:text-white mb-1.5 leading-snug">
                     {model.title}
                   </h3>

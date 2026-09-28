@@ -22,7 +22,7 @@ export default function ServiceCard({ service, index, onOpenDetails }: ServiceCa
       className="bg-white dark:bg-[#071a38] rounded-3xl overflow-hidden border border-[#E5DFD5] dark:border-slate-800 shadow-sm hover:shadow-2xl hover:border-brand-green-600 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group font-sans"
     >
       <div>
-        {/* High-Visibility Photographic Header with Minimal Dark Tint */}
+        {/* High-Visibility Photographic Header */}
         <div className="relative h-48 w-full overflow-hidden bg-slate-900">
           <img 
             src={serviceImage} 
@@ -30,24 +30,7 @@ export default function ServiceCard({ service, index, onOpenDetails }: ServiceCa
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-100 contrast-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          
-          {/* Practice Category Overlay */}
-          <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-            <span className="text-[10px] font-mono font-bold tracking-wider text-white uppercase bg-brand-blue-900/90 px-3 py-1 rounded-full border border-white/20 max-w-[220px] truncate shadow-sm">
-              {service.practiceCategory || 'Advisory Practice'}
-            </span>
-
-            <span className="text-[10px] font-mono text-emerald-300 font-bold uppercase tracking-wider bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm border border-white/10">
-              0{index + 1}
-            </span>
-          </div>
-
-          <div className="absolute bottom-3 left-3 right-3">
-            <span className="text-[10px] font-mono text-slate-200 tracking-wider">
-              Statutory NEMA & Lender Standards Aligned
-            </span>
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </div>
 
         {/* Card Content Body */}

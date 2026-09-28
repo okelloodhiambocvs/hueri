@@ -234,7 +234,7 @@ export function generateInstitutionalProfilePDF(
             <div style="text-align: right;">
               <div class="doc-tag">Document Ref: HUERI-CP-2026/V2</div>
               <div style="font-size: 9px; font-family: monospace; color: #64748b;">Issued: ${dateStr}</div>
-              <div style="font-size: 9px; font-family: monospace; color: #0d7b48; font-weight: 700;">NEMA Firm Licence: NEMA/ENVIS/ELi/F0026*</div>
+              <div style="font-size: 9px; font-family: monospace; color: #0d7b48; font-weight: 700;">NEMA Registered Firm of Experts</div>
             </div>
           </div>
 
@@ -269,12 +269,12 @@ export function generateInstitutionalProfilePDF(
               </tr>
               <tr>
                 <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0; font-weight: 600;">NEMA Firm Practicing Licence</td>
-                <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0;">Licence No. NEMA/ENVIS/ELi/F0026 • Reg # NEMA/EIA/RC/1058</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0;">NEMA Registered Firm of Experts (Available on Request)</td>
                 <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0; font-family: monospace; color: #64748b;">Subject to Annual Licence Verification</td>
               </tr>
               <tr>
                 <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0; font-weight: 600;">Founder & Managing Director</td>
-                <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0;">Belinda Nyakinya (NEMA Registered Lead Expert #7718)</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0;">Belinda Nyakinya (NEMA Registered Lead Expert)</td>
                 <td style="padding: 6px 10px; border-bottom: 1px solid #e2e8f0; font-family: monospace; color: #0d7b48;">Verified Practicing Lead Expert</td>
               </tr>
               <tr>
@@ -322,7 +322,7 @@ export function generateInstitutionalProfilePDF(
               <h2 class="company-name" style="font-size: 16px;">Core Advisory Practices & Leadership</h2>
             </div>
             <div style="text-align: right;">
-              <div style="font-size: 9px; font-family: monospace; color: #64748b;">NEMA Firm Licence: NEMA/ENVIS/ELi/F0026*</div>
+              <div style="font-size: 9px; font-family: monospace; color: #64748b;">NEMA Registered Firm of Experts</div>
             </div>
           </div>
 
@@ -334,7 +334,7 @@ export function generateInstitutionalProfilePDF(
             <div style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; background: #faf8f5;">
               <div style="font-weight: 700; color: #07162c; font-size: 11px;">Belinda Nyakinya</div>
               <div style="font-size: 9px; font-family: monospace; color: #0d7b48; font-weight: 600;">Founder & Managing Director | Principal Consultant</div>
-              <div style="font-size: 9px; color: #64748b; margin: 2px 0;">MSc. Environmental Studies • BSc. Natural Resource Management • NEMA Lead Expert #7718</div>
+              <div style="font-size: 9px; color: #64748b; margin: 2px 0;">MSc. Environmental Studies • BSc. Natural Resource Management • NEMA Registered Lead Expert</div>
               <p style="font-size: 9.5px; color: #334155; margin: 4px 0 0 0; line-height: 1.4;">
                 15+ years experience directing statutory ESIAs, resettlement planning, and safeguards compliance. Technical Safeguards Specialist for national devolution programs (KDSP II NPCU).
               </p>
@@ -383,8 +383,8 @@ export function generateInstitutionalProfilePDF(
             * The following corporate documents are maintained on file and certified copies are provided during formal tender and RFP submissions:
           </p>
           <div style="font-size: 9px; font-family: monospace; color: #334155; line-height: 1.5;">
-            • Current Annual NEMA Firm Practicing Licence (NEMA/ENVIS/ELi/F0026)<br/>
-            • Certified CR12 / Registrar of Companies Certificate (CPR/2014/168986)<br/>
+            • Current Annual NEMA Firm Practicing Licence & Registration Certificate<br/>
+            • Certified CR12 / Registrar of Companies Certificate<br/>
             • Current KRA Tax Compliance Certificate (TCC)<br/>
             • County Government Single Business Operating Permit<br/>
             • Practicing Lead Expert Certificates & Professional Memberships (EIK / VRB / EBK / DOSHS)

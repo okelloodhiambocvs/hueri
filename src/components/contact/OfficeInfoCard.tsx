@@ -65,7 +65,7 @@ export default function OfficeInfoCard() {
                 </a>
               </p>
               <p className="text-[11px] text-stone-500 dark:text-slate-400 font-sans">
-                Managing Director: Belinda Nyakinya (NEMA Lead Expert #7718)
+                Managing Director: Belinda Nyakinya (NEMA Registered Lead Expert)
               </p>
             </div>
 
@@ -116,19 +116,11 @@ export default function OfficeInfoCard() {
 
       {/* Corporate Verification Card */}
       <div className="bg-gradient-to-br from-[#0B1D38] to-[#071A38] text-white rounded-3xl p-8 border border-slate-700/80 shadow-xl space-y-3">
-        <div className="flex items-center justify-between">
-          <span className="text-[10px] font-mono tracking-widest text-emerald-400 font-bold uppercase">
-            NEMA LICENSED FIRM OF EXPERTS
-          </span>
-          <span className="text-xs font-mono text-emerald-300 border border-emerald-400/40 bg-emerald-950/50 px-2.5 py-0.5 rounded-full font-bold">
-            F0026
-          </span>
-        </div>
         <h4 className="font-heading font-extrabold text-base text-white">
-          STATUTORY REGISTRATION CREDENTIALS
+          NEMA REGISTERED FIRM OF EXPERTS
         </h4>
         <p className="text-xs text-slate-300 leading-relaxed font-sans font-light">
-          Firm Licence: <strong className="text-emerald-300 font-mono">NEMA/ENVIS/ELi/F0026</strong>. Corporate Register: <strong className="text-emerald-300 font-mono">NEMA/EIA/RC/1058</strong>. Incorporation: <strong className="text-emerald-300 font-mono">CPR/2014/168986</strong>. Operating in compliance with EMCA Cap 387 and OSHA 2007.
+          HUERI Limited operates in full compliance with EMCA Cap 387 and OSHA 2007. Official statutory practicing licenses, lead expert registration certificates, and incorporated corporate records are maintained in confidence and provided directly to clients and partner institutions upon request.
         </p>
       </div>
     </div>

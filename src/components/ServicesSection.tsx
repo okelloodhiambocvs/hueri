@@ -58,14 +58,14 @@ export default function ServicesSection({
       });
   }, []);
 
-  // 6 Practice Pillars
+  // Practice Pillars
   const serviceSections = [
-    { id: 'service-pillar-1', label: '1. Statutory Licencing & ESIA', tag: 'Statutory Clearances', desc: 'EMCA Cap 387 EIA/ESIA, Strategic Environmental Assessments (SEA), and official approvals.' },
-    { id: 'service-pillar-2', label: '2. Social Safeguards & Resettlement', tag: 'Social Performance', desc: 'Resettlement Action Plans (RAP), comprehensive socio-economic census, asset valuation, livelihood restoration & barazas.' },
-    { id: 'service-pillar-3', label: '3. Climate Resilience & Ecology', tag: 'Climate & Ecology', desc: 'Climate vulnerability profiling, hydrological modeling, biodiversity baselines, and nature-based solutions.' },
-    { id: 'service-pillar-4', label: '4. Safety & Compliance Audits', tag: 'Audits & Safety', desc: 'Annual statutory NEMA audits, workplace occupational health & safety (OHS), and hazardous waste monitoring.' },
-    { id: 'service-pillar-5', label: '5. ESG & Lender Standards', tag: 'Lender Standards', desc: 'World Bank ESF, IFC Performance Standards, AfDB ISS, and lender Environmental & Social Due Diligence (ESDD).' },
-    { id: 'service-pillar-6', label: '6. ESHSRIM Procedures Training', tag: 'Capacity & Certification', desc: 'Professional and organizational capacity building on ESHSRIM procedures, hazard control, and compliance toolkits.' }
+    { id: 'service-pillar-1', label: 'Statutory Licencing & ESIA', tag: 'Statutory Clearances', desc: 'EMCA Cap 387 EIA/ESIA, Strategic Environmental Assessments (SEA), and official approvals.' },
+    { id: 'service-pillar-2', label: 'Social Safeguards & Resettlement', tag: 'Social Performance', desc: 'Resettlement Action Plans (RAP), comprehensive socio-economic census, asset valuation, livelihood restoration & barazas.' },
+    { id: 'service-pillar-3', label: 'Climate Resilience & Ecology', tag: 'Climate & Ecology', desc: 'Climate vulnerability profiling, hydrological modeling, biodiversity baselines, and nature-based solutions.' },
+    { id: 'service-pillar-4', label: 'Safety & Compliance Audits', tag: 'Audits & Safety', desc: 'Annual statutory NEMA audits, workplace occupational health & safety (OHS), and hazardous waste monitoring.' },
+    { id: 'service-pillar-5', label: 'ESG & Lender Standards', tag: 'Lender Standards', desc: 'World Bank ESF, IFC Performance Standards, AfDB ISS, and lender Environmental & Social Due Diligence (ESDD).' },
+    { id: 'service-pillar-6', label: 'ESHSRIM Procedures Training', tag: 'Capacity & Certification', desc: 'Professional and organizational capacity building on ESHSRIM procedures, hazard control, and compliance toolkits.' }
   ];
 
   const pillarCategoryMap: Record<string, string> = {
@@ -75,11 +75,6 @@ export default function ServicesSection({
     'service-pillar-4': 'Safety',
     'service-pillar-5': 'ESG',
     'service-pillar-6': 'Training'
-  };
-
-  const handlePillarJump = (pillarId: string) => {
-    setSelectedPillarId(pillarId);
-    window.scrollTo({ top: 180, behavior: 'smooth' });
   };
 
   const filteredServices = selectedPillarId === 'all'
@@ -142,110 +137,18 @@ export default function ServicesSection({
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-brand-green-700 dark:text-emerald-400 block">
-            CONSOLIDATED ADVISORY PORTFOLIO
-          </span>
           <h2 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-stone-900 dark:text-white tracking-tight">
-            Our 5 Advisory Practice Pillars
+            Advisory Practice Pillars
           </h2>
           <p className="text-xs sm:text-sm text-stone-600 dark:text-slate-300 font-sans leading-relaxed font-light">
             HUERI provides integrated environmental, social, climate, and safety solutions across the complete project lifecycle—bridging statutory Kenyan requirements (NEMA) with international lender standards (World Bank, IFC, AfDB).
           </p>
         </div>
 
-        {/* SERVICE SECTION NAVIGATOR & DROPDOWN (matching light mode toggle size) */}
-        <div className="sticky top-20 z-30 bg-white/95 dark:bg-[#071a38]/95 backdrop-blur-md p-3 rounded-2xl border border-[#E5DFD5] dark:border-slate-800 shadow-md">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-brand-green-600 dark:bg-emerald-400" />
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-stone-800 dark:text-slate-200">
-                SELECT SERVICE PILLAR:
-              </span>
-            </div>
-
-            {/* Interactive Dropdown */}
-            <div className="w-full sm:w-auto flex items-center gap-2">
-              <select
-                value={selectedPillarId}
-                onChange={(e) => handlePillarJump(e.target.value)}
-                className="w-full sm:w-64 px-3 py-1.5 rounded-xl bg-[#FAF8F5] dark:bg-slate-900 border border-[#DCD5C9] dark:border-slate-700 text-[10px] font-mono font-bold uppercase text-stone-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-green-600 cursor-pointer shadow-sm"
-              >
-                <option value="all">✦ All Pillars Directory</option>
-                {serviceSections.map(s => (
-                  <option key={s.id} value={s.id}>
-                    {s.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Quick-Jump Navigation Tabs */}
-          <div className="flex items-center gap-1.5 pt-2.5 mt-2.5 border-t border-[#EDE7DD] dark:border-slate-800 overflow-x-auto text-xs font-mono">
-            <button
-              onClick={() => handlePillarJump('all')}
-              className={`px-3 py-1.5 rounded-xl text-[10px] font-mono font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
-                selectedPillarId === 'all'
-                  ? 'bg-brand-green-700 text-white shadow-sm'
-                  : 'bg-[#FAF8F5] dark:bg-slate-800 text-stone-700 dark:text-slate-300 hover:bg-stone-100 dark:hover:bg-slate-700 border border-[#E0D9CD] dark:border-slate-700'
-              }`}
-            >
-              All Pillars Directory
-            </button>
-            {serviceSections.map(s => (
-              <button
-                key={s.id}
-                onClick={() => handlePillarJump(s.id)}
-                className={`px-3 py-1.5 rounded-xl text-[10px] font-mono font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
-                  selectedPillarId === s.id
-                    ? 'bg-brand-green-700 text-white shadow-sm'
-                    : 'bg-[#FAF8F5] dark:bg-slate-800 text-stone-700 dark:text-slate-300 hover:bg-stone-100 dark:hover:bg-slate-700 border border-[#E0D9CD] dark:border-slate-700'
-                }`}
-              >
-                {s.label.split('.')[1] || s.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* VIEW MODE 1: ALL PILLARS INTERACTIVE DIRECTORY */}
+        {/* VIEW MODE 1: ALL PILLARS / PLANNING MATRIX */}
         {selectedPillarId === 'all' && (
           <div className="space-y-8 sm:space-y-10 animate-in fade-in duration-200">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {serviceSections.map((sec, idx) => (
-                <div 
-                  key={sec.id}
-                  onClick={() => handlePillarJump(sec.id)}
-                  className="p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-[#E5DFD5] dark:border-slate-700 hover:border-brand-green-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between group shadow-sm"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex items-center justify-between">
-                      <span className="h-7 w-7 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-mono text-xs font-bold flex items-center justify-center group-hover:scale-105 transition-transform">
-                        0{idx + 1}
-                      </span>
-                      <span className="text-[9px] font-mono font-bold uppercase text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full">
-                        {sec.tag}
-                      </span>
-                    </div>
-
-                    <h4 className="font-heading font-bold text-sm text-stone-900 dark:text-white group-hover:text-brand-green-700 dark:group-hover:text-emerald-400 transition-colors leading-snug">
-                      {sec.label}
-                    </h4>
-
-                    <p className="text-xs text-stone-600 dark:text-slate-300 font-light leading-relaxed">
-                      {sec.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 mt-3 border-t border-[#EDE7DD] dark:border-slate-700 flex items-center justify-between text-xs font-mono font-bold text-brand-green-700 dark:text-emerald-400">
-                    <span>Explore Scope</span>
-                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* INTERACTIVE STATUTORY & SAFEGUARDS SCOPING ESTIMATOR */}
+            {/* STATUTORY & SAFEGUARDS SCOPING ESTIMATOR */}
             <div className="rounded-3xl bg-gradient-to-br from-[#0B1D38] via-[#071A38] to-[#0A2558] text-white p-6 sm:p-8 lg:p-10 border border-slate-700/80 shadow-xl space-y-6">
               <div className="space-y-1.5">
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400 block">
@@ -262,10 +165,10 @@ export default function ServicesSection({
               {/* Scoping Configurator Selectors */}
               <div className="grid md:grid-cols-3 gap-4">
                 
-                {/* 1. Sector */}
+                {/* Sector */}
                 <div className="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 space-y-1.5">
                   <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-300 block">
-                    1. Select Sector:
+                    Select Sector:
                   </label>
                   <select
                     value={scopeSector}
@@ -280,10 +183,10 @@ export default function ServicesSection({
                   </select>
                 </div>
 
-                {/* 2. Lifecycle Phase */}
+                {/* Lifecycle Phase */}
                 <div className="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 space-y-1.5">
                   <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-300 block">
-                    2. Project Phase:
+                    Project Phase:
                   </label>
                   <select
                     value={scopePhase}
@@ -297,10 +200,10 @@ export default function ServicesSection({
                   </select>
                 </div>
 
-                {/* 3. Lender Standard */}
+                {/* Lender Standard */}
                 <div className="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 space-y-1.5">
                   <label className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-300 block">
-                    3. Financing & Lender Framework:
+                    Financing & Lender Framework:
                   </label>
                   <select
                     value={scopeLender}
@@ -352,27 +255,36 @@ export default function ServicesSection({
                 </div>
               </div>
             </div>
+
+            {/* Practice Portfolios Grid */}
+            <div className="space-y-4">
+              <h3 className="font-heading font-black text-xl sm:text-2xl text-stone-900 dark:text-white">
+                All Advisory Disciplines
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {services.map((service, index) => (
+                  <ServiceCard
+                    key={service.id}
+                    service={service}
+                    index={index}
+                    onOpenDetails={handleOpenDetails}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
         {/* VIEW MODE 2: SPECIFIC SELECTED PILLAR */}
         {selectedPillarId !== 'all' && (
           <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-200">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-[#E5DFD5] dark:border-slate-800 pb-3">
-              <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-                  FOCUSED PRACTICE SCOPE
-                </span>
-                <h3 className="text-xl sm:text-2xl font-heading font-black text-stone-900 dark:text-white">
-                  {serviceSections.find(s => s.id === selectedPillarId)?.label || 'Practice Scope'}
-                </h3>
-              </div>
-              <button
-                onClick={() => setSelectedPillarId('all')}
-                className="text-[11px] font-mono font-bold text-brand-green-700 dark:text-emerald-400 hover:underline cursor-pointer"
-              >
-                ← View All 5 Pillars Directory
-              </button>
+            <div className="border-b border-[#E5DFD5] dark:border-slate-800 pb-3">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
+                FOCUSED PRACTICE SCOPE
+              </span>
+              <h3 className="text-xl sm:text-2xl font-heading font-black text-stone-900 dark:text-white">
+                {serviceSections.find(s => s.id === selectedPillarId)?.label || 'Practice Scope'}
+              </h3>
             </div>
 
             {/* Service Practice Cards */}
@@ -385,15 +297,6 @@ export default function ServicesSection({
                   onOpenDetails={handleOpenDetails}
                 />
               ))}
-            </div>
-
-            <div className="flex items-center justify-between pt-4 border-t border-[#EDE7DD] dark:border-slate-800">
-              <button
-                onClick={() => setSelectedPillarId('all')}
-                className="text-[11px] font-mono font-bold text-stone-600 dark:text-slate-300 hover:text-brand-green-700 cursor-pointer"
-              >
-                ← Back to All Pillars Directory
-              </button>
             </div>
           </div>
         )}

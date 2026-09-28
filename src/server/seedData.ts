@@ -1126,21 +1126,21 @@ export const initialCredentials: CorporateCredential[] = [
   {
     credential: "NEMA Firm of Experts Annual Practicing Licence",
     issuingAuthority: "National Environment Management Authority (NEMA)",
-    reference: "NEMA/ENVIS/ELi/F0026",
+    reference: "Statutory Licence (Available Upon Request)",
     validity: "Annual Registration (Current Cycle)",
     status: "Active (Subject to Document Verification)",
     category: "Statutory Licence",
-    verificationNote: "NEMA Firm of Experts Licence No. NEMA/ENVIS/ELi/F0026 is maintained in the statutory register and subject to formal verification against current annual renewal certificate documents for client submissions.",
+    verificationNote: "Official NEMA Firm of Experts practicing documentation is maintained in corporate registry archives and provided directly for client submissions and procurement packs.",
     requiresVerification: true
   },
   {
     credential: "NEMA Corporate Registration Certificate",
     issuingAuthority: "National Environment Management Authority (NEMA)",
-    reference: "NEMA/EIA/RC/1058",
+    reference: "Corporate Registration (Available Upon Request)",
     validity: "Permanent Statutory Register",
     status: "Verified Record",
     category: "Statutory Licence",
-    verificationNote: "Permanent corporate EIA register entry NEMA/EIA/RC/1058 linked to Lead Expert registration (Belinda Nyakinya, NEMA Lead Expert Reg #7718).",
+    verificationNote: "Corporate EIA register documentation linked to Lead Expert registration (Belinda Nyakinya, NEMA Registered Lead Expert).",
     requiresVerification: false
   },
   {
@@ -1273,7 +1273,7 @@ export const initialGovernanceTiers: GovernanceTier[] = [
     level: "Tier 2",
     title: "Executive Leadership & Technical Direction",
     responsibilities: [
-      "Led by the Founder & Managing Director (Belinda Nyakinya, NEMA Lead Expert #7718).",
+      "Led by the Founder & Managing Director (Belinda Nyakinya, Registered NEMA Lead Expert).",
       "Executive direction of technical advisory practices, tender submissions, and client engagements.",
       "Quality assurance sign-off on major statutory ESIA reports and safeguards documentation."
     ],
@@ -1314,7 +1314,7 @@ export const initialTeam: TeamMember[] = [
       "Bachelor of Science (BSc) in Natural Resource Management"
     ],
     professionalRegistrations: [
-      "NEMA Registered Lead Expert (Practicing Licence #7718)",
+      "NEMA Registered Lead Expert",
       "Member, Environment Institute of Kenya (EIK)"
     ],
     yearsOfExperience: "15+ Years",
@@ -1331,12 +1331,12 @@ export const initialTeam: TeamMember[] = [
       "Lead EIA Consultant, Multi-Storey Residential Housing ESIA (Wema Magharibi Ltd)",
       "Environmental Safeguards Consultant, Siaya Climate Resilience Infrastructure (FLLoCA)"
     ],
-    bio: "Belinda Nyakinya is an established environmental and social performance practitioner, NEMA Registered Lead Expert (#7718), and the Founder and Managing Director of Hope Urban Environmental and Research Investments Limited (HUERI Limited). She has over 15 years of technical experience directing statutory ESIAs, resettlement action plans, climate vulnerability assessments, and safeguards systems across Kenya.",
+    bio: "Belinda Nyakinya is an established environmental and social performance practitioner, registered NEMA Lead Expert, and the Founder and Managing Director of Hope Urban Environmental and Research Investments Limited (HUERI Limited). She has over 15 years of technical experience directing statutory ESIAs, resettlement action plans, climate vulnerability assessments, and safeguards systems across Kenya.",
     verificationStatus: "Verified",
     isCoreLeadership: true,
     category: "Leadership",
     credentials: [
-      "NEMA Registered Lead Expert #7718",
+      "NEMA Registered Lead Expert",
       "MSc. Environmental Studies",
       "BSc. Natural Resource Management"
     ],
@@ -1575,7 +1575,7 @@ export const initialResources: Resource[] = [
     id: "res-1",
     title: "HUERI Limited Corporate Capability & Institutional Profile 2026",
     category: "Corporate Profile",
-    description: "Official institutional profile detailing NEMA registration F0026, corporate governance, multidisciplinary service pillars, quality assurance protocols, and verified track record.",
+    description: "Official institutional profile detailing statutory NEMA registration, corporate governance, multidisciplinary service pillars, quality assurance protocols, and verified track record.",
     downloadCount: 142,
     fileSize: "2.4 MB"
   },

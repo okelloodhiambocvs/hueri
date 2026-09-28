@@ -47,6 +47,27 @@ export function initDatabase(): Database {
     fs.mkdirSync(DATA_DIR, { recursive: true });
   }
 
+  if (fs.existsSync(DATA_FILE)) {
+    try {
+      const fileData = fs.readFileSync(DATA_FILE, 'utf-8');
+      const parsed = JSON.parse(fileData);
+      if (parsed && typeof parsed === 'object') {
+        return {
+          leads: Array.isArray(parsed.leads) ? parsed.leads : [],
+          applicants: Array.isArray(parsed.applicants) ? parsed.applicants : [],
+          newsletter: Array.isArray(parsed.newsletter) ? parsed.newsletter : [],
+          projects: Array.isArray(parsed.projects) && parsed.projects.length > 0 ? parsed.projects : initialProjects,
+          leadershipExperience: Array.isArray(parsed.leadershipExperience) && parsed.leadershipExperience.length > 0 ? parsed.leadershipExperience : initialLeadershipExperience,
+          articles: Array.isArray(parsed.articles) && parsed.articles.length > 0 ? parsed.articles : initialArticles,
+          services: Array.isArray(parsed.services) && parsed.services.length > 0 ? parsed.services : initialServices,
+          resources: Array.isArray(parsed.resources) && parsed.resources.length > 0 ? parsed.resources : initialResources
+        };
+      }
+    } catch (e) {
+      console.warn('Could not read existing db.json, generating fresh seed:', e);
+    }
+  }
+
   const fresh: Database = {
     leads: [
       {

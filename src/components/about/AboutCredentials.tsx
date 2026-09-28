@@ -14,9 +14,6 @@ export default function AboutCredentials() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E5DFD5] dark:border-slate-800 pb-5">
         <div className="space-y-1.5">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-            STATUTORY COMPLIANCE & LEGAL ACCREDITATION
-          </span>
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-stone-900 dark:text-white tracking-tight">
             Corporate Credentials & Statutory Registrations
           </h2>
@@ -41,7 +38,7 @@ export default function AboutCredentials() {
           <span>Statutory Document Verification Notice</span>
         </div>
         <p className="font-light leading-relaxed">
-          The corporate credentials below reflect statutory records maintained by HUERI Limited. Specific annual practicing licences (including NEMA Firm Practicing Licence <code>NEMA/ENVIS/ELi/F0026</code>) and corporate registration archives (<code>CPR/2014/168986</code>) are subject to current certified copy verification against active registrar documents. Certified true copies are provided in formal RFP and tender bid submissions upon client request.
+          The corporate credentials below reflect statutory records maintained by HUERI Limited. In accordance with corporate governance and data privacy protocols, statutory practicing licenses, lead expert certifications, and registrar records are private documentation provided directly to prospective clients, partners, and tender evaluation committees upon request.
         </p>
       </div>
 

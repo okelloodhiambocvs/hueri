@@ -32,12 +32,6 @@ export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership,
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
         
-        {/* Partnership & Collaboration Pre-Header Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-green-500/20 border border-emerald-400/40 backdrop-blur-md text-emerald-300 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Strategic In-Country Partner & Consortium Co-Lead | Kenya & East Africa</span>
-        </div>
-
         {/* Main Authoritative Headline */}
         <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-white leading-[1.15] drop-shadow-md max-w-4xl mx-auto">
           Your Trusted African Partner for <br className="hidden sm:inline" />
@@ -48,24 +42,8 @@ export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership,
 
         {/* Concise Collaboration-Focused Executive Statement */}
         <p className="text-sm sm:text-base lg:text-lg text-slate-100 max-w-3xl mx-auto font-sans font-light leading-relaxed drop-shadow-md">
-          <strong className="font-semibold text-white">HUERI Limited</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm headquartered in Kisumu, Kenya (NEMA Reg. <strong className="text-emerald-300 font-semibold">F0026</strong>). We collaborate with international engineering primes, multilateral financiers (World Bank, IFC, AfDB), EPC contractors, and county governments as an on-the-ground technical co-delivery partner—securing statutory NEMA approvals, orchestrating land resettlement (RAP), and supervising active site safeguards compliance.
+          <strong className="font-semibold text-white">HUERI Limited</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm headquartered in Kisumu, Kenya. We collaborate with engineering primes, multilateral financiers (World Bank, IFC, AfDB), EPC contractors, and county governments as an on-the-ground technical delivery partner—securing statutory NEMA approvals, orchestrating land resettlement (RAP), and supervising active site safeguards compliance.
         </p>
-
-        {/* Collaboration Readiness Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] font-mono text-emerald-200">
-          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 backdrop-blur-sm">
-            ✓ Consortium Teaming & JV Ready
-          </span>
-          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 backdrop-blur-sm">
-            ✓ NEMA Registered Firm F0026
-          </span>
-          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 backdrop-blur-sm">
-            ✓ WB ESF & IFC PS Aligned
-          </span>
-          <span className="px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 backdrop-blur-sm">
-            ✓ 47-County Field Mobilisation
-          </span>
-        </div>
 
         {/* Dynamic Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">

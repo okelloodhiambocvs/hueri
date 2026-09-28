@@ -137,7 +137,7 @@ export default function CompanyProfileModal({ isOpen, onClose, onRequestProposal
                   <div className="text-xs font-mono font-bold text-stone-400 uppercase tracking-wider">Section 1–3</div>
                   <h4 className="font-heading font-bold text-sm text-stone-900 dark:text-white">Institutional Foundation & Governance</h4>
                   <p className="text-xs text-stone-600 dark:text-slate-300 font-light">
-                    Incorporation records (CPR/2014/168986), NEMA registration (#7718 & F0026), Vision, Mission, and Guiding Principles.
+                    Incorporation records, statutory NEMA registrations, Vision, Mission, and Guiding Principles.
                   </p>
                 </div>
 

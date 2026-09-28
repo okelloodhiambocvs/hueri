@@ -43,7 +43,7 @@ export default function AboutPage({
               Institutional Profile, Leadership & Governance
             </h1>
             <p className="text-xs sm:text-sm text-slate-200 font-light leading-relaxed">
-              Hope Urban Environmental and Research Investments Limited (HUERI Limited) was incorporated in 2014, building on collaboration dating back to 2007. Led by Managing Director Belinda Nyakinya (NEMA Lead Expert #7718).
+              Hope Urban Environmental and Research Investments Limited (HUERI Limited) was incorporated in 2014, building on collaboration dating back to 2007. Led by Founder & Managing Director Belinda Nyakinya, registered NEMA Lead Expert. Complete statutory credentials and documentation are available upon request.
             </p>
           </div>
         </div>

@@ -21,13 +21,13 @@ export default function FAQSection() {
       id: "faq_firm_identity",
       category: "Licensing & Standards",
       question: "What is HUERI Limited's geographic scope, licensing credentials, and institutional positioning?",
-      answer: "Hope Urban Environmental and Research Investments Limited (HUERI Limited) is an independent Africa-based environmental, social, health, safety, climate and sustainability advisory firm headquartered in Kisumu, Kenya. Incorporated in 2014 (CPR/2014/168986) with collaborative origins dating to 2007, HUERI combines deep African local context with internationally recognized standards (World Bank ESF, IFC Performance Standards, AfDB ISS, Equator Principles) to serve assignments across Kenya, East Africa, and the wider continent through global partnerships."
+      answer: "Hope Urban Environmental and Research Investments Limited (HUERI Limited) is an independent Africa-based environmental, social, health, safety, climate and sustainability advisory firm headquartered in Kisumu, Kenya. Incorporated in 2014 with professional collaborative roots dating to 2007, HUERI combines deep African local context with internationally recognized standards (World Bank ESF, IFC Performance Standards, AfDB ISS, Equator Principles) to serve assignments across Kenya, East Africa, and the wider continent through qualified partnerships."
     },
     {
       id: "faq_nema_licence",
       category: "Licensing & Standards",
       question: "Is HUERI Limited an officially registered and licensed Firm of Experts with NEMA in 2026?",
-      answer: "Yes. HUERI Limited holds valid annual Firm of Experts licence NEMA/ENVIS/ELi/F0026 and Registration Certificate NEMA/EIA/RC/1058. Managing Director Belinda Nyakinya is registered as Lead Expert (#7718). Engaging a licensed firm is a mandatory statutory requirement under EMCA Cap 387 in Kenya and prevents regulatory invalidation or project work stoppages."
+      answer: "Yes. HUERI Limited is an officially registered and practicing Firm of Experts with NEMA under EMCA Cap 387, directed by certified NEMA Lead Experts. As a matter of corporate privacy and professional compliance, statutory practicing licenses and official registration certificates are considered private documentation and are provided directly to clients, prospective partners, and procurement evaluation panels upon formal request."
     },
     {
       id: "faq_lender_standards",
@@ -129,13 +129,6 @@ export default function FAQSection() {
                   className="w-full flex items-center justify-between p-4 sm:p-5 text-left cursor-pointer transition-colors"
                 >
                   <div className="flex items-start space-x-3">
-                    <span className={`mt-0.5 h-6 w-6 rounded-lg font-mono text-xs font-bold flex items-center justify-center shrink-0 transition-colors ${
-                      isOpen 
-                        ? 'bg-brand-green-700 text-white' 
-                        : 'bg-[#FAF8F5] dark:bg-slate-800 text-stone-800 dark:text-blue-300 border border-[#E0D9CD] dark:border-slate-700'
-                    }`}>
-                      0{idx + 1}
-                    </span>
                     <span className="font-heading font-bold text-stone-900 dark:text-white text-sm sm:text-base leading-snug">
                       {faq.question}
                     </span>

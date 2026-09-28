@@ -143,7 +143,7 @@ export default function LegalPoliciesModal({
         {/* Footer */}
         <div className="p-4 sm:p-5 bg-slate-50 dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500 dark:text-slate-400 shrink-0 font-mono">
           <div>
-            <span>HUERI LIMITED • Licensed NEMA Firm of Experts (NEMA/ENVIS/ELi/F0026) • Kisumu, Kenya</span>
+            <span>HUERI LIMITED • Registered NEMA Firm of Experts • Kisumu, Kenya</span>
           </div>
           <button
             onClick={onClose}

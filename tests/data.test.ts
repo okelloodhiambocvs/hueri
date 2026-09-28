@@ -57,7 +57,7 @@ describe('Seed Data & Rebranding Integrity', () => {
     expect(initialCredentials.length).toBeGreaterThanOrEqual(4);
     const credRefs = initialCredentials.map(c => c.reference);
     expect(credRefs.some(r => r.includes('CPR/2014/168986'))).toBe(true);
-    expect(credRefs.some(r => r.includes('NEMA/ENVIS/ELi/F0026'))).toBe(true);
+    expect(credRefs.some(r => r.toLowerCase().includes('request') || r.toLowerCase().includes('statutory'))).toBe(true);
   });
 
   it('contains certified African project references', () => {

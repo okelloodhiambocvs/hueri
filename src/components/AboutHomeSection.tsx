@@ -18,15 +18,12 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
         {/* Top Header: Purpose & Identity */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b border-[#E5DFD5] dark:border-slate-800 pb-5">
           <div className="max-w-3xl space-y-2">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-              INSTITUTIONAL PURPOSE & PARTNERSHIP MANDATE
-            </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-stone-900 dark:text-white tracking-tight leading-tight">
               Grounded in African Realities. <br className="hidden sm:inline" />
               Engineered for Global Consortia.
             </h2>
             <p className="text-xs sm:text-sm text-stone-700 dark:text-slate-200 font-sans leading-relaxed font-light">
-              <strong>Hope Urban Environmental and Research Investments Limited (HUERI Limited)</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm incorporated in 2014 (NEMA Firm Licence: <strong>NEMA/ENVIS/ELi/F0026</strong>). As a preferred in-country delivery and consortium partner, HUERI empowers international engineering primes, development financiers, and public agencies to obtain statutory approvals, ensure rigorous safeguard compliance, resolve land resettlement challenges, and manage project risks across Africa.
+              <strong>Hope Urban Environmental and Research Investments Limited (HUERI Limited)</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm incorporated in 2014 (NEMA Registered Firm of Experts). As a preferred in-country delivery and consortium partner, HUERI empowers international engineering primes, development financiers, and public agencies to obtain statutory approvals, ensure rigorous safeguard compliance, resolve land resettlement challenges, and manage project risks across Africa.
             </p>
           </div>
 
@@ -46,22 +43,14 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
           </div>
         </div>
 
-        {/* 3 Core Value Proposition Pillars */}
+        {/* Core Value Proposition Pillars */}
         <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
           
-            {/* Pillar 1: Emerald Theme */}
+          {/* Pillar 1: Emerald Theme */}
           <div 
             onClick={() => onNavigate('about', 'about-leadership')}
             className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-emerald-500/30 hover:border-emerald-600 hover:bg-emerald-50/50 dark:hover:bg-emerald-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
           >
-            <div className="flex items-center justify-between">
-              <span className="h-7 w-7 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-mono text-xs font-bold flex items-center justify-center">
-                01
-              </span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-bold">
-                COMMUNITY & GOVERNANCE
-              </span>
-            </div>
             <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-emerald-800 dark:group-hover:text-emerald-300 transition-colors">
               Local Realities & Lender Alignment
             </h3>
@@ -78,14 +67,6 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
             onClick={() => onNavigate('services', 'service-pillar-2')}
             className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-blue-500/30 hover:border-blue-600 hover:bg-blue-50/50 dark:hover:bg-blue-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
           >
-            <div className="flex items-center justify-between">
-              <span className="h-7 w-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 font-mono text-xs font-bold flex items-center justify-center">
-                02
-              </span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-blue-700 dark:text-blue-400 font-bold">
-                SAFEGUARDS & COMPLIANCE
-              </span>
-            </div>
             <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-300 transition-colors">
               Safeguards Delivery & Compliance
             </h3>
@@ -102,14 +83,6 @@ export default function AboutHomeSection({ onNavigate, onRequestProposal }: Abou
             onClick={() => onNavigate('services', 'service-pillar-3')}
             className="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-amber-500/30 hover:border-amber-600 hover:bg-amber-50/50 dark:hover:bg-amber-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer group space-y-3"
           >
-            <div className="flex items-center justify-between">
-              <span className="h-7 w-7 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 font-mono text-xs font-bold flex items-center justify-center">
-                03
-              </span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-amber-700 dark:text-amber-400 font-bold">
-                CLIMATE & ECOLOGY
-              </span>
-            </div>
             <h3 className="font-heading font-bold text-base text-stone-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
               Empirical Baseline & Spatial Assessment
             </h3>

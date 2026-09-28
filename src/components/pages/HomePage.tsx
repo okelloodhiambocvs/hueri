@@ -25,59 +25,44 @@ export default function HomePage({
 
   const consolidatedPillars = [
     {
-      num: '01',
       id: 'service-pillar-1',
       title: 'Statutory Licencing & ESIA',
       desc: 'NEMA environmental and social impact assessments, Strategic Environmental Assessments (SEA), and official approvals.',
-      tag: 'Statutory Clearances',
       color: 'emerald',
       bgHover: 'hover:bg-emerald-50/80 dark:hover:bg-emerald-950/40',
-      borderHover: 'hover:border-emerald-500',
-      tagColor: 'text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60'
+      borderHover: 'hover:border-emerald-500'
     },
     {
-      num: '02',
       id: 'service-pillar-2',
       title: 'Social Safeguards & Resettlement',
       desc: 'Resettlement Action Plans (RAP), socio-economic census, asset valuation, livelihood restoration & barazas.',
-      tag: 'Social Performance',
       color: 'blue',
       bgHover: 'hover:bg-blue-50/80 dark:hover:bg-blue-950/40',
-      borderHover: 'hover:border-blue-500',
-      tagColor: 'text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/60'
+      borderHover: 'hover:border-blue-500'
     },
     {
-      num: '03',
       id: 'service-pillar-3',
       title: 'Climate Resilience & Ecology',
       desc: 'Climate vulnerability profiling, hydrological modeling, biodiversity baselines, and nature-based solutions.',
-      tag: 'Climate & Ecology',
       color: 'teal',
       bgHover: 'hover:bg-teal-50/80 dark:hover:bg-teal-950/40',
-      borderHover: 'hover:border-teal-500',
-      tagColor: 'text-teal-700 dark:text-teal-400 bg-teal-100 dark:bg-teal-950/60'
+      borderHover: 'hover:border-teal-500'
     },
     {
-      num: '04',
       id: 'service-pillar-4',
       title: 'Safety & Compliance Audits',
       desc: 'Annual statutory NEMA audits, workplace occupational health & safety (OHS), and hazardous waste monitoring.',
-      tag: 'Audits & Safety',
       color: 'amber',
       bgHover: 'hover:bg-amber-50/80 dark:hover:bg-amber-950/40',
-      borderHover: 'hover:border-amber-500',
-      tagColor: 'text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/60'
+      borderHover: 'hover:border-amber-500'
     },
     {
-      num: '05',
       id: 'service-pillar-5',
       title: 'ESG & Lender Standards',
       desc: 'World Bank ESF, IFC Performance Standards, AfDB ISS, and lender Environmental & Social Due Diligence (ESDD).',
-      tag: 'Lender Standards',
       color: 'purple',
       bgHover: 'hover:bg-purple-50/80 dark:hover:bg-purple-950/40',
-      borderHover: 'hover:border-purple-500',
-      tagColor: 'text-purple-700 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/60'
+      borderHover: 'hover:border-purple-500'
     }
   ];
 
@@ -205,9 +190,6 @@ export default function HomePage({
       {/* 2. What We Do at a Glance (5 Consolidated Pillars) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-            5 CORE ADVISORY PILLARS
-          </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-stone-900 dark:text-white tracking-tight">
             Integrated Advisory Practices
           </h2>
@@ -224,14 +206,6 @@ export default function HomePage({
               className={`p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-[#E5DFD5] dark:border-slate-700/80 ${p.bgHover} ${p.borderHover} hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between group shadow-sm`}
             >
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="h-7 w-7 rounded-lg bg-stone-100 dark:bg-slate-700 text-stone-900 dark:text-white font-mono text-xs font-bold flex items-center justify-center group-hover:scale-105 transition-transform">
-                    {p.num}
-                  </span>
-                  <span className={`text-[10px] font-mono uppercase tracking-wider font-bold px-2 py-0.5 rounded-full ${p.tagColor}`}>
-                    {p.tag}
-                  </span>
-                </div>
                 <h3 className="font-heading font-bold text-sm sm:text-base text-stone-900 dark:text-white group-hover:text-brand-green-700 dark:group-hover:text-emerald-400 transition-colors leading-snug">
                   {p.title}
                 </h3>
@@ -258,9 +232,6 @@ export default function HomePage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-[#E5DFD5] dark:border-slate-800 pb-5">
           <div className="space-y-1.5">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-              PORTFOLIO HIGHLIGHTS
-            </span>
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-stone-900 dark:text-white tracking-tight">
               Selected Advisory Disciplines
             </h2>
@@ -302,13 +273,7 @@ export default function HomePage({
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-100 contrast-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white bg-brand-blue-900/90 px-2.5 py-0.5 rounded-full border border-white/20">
-                      {practice.badge}
-                    </span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
 
                 <div className="p-4 space-y-2.5">
@@ -348,9 +313,6 @@ export default function HomePage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-[#E5DFD5] dark:border-slate-800 pb-5">
           <div className="space-y-1.5">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400 block">
-              DEMONSTRATED DELIVERY
-            </span>
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-stone-900 dark:text-white tracking-tight">
               Selected Environmental and Social Assignments
             </h2>
@@ -382,12 +344,6 @@ export default function HomePage({
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-mono font-bold tracking-wider text-white uppercase bg-emerald-700/95 px-2.5 py-0.5 rounded-full border border-white/20">
-                      {proj.badge}
-                    </span>
-                  </div>
 
                   <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-emerald-300">
                     <span>{proj.location}</span>
@@ -426,14 +382,9 @@ export default function HomePage({
         {/* Dedicated Leadership Experience Callout (KDSP II) */}
         <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-brand-green-600/30 dark:border-emerald-500/30 space-y-3 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white bg-brand-green-700 dark:bg-emerald-700 px-2.5 py-0.5 rounded-full">
-                Leadership Experience
-              </span>
-              <h4 className="font-heading font-bold text-sm sm:text-base text-stone-900 dark:text-white">
-                National Environmental and Social Safeguards Support – KDSP II
-              </h4>
-            </div>
+            <h4 className="font-heading font-bold text-sm sm:text-base text-stone-900 dark:text-white">
+              National Environmental and Social Safeguards Support – KDSP II
+            </h4>
             <span className="text-xs font-mono font-bold text-stone-500 dark:text-slate-400">
               2025–Present
             </span>
@@ -467,27 +418,25 @@ export default function HomePage({
         <div className="rounded-3xl overflow-hidden bg-[#07162C] border-2 border-emerald-500/30 text-white shadow-xl relative">
           <div className="grid lg:grid-cols-12 items-center">
             <div className="lg:col-span-8 p-6 sm:p-8 lg:p-10 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase tracking-wider">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>GLOBAL COLLABORATION & IN-COUNTRY TEAMING</span>
-              </div>
               <h3 className="font-heading font-black text-2xl sm:text-3xl text-white tracking-tight">
                 Partner with HUERI on African Infrastructure, Energy & Safeguards Tenders
               </h3>
               <p className="text-xs sm:text-sm text-slate-200 font-sans font-light leading-relaxed max-w-3xl">
                 We regularly partner with international engineering firms, multilateral prime contractors, and regional developers as a trusted local delivery co-lead. We bring NEMA-licensed lead experts, World Bank ESF / IFC PS proficiency, 47-county mobilization capacity, and established community networks to ensure flawless bid compliance and in-situ project delivery.
               </p>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {[
-                  'Joint Venture & Consortia Submissions',
-                  'In-Country Safeguards Delivery Partner',
-                  'Master Service Agreements (MSA)',
-                  'Rapid Technical Proposal Backstopping'
-                ].map((item, i) => (
-                  <span key={i} className="px-2.5 py-1 rounded-lg bg-white/10 text-emerald-200 font-mono text-[10px] font-semibold border border-white/10">
-                    ✓ {item}
-                  </span>
-                ))}
+              <div className="grid sm:grid-cols-2 gap-2 pt-1 text-xs text-emerald-200">
+                <div className="flex items-center gap-2">
+                  <span className="text-emerald-400">✓</span> Joint Venture & Consortia Submissions
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-emerald-400">✓</span> In-Country Safeguards Delivery Partner
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-emerald-400">✓</span> Master Service Agreements (MSA)
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-emerald-400">✓</span> Rapid Technical Proposal Backstopping
+                </div>
               </div>
             </div>
             <div className="lg:col-span-4 p-6 sm:p-8 lg:p-10 flex flex-col gap-3 justify-center bg-white/5 border-t lg:border-t-0 lg:border-l border-white/10">
@@ -501,21 +450,18 @@ export default function HomePage({
                 onClick={() => onNavigate('partnerships')}
                 className="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-slate-100 font-mono font-bold text-xs uppercase tracking-wider transition-all border border-white/20 text-center cursor-pointer hover:-translate-y-0.5"
               >
-                Explore 6 Partnership Models
+                Explore Partnership Models
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. Sectors Strip */}
+      {/* Sectors Strip */}
       <section className="bg-white dark:bg-slate-900/80 py-10 sm:py-14 border-y border-[#E5DFD5] dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-1.5">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">
-                PRIORITY INFRASTRUCTURE & ECONOMIC PILLARS
-              </span>
               <h2 className="text-2xl sm:text-3xl font-heading font-black text-stone-900 dark:text-white tracking-tight">
                 Serving Key African Sectors
               </h2>
@@ -527,7 +473,7 @@ export default function HomePage({
               onClick={() => onNavigate('sectors')}
               className="px-3.5 py-1.5 bg-brand-green-700 hover:bg-brand-green-600 text-white text-[10px] font-mono font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm cursor-pointer hover:-translate-y-0.5 shrink-0"
             >
-              Explore All 10 Sectors →
+              Explore All Sectors →
             </button>
           </div>
 
@@ -546,15 +492,7 @@ export default function HomePage({
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-100 contrast-105"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    
-                    <span className="absolute top-2.5 left-2.5 text-[9px] font-mono font-bold text-white bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded border border-white/20">
-                      0{idx + 1}
-                    </span>
-
-                    <span className="absolute bottom-2 left-2.5 text-[9px] font-mono font-bold text-emerald-300">
-                      {s.badge}
-                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>
 
                   <div className="p-3.5 space-y-1">

@@ -96,8 +96,8 @@ export function generateBrochurePDF(services: Service[]) {
             Hope Urban Environmental and Research Investments Limited
           </div>
           <div class="meta">
-            NEMA Licenced Firm of Experts (NEMA/ENVIS/ELi/F0026) • Reg # NEMA/EIA/RC/1058<br/>
-            Managing Director: Belinda Nyakinya (NEMA Lead Reg. #7718) • Kisumu, Kenya
+            NEMA Registered Firm of Experts • Registered in Kenya<br/>
+            Managing Director: Belinda Nyakinya (NEMA Registered Lead Expert) • Kisumu, Kenya
           </div>
         </div>
 

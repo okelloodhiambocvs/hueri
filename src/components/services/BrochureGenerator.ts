@@ -27,7 +27,7 @@ export function generateBrochurePDF(services: Service[]) {
       doc.text(`HUERI LIMITED`, 15, 12);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(100, 116, 139);
-      doc.text(` | NEMA Licensed Environmental Consultants (NEMA/ENVIS/ELi/F0026)`, 41, 12);
+      doc.text(` | NEMA Licensed Environmental Consultants`, 41, 12);
       
       doc.setDrawColor(241, 245, 249);
       doc.line(15, 14, 195, 14);
@@ -72,9 +72,9 @@ export function generateBrochurePDF(services: Service[]) {
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.setTextColor(51, 65, 85);
-  doc.text('• NEMA Firm of Experts Annual Licence: NEMA/ENVIS/ELi/F0026', 28, 115);
-  doc.text('• NEMA Corporate Register Certificate: NEMA/EIA/RC/1058', 28, 122);
-  doc.text('• Company Registration / Incorporation: CPR/2014/168986 (Est. 2014)', 28, 129);
+  doc.text('• NEMA Registered Firm of Experts (Credentials on File)', 28, 115);
+  doc.text('• Certified Statutory Compliance & Practicing Authorizations', 28, 122);
+  doc.text('• Incorporated Limited Company (Established 2014)', 28, 129);
   doc.text('• DOSHS Occupational Health & Safety Compliance Auditing', 28, 136);
   doc.text('• World Bank ESF (ESS1-10) & IFC Performance Standards (PS1-8) Alignment', 28, 143);
   doc.text('• Water Resources Authority (WRA) Hydrogeological Permitting Support', 28, 150);
@@ -88,7 +88,7 @@ export function generateBrochurePDF(services: Service[]) {
   doc.setFontSize(9.5);
   doc.setTextColor(71, 85, 105);
   doc.text('Headquarters: Milimani Estate, Kisumu City, Kenya (P.O. Box 7919 - 40100)', 20, 184);
-  doc.text('Founder & Managing Director: Belinda Nyakinya (NEMA Lead Expert #7718)', 20, 192);
+  doc.text('Founder & Managing Director: Belinda Nyakinya (NEMA Registered Lead Expert)', 20, 192);
   doc.text('Telephone: +254 721 410139', 20, 200);
   doc.text('General Enquiries: info@hueriafrica.com', 20, 208);
   doc.text('Proposal Desk: proposals@hueriafrica.com | Partnerships: partnerships@hueriafrica.com', 20, 216);

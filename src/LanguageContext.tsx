@@ -32,7 +32,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.partner_with_us': 'PARTNER WITH US',
 
     // Hero Section
-    'hero.badge': 'NEMA LICENSED FIRM OF EXPERTS • REG #1058',
+    'hero.badge': 'ENVIRONMENTAL & SOCIAL IMPACT CONSULTANTS • KENYA & AFRICA',
     'hero.title_part1': 'Enabling Responsible,',
     'hero.title_part2': 'Climate-Resilient Development Across Africa',
     'hero.desc': 'Hope Urban Environmental and Research Investments Limited (HUERI Limited) is an independent Africa-based environmental, social, health, safety, climate, sustainability and development advisory firm. Combining deep African context with internationally aligned standards (IFC, World Bank, AfDB, Equator Principles) to build development that lasts.',
