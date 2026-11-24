@@ -35,7 +35,7 @@ export default function PageHero({
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-xl space-y-4">
+        <div className="max-w-2xl space-y-4">
           <h1 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight text-white leading-[1.12] drop-shadow">
             {title}
           </h1>

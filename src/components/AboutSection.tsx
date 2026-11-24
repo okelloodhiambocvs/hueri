@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import photoAssets from '../utils/photoAssets';
 import { generateInstitutionalProfilePDF } from '../utils/companyProfileGenerator';
+import { serviceSummaries } from '../utils/serviceRoutes';
 import PageHero from './PageHero';
 import {
   Download,
@@ -32,6 +33,25 @@ export default function AboutSection({
       setIsDownloading(false);
     }, 600);
   };
+
+  const coreValues = [
+    {
+      title: 'Commitment to Sustainable Development',
+      description: 'HUERI is committed to promoting sustainable development in the East African region and globally. This core value underscores the organization\'s mission to provide professional environmental and research consultancy services that prioritize long-term environmental and social sustainability.'
+    },
+    {
+      title: 'Excellence and Professionalism',
+      description: 'HUERI places a strong emphasis on excellence and professionalism in all its services. The organization\'s pool of consultants and associates, with their strong academic credentials and extensive experience, strive to provide high-quality, reliable, and ethical consultancy services to clients.'
+    },
+    {
+      title: 'Centric Approach',
+      description: 'HUERI values active engagement with stakeholders and local communities. The organization recognizes the importance of understanding and involving stakeholders in the decision-making process to ensure that projects align with local needs and environmental considerations.'
+    },
+    {
+      title: 'Innovation and Adaptability',
+      description: 'HUERI emphasizes innovation and adaptability to address the evolving challenges in the field of environmental consultancy. The organization aims to continually improve its services, embrace new technologies, and adapt to changing regulations to remain at the forefront of the industry.'
+    }
+  ];
 
   const problemItems = [
     {
@@ -92,6 +112,31 @@ export default function AboutSection({
     }
   ];
 
+  const whyChooseUsItems = [
+    {
+      number: '01',
+      title: 'Accredited Field Specialists',
+      description: 'Assignments are led by certified Lead Experts, socio-economists, safety auditors, and GIS specialists with hands-on African delivery experience.'
+    },
+    {
+      number: '02',
+      title: 'Local & Lender Alignment',
+      description: 'We bridge Kenyan regulatory requirements seamlessly with World Bank ESF, IFC Performance Standards, and AfDB safeguard expectations.'
+    },
+    {
+      number: '03',
+      title: 'Community & County Reach',
+      description: 'Headquartered in Kisumu with active fieldwork capacity across all 47 counties, grounded in transparent community barazas and stakeholder dialogue.'
+    },
+    {
+      number: '04',
+      title: 'Full Lifecycle Continuity',
+      description: 'One integrated partner from early screening and ESIA approvals through construction supervision, annual audits, and climate resilience.'
+    }
+  ];
+
+  const marqueeServices = [...serviceSummaries, ...serviceSummaries];
+
   return (
     <div className="space-y-12 sm:space-y-14 font-sans">
 
@@ -120,7 +165,64 @@ export default function AboutSection({
         </button>
       </PageHero>
 
-      {/* 2. The Problem */}
+      {/* 2. Overview — Concise 2-3 Sentence Introduction */}
+      <section id="about-overview" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+          Overview
+        </h2>
+        <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light max-w-3xl mx-auto">
+          Hope Urban Environmental and Research Investments Limited (HUERI Limited) is a Kenyan environmental, social, health, safety, and sustainability consultancy headquartered in Kisumu. Incorporated in 2014 with professional roots dating back to 2007, we work alongside developers, public agencies, contractors, and international financiers to guide responsible infrastructure and investment delivery across Kenya and East Africa.
+        </p>
+      </section>
+
+      {/* 3. Vision, Mission & Core Values */}
+      <section id="about-vision-mission" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 scroll-mt-24">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="bg-slate-50 dark:bg-[#06183A] p-6 sm:p-8 rounded-xl space-y-2.5">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+              Our Vision
+            </h3>
+            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+              To be one of the leading Environmental and Research Consultancy Firms in the East African Region, expanding globally with a focus on promoting sustainable development.
+            </p>
+          </div>
+
+          <div className="bg-slate-50 dark:bg-[#06183A] p-6 sm:p-8 rounded-xl space-y-2.5">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+              Our Mission
+            </h3>
+            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+              To provide professional Environmental and Research Consultancy Services to our clients, promoting sustainable development.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+              Core Values
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {coreValues.map((value) => (
+              <div
+                key={value.title}
+                className="bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-2"
+              >
+                <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+                  {value.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                  {value.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. The Problem */}
       <section id="about-problem" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black uppercase text-[#003B95] dark:text-white tracking-wider">
@@ -164,7 +266,7 @@ export default function AboutSection({
         </div>
       </section>
 
-      {/* 3. Our Approach — Clean Photo with NO text underneath */}
+      {/* 5. Our Approach — Clean Photo with NO text underneath */}
       <section id="about-approach" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
@@ -214,7 +316,7 @@ export default function AboutSection({
         </div>
       </section>
 
-      {/* 4. Our Solution — Clean 3-Column Editorial Progression without Underlines */}
+      {/* 6. Our Solution — Clean 3-Column Editorial Progression without Underlines */}
       <section id="about-solution" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
@@ -253,7 +355,100 @@ export default function AboutSection({
         </div>
       </section>
 
-      {/* 5. Leadership & Corporate Credentials */}
+      {/* 7. Our Services — Linear Auto-Scrolling Links Strip Matching Problem Card Photo Sizing */}
+      <section id="about-services-strip" className="space-y-6 scroll-mt-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="space-y-1.5">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              Our Services
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light max-w-2xl">
+              Select any service below to open its full scope, step-by-step methodology, and key deliverables.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => onNavigate('services')}
+            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] cursor-pointer shrink-0"
+          >
+            <span>All Services</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        <div className="service-marquee-wrapper w-full overflow-hidden py-1">
+          <div className="animate-service-marquee gap-6 px-4 sm:px-6 lg:px-8">
+            {marqueeServices.map((service, index) => {
+              const image = photoAssets.services[service.imageKey] || photoAssets.eiaAssessment;
+              const isDuplicate = index >= serviceSummaries.length;
+              return (
+                <button
+                  key={`${service.id}-${index}`}
+                  type="button"
+                  aria-hidden={isDuplicate}
+                  tabIndex={isDuplicate ? -1 : 0}
+                  onClick={() => onNavigate('service-detail', service.slug)}
+                  className="group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col space-y-3 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006B22]"
+                >
+                  <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <img
+                      src={image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] transition-colors leading-snug">
+                      {service.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-light line-clamp-2 leading-relaxed">
+                      {service.snippet}
+                    </p>
+                    <span className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] pt-0.5">
+                      <span>View Service</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Why Choose Us */}
+      <section id="about-why-choose-us" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 scroll-mt-24">
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+            Why Choose Us
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+            Trusted by developers, county governments, contractors, and international financing partners for dependable environmental and social delivery.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {whyChooseUsItems.map((item) => (
+            <div
+              key={item.number}
+              className="bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-2.5"
+            >
+              <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
+                {item.number}
+              </span>
+              <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
+                {item.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 9. Leadership & Corporate Credentials */}
       <section id="about-leadership" className="bg-[#041B44] dark:bg-[#061E4A] text-white py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 

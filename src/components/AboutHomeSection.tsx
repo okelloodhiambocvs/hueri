@@ -12,7 +12,7 @@ interface AboutHomeSectionProps {
 
 export default function AboutHomeSection({ onNavigate }: AboutHomeSectionProps) {
   return (
-    <section className="bg-slate-50 dark:bg-[#06183A] py-10 sm:py-12">
+    <section id="home-grounded" className="bg-white dark:bg-[#041B44] py-6 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         {/* Top Header: Purpose & Identity */}

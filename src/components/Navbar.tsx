@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
-import { Sun, Moon } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Sun, Moon, ChevronDown, ArrowRight } from 'lucide-react';
 import Logo from './Logo';
 import { useLanguage } from '../LanguageContext';
+import { serviceDropdownItems } from '../utils/navDropdowns';
 
 interface NavbarProps {
   currentPage: string;
@@ -23,50 +24,70 @@ export default function Navbar({
   currentPage = 'home',
   onNavigate,
   onRequestProposal,
-  onOpenPartnership,
-  onOpenAdmin,
-  onOpenPolicy = () => {},
   theme = 'light',
   onToggleTheme
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const hoverOpenedPendingClickRef = useRef<boolean>(false);
   const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setServicesOpen(false);
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   const handleNavClick = (pageId: string, sectionId?: string) => {
     onNavigate(pageId, sectionId);
+    setServicesOpen(false);
     setMobileMenuOpen(false);
-    if (!sectionId) {
+    setMobileServicesOpen(false);
+    if (!sectionId || sectionId === 'all') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   return (
-    <nav 
+    <nav
+      ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans ${
-        isScrolled 
-          ? 'bg-white/98 dark:bg-[#041B44]/98 backdrop-blur-md shadow-sm py-3 border-b border-slate-200 dark:border-slate-800' 
-          : 'bg-white dark:bg-[#041B44] py-3.5 border-b border-slate-200 dark:border-slate-800/80'
+        isScrolled
+          ? 'bg-white/98 dark:bg-[#041B44]/98 backdrop-blur-md shadow-sm py-3'
+          : 'bg-white dark:bg-[#041B44] py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-8">
-          
+
           {/* Zone 1: Official Brand Logo */}
-          <button 
-            onClick={() => handleNavClick('home')} 
+          <button
+            onClick={() => handleNavClick('home')}
             className="flex items-center cursor-pointer text-left shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006B22]"
             aria-label="HUERI Limited Home"
           >
@@ -97,16 +118,82 @@ export default function Navbar({
               {language === 'sw' ? 'KUHUSU SISI' : 'ABOUT US'}
             </button>
 
-            <button
-              onClick={() => handleNavClick('services')}
-              className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 ${
-                currentPage === 'services'
-                  ? 'text-[#006B22] dark:text-[#4ADE80]'
-                  : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
-              }`}
+            {/* Our Services Scrollable List Dropdown */}
+            <div
+              className="relative flex items-center"
+              onMouseEnter={() => {
+                if (!servicesOpen) {
+                  hoverOpenedPendingClickRef.current = true;
+                  setServicesOpen(true);
+                }
+              }}
+              onMouseLeave={() => {
+                hoverOpenedPendingClickRef.current = false;
+                setServicesOpen(false);
+              }}
             >
-              OUR SERVICES
-            </button>
+              <button
+                type="button"
+                onClick={() => handleNavClick('services')}
+                className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 ${
+                  currentPage === 'services' || currentPage === 'service-detail'
+                    ? 'text-[#006B22] dark:text-[#4ADE80]'
+                    : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
+                }`}
+              >
+                OUR SERVICES
+              </button>
+              <button
+                type="button"
+                aria-label="Toggle Our Services menu"
+                aria-haspopup="menu"
+                aria-expanded={servicesOpen}
+                onClick={() => {
+                  if (hoverOpenedPendingClickRef.current) {
+                    hoverOpenedPendingClickRef.current = false;
+                    setServicesOpen(true);
+                    return;
+                  }
+                  setServicesOpen((prev) => !prev);
+                }}
+                className={`p-1 transition-colors cursor-pointer ${
+                  currentPage === 'services' || currentPage === 'service-detail'
+                    ? 'text-[#006B22] dark:text-[#4ADE80]'
+                    : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
+                }`}
+              >
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    servicesOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+
+              {servicesOpen && (
+                <div className="absolute left-0 top-full pt-2 w-84 sm:w-[400px] z-50">
+                  <div
+                    role="menu"
+                    aria-label="Our Services Navigation"
+                    className="bg-white dark:bg-[#06183A] rounded-xl shadow-xl ring-1 ring-slate-200/80 dark:ring-slate-700/70 p-2 max-h-[340px] overflow-y-auto overscroll-contain space-y-1"
+                  >
+                    {serviceDropdownItems.map((service) => (
+                      <button
+                        key={service.id}
+                        type="button"
+                        role="menuitem"
+                        onClick={() => handleNavClick('service-detail', service.slug)}
+                        className="w-full text-left px-4 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-[#0B2559] transition-colors cursor-pointer group flex items-center justify-between gap-3"
+                      >
+                        <span className="text-[15px] sm:text-base font-heading font-bold text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] leading-snug">
+                          {service.label}
+                        </span>
+                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] shrink-0" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
             <button
               onClick={() => handleNavClick('sectors')}
@@ -136,7 +223,7 @@ export default function Navbar({
             {onToggleTheme && (
               <button
                 onClick={onToggleTheme}
-                className="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-[#003B95] dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer border border-slate-200 dark:border-slate-700 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#006B22] focus-visible:outline-none"
+                className="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-[#003B95] dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#006B22] focus-visible:outline-none"
                 title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
                 aria-label={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
               >
@@ -161,7 +248,7 @@ export default function Navbar({
             {onToggleTheme && (
               <button
                 onClick={onToggleTheme}
-                className="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-[#003B95] dark:text-amber-400 transition-colors border border-slate-200 dark:border-slate-700 flex items-center justify-center"
+                className="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 text-[#003B95] dark:text-amber-400 transition-colors flex items-center justify-center"
                 title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
                 aria-label={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
               >
@@ -175,7 +262,7 @@ export default function Navbar({
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[#003B95] dark:text-white font-mono text-xs font-bold uppercase border border-slate-200 dark:border-slate-700"
+              className="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-[#003B95] dark:text-white text-xs font-bold uppercase"
             >
               {mobileMenuOpen ? 'CLOSE' : 'MENU'}
             </button>
@@ -186,7 +273,7 @@ export default function Navbar({
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-[#041B44] border-b border-slate-200 dark:border-slate-800 px-4 pt-4 pb-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden bg-white dark:bg-[#041B44] px-4 pt-4 pb-6 space-y-3 shadow-xl max-h-[85vh] overflow-y-auto">
           <div className="flex flex-col space-y-1">
             <button
               onClick={() => handleNavClick('home')}
@@ -210,16 +297,44 @@ export default function Navbar({
               ABOUT US
             </button>
 
-            <button
-              onClick={() => handleNavClick('services')}
-              className={`text-left py-2.5 px-3 rounded-lg text-sm font-heading font-bold uppercase tracking-wider ${
-                currentPage === 'services'
-                  ? 'text-[#006B22] dark:text-[#4ADE80] bg-slate-100 dark:bg-slate-800 font-extrabold'
-                  : 'text-[#003B95] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
-              }`}
-            >
-              OUR SERVICES
-            </button>
+            {/* Mobile Our Services Row + Expandable Scrollable List */}
+            <div>
+              <div className="flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('services')}
+                  className={`flex-1 text-left py-2.5 px-3 rounded-lg text-sm font-heading font-bold uppercase tracking-wider ${
+                    currentPage === 'services' || currentPage === 'service-detail'
+                      ? 'text-[#006B22] dark:text-[#4ADE80] bg-slate-100 dark:bg-slate-800 font-extrabold'
+                      : 'text-[#003B95] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                  }`}
+                >
+                  OUR SERVICES
+                </button>
+                <button
+                  type="button"
+                  aria-label="Toggle Mobile Services list"
+                  onClick={() => setMobileServicesOpen((prev) => !prev)}
+                  className="p-2.5 text-[#003B95] dark:text-white"
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
+              {mobileServicesOpen && (
+                <div className="pl-4 py-1 space-y-1 max-h-64 overflow-y-auto">
+                  {serviceDropdownItems.map((service) => (
+                    <button
+                      key={service.id}
+                      type="button"
+                      onClick={() => handleNavClick('service-detail', service.slug)}
+                      className="w-full text-left py-2.5 px-3 rounded-lg text-sm font-heading font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60"
+                    >
+                      {service.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <button
               onClick={() => handleNavClick('sectors')}
@@ -244,7 +359,7 @@ export default function Navbar({
             </button>
           </div>
 
-          <div className="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-2">
+          <div className="pt-2 space-y-2">
             <button
               onClick={() => { onRequestProposal(); setMobileMenuOpen(false); }}
               className="w-full py-2 px-4 bg-[#003B95] hover:bg-[#002D73] text-white font-heading font-bold text-xs tracking-wide rounded-md cursor-pointer"

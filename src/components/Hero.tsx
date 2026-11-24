@@ -5,6 +5,7 @@
 
 import React from 'react';
 import photoAssets from '../utils/photoAssets';
+import { HOME_HERO_CONTENT } from '../utils/homeContent';
 import PageHero from './PageHero';
 
 interface HeroProps {
@@ -21,14 +22,14 @@ export default function Hero({ onRequestProposal }: HeroProps) {
       imageAlt="African Urban Construction & Environmental Safeguards Supervision"
       title={
         <>
-          Your Trusted African Partner for{' '}
+          {HOME_HERO_CONTENT.line1}
+          <br />
           <span className="text-[#4ADE80]">
-            Environmental, Social &amp; Safeguards
-          </span>{' '}
-          Advisory
+            {HOME_HERO_CONTENT.line2}
+          </span>
         </>
       }
-      description="HUERI Limited is a Kenyan environmental, social, climate, and safety consultancy headquartered in Kisumu, supporting engineering primes, financiers, contractors, and county governments with environmental assessments, resettlement planning, and site compliance."
+      description={HOME_HERO_CONTENT.description}
     >
       <button
         onClick={onRequestProposal}

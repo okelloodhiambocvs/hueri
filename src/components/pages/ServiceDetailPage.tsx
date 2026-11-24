@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { getServiceDetailByIdOrSlug, getServiceSummaryByIdOrSlug } from '../../utils/serviceRoutes';
 import photoAssets from '../../utils/photoAssets';
+import PageHero from '../PageHero';
 
 interface ServiceDetailPageProps {
   serviceIdOrSlug: string;
@@ -81,46 +82,38 @@ export default function ServiceDetailPage({
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#041B44] font-sans">
-      {/* Slim Photo Strip Banner matching the Contact-style strip */}
-      <div className="relative bg-[#041B44] text-white py-10 sm:py-14 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt={service.title}
-            className="w-full h-full object-cover object-center"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#041B44]/80 via-[#041B44]/40 to-transparent" />
-        </div>
+      <PageHero
+        image={heroImage}
+        imageAlt={service.title}
+        title={service.title}
+        description={service.shortDescription}
+      >
+        <button
+          type="button"
+          onClick={() => onRequestProposal(service.title)}
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#006B22] hover:bg-[#00581C] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
+        >
+          <span>Let&apos;s Talk</span>
+          <ArrowRight className="w-4 h-4" />
+        </button>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
-          <button
-            type="button"
-            onClick={() => onNavigate('services')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-slate-100 hover:text-[#4ADE80] transition-colors cursor-pointer"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Our Services</span>
-          </button>
-
-          <div className="max-w-3xl space-y-2">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white leading-tight drop-shadow">
-              {service.title}
-            </h1>
-            <p className="text-xs sm:text-sm text-slate-100 font-light leading-relaxed drop-shadow">
-              {service.shortDescription}
-            </p>
-          </div>
-        </div>
-      </div>
+        <button
+          type="button"
+          onClick={() => onNavigate('services')}
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/15 hover:bg-white/25 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Our Services</span>
+        </button>
+      </PageHero>
 
       {/* Main Service Details Body */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-12">
-        {/* Overview & Action */}
+        {/* Service Scope & Overview */}
         <section className="grid lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-8 space-y-4">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
-              How Our Service Works
+              Service Scope &amp; Overview
             </h2>
             <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
               {service.overview}
@@ -154,7 +147,7 @@ export default function ServiceDetailPage({
         {service.methodology && service.methodology.length > 0 && (
           <section className="space-y-5">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
-              Our Approach &amp; Process
+              Step-by-Step Process
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.methodology.map((step, idx) => (

@@ -13,8 +13,7 @@ import {
   Shield,
   Mail,
   Linkedin,
-  FileText,
-  AlertCircle
+  FileText
 } from 'lucide-react';
 
 interface AboutLeadershipProps {
@@ -248,18 +247,6 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
               ))}
             </ul>
           </div>
-
-          {activeMember.id === 'team-belinda-nyakinya' && (
-            <div className="border-y border-[#006B22]/30 py-3 text-xs text-slate-700 dark:text-slate-300 space-y-1">
-              <div className="flex items-center gap-1.5 font-bold text-[#006B22] dark:text-[#4ADE80]">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>Individual Advisory Capacity Disclosure (KDSP II)</span>
-              </div>
-              <p className="font-light text-[11px] leading-relaxed">
-                National Environmental and Social Safeguards advisory for the Kenya Devolved Support Programme (KDSP II) is delivered by Belinda Nyakinya in her individual capacity as an Environmental Safeguards Specialist within the National Programme Coordination Unit (State Department for Devolution), and not as a corporate contract of HUERI Limited.
-              </p>
-            </div>
-          )}
 
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-4">

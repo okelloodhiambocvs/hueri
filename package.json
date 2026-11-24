@@ -7,7 +7,7 @@
     "dev": "tsx server.ts",
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
-    "test": "vitest run tests && tsx --test src/utils/serviceRoutes.test.ts",
+    "test": "vitest run tests && tsx --test src/utils/serviceRoutes.test.ts src/utils/navDropdowns.test.ts",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
