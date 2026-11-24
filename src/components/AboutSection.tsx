@@ -55,28 +55,28 @@ export default function AboutSection({
 
   const problemItems = [
     {
-      title: 'REGULATORY DELAYS',
+      title: 'Regulatory Delays',
       subtitle: 'Approval Bottlenecks',
       description: 'Complex licencing, uncoordinated public reviews, and delayed permits stall project launches and escalate financing costs.',
       image: photoAssets.eiaAssessment,
       alt: 'ESIA licencing and regulatory review in Kenya'
     },
     {
-      title: 'SOCIAL & RESETTLEMENT',
+      title: 'Social & Resettlement',
       subtitle: 'Community Friction',
       description: 'Inadequately consulted communities and poorly executed Resettlement Action Plans (RAP) trigger land disputes, legal challenges, and work stoppages.',
       image: photoAssets.milestones.communityBaraza,
       alt: 'Community baraza stakeholder consultation'
     },
     {
-      title: 'ECOLOGICAL IMPACTS',
+      title: 'Ecological Impacts',
       subtitle: 'Catchment Stress',
       description: 'Wetland loss, unchecked industrial effluent, and climate vulnerabilities degrade natural resources and jeopardize facility resilience.',
       image: photoAssets.waterCatchment,
       alt: 'Lake Victoria wetland catchment and environmental conservation'
     },
     {
-      title: 'LENDER COMPLIANCE GAPS',
+      title: 'Lender Compliance Gaps',
       subtitle: 'Financing Roadblocks',
       description: 'International financiers (World Bank, IFC, AfDB) require stringent ESF and ESG standards that standard local reports fail to satisfy.',
       image: photoAssets.milestones.infrastructureEsmp,
@@ -165,12 +165,12 @@ export default function AboutSection({
         </button>
       </PageHero>
 
-      {/* 2. Overview — Concise 2-3 Sentence Introduction */}
-      <section id="about-overview" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 scroll-mt-24">
+      {/* 2. Overview — Concise 2-3 Sentence Introduction Left Aligned */}
+      <section id="about-overview" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-3 scroll-mt-24">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
           Overview
         </h2>
-        <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light max-w-3xl">
           Hope Urban Environmental and Research Investments Limited (HUERI Limited) is a Kenyan environmental, social, health, safety, and sustainability consultancy headquartered in Kisumu. Incorporated in 2014 with professional roots dating back to 2007, we work alongside developers, public agencies, contractors, and international financiers to guide responsible infrastructure and investment delivery across Kenya and East Africa.
         </p>
       </section>
@@ -198,7 +198,7 @@ export default function AboutSection({
         </div>
 
         <div className="space-y-6">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
+          <div className="max-w-2xl text-left space-y-2">
             <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Core Values
             </h3>
@@ -224,9 +224,9 @@ export default function AboutSection({
 
       {/* 4. The Problem */}
       <section id="about-problem" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black uppercase text-[#003B95] dark:text-white tracking-wider">
-            THE PROBLEM
+        <div className="text-left max-w-3xl space-y-3 mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+            The Problem
           </h2>
           <div className="space-y-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
             <p>
@@ -251,7 +251,7 @@ export default function AboutSection({
               </div>
 
               <div className="space-y-1.5">
-                <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#006B22] dark:text-[#4ADE80] block">
+                <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
                   {item.title}
                 </span>
                 <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
@@ -318,7 +318,7 @@ export default function AboutSection({
 
       {/* 6. Our Solution — Clean 3-Column Editorial Progression without Underlines */}
       <section id="about-solution" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-8">
+        <div className="text-left max-w-3xl space-y-2.5 mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
             Our Solution
           </h2>
@@ -341,7 +341,7 @@ export default function AboutSection({
 
               <div className="space-y-2">
                 <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
-                  PHASE {step.number}
+                  Phase {step.number}
                 </span>
                 <h3 className="font-heading font-bold text-lg text-[#003B95] dark:text-white leading-snug">
                   {step.title}
@@ -419,7 +419,7 @@ export default function AboutSection({
 
       {/* 8. Why Choose Us */}
       <section id="about-why-choose-us" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 scroll-mt-24">
-        <div className="text-center max-w-3xl mx-auto space-y-2">
+        <div className="text-left max-w-3xl space-y-2">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
             Why Choose Us
           </h2>

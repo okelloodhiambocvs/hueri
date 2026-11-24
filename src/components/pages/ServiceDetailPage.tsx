@@ -5,7 +5,11 @@
 
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { getServiceDetailByIdOrSlug, getServiceSummaryByIdOrSlug } from '../../utils/serviceRoutes';
+import {
+  getServiceDetailByIdOrSlug,
+  getServiceSummaryByIdOrSlug,
+  splitServiceHeroTitle
+} from '../../utils/serviceRoutes';
 import photoAssets from '../../utils/photoAssets';
 import PageHero from '../PageHero';
 
@@ -32,6 +36,7 @@ export default function ServiceDetailPage({
   const service = getServiceDetailByIdOrSlug(serviceIdOrSlug);
   const summary = getServiceSummaryByIdOrSlug(serviceIdOrSlug);
   const heroImage = photoAssets.services[summary.imageKey] || photoAssets.eiaAssessment;
+  const heroTitleParts = splitServiceHeroTitle(service.title);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -85,7 +90,17 @@ export default function ServiceDetailPage({
       <PageHero
         image={heroImage}
         imageAlt={service.title}
-        title={service.title}
+        title={
+          <>
+            {heroTitleParts.upper}
+            {heroTitleParts.lower && (
+              <>
+                <br />
+                <span className="text-[#4ADE80]">{heroTitleParts.lower}</span>
+              </>
+            )}
+          </>
+        }
         description={service.shortDescription}
       >
         <button

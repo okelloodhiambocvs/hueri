@@ -5,19 +5,20 @@ import {
   HOME_HERO_CONTENT,
   homeFeaturedAssignments,
   homeAdvisoryDisciplines,
-  consolidatedPillars
+  consolidatedPillars,
+  projectDeliverySteps
 } from './homeContent';
 import { serviceSummaries } from './serviceRoutes';
 
-test('homepage renders sections in requested order starting with Grounded after Hero', () => {
+test('homepage renders sections in requested order with delivery steps before consortia', () => {
   assert.deepEqual(HOME_SECTION_ORDER, [
     'hero',
     'grounded',
     'assignments',
     'practices',
     'disciplines',
-    'consortia',
-    'sectors'
+    'deliverySteps',
+    'consortia'
   ]);
 });
 
@@ -41,4 +42,10 @@ test('homepage advisory disciplines include all offered services', () => {
   assert.equal(homeAdvisoryDisciplines.length, serviceSummaries.length);
   assert.equal(homeAdvisoryDisciplines.length, 9);
   assert.equal(consolidatedPillars.length, 5);
+});
+
+test('project delivery steps progress from initial discussion to final report delivery', () => {
+  assert.equal(projectDeliverySteps.length, 5);
+  assert.match(projectDeliverySteps[0].title, /discussion/i);
+  assert.match(projectDeliverySteps[projectDeliverySteps.length - 1].title, /final report delivery/i);
 });

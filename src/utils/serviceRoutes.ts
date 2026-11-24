@@ -300,3 +300,58 @@ export function resolveServiceSlugFromPath(pathname: string): string | null {
   }
   return null;
 }
+
+const twoToneServiceTitles: Record<string, { upper: string; lower: string }> = {
+  'Environmental Impact Assessment': {
+    upper: 'Environmental',
+    lower: 'Impact Assessment'
+  },
+  'Resettlement Action Plans & Livelihoods': {
+    upper: 'Resettlement Action Plans',
+    lower: '& Livelihoods'
+  },
+  'Environmental Compliance & Annual Audits': {
+    upper: 'Environmental Compliance',
+    lower: '& Annual Audits'
+  },
+  'Occupational Health & Safety': {
+    upper: 'Occupational',
+    lower: 'Health & Safety'
+  },
+  'Climate Change & Ecology': {
+    upper: 'Climate Change',
+    lower: '& Ecology'
+  },
+  'Water Resources & Catchment Management': {
+    upper: 'Water Resources &',
+    lower: 'Catchment Management'
+  },
+  'ESG & Lender Due Diligence': {
+    upper: 'ESG & Lender',
+    lower: 'Due Diligence'
+  },
+  'Drone Mapping & Corridor GIS': {
+    upper: 'Drone Mapping &',
+    lower: 'Corridor GIS'
+  },
+  'ESHSRIM Procedures Training': {
+    upper: 'ESHSRIM',
+    lower: 'Procedures Training'
+  }
+};
+
+export function splitServiceHeroTitle(title: string): { upper: string; lower: string } {
+  const trimmed = (title || '').trim();
+  if (twoToneServiceTitles[trimmed]) {
+    return twoToneServiceTitles[trimmed];
+  }
+  const words = trimmed.split(/\s+/).filter(Boolean);
+  if (words.length <= 1) {
+    return { upper: trimmed, lower: '' };
+  }
+  const mid = Math.ceil(words.length / 2);
+  return {
+    upper: words.slice(0, mid).join(' '),
+    lower: words.slice(mid).join(' ')
+  };
+}

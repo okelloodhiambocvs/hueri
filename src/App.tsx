@@ -14,8 +14,8 @@ import PartnershipsPage from './components/pages/PartnershipsPage';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
 import ServiceDetailPage from './components/pages/ServiceDetailPage';
+import LegalPoliciesPage from './components/pages/LegalPoliciesPage';
 import ProposalModal from './components/ProposalModal';
-import LegalPoliciesModal from './components/LegalPoliciesModal';
 import QuickContactFloat from './components/QuickContactFloat';
 import AdminDrawer from './components/AdminDrawer';
 import CompanyProfileModal from './components/CompanyProfileModal';
@@ -145,6 +145,20 @@ const routeMap: Record<string, RouteInfo> = {
     path: '/contact',
     title: 'Contact | HUERI Limited',
     desc: 'Contact HUERI Limited for project consultations, environmental impact assessments, and partnerships in Kisumu and across East Africa.'
+  },
+  '/privacy-policy': {
+    page: 'privacy',
+    sectionId: 'all',
+    path: '/privacy-policy',
+    title: 'Privacy Policy | HUERI Limited',
+    desc: 'Data protection and privacy practices of HUERI Limited under the Kenya Data Protection Act, 2019.'
+  },
+  '/terms-and-conditions': {
+    page: 'terms',
+    sectionId: 'all',
+    path: '/terms-and-conditions',
+    title: 'Terms and Conditions | HUERI Limited',
+    desc: 'Terms of use and professional engagement standards for HUERI Limited.'
   }
 };
 
@@ -180,6 +194,8 @@ function resolveCurrentRoute(): { page: string; sectionId: string; path: string 
     if (hash === 'lifecycle') return { page: 'lifecycle', sectionId: 'all', path: '/lifecycle' };
     if (hash === 'partnerships') return { page: 'partnerships', sectionId: 'all', path: '/partnerships' };
     if (hash === 'contact') return { page: 'contact', sectionId: 'all', path: '/contact' };
+    if (hash === 'privacy') return { page: 'privacy', sectionId: 'all', path: '/privacy-policy' };
+    if (hash === 'terms') return { page: 'terms', sectionId: 'all', path: '/terms-and-conditions' };
     if (hash === 'home') return { page: 'home', sectionId: 'all', path: '/' };
   }
 
@@ -251,7 +267,6 @@ export default function App() {
   const [proposalTab, setProposalTab] = useState<'proposal' | 'tor' | 'partnership' | 'general'>('proposal');
   const [prefilledScope, setPrefilledScope] = useState<string | undefined>(undefined);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
-  const [activePolicyTab, setActivePolicyTab] = useState<string | null>(null);
   const [isCompanyProfileOpen, setIsCompanyProfileOpen] = useState(false);
 
   // Sync dark class on html root and persist preference
@@ -317,6 +332,10 @@ export default function App() {
         if (sectionId === 'about-director') targetPath = '/team';
         else if (sectionId === 'about-field') targetPath = '/projects';
         else targetPath = '/about';
+      } else if (page === 'privacy') {
+        targetPath = '/privacy-policy';
+      } else if (page === 'terms') {
+        targetPath = '/terms-and-conditions';
       } else {
         targetPath = `/${page}`;
       }
@@ -429,7 +448,7 @@ export default function App() {
         onRequestProposal={() => handleOpenAdvisoryProposal()}
         onOpenPartnership={() => handleOpenPartnershipModal()}
         onOpenAdmin={() => setIsAdminOpen(true)}
-        onOpenPolicy={(tab) => setActivePolicyTab(tab)}
+        onOpenPolicy={(tab) => navigateToPage(tab === 'terms' ? 'terms' : 'privacy')}
         theme={theme} 
         onToggleTheme={toggleTheme} 
       />
@@ -499,12 +518,19 @@ export default function App() {
             onLeadSubmit={handleLeadSubmit}
           />
         )}
+
+        {(currentPage === 'privacy' || currentPage === 'terms') && (
+          <LegalPoliciesPage
+            initialPolicy={currentPage === 'terms' ? 'terms' : 'privacy'}
+            onNavigate={navigateToPage}
+          />
+        )}
       </main>
 
       {/* Footer with Balanced Links */}
       <Footer 
         onNavigate={navigateToPage}
-        onOpenPolicy={(tab) => setActivePolicyTab(tab)}
+        onOpenPolicy={(tab) => navigateToPage(tab === 'terms' ? 'terms' : 'privacy')}
         onRequestProposal={() => handleOpenAdvisoryProposal()}
         onOpenPartnership={() => handleOpenPartnershipModal()}
       />
@@ -518,12 +544,6 @@ export default function App() {
         prefilledScope={prefilledScope}
         onClose={() => setIsProposalOpen(false)}
         onLeadSubmit={handleLeadSubmit}
-      />
-
-      <LegalPoliciesModal 
-        isOpen={!!activePolicyTab}
-        initialTab={activePolicyTab || 'privacy'}
-        onClose={() => setActivePolicyTab(null)}
       />
 
       <AdminDrawer 

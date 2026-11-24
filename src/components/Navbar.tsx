@@ -170,11 +170,11 @@ export default function Navbar({
               </button>
 
               {servicesOpen && (
-                <div className="absolute left-0 top-full pt-2 w-84 sm:w-[400px] z-50">
+                <div className="absolute left-0 top-full pt-2 w-72 sm:w-[320px] z-50">
                   <div
                     role="menu"
                     aria-label="Our Services Navigation"
-                    className="bg-white dark:bg-[#06183A] rounded-xl shadow-xl ring-1 ring-slate-200/80 dark:ring-slate-700/70 p-2 max-h-[340px] overflow-y-auto overscroll-contain space-y-1"
+                    className="bg-white dark:bg-[#06183A] rounded-xl shadow-xl ring-1 ring-slate-200/80 dark:ring-slate-700/70 p-1.5 max-h-[275px] overflow-y-auto overscroll-contain space-y-0.5"
                   >
                     {serviceDropdownItems.map((service) => (
                       <button
@@ -182,12 +182,12 @@ export default function Navbar({
                         type="button"
                         role="menuitem"
                         onClick={() => handleNavClick('service-detail', service.slug)}
-                        className="w-full text-left px-4 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-[#0B2559] transition-colors cursor-pointer group flex items-center justify-between gap-3"
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-[#0B2559] transition-colors cursor-pointer group flex items-center justify-between gap-2.5"
                       >
-                        <span className="text-[15px] sm:text-base font-heading font-bold text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] leading-snug">
+                        <span className="text-[13px] sm:text-sm font-heading font-bold text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] leading-snug">
                           {service.label}
                         </span>
-                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] shrink-0" />
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] shrink-0" />
                       </button>
                     ))}
                   </div>

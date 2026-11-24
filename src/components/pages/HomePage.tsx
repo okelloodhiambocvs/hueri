@@ -4,7 +4,14 @@
  */
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import {
+  ArrowRight,
+  MessageSquare,
+  Compass,
+  Users,
+  ClipboardCheck,
+  FileCheck2
+} from 'lucide-react';
 import Hero from '../Hero';
 import AboutHomeSection from '../AboutHomeSection';
 import photoAssets from '../../utils/photoAssets';
@@ -12,7 +19,8 @@ import {
   consolidatedPillars,
   homeFeaturedAssignments,
   homeAdvisoryDisciplines,
-  previewSectors
+  projectDeliverySteps,
+  DeliveryStepIcon
 } from '../../utils/homeContent';
 
 interface HomePageProps {
@@ -21,6 +29,21 @@ interface HomePageProps {
   onOpenPartnership: (model?: string) => void;
   stats?: any;
 }
+
+const renderDeliveryIcon = (icon: DeliveryStepIcon) => {
+  switch (icon) {
+    case 'discussion':
+      return <MessageSquare className="w-5 h-5" />;
+    case 'scoping':
+      return <Compass className="w-5 h-5" />;
+    case 'fieldwork':
+      return <Users className="w-5 h-5" />;
+    case 'drafting':
+      return <ClipboardCheck className="w-5 h-5" />;
+    case 'delivery':
+      return <FileCheck2 className="w-5 h-5" />;
+  }
+};
 
 export default function HomePage({
   onNavigate,
@@ -121,10 +144,10 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 4. Integrated Advisory Practices */}
+      {/* 4. Integrated Advisory Practices — Left Aligned */}
       <section id="home-practices" className="bg-slate-50 dark:bg-[#06183A] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
+          <div className="max-w-3xl mb-6 space-y-2 text-left">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Integrated Advisory Practices
             </h2>
@@ -229,8 +252,67 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 6. Strategic Consortia & International Teaming */}
-      <section className="bg-[#003B95] dark:bg-[#061E4A] text-white py-10 sm:py-12">
+      {/* 6. Project Delivery Steps & Style (Replaces Serving Key African Sectors) */}
+      <section id="home-delivery-steps" className="bg-slate-50 dark:bg-[#06183A] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="space-y-1.5 max-w-2xl text-left">
+              <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+                Our Project Delivery Process
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                How we partner with you from initial project discussions through fieldwork, quality review, and final report delivery.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => onRequestProposal()}
+              className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] uppercase tracking-wider cursor-pointer shrink-0"
+            >
+              Start a Discussion →
+            </button>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {projectDeliverySteps.map((item, idx) => (
+              <div
+                key={item.step}
+                className="relative bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-3 flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="w-10 h-10 rounded-lg bg-[#003B95]/10 dark:bg-[#38BDF8]/15 text-[#003B95] dark:text-[#38BDF8] flex items-center justify-center">
+                      {renderDeliveryIcon(item.icon)}
+                    </div>
+                    <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                      Step {item.step}
+                    </span>
+                  </div>
+
+                  <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                {idx < projectDeliverySteps.length - 1 && (
+                  <div
+                    className="hidden lg:flex items-center justify-end text-[#006B22] dark:text-[#4ADE80] pt-1"
+                    aria-hidden="true"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Strategic Consortia & International Teaming (Moved After Delivery Steps) */}
+      <section id="home-consortia" className="bg-[#003B95] dark:bg-[#061E4A] text-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 items-center gap-8">
             <div className="lg:col-span-8 space-y-3">
@@ -269,65 +351,6 @@ export default function HomePage({
                 Explore Partnership Models
               </button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Sectors Strip */}
-      <section className="py-4 sm:py-6 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-1">
-              <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-                Serving Key African Sectors
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light max-w-xl">
-                Dedicated multidisciplinary advisory tailored to specific sector risks, engineering constraints, and project requirements.
-              </p>
-            </div>
-            <button
-              onClick={() => onNavigate('sectors')}
-              className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] uppercase tracking-wider cursor-pointer shrink-0"
-            >
-              Explore All Sectors →
-            </button>
-          </div>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {previewSectors.map((s, idx) => {
-              const sectorImage = photoAssets.sectors[s.imageKey] || photoAssets.servicesHero;
-              return (
-              <div
-                key={idx}
-                onClick={() => onNavigate('sectors')}
-                className="cursor-pointer group flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="h-32 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
-                    <img
-                      src={sectorImage}
-                      alt={s.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-
-                  <div className="space-y-1">
-                    <h4 className="font-heading font-bold text-sm text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] transition-colors">
-                      {s.name}
-                    </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-                      {s.desc}
-                    </p>
-                  </div>
-                </div>
-
-                <span className="text-[11px] font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block pt-2">
-                  View Sector →
-                </span>
-              </div>
-              );
-            })}
           </div>
         </div>
       </section>

@@ -4,10 +4,18 @@
  */
 
 import React, { useState } from 'react';
+import { MessageSquare, ArrowUp, X } from 'lucide-react';
 import { sanitizeString, sanitizeText, sanitizeEmail, isValidEmail } from '../utils/security';
 
 interface QuickContactFloatProps {
-  onLeadSubmit: (leadData: { fullName: string; email: string; phone: string; company: string; serviceNeeded: string; message: string }) => void;
+  onLeadSubmit: (leadData: {
+    fullName: string;
+    email: string;
+    phone: string;
+    company: string;
+    serviceNeeded: string;
+    message: string;
+  }) => void;
 }
 
 export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatProps) {
@@ -19,6 +27,10 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
 
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg(null);
@@ -28,12 +40,12 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
     const purifiedMsg = sanitizeText(msg, 2000);
 
     if (!purifiedName || purifiedName.length < 2) {
-      setErrorMsg("Please enter your name.");
+      setErrorMsg('Please enter your name.');
       return;
     }
 
     if (!isValidEmail(purifiedEmail)) {
-      setErrorMsg("Please enter a valid email address.");
+      setErrorMsg('Please enter a valid email address.');
       return;
     }
 
@@ -53,8 +65,8 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setIsSubmitting(false);
         if (data.success) {
           onLeadSubmit(payload);
@@ -67,29 +79,31 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
             setMsg('');
           }, 2500);
         } else {
-          setErrorMsg(data.error || "Submission failed.");
+          setErrorMsg(data.error || 'Submission failed.');
         }
       })
       .catch(() => {
         setIsSubmitting(false);
-        setErrorMsg("Network error. Please try again.");
+        setErrorMsg('Network error. Please try again.');
       });
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-40">
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       {isOpen && (
-        <div className="mb-4 bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 p-6 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-80 sm:w-96 font-sans relative animate-fadeIn transition-all">
+        <div className="mb-3 bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 p-6 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-80 sm:w-96 font-sans relative animate-fadeIn transition-all">
           <button
+            type="button"
             onClick={() => setIsOpen(false)}
-            className="absolute top-4 right-4 text-xs font-mono font-bold text-slate-400 hover:text-slate-600 dark:hover:text-white cursor-pointer"
+            aria-label="Close Quick Inquiry"
+            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white cursor-pointer"
           >
-            ✕
+            <X className="w-4 h-4" />
           </button>
 
           <div className="mb-4">
-            <span className="text-[10px] font-mono font-bold tracking-widest text-[#006B22] dark:text-[#4ADE80] uppercase block">
-              DIRECT ADVISORY CHANNEL
+            <span className="text-[11px] font-mono font-bold tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
+              Direct Advisory Channel
             </span>
             <h4 className="font-heading font-extrabold text-lg text-[#003B95] dark:text-white">
               Quick Expert Consultation
@@ -104,7 +118,7 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
 
           {sent ? (
             <div className="p-3 bg-brand-green-50 dark:bg-brand-green-950/60 text-brand-green-700 dark:text-brand-green-300 rounded-xl text-xs font-bold text-center">
-              ✓ Inquiry Safely Transmitted! We will respond promptly.
+              Inquiry transmitted. We will respond promptly.
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -113,7 +127,7 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
                 required
                 maxLength={100}
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Your Name *"
                 className="w-full px-3.5 py-2 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white focus:outline-none focus:border-brand-green-500"
               />
@@ -122,7 +136,7 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
                 required
                 maxLength={120}
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email *"
                 className="w-full px-3.5 py-2 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white focus:outline-none focus:border-brand-green-500"
               />
@@ -130,7 +144,7 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
                 rows={2}
                 maxLength={2000}
                 value={msg}
-                onChange={e => setMsg(e.target.value)}
+                onChange={(e) => setMsg(e.target.value)}
                 placeholder="How can HUERI assist your project or licensing?"
                 className="w-full px-3.5 py-2 bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white focus:outline-none focus:border-brand-green-500 resize-none"
               />
@@ -139,7 +153,7 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
                 disabled={isSubmitting}
                 className="w-full py-2.5 bg-[#006B22] hover:bg-[#00581C] text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer disabled:opacity-50"
               >
-                {isSubmitting ? 'TRANSMITTING...' : 'TRANSMIT QUICK INQUIRY'}
+                {isSubmitting ? 'Submitting...' : 'Send Quick Inquiry'}
               </button>
             </form>
           )}
@@ -151,12 +165,28 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
         </div>
       )}
 
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-3 bg-[#003B95] hover:bg-[#002D73] text-white rounded-xl shadow-xl flex items-center justify-center font-heading font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer border border-white/20"
-      >
-        <span>{isOpen ? '✕ CLOSE' : 'QUICK INQUIRY'}</span>
-      </button>
+      <div className="flex items-center gap-2.5">
+        <button
+          type="button"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Quick Inquiry"
+          title="Quick Inquiry"
+          aria-expanded={isOpen}
+          className="w-11 h-11 bg-[#003B95] hover:bg-[#002D73] text-white rounded-full shadow-xl flex items-center justify-center transition-colors cursor-pointer border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ADE80]"
+        >
+          {isOpen ? <X className="w-5 h-5" /> : <MessageSquare className="w-5 h-5" />}
+        </button>
+
+        <button
+          type="button"
+          onClick={handleBackToTop}
+          aria-label="Back to top"
+          title="Back to top"
+          className="w-11 h-11 bg-[#006B22] hover:bg-[#00581C] text-white rounded-full shadow-xl flex items-center justify-center transition-colors cursor-pointer border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ADE80]"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
+      </div>
     </div>
   );
 }

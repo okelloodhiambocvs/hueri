@@ -34,14 +34,14 @@ export default function Footer({
         
         <div className="flex items-center gap-4 text-sm sm:text-base font-mono">
           <button 
-            onClick={() => onOpenPolicy('privacy')} 
+            onClick={() => onNavigate('privacy')} 
             className="hover:text-[#4ADE80] transition-colors cursor-pointer text-slate-300 focus-visible:ring-1 focus-visible:ring-[#4ADE80] rounded"
           >
             Privacy Policy
           </button>
           <span>•</span>
           <button 
-            onClick={() => onOpenPolicy('terms')} 
+            onClick={() => onNavigate('terms')} 
             className="hover:text-[#4ADE80] transition-colors cursor-pointer text-slate-300 focus-visible:ring-1 focus-visible:ring-[#4ADE80] rounded"
           >
             Terms and Conditions

@@ -4,7 +4,8 @@ import {
   serviceSummaries,
   getServiceDetailByIdOrSlug,
   getServiceDetailPath,
-  resolveServiceSlugFromPath
+  resolveServiceSlugFromPath,
+  splitServiceHeroTitle
 } from './serviceRoutes';
 
 test('serviceSummaries starts with Environmental Impact Assessment', () => {
@@ -30,4 +31,13 @@ test('service detail paths and slug resolution round-trip cleanly', () => {
   assert.equal(path, '/services/details/environmental-impact-assessment');
   assert.equal(resolveServiceSlugFromPath(path), 'environmental-impact-assessment');
   assert.equal(resolveServiceSlugFromPath('/services'), null);
+});
+
+test('all 9 services split cleanly into upper white and lower green lines', () => {
+  for (const summary of serviceSummaries) {
+    const { upper, lower } = splitServiceHeroTitle(summary.title);
+    assert.ok(upper.length > 0);
+    assert.ok(lower.length > 0);
+    assert.equal(`${upper} ${lower}`, summary.title);
+  }
 });

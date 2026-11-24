@@ -11,8 +11,8 @@ export const HOME_SECTION_ORDER = [
   'assignments',
   'practices',
   'disciplines',
-  'consortia',
-  'sectors'
+  'deliverySteps',
+  'consortia'
 ] as const;
 
 export const HOME_HERO_CONTENT = {
@@ -171,30 +171,54 @@ export const homeFeaturedAssignments: FeaturedAssignment[] = [
 
 export const homeAdvisoryDisciplines: ServiceCardSummary[] = serviceSummaries;
 
-export const previewSectors = [
+export type DeliveryStepIcon =
+  | 'discussion'
+  | 'scoping'
+  | 'fieldwork'
+  | 'drafting'
+  | 'delivery';
+
+export interface ProjectDeliveryStep {
+  step: string;
+  title: string;
+  description: string;
+  icon: DeliveryStepIcon;
+}
+
+export const projectDeliverySteps: ProjectDeliveryStep[] = [
   {
-    name: 'Energy & Power',
-    desc: 'Solar PV, Wind, Hydro, Geothermal & Transmission',
-    imageKey: 'energy-power'
+    step: '01',
+    title: 'Initial Client Discussion',
+    description:
+      'We begin with a focused discussion on your project scope, location, timelines, and regulatory or financier requirements.',
+    icon: 'discussion'
   },
   {
-    name: 'Transport & Logistics',
-    desc: 'Highways, Rail, Maritime Ports & Trade Corridors',
-    imageKey: 'transport-logistics'
+    step: '02',
+    title: 'Scoping & Mobilization',
+    description:
+      'Our lead specialists define study boundaries, review technical designs, and map applicable statutory and lender frameworks.',
+    icon: 'scoping'
   },
   {
-    name: 'Water & Sanitation',
-    desc: 'Dams, Boreholes, Irrigation & Catchment Basins',
-    imageKey: 'water-sanitation'
+    step: '03',
+    title: 'Field Baselines & Consultations',
+    description:
+      'Multidisciplinary teams conduct site sampling, GIS mapping, socio-economic surveys, and stakeholder baraza engagements.',
+    icon: 'fieldwork'
   },
   {
-    name: 'Urban Built Environment',
-    desc: 'Housing, Special Economic Zones & Municipal Works',
-    imageKey: 'urban-built-env'
+    step: '04',
+    title: 'Technical Assessment & Drafting',
+    description:
+      'We evaluate impacts, design practical mitigation hierarchies, and compile actionable management and audit plans.',
+    icon: 'drafting'
   },
   {
-    name: 'Carbon & Nature Markets',
-    desc: 'Article 6, REDD+, Blue Carbon & Green Bonds',
-    imageKey: 'carbon-nature-finance'
+    step: '05',
+    title: 'QA/QC & Final Report Delivery',
+    description:
+      'Following senior peer review, we deliver the final report, support statutory submissions, and guide clearance approval.',
+    icon: 'delivery'
   }
 ];
