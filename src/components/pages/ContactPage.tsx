@@ -5,17 +5,15 @@
 
 import React from 'react';
 import ContactSection from '../ContactSection';
-import FAQSection from '../FAQSection';
 import PageHero from '../PageHero';
 import photoAssets from '../../utils/photoAssets';
 
 interface ContactPageProps {
-  onNavigate: (page: string) => void;
+  onNavigate?: (page: string) => void;
   onLeadSubmit?: (lead: any) => void;
 }
 
 export default function ContactPage({
-  onNavigate,
   onLeadSubmit = () => {}
 }: ContactPageProps) {
   return (
@@ -28,7 +26,6 @@ export default function ContactPage({
       />
 
       <ContactSection onLeadSubmit={onLeadSubmit} />
-      <FAQSection onNavigate={onNavigate} />
     </div>
   );
 }

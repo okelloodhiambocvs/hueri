@@ -10,6 +10,7 @@ import { initialServices } from '../server/seedData';
 import { serviceSummaries } from '../utils/serviceRoutes';
 import BrochureBanner from './services/BrochureBanner';
 import PageHero from './PageHero';
+import { RevealBlock } from './MotionReveal';
 import {
   ArrowRight,
   Download
@@ -115,18 +116,18 @@ export default function ServicesSection({
       </PageHero>
 
       {/* 2. Advisory Services Portfolio Grid — White Background */}
-      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="text-left max-w-3xl space-y-2">
+          <RevealBlock direction="left" className="text-left max-w-3xl space-y-2">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white">
               Advisory Services
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed">
               Explore our core environmental, social, health, safety, and sustainability services. Select Details on any service to view full scope, methodology, and delivery formats.
             </p>
-          </div>
+          </RevealBlock>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+          <RevealBlock direction="up" delayMs={80} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {serviceSummaries.map((service) => {
               const serviceImg = photoAssets.services[service.imageKey] || photoAssets.eiaAssessment;
               return (
@@ -175,21 +176,21 @@ export default function ServicesSection({
                 </div>
               );
             })}
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
       {/* 3. Interactive Planning Tool: Safeguards Matrix — Logo Green Background */}
-      <section id="scoping-matrix" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-28">
+      <section id="scoping-matrix" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="space-y-2 text-left">
+          <RevealBlock direction="left" className="space-y-2 text-left">
             <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
               African Project Safeguards &amp; Scoping Matrix
             </h3>
             <p className="text-sm sm:text-base text-emerald-50 font-light max-w-2xl leading-relaxed">
               Configure your project parameters below to determine required deliverables and estimated timelines.
             </p>
-          </div>
+          </RevealBlock>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="space-y-2">

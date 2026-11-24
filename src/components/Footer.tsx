@@ -89,6 +89,14 @@ export default function Footer({
           <div className="flex items-center gap-4 text-xs sm:text-sm font-mono">
             <button
               type="button"
+              onClick={() => onNavigate('faq')}
+              className="hover:text-[#4ADE80] transition-colors cursor-pointer text-slate-300 focus-visible:ring-1 focus-visible:ring-[#4ADE80] rounded"
+            >
+              FAQ
+            </button>
+            <span>•</span>
+            <button
+              type="button"
               onClick={() => onNavigate('privacy')}
               className="hover:text-[#4ADE80] transition-colors cursor-pointer text-slate-300 focus-visible:ring-1 focus-visible:ring-[#4ADE80] rounded"
             >

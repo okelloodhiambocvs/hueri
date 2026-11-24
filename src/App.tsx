@@ -16,6 +16,7 @@ import ContactPage from './components/pages/ContactPage';
 import ServiceDetailPage from './components/pages/ServiceDetailPage';
 import ProjectDetailPage from './components/pages/ProjectDetailPage';
 import LegalPoliciesPage from './components/pages/LegalPoliciesPage';
+import FAQPage from './components/pages/FAQPage';
 import ProposalModal from './components/ProposalModal';
 import QuickContactFloat from './components/QuickContactFloat';
 import AdminDrawer from './components/AdminDrawer';
@@ -165,6 +166,13 @@ const routeMap: Record<string, RouteInfo> = {
     path: '/terms-and-conditions',
     title: 'Terms and Conditions | HUERI Limited',
     desc: 'Terms of use and professional engagement standards for HUERI Limited.'
+  },
+  '/faq': {
+    page: 'faq',
+    sectionId: 'all',
+    path: '/faq',
+    title: 'Frequently Asked Questions | HUERI Limited',
+    desc: 'Answers regarding HUERI Limited licensing credentials, lender safeguards, ESIA turnaround timelines, and partnerships.'
   }
 };
 
@@ -211,6 +219,7 @@ function resolveCurrentRoute(): { page: string; sectionId: string; path: string 
     if (hash === 'contact') return { page: 'contact', sectionId: 'all', path: '/contact' };
     if (hash === 'privacy') return { page: 'privacy', sectionId: 'all', path: '/privacy-policy' };
     if (hash === 'terms') return { page: 'terms', sectionId: 'all', path: '/terms-and-conditions' };
+    if (hash === 'faq') return { page: 'faq', sectionId: 'all', path: '/faq' };
     if (hash === 'home') return { page: 'home', sectionId: 'all', path: '/' };
   }
 
@@ -567,6 +576,10 @@ export default function App() {
             onNavigate={navigateToPage}
             onLeadSubmit={handleLeadSubmit}
           />
+        )}
+
+        {currentPage === 'faq' && (
+          <FAQPage onNavigate={navigateToPage} />
         )}
 
         {(currentPage === 'privacy' || currentPage === 'terms') && (

@@ -135,12 +135,72 @@ html.dark .glass-panel {
   }
 }
 
+@keyframes enterFromLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-44px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enterFromRight {
+  from {
+    opacity: 0;
+    transform: translate3d(44px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enterFromBottom {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enterFromTop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -32px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slideLeft {
   animation: slideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-enter-left {
+  animation: enterFromLeft 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-enter-right {
+  animation: enterFromRight 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-enter-up {
+  animation: enterFromBottom 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-enter-down {
+  animation: enterFromTop 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-service-marquee {
@@ -155,7 +215,11 @@ html.dark .glass-panel {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-service-marquee {
+  .animate-service-marquee,
+  .animate-enter-left,
+  .animate-enter-right,
+  .animate-enter-up,
+  .animate-enter-down {
     animation: none;
   }
 }

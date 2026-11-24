@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import OfficeInfoCard from './contact/OfficeInfoCard';
+import { RevealBlock } from './MotionReveal';
 import { sanitizeString, sanitizeText, sanitizeEmail, sanitizePhone, isValidEmail, isValidPhone } from '../utils/security';
 
 interface ContactSectionProps {
@@ -142,25 +143,25 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
     'w-full px-3.5 py-2.5 bg-white dark:bg-[#06183A] border border-slate-300 dark:border-slate-700 rounded-lg text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]';
 
   return (
-    <section id="contact" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans" aria-labelledby="contact-heading">
+    <section id="contact" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans overflow-hidden" aria-labelledby="contact-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
-        <div className="text-center max-w-3xl mx-auto space-y-2">
+        <RevealBlock direction="up" className="text-center max-w-3xl mx-auto space-y-2">
           <h2 id="contact-heading" className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#003B95] dark:text-white tracking-tight leading-tight">
             Consult Our Advisory Team
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
             Headquartered in Kisumu, Kenya, with capacity to deliver assignments across Kenya and wider Africa through qualified partnerships.
           </p>
-        </div>
+        </RevealBlock>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start pt-2">
 
-          <div className="lg:col-span-5">
+          <RevealBlock direction="left" className="lg:col-span-5">
             <OfficeInfoCard />
-          </div>
+          </RevealBlock>
 
-          <div className="lg:col-span-7 lg:pl-10 space-y-6">
+          <RevealBlock direction="right" delayMs={80} className="lg:col-span-7 lg:pl-10 space-y-6">
             <div className="space-y-1.5">
               <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#003B95] dark:text-white">
                 Send an Inquiry
@@ -378,7 +379,7 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
                 </div>
               </form>
             )}
-          </div>
+          </RevealBlock>
 
         </div>
 

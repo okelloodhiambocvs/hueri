@@ -12,6 +12,7 @@ import {
 } from '../../utils/serviceRoutes';
 import photoAssets from '../../utils/photoAssets';
 import PageHero from '../PageHero';
+import { RevealBlock } from '../MotionReveal';
 
 interface ServiceDetailPageProps {
   serviceIdOrSlug: string;
@@ -123,9 +124,9 @@ export default function ServiceDetailPage({
       </PageHero>
 
       {/* 1. Service Scope & Overview — White Background */}
-      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-8 space-y-4">
+          <RevealBlock direction="left" className="lg:col-span-8 space-y-4">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Service Scope &amp; Overview
             </h2>
@@ -137,9 +138,9 @@ export default function ServiceDetailPage({
                 {service.deliveryModelNote}
               </p>
             )}
-          </div>
+          </RevealBlock>
 
-          <div className="lg:col-span-4 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-4">
+          <RevealBlock direction="right" delayMs={80} className="lg:col-span-4 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-4">
             <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
               Start an Assignment
             </h3>
@@ -154,18 +155,20 @@ export default function ServiceDetailPage({
               <span>Let&apos;s Talk</span>
               <ArrowRight className="w-4 h-4" />
             </button>
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
       {/* 2. Step-by-Step Process — Logo Green Background */}
       {service.methodology && service.methodology.length > 0 && (
-        <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+        <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
-              Step-by-Step Process
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7">
+            <RevealBlock direction="left">
+              <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
+                Step-by-Step Process
+              </h2>
+            </RevealBlock>
+            <RevealBlock direction="up" delayMs={80} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7">
               {service.methodology.map((step, idx) => (
                 <div
                   key={idx}
@@ -184,7 +187,7 @@ export default function ServiceDetailPage({
                   </p>
                 </div>
               ))}
-            </div>
+            </RevealBlock>
           </div>
         </section>
       )}

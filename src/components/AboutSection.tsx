@@ -8,6 +8,7 @@ import photoAssets from '../utils/photoAssets';
 import { generateInstitutionalProfilePDF } from '../utils/companyProfileGenerator';
 import { serviceSummaries } from '../utils/serviceRoutes';
 import PageHero from './PageHero';
+import { RevealBlock } from './MotionReveal';
 import {
   Download,
   CheckCircle2,
@@ -15,7 +16,9 @@ import {
   Leaf,
   Award,
   Users,
-  Lightbulb
+  Lightbulb,
+  Compass,
+  Target
 } from 'lucide-react';
 
 interface AboutSectionProps {
@@ -173,77 +176,80 @@ export default function AboutSection({
         </button>
       </PageHero>
 
-      {/* 2. Overview — White Background */}
+      {/* 2. Overview, Vision, Mission & Core Values — Balanced White Background */}
       <section id="about-overview" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-3">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-            Overview
-          </h2>
-          <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light max-w-3xl">
-            Hope Urban Environmental and Research Investments Limited (HUERI Limited) is a Kenyan environmental, social, health, safety, and sustainability consultancy headquartered in Kisumu. Incorporated in 2014 with professional roots dating back to 2007, we work alongside developers, public agencies, contractors, and international financiers to guide responsible infrastructure and investment delivery across Kenya and East Africa.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. Vision, Mission & Core Values — Logo Green Background */}
-      <section id="about-vision-mission" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
-            <div className="space-y-2.5 border-t border-white/25 pt-5">
-              <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
-                Our Vision
-              </h3>
-              <p className="text-sm sm:text-base text-emerald-50 leading-relaxed font-light">
-                To be one of the leading Environmental and Research Consultancy Firms in the East African Region, expanding globally with a focus on promoting sustainable development.
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <RevealBlock direction="left" className="lg:col-span-6 space-y-3 text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+                Overview
+              </h2>
+              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+                Hope Urban Environmental and Research Investments Limited (HUERI Limited) is a Kenyan environmental, social, health, safety, and sustainability consultancy headquartered in Kisumu. Incorporated in 2014 with professional roots dating back to 2007, we work alongside developers, public agencies, contractors, and international financiers to guide responsible infrastructure and investment delivery across Kenya and East Africa.
               </p>
-            </div>
+            </RevealBlock>
 
-            <div className="space-y-2.5 border-t border-white/25 pt-5">
-              <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
-                Our Mission
-              </h3>
-              <p className="text-sm sm:text-base text-emerald-50 leading-relaxed font-light">
-                To provide professional Environmental and Research Consultancy Services to our clients, promoting sustainable development.
-              </p>
-            </div>
+            <RevealBlock direction="right" className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-10 space-y-6">
+              <div className="flex items-start gap-3.5">
+                <Compass className="w-5 h-5 text-[#006B22] dark:text-[#4ADE80] shrink-0 mt-1" aria-hidden="true" />
+                <div className="space-y-1">
+                  <h3 className="text-lg sm:text-xl font-heading font-black text-[#003B95] dark:text-white">
+                    Our Vision
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                    To be one of the leading Environmental and Research Consultancy Firms in the East African Region, expanding globally with a focus on promoting sustainable development.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5 border-t border-slate-200 dark:border-slate-800 pt-5">
+                <Target className="w-5 h-5 text-[#006B22] dark:text-[#4ADE80] shrink-0 mt-1" aria-hidden="true" />
+                <div className="space-y-1">
+                  <h3 className="text-lg sm:text-xl font-heading font-black text-[#003B95] dark:text-white">
+                    Our Mission
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                    To provide professional Environmental and Research Consultancy Services to our clients, promoting sustainable development.
+                  </p>
+                </div>
+              </div>
+            </RevealBlock>
           </div>
 
-          <div className="space-y-6">
-            <div className="max-w-2xl text-left space-y-2">
-              <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
-                Core Values
-              </h3>
-            </div>
+          <RevealBlock direction="up" className="border-t border-slate-200 dark:border-slate-800 pt-8 space-y-6">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+              Core Values
+            </h3>
 
-            <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {coreValues.map((value) => {
                 const Icon = value.icon;
                 return (
                   <div
                     key={value.title}
-                    className="flex items-start gap-4 border-t border-white/20 pt-5"
+                    className="space-y-2.5"
                   >
-                    <Icon className="w-6 h-6 text-[#A7F3D0] shrink-0 mt-0.5" aria-hidden="true" />
-                    <div className="space-y-1.5">
-                      <h4 className="font-heading font-bold text-base text-white">
+                    <div className="flex items-start gap-2.5">
+                      <Icon className="w-5 h-5 text-[#006B22] dark:text-[#4ADE80] shrink-0 mt-0.5" aria-hidden="true" />
+                      <h4 className="font-heading font-bold text-sm sm:text-base text-[#003B95] dark:text-white leading-snug">
                         {value.title}
                       </h4>
-                      <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed font-light">
-                        {value.description}
-                      </p>
                     </div>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      {value.description}
+                    </p>
                   </div>
                 );
               })}
             </div>
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
-      {/* 4. The Problem — White Background */}
-      <section id="about-problem" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
+      {/* 3. The Problem — Soft Neutral Surface */}
+      <section id="about-problem" className="bg-slate-50 dark:bg-[#06183A] py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-left max-w-3xl space-y-3 mb-8">
+          <RevealBlock direction="left" className="text-left max-w-3xl space-y-3 mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               The Problem
             </h2>
@@ -255,12 +261,12 @@ export default function AboutSection({
                 Project developers, public agencies, and investors frequently face costly delays, community disputes, or international financing freezes due to compliance bottlenecks and unaddressed safeguard risks.
               </p>
             </div>
-          </div>
+          </RevealBlock>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <RevealBlock direction="up" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {problemItems.map((item, idx) => (
               <div key={idx} className="group flex flex-col space-y-3.5">
-                <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                <div className="h-44 w-full overflow-hidden bg-slate-200 dark:bg-slate-900">
                   <img
                     src={item.image}
                     alt={item.alt}
@@ -282,16 +288,15 @@ export default function AboutSection({
                 </div>
               </div>
             ))}
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
-      {/* 5. Our Approach — Logo Green Background */}
-      <section id="about-approach" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-            <div className="lg:col-span-6 space-y-5">
+      {/* 4. Our Approach — Logo Green Background with Flush Squared Right-Edge Photo */}
+      <section id="about-approach" className="bg-[#006B22] dark:bg-[#054A20] text-white scroll-mt-24 overflow-hidden">
+        <div className="grid lg:grid-cols-12 items-stretch">
+          <div className="lg:col-span-6 py-10 sm:py-14 px-4 sm:px-6 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-10 flex flex-col justify-center">
+            <RevealBlock direction="left" className="space-y-5 max-w-xl">
               <div className="space-y-2.5 text-left">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
                   Our Approach
@@ -321,19 +326,16 @@ export default function AboutSection({
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
+            </RevealBlock>
+          </div>
 
-            <div className="lg:col-span-6">
-              <div className="overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-xl aspect-[4/3] sm:aspect-[16/11] shadow-md">
-                <img
-                  src={photoAssets.fieldScientists}
-                  alt="HUERI Environmental Scientists Conducting Field Research"
-                  className="w-full h-full object-cover object-center"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
-
+          <div className="lg:col-span-6 min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]">
+            <img
+              src={photoAssets.fieldScientists}
+              alt="HUERI Environmental Scientists Conducting Field Research"
+              className="w-full h-full object-cover object-center rounded-none block"
+              referrerPolicy="no-referrer"
+            />
           </div>
         </div>
       </section>
@@ -341,16 +343,16 @@ export default function AboutSection({
       {/* 6. Our Solution — White Background */}
       <section id="about-solution" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-left max-w-3xl space-y-2.5 mb-8">
+          <RevealBlock direction="left" className="text-left max-w-3xl space-y-2.5 mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Our Solution
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
               A seamless, end-to-end environmental, social, and safety compliance pathway from project inception to operational licensing.
             </p>
-          </div>
+          </RevealBlock>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <RevealBlock direction="up" className="grid md:grid-cols-3 gap-8">
             {solutionSteps.map((step) => (
               <div key={step.number} className="group flex flex-col space-y-4">
                 <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
@@ -375,7 +377,7 @@ export default function AboutSection({
                 </div>
               </div>
             ))}
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
@@ -443,16 +445,16 @@ export default function AboutSection({
       {/* 8. Why Choose Us — White Background */}
       <section id="about-why-choose-us" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="text-left max-w-3xl space-y-2">
+          <RevealBlock direction="left" className="text-left max-w-3xl space-y-2">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Why Choose Us
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
               Trusted by developers, county governments, contractors, and international financing partners for dependable environmental and social delivery.
             </p>
-          </div>
+          </RevealBlock>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <RevealBlock direction="up" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUsItems.map((item) => (
               <div
                 key={item.number}
@@ -469,7 +471,7 @@ export default function AboutSection({
                 </p>
               </div>
             ))}
-          </div>
+          </RevealBlock>
         </div>
       </section>
 

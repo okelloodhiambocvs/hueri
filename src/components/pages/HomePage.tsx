@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import Hero from '../Hero';
 import AboutHomeSection from '../AboutHomeSection';
+import { RevealBlock } from '../MotionReveal';
 import photoAssets from '../../utils/photoAssets';
 import {
   consolidatedPillars,
@@ -74,22 +75,24 @@ export default function HomePage({
       {/* 3. Our Recent Work — Logo Green Background with Concise Cards + Details Button */}
       <section id="home-assignments" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 space-y-6 overflow-hidden scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-1 text-left">
+          <RevealBlock direction="left" className="space-y-1 text-left">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
               Our Recent Work
             </h2>
             <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl">
               Selected track record of EIA clearances, resettlement planning (RAP), climate vulnerability assessments, and compliance audits in Kenya.
             </p>
-          </div>
+          </RevealBlock>
 
-          <button
-            type="button"
-            onClick={() => onNavigate('about', 'about-milestones')}
-            className="text-xs font-mono font-bold text-white hover:text-emerald-200 transition-colors uppercase tracking-wider cursor-pointer shrink-0"
-          >
-            View Historic Milestones →
-          </button>
+          <RevealBlock direction="right" delayMs={80}>
+            <button
+              type="button"
+              onClick={() => onNavigate('about', 'about-milestones')}
+              className="text-xs font-mono font-bold text-white hover:text-emerald-200 transition-colors uppercase tracking-wider cursor-pointer shrink-0"
+            >
+              View Historic Milestones →
+            </button>
+          </RevealBlock>
         </div>
 
         <div className="service-marquee-wrapper w-full overflow-hidden py-1">
@@ -145,18 +148,18 @@ export default function HomePage({
       </section>
 
       {/* 4. Integrated Advisory Practices — White Background */}
-      <section id="home-practices" className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+      <section id="home-practices" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-6 space-y-2 text-left">
+          <RevealBlock direction="left" className="max-w-3xl mb-6 space-y-2 text-left">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Integrated Advisory Practices
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed">
               Consolidated environmental, social, climate, and compliance advisory services engineered for international lender alignment and regulatory excellence across Africa.
             </p>
-          </div>
+          </RevealBlock>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 pt-2">
+          <RevealBlock direction="up" delayMs={80} className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 pt-2">
             {consolidatedPillars.map((p) => (
               <button
                 key={p.id}
@@ -181,30 +184,32 @@ export default function HomePage({
                 </div>
               </button>
             ))}
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
       {/* 5. Selected Advisory Disciplines — Logo Green Background with Concise Cards + Details Button */}
       <section id="home-disciplines" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 space-y-6 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-1 text-left">
+          <RevealBlock direction="left" className="space-y-1 text-left">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
               Selected Advisory Disciplines
             </h2>
             <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl">
               Explore all environmental assessments, resettlement frameworks, compliance audits, climate services, and ESG advisory we offer.
             </p>
-          </div>
+          </RevealBlock>
 
-          <button
-            type="button"
-            onClick={() => onNavigate('services')}
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-white hover:text-emerald-200 cursor-pointer shrink-0"
-          >
-            <span>All Services</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          <RevealBlock direction="right" delayMs={80}>
+            <button
+              type="button"
+              onClick={() => onNavigate('services')}
+              className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-white hover:text-emerald-200 cursor-pointer shrink-0"
+            >
+              <span>All Services</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </RevealBlock>
         </div>
 
         <div className="service-marquee-wrapper w-full overflow-hidden py-1">
@@ -250,53 +255,58 @@ export default function HomePage({
       </section>
 
       {/* 6. Our Project Delivery Process — White Background */}
-      <section id="home-delivery-steps" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
+      <section id="home-delivery-steps" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-1.5 max-w-2xl text-left">
+            <RevealBlock direction="left" className="space-y-1.5 max-w-2xl text-left">
               <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
                 Our Project Delivery Process
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
                 How we partner with you from initial project discussions through fieldwork, quality review, and final report delivery.
               </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => onRequestProposal()}
-              className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] uppercase tracking-wider cursor-pointer shrink-0"
-            >
-              Start a Discussion →
-            </button>
+            </RevealBlock>
+            <RevealBlock direction="right" delayMs={80}>
+              <button
+                type="button"
+                onClick={() => onRequestProposal()}
+                className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] uppercase tracking-wider cursor-pointer shrink-0"
+              >
+                Start a Discussion →
+              </button>
+            </RevealBlock>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-5">
             {projectDeliverySteps.map((item, idx) => (
-              <div
-                key={item.step}
-                className="flex flex-col space-y-3"
-              >
-                <div className="flex items-center gap-2.5">
-                  <div className="w-10 h-10 rounded-full bg-[#006B22] text-white flex items-center justify-center shrink-0">
-                    {renderDeliveryIcon(item.icon)}
-                  </div>
-                  <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] shrink-0">
-                    Step {item.step}
-                  </span>
-                  {idx < projectDeliverySteps.length - 1 && (
-                    <div className="hidden lg:flex items-center flex-1 text-[#006B22]/60 dark:text-[#4ADE80]/60 pl-1" aria-hidden="true">
-                      <span className="h-px flex-1 bg-[#006B22]/30 dark:bg-[#4ADE80]/30" />
-                      <ArrowRight className="w-4 h-4 -ml-1 shrink-0 text-[#006B22] dark:text-[#4ADE80]" />
+              <div key={item.step}>
+                <RevealBlock
+                  direction="up"
+                  delayMs={idx * 75}
+                  className="flex flex-col space-y-3"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-10 h-10 rounded-full bg-[#006B22] text-white flex items-center justify-center shrink-0">
+                      {renderDeliveryIcon(item.icon)}
                     </div>
-                  )}
-                </div>
+                    <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] shrink-0">
+                      Step {item.step}
+                    </span>
+                    {idx < projectDeliverySteps.length - 1 && (
+                      <div className="hidden lg:flex items-center flex-1 text-[#006B22]/60 dark:text-[#4ADE80]/60 pl-1" aria-hidden="true">
+                        <span className="h-px flex-1 bg-[#006B22]/30 dark:bg-[#4ADE80]/30" />
+                        <ArrowRight className="w-4 h-4 -ml-1 shrink-0 text-[#006B22] dark:text-[#4ADE80]" />
+                      </div>
+                    )}
+                  </div>
 
-                <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug pt-1">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-                  {item.description}
-                </p>
+                  <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug pt-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                    {item.description}
+                  </p>
+                </RevealBlock>
               </div>
             ))}
           </div>

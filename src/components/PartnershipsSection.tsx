@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { initialPartnershipModels } from '../server/seedData';
 import { PartnershipModel } from '../types';
 import photoAssets from '../utils/photoAssets';
+import { RevealBlock } from './MotionReveal';
 
 interface PartnershipsSectionProps {
   onOpenPartnershipInquiry: (modelTitle?: string) => void;
@@ -38,17 +39,17 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
     <section id="partnerships" className="text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
 
       {/* 1. Section Header + Value Props — White Background */}
-      <div className="bg-white dark:bg-[#041B44] py-10 sm:py-12 space-y-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-2">
+      <div className="bg-white dark:bg-[#041B44] py-10 sm:py-12 space-y-8 overflow-hidden">
+        <RevealBlock direction="left" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-2">
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
             International Partnerships &amp; Consortia Models
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-3xl leading-relaxed font-light">
             Collaborating with global engineering firms, international consulting platforms, and development finance institutions requiring trusted, on-the-ground African safeguards execution.
           </p>
-        </div>
+        </RevealBlock>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RevealBlock direction="up" delayMs={80} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {valueProps.map((val, idx) => (
               <div key={idx} className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4">
@@ -61,14 +62,14 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
               </div>
             ))}
           </div>
-        </div>
+        </RevealBlock>
       </div>
 
       {/* 2. Full-Width Feature Split Band — Logo Green Background */}
-      <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+      <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 items-center gap-10">
-            <div className="lg:col-span-7 space-y-4">
+            <RevealBlock direction="left" className="lg:col-span-7 space-y-4">
               <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
                 Combining Local Ground Mastery with Multilateral Bankability
               </h3>
@@ -90,9 +91,9 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                   <span className="font-bold text-white">Kenya &amp; East Africa</span>
                 </div>
               </div>
-            </div>
+            </RevealBlock>
 
-            <div className="lg:col-span-5">
+            <RevealBlock direction="right" delayMs={80} className="lg:col-span-5">
               <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-900 shadow-md">
                 <img
                   src={photoAssets.infrastructure}
@@ -101,7 +102,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                   referrerPolicy="no-referrer"
                 />
               </div>
-            </div>
+            </RevealBlock>
           </div>
         </div>
       </div>

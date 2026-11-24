@@ -6,6 +6,7 @@
 import React from 'react';
 import photoAssets from '../utils/photoAssets';
 import PageHero from './PageHero';
+import { RevealBlock } from './MotionReveal';
 import {
   ArrowRight,
   CheckCircle2
@@ -109,18 +110,18 @@ export default function SectorsSection({
       />
 
       {/* 1. Infrastructure, Energy & Water Sectors — White Background */}
-      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="max-w-2xl text-left space-y-1.5">
+          <RevealBlock direction="left" className="max-w-2xl text-left space-y-1.5">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Energy, Transport &amp; Water Infrastructure
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light">
               Dedicated safeguard studies and compliance engineering for core public and private infrastructure investments.
             </p>
-          </div>
+          </RevealBlock>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+          <RevealBlock direction="up" delayMs={80} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {firstGroup.map((sec) => (
               <div
                 key={sec.id}
@@ -166,23 +167,23 @@ export default function SectorsSection({
                 </div>
               </div>
             ))}
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
       {/* 2. Built Environment, Agribusiness & Extractives — Logo Green Background */}
-      <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+      <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="max-w-2xl text-left space-y-1.5">
+          <RevealBlock direction="left" className="max-w-2xl text-left space-y-1.5">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
               Urban Development, Agribusiness &amp; Extractives
             </h2>
             <p className="text-xs sm:text-sm text-emerald-50 font-light">
               Environmental permitting, occupational safety, and land stewardship for commercial and industrial operations.
             </p>
-          </div>
+          </RevealBlock>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+          <RevealBlock direction="up" delayMs={80} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {secondGroup.map((sec) => (
               <div
                 key={sec.id}
@@ -228,7 +229,7 @@ export default function SectorsSection({
                 </div>
               </div>
             ))}
-          </div>
+          </RevealBlock>
         </div>
       </section>
 
