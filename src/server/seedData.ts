@@ -28,7 +28,7 @@ export const initialServices: Service[] = [
     overview: "HUERI supports project proponents, public authorities, and financing institutions to identify, assess, manage, and monitor environmental and social risks across the project lifecycle. We deliver statutory EIA/ESIA studies, Strategic Environmental Assessments (SEA), Environmental and Social Management Frameworks (ESMF), and Contractor C-ESMPs structured to meet regulatory and lender standards.",
     deliveryModelNote: "Delivered through HUERI's multidisciplinary team and qualified technical associates or specialist partners, depending on assignment requirements.",
     methodology: [
-      "Inception & Scoping Protocol: Defining project baseline boundaries against statutory EMCA Cap 387 and lender guidelines (IFC PS1, World Bank ESS1, AfDB ISS).",
+      "Inception & Scoping Protocol: Defining project baseline boundaries against national regulatory and international lender guidelines (IFC PS1, World Bank ESS1, AfDB ISS).",
       "Multidisciplinary Baseline Investigations: Ambient air quality, acoustic baseline surveys, soil characterization, biodiversity inventories, and hydrological assessments.",
       "Quantitative & Qualitative Significance Matrices: Evaluating magnitude, sensitivity, duration, reversibility, and cumulative impacts.",
       "Mitigation Hierarchy Architecture: Prioritizing avoidance and minimization over mitigation to reduce residual environmental footprint.",
@@ -46,7 +46,7 @@ export const initialServices: Service[] = [
       "Structured risk mitigation to support predictable project timelines."
     ],
     internationalAlignment: [
-      "Kenyan EMCA Cap 387 & Environmental (Impact Assessment and Audit) Regulations",
+      "Kenyan Environmental Impact Assessment and Audit Regulations",
       "World Bank Environmental and Social Framework (ESS1-ESS10)",
       "IFC Performance Standards (PS1-PS8)",
       "AfDB Integrated Safeguards System (ISS)"
@@ -407,7 +407,7 @@ export const initialServices: Service[] = [
     icon: "GraduationCap",
     practiceCategory: "Capacity Building & Training",
     shortDescription: "Specialized professional and corporate training on ESHSRIM procedures, compliance frameworks, hazard management, and international safeguard standards for individuals and organizations.",
-    overview: "HUERI delivers specialized capacity-building programs in Environmental, Social, Health and Safety Risks and Impacts Management (ESHSRIM) procedures. Tailored for both individuals seeking professional qualification and organizations executing high-stakes infrastructure, energy, and commercial projects, our modular training integrates Kenyan statutory regulations (NEMA EMCA Cap 387, DOSHS OSHA 2007) with international lender benchmarks (World Bank ESF, IFC Performance Standards, AfDB ISS).",
+    overview: "HUERI delivers specialized capacity-building programs in Environmental, Social, Health and Safety Risks and Impacts Management (ESHSRIM) procedures. Tailored for both individuals seeking professional qualification and organizations executing high-stakes infrastructure, energy, and commercial projects, our modular training integrates national environmental and workplace safety regulations with international lender benchmarks (World Bank ESF, IFC Performance Standards, AfDB ISS).",
     deliveryModelNote: "Delivered in-person at client premises, our Kisumu training suites, or via interactive executive virtual sessions with verifiable certificates of completion.",
     methodology: [
       "Modular Curriculum Architecture: Structured modules spanning statutory risk screening, hazard identification (HIRA), Contractor C-ESMP implementation, and grievance redress mechanism (GRM) operations.",
@@ -428,7 +428,7 @@ export const initialServices: Service[] = [
       "Reduces institutional legal liabilities and operational disruptions through proactive hazard management."
     ],
     internationalAlignment: [
-      "NEMA EMCA Cap 387 EIA & Audit Regulations",
+      "National Environmental Impact Assessment & Audit Regulations",
       "DOSHS Occupational Safety and Health Act (OSHA 2007)",
       "World Bank Environmental and Social Framework (ESS1-ESS10)",
       "IFC Performance Standards (PS1, PS2, PS4)",

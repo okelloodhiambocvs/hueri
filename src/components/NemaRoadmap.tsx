@@ -247,9 +247,6 @@ export default function NemaRoadmap({}: NemaRoadmapProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#006B22] dark:text-[#4ADE80] block">
-            End-to-End Project Lifecycle Framework
-          </span>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
             12-Stage African Advisory Support
           </h2>
@@ -258,7 +255,7 @@ export default function NemaRoadmap({}: NemaRoadmapProps) {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 pb-2">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -275,26 +272,26 @@ export default function NemaRoadmap({}: NemaRoadmapProps) {
         </div>
 
         {/* Clean Flat Stage Selector Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-5 gap-y-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
           {filteredStages.map((stage) => {
             const isSelected = activeStageNumber === stage.stageNumber;
             return (
               <button
                 key={stage.stageNumber}
                 onClick={() => setActiveStageNumber(stage.stageNumber)}
-                className={`pt-3 pb-2 border-t-2 text-left transition-colors flex flex-col justify-between cursor-pointer ${
+                className={`p-3 rounded-lg text-left transition-colors flex flex-col justify-between cursor-pointer ${
                   isSelected
-                    ? 'border-[#006B22] dark:border-[#4ADE80] text-[#003B95] dark:text-white'
-                    : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-[#003B95] hover:text-[#003B95] dark:hover:text-white'
+                    ? 'bg-[#003B95] text-white'
+                    : 'bg-slate-50 dark:bg-[#06183A] text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-[#003B95] dark:hover:text-white'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className={`text-[10px] font-mono font-bold ${
-                    isSelected ? 'text-[#006B22] dark:text-[#4ADE80]' : 'text-slate-400'
+                    isSelected ? 'text-[#4ADE80]' : 'text-slate-400'
                   }`}>
                     {stage.stageNumber.toString().padStart(2, '0')}
                   </span>
-                  <span className="text-[9px] font-mono uppercase text-slate-400">
+                  <span className={`text-[9px] font-mono uppercase ${isSelected ? 'text-slate-200' : 'text-slate-400'}`}>
                     PHASE
                   </span>
                 </div>

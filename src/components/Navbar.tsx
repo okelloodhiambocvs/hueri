@@ -79,7 +79,7 @@ export default function Navbar({
               onClick={() => handleNavClick('home')}
               className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 ${
                 currentPage === 'home'
-                  ? 'text-[#006B22] dark:text-[#4ADE80] border-b-2 border-[#006B22] dark:border-[#4ADE80]'
+                  ? 'text-[#006B22] dark:text-[#4ADE80]'
                   : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
               }`}
             >
@@ -90,7 +90,7 @@ export default function Navbar({
               onClick={() => handleNavClick('about')}
               className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 ${
                 currentPage === 'about'
-                  ? 'text-[#006B22] dark:text-[#4ADE80] border-b-2 border-[#006B22] dark:border-[#4ADE80]'
+                  ? 'text-[#006B22] dark:text-[#4ADE80]'
                   : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
               }`}
             >
@@ -101,7 +101,7 @@ export default function Navbar({
               onClick={() => handleNavClick('services')}
               className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 ${
                 currentPage === 'services'
-                  ? 'text-[#006B22] dark:text-[#4ADE80] border-b-2 border-[#006B22] dark:border-[#4ADE80]'
+                  ? 'text-[#006B22] dark:text-[#4ADE80]'
                   : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
               }`}
             >
@@ -112,7 +112,7 @@ export default function Navbar({
               onClick={() => handleNavClick('sectors')}
               className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 ${
                 currentPage === 'sectors'
-                  ? 'text-[#006B22] dark:text-[#4ADE80] border-b-2 border-[#006B22] dark:border-[#4ADE80]'
+                  ? 'text-[#006B22] dark:text-[#4ADE80]'
                   : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
               }`}
             >
@@ -123,11 +123,11 @@ export default function Navbar({
               onClick={() => handleNavClick('contact')}
               className={`text-xs font-heading font-bold uppercase tracking-wider transition-colors cursor-pointer py-1 whitespace-nowrap shrink-0 ${
                 currentPage === 'contact'
-                  ? 'text-[#006B22] dark:text-[#4ADE80] border-b-2 border-[#006B22] dark:border-[#4ADE80]'
+                  ? 'text-[#006B22] dark:text-[#4ADE80]'
                   : 'text-[#003B95] dark:text-slate-100 hover:text-[#006B22] dark:hover:text-[#4ADE80]'
               }`}
             >
-              {language === 'sw' ? 'WASILIANA NASI' : 'CONTACT & ENQUIRIES'}
+              {language === 'sw' ? 'WASILIANA NASI' : 'CONTACT'}
             </button>
           </div>
 
@@ -150,9 +150,9 @@ export default function Navbar({
 
             <button
               onClick={() => onRequestProposal()}
-              className="px-5 py-2.5 bg-[#003B95] hover:bg-[#002D73] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer whitespace-nowrap shrink-0"
+              className="px-3.5 py-1.5 bg-[#003B95] hover:bg-[#002D73] text-white font-heading font-bold text-xs tracking-wide rounded-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
-              REQUEST PROPOSAL
+              Let&apos;s Talk
             </button>
           </div>
 
@@ -240,16 +240,16 @@ export default function Navbar({
                   : 'text-[#003B95] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
               }`}
             >
-              CONTACT & ENQUIRIES
+              CONTACT
             </button>
           </div>
 
           <div className="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-2">
             <button
               onClick={() => { onRequestProposal(); setMobileMenuOpen(false); }}
-              className="w-full py-3 bg-[#003B95] hover:bg-[#002D73] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg cursor-pointer"
+              className="w-full py-2 px-4 bg-[#003B95] hover:bg-[#002D73] text-white font-heading font-bold text-xs tracking-wide rounded-md cursor-pointer"
             >
-              REQUEST PROPOSAL
+              Let&apos;s Talk
             </button>
           </div>
         </div>

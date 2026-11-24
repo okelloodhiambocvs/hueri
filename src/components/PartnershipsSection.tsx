@@ -36,13 +36,10 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
 
   return (
     <section id="partnerships" className="text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
-      <div className="space-y-16 py-10">
+      <div className="space-y-10 py-8">
 
         {/* Section Header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#006B22] dark:text-[#4ADE80] block">
-            Global Collaboration &amp; Market Access
-          </span>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
             International Partnerships &amp; Consortia Models
           </h2>
@@ -51,22 +48,19 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           </p>
         </div>
 
-        {/* Full-Width Feature Split Band — No Card Block, Clean Photo */}
+        {/* Full-Width Feature Split Band */}
         <div className="bg-[#041B44] dark:bg-[#061E4A] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
             <div className="grid lg:grid-cols-12 items-center gap-10">
-              <div className="lg:col-span-7 space-y-5">
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#4ADE80] block">
-                  Pan-African &amp; Global Alignment
-                </span>
+              <div className="lg:col-span-7 space-y-4">
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
                   Combining Local Ground Mastery with Multilateral Bankability
                 </h3>
                 <p className="text-xs sm:text-sm text-blue-100 font-light leading-relaxed">
-                  International consortia and engineering prime contractors rely on HUERI to execute in-situ stakeholder engagements, statutory NEMA licensing, environmental monitoring, and Resettlement Action Plans without project disruption or legal exposure.
+                  International consortia and engineering prime contractors rely on HUERI to execute in-situ stakeholder engagements, statutory licensing, environmental monitoring, and Resettlement Action Plans without project disruption or legal exposure.
                 </p>
 
-                <div className="grid sm:grid-cols-3 gap-6 pt-4 border-t border-white/15 text-xs font-mono">
+                <div className="grid sm:grid-cols-3 gap-6 pt-2 text-xs font-mono">
                   <div>
                     <span className="text-blue-200 block text-[10px] uppercase">Response Time</span>
                     <span className="font-bold text-[#4ADE80]">&lt; 24h Scoping</span>
@@ -96,11 +90,11 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           </div>
         </div>
 
-        {/* Why Partner With HUERI — Open 4-Column Row */}
+        {/* Why Partner With HUERI */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-slate-200 dark:border-slate-800 pt-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {valueProps.map((val, idx) => (
-              <div key={idx} className="border-t-2 border-[#006B22] dark:border-[#4ADE80] pt-4 space-y-2">
+              <div key={idx} className="space-y-2">
                 <h4 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
                   {val.title}
                 </h4>
@@ -112,18 +106,15 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           </div>
         </div>
 
-        {/* Pan-African In-Country Partnering Framework — Open Editorial Strip */}
+        {/* Pan-African In-Country Partnering Framework */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border-y border-slate-200 dark:border-slate-800 py-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div className="bg-slate-50 dark:bg-[#06183A] rounded-xl p-6 sm:p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="space-y-3 max-w-3xl">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#006B22] dark:text-[#4ADE80] block">
-                Pan-African Alliance Strategy • Regional Collaboration Framework
-              </span>
               <h3 className="font-heading font-black text-xl sm:text-2xl text-[#003B95] dark:text-white">
                 In-Country Teaming with Local African Experts &amp; National Consultancies
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-                While our direct core track record is rooted in Kenya, HUERI operates on a deliberate <strong className="font-semibold text-slate-900 dark:text-slate-100">Pan-African Partnering Philosophy</strong>. Whenever project opportunities arise across other African countries, our organization is structured to collaborate directly with registered in-country environmental practitioners, local engineering firms, and national lead consultants. This ensures every multi-country assignment combines deep domestic statutory familiarity and local institutional relationships with our rigorous international safeguards compliance (World Bank ESF, IFC PS, AfDB ISS).
+                While our direct core track record is rooted in Kenya, HUERI operates on a deliberate <strong className="font-semibold text-slate-900 dark:text-slate-100">Pan-African Partnering Philosophy</strong>. Whenever project opportunities arise across other African countries, our organization is structured to collaborate directly with registered in-country environmental practitioners, local engineering firms, and national lead consultants.
               </p>
               <div className="flex flex-wrap gap-4 pt-1 font-mono text-xs text-[#006B22] dark:text-[#4ADE80]">
                 <span>✓ Joint-Venture Consortiums</span>
@@ -143,13 +134,13 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           </div>
         </div>
 
-        {/* Structured Partnership Models Grid — Open Editorial Grid */}
+        {/* Structured Partnership Models Grid */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
             {models.map((model) => (
               <div
                 key={model.id}
-                className="border-t-2 border-[#003B95] dark:border-[#38BDF8] pt-5 pb-4 flex flex-col justify-between space-y-4"
+                className="pb-4 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-2.5">
                   <h3 className="font-heading font-extrabold text-base text-[#003B95] dark:text-white leading-snug">
@@ -160,7 +151,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                     {model.description}
                   </p>
 
-                  <div className="pt-2.5 border-t border-slate-100 dark:border-slate-800">
+                  <div className="pt-1">
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-0.5">
                       Typical Target Partners
                     </span>
@@ -170,7 +161,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                   </div>
                 </div>
 
-                <div className="space-y-3 pt-2.5 border-t border-slate-100 dark:border-slate-800">
+                <div className="space-y-3 pt-1">
                   <div className="space-y-1">
                     {model.benefits.map((b, i) => (
                       <div key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-1.5">

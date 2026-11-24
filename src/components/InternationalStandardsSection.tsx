@@ -126,9 +126,6 @@ export default function InternationalStandardsSection({}: InternationalStandards
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#006B22] dark:text-[#4ADE80] block">
-            Global Compliance &amp; Safeguard Architectures
-          </span>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
             International Standards &amp; Statutory Frameworks
           </h2>
@@ -137,7 +134,7 @@ export default function InternationalStandardsSection({}: InternationalStandards
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 pb-2">
           <button
             onClick={() => setActiveTab('lenders')}
             className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
@@ -173,18 +170,15 @@ export default function InternationalStandardsSection({}: InternationalStandards
         </div>
 
         {activeTab === 'lenders' && (
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 animate-fadeIn">
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 animate-fadeIn">
             {lenderStandards.map((item, idx) => (
               <div
                 key={idx}
-                className="border-t-2 border-[#003B95] dark:border-[#38BDF8] pt-5 pb-4 space-y-3"
+                className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-3"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80]">
                     {item.tag}
-                  </span>
-                  <span className="text-[10px] font-mono text-slate-400 font-bold">
-                    BENCHMARK
                   </span>
                 </div>
 
@@ -197,7 +191,7 @@ export default function InternationalStandardsSection({}: InternationalStandards
                   </p>
                 </div>
 
-                <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-1">
                   {item.standards.map((std, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-[#006B22] dark:text-[#4ADE80] font-bold shrink-0">·</span>
@@ -211,11 +205,11 @@ export default function InternationalStandardsSection({}: InternationalStandards
         )}
 
         {activeTab === 'voluntary' && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 animate-fadeIn">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fadeIn">
             {voluntaryFrameworks.map((item, idx) => (
               <div
                 key={idx}
-                className="border-t-2 border-[#006B22] dark:border-[#4ADE80] pt-4 space-y-2"
+                className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-2"
               >
                 <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
                   {item.category}
@@ -232,11 +226,11 @@ export default function InternationalStandardsSection({}: InternationalStandards
         )}
 
         {activeTab === 'statutory' && (
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 animate-fadeIn">
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-6 animate-fadeIn">
             {statutoryFrameworks.map((law, idx) => (
               <div
                 key={idx}
-                className="border-t-2 border-[#003B95] dark:border-[#38BDF8] pt-4 space-y-2"
+                className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-2"
               >
                 <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80] block">
                   {law.authority}

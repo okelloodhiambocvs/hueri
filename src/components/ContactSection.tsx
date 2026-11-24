@@ -143,48 +143,42 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
 
   return (
     <section id="contact" className="py-10 sm:py-12 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans" aria-labelledby="contact-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#006B22] dark:text-[#4ADE80] block">
-            OFFICIAL CONSULTATIONS &amp; INQUIRIES
-          </span>
           <h2 id="contact-heading" className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#003B95] dark:text-white tracking-tight leading-tight">
-            Consult Our Safeguards &amp; Advisory Team
+            Consult Our Advisory Team
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
-            Headquartered in Kisumu, Kenya, with multidisciplinary capacity to deliver assignments across Kenya and wider Africa through qualified partnerships.
+            Headquartered in Kisumu, Kenya, with capacity to deliver assignments across Kenya and wider Africa through qualified partnerships.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start border-t border-slate-200 dark:border-slate-800 pt-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start pt-2">
 
           <div className="lg:col-span-5">
             <OfficeInfoCard />
           </div>
 
-          <div className="lg:col-span-7 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-10 space-y-6">
-            <div className="space-y-1.5 border-b border-slate-200 dark:border-slate-800 pb-4">
-              <span className="text-[10px] font-mono font-bold text-[#006B22] dark:text-[#4ADE80] uppercase tracking-widest block">
-                TERMS OF REFERENCE &amp; TECHNICAL PROPOSAL DESK
-              </span>
+          <div className="lg:col-span-7 lg:pl-10 space-y-6">
+            <div className="space-y-1.5">
               <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#003B95] dark:text-white">
-                Advisory Proposal &amp; Scoping Request
+                Send an Inquiry
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 font-sans font-light leading-relaxed">
-                Submit your project specifications or consortium requirements. Managing Director Belinda Nyakinya and our technical panel will review and provide a structured response.
+                Submit your project details or partnership requirements. Managing Director Belinda Nyakinya and our technical team will review and respond promptly.
               </p>
             </div>
 
             {validationError && (
               <div className="p-3 bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 rounded-lg text-rose-700 dark:text-rose-300 text-xs font-mono flex items-center justify-between">
                 <span>{validationError}</span>
-                <button type="button" onClick={() => setValidationError(null)} className="text-xs underline cursor-pointer">Dismiss</button>
+                <button type="button" onClick={() => setValidationError(null)} className="text-xs font-bold cursor-pointer">Dismiss</button>
               </div>
             )}
 
             {submitSuccess ? (
-              <div className="py-8 border-y border-[#006B22]/40 text-center space-y-3">
+              <div className="p-6 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/30 text-center space-y-3">
                 <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] uppercase tracking-wider block">
                   Dossier Logged Successfully
                 </span>
@@ -379,12 +373,8 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
                     disabled={isSubmitting}
                     className="w-full py-3.5 bg-[#006B22] hover:bg-[#00581C] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer disabled:opacity-50"
                   >
-                    {isSubmitting ? 'PURIFYING & TRANSMITTING SCOPING DOSSIER...' : 'SUBMIT ADVISORY SCOPING REQUEST'}
+                    {isSubmitting ? 'SUBMITTING...' : 'SUBMIT INQUIRY'}
                   </button>
-                </div>
-
-                <div className="pt-2 border-t border-slate-200 dark:border-slate-800 text-[10px] font-mono text-slate-500 dark:text-slate-400 text-center">
-                  ENCRYPTED &amp; SANITIZED ENTRY POINT • DIRECT RESPONSE • NEMA REGISTERED LEAD EXPERTS
                 </div>
               </form>
             )}

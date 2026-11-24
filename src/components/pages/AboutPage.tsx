@@ -18,7 +18,7 @@ export default function AboutPage({
   onRequestProposal
 }: AboutPageProps) {
   return (
-    <div className="pt-24 pb-0 min-h-screen font-sans bg-white dark:bg-[#041B44]">
+    <div className="pb-0 min-h-screen font-sans bg-white dark:bg-[#041B44]">
       {/* Main About Component Following the Nyumbani Greens Flow */}
       <AboutSection 
         initialSection={initialSection}

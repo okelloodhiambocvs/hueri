@@ -30,8 +30,8 @@ export default function FAQSection({}: FAQSectionProps) {
     {
       id: 'faq_nema_licence',
       category: 'Licensing & Standards',
-      question: 'Is HUERI Limited an officially registered and licensed Firm of Experts with NEMA in 2026?',
-      answer: 'Yes. HUERI Limited is an officially registered and practicing Firm of Experts with NEMA under EMCA Cap 387, directed by certified NEMA Lead Experts. As a matter of corporate privacy and professional compliance, statutory practicing licenses and official registration certificates are considered private documentation and are provided directly to clients, prospective partners, and procurement evaluation panels upon formal request.'
+      question: 'Is HUERI Limited licensed to conduct NEMA environmental assessments and audits?',
+      answer: 'Yes. HUERI Limited is licensed by NEMA and directed by certified Lead Experts. Statutory practicing licenses and official registration certificates are treated as private corporate documentation and provided directly to clients, prospective partners, and procurement evaluation panels upon formal request.'
     },
     {
       id: 'faq_lender_standards',
@@ -55,7 +55,7 @@ export default function FAQSection({}: FAQSectionProps) {
       id: 'faq_operational_audit',
       category: 'Lifecycle & Costs',
       question: 'What support does HUERI provide for existing operating assets and annual compliance?',
-      answer: 'Under EMCA Cap 387 and OSHA 2007, operating commercial, industrial, and infrastructure facilities must conduct statutory Annual Environmental Audits (EA) and workplace safety audits registered with NEMA and DOSHS. HUERI performs initial baseline audits, hazardous waste surveys, effluent trials, and ESG disclosures, drafting practical Corrective Action Plans (CAPs) to maintain continuous legal standing.'
+      answer: 'Operating commercial, industrial, and infrastructure facilities must conduct annual environmental audits and workplace safety audits registered with NEMA and DOSHS. HUERI performs baseline audits, hazardous waste surveys, effluent monitoring, and ESG disclosures, drafting practical Corrective Action Plans (CAPs) to maintain compliance.'
     }
   ];
 
@@ -70,23 +70,20 @@ export default function FAQSection({}: FAQSectionProps) {
   };
 
   return (
-    <section id="faq" className="py-12 sm:py-16 bg-slate-50/60 dark:bg-[#06183A] text-slate-900 dark:text-slate-100 transition-colors duration-300 border-t border-slate-200 dark:border-slate-800 font-sans">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <section id="faq" className="py-10 sm:py-12 bg-slate-50/60 dark:bg-[#06183A] text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
         <div className="text-center max-w-3xl mx-auto space-y-2">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#006B22] dark:text-[#4ADE80] block">
-            KNOWLEDGE BASE &amp; STATUTORY CLARIFICATIONS
-          </span>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
-            Frequently Asked Advisory &amp; Partnership Questions
+            Frequently Asked Questions
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
-            Answers regarding our African advisory coverage, international lender standards, statutory permitting, and consortium partnerships.
+            Answers regarding our advisory coverage, international lender standards, permitting, and partnerships.
           </p>
         </div>
 
-        {/* Clean Filter Strip — No Card Box */}
-        <div className="py-3 border-y border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+        {/* Clean Filter Strip */}
+        <div className="py-2 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 dark:text-slate-200">
             Filter FAQ Topics
           </span>
@@ -109,8 +106,7 @@ export default function FAQSection({}: FAQSectionProps) {
           </div>
         </div>
 
-        {/* Open Hairline Accordion List — No Card Blocks */}
-        <div className="divide-y divide-slate-200 dark:divide-slate-800 border-b border-slate-200 dark:border-slate-800">
+        <div className="space-y-2">
           {filteredFaqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (

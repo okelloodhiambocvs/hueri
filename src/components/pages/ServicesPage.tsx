@@ -20,7 +20,7 @@ export default function ServicesPage({
   onLeadSubmit = () => {}
 }: ServicesPageProps) {
   return (
-    <div className="pt-24 pb-0 min-h-screen font-sans bg-white dark:bg-[#041B44]">
+    <div className="pb-0 min-h-screen font-sans bg-white dark:bg-[#041B44]">
       {/* Consolidated Core Services Portfolio */}
       <ServicesSection 
         initialPillarId={initialPillarId}

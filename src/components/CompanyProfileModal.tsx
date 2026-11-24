@@ -68,33 +68,33 @@ export default function CompanyProfileModal({ isOpen, onClose, onRequestProposal
         </div>
 
         {/* Navigation Tabs */}
-        <div className="px-6 border-b border-stone-200 dark:border-slate-800 flex gap-4 bg-white dark:bg-slate-900 text-xs font-mono font-bold">
+        <div className="px-6 py-2.5 flex flex-wrap gap-2 bg-white dark:bg-slate-900 text-xs font-mono font-bold">
           <button
             onClick={() => setActiveTab('download')}
-            className={`py-3 border-b-2 transition-all cursor-pointer ${
+            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               activeTab === 'download'
-                ? 'border-brand-green-700 text-brand-green-700 dark:text-emerald-400'
-                : 'border-transparent text-stone-500 hover:text-stone-800 dark:hover:text-slate-300'
+                ? 'bg-emerald-50 dark:bg-emerald-950/50 text-brand-green-700 dark:text-emerald-400'
+                : 'text-stone-500 hover:text-stone-800 dark:hover:text-slate-300'
             }`}
           >
             Overview & Download
           </button>
           <button
             onClick={() => setActiveTab('verification')}
-            className={`py-3 border-b-2 transition-all cursor-pointer ${
+            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               activeTab === 'verification'
-                ? 'border-brand-green-700 text-brand-green-700 dark:text-emerald-400'
-                : 'border-transparent text-stone-500 hover:text-stone-800 dark:hover:text-slate-300'
+                ? 'bg-emerald-50 dark:bg-emerald-950/50 text-brand-green-700 dark:text-emerald-400'
+                : 'text-stone-500 hover:text-stone-800 dark:hover:text-slate-300'
             }`}
           >
             Verification & Accreditation
           </button>
           <button
             onClick={() => setActiveTab('checklist')}
-            className={`py-3 border-b-2 transition-all cursor-pointer ${
+            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               activeTab === 'checklist'
-                ? 'border-brand-green-700 text-brand-green-700 dark:text-emerald-400'
-                : 'border-transparent text-stone-500 hover:text-stone-800 dark:hover:text-slate-300'
+                ? 'bg-emerald-50 dark:bg-emerald-950/50 text-brand-green-700 dark:text-emerald-400'
+                : 'text-stone-500 hover:text-stone-800 dark:hover:text-slate-300'
             }`}
           >
             Procurement Compliance Checklist
@@ -304,7 +304,7 @@ export default function CompanyProfileModal({ isOpen, onClose, onRequestProposal
           <div className="flex items-center gap-3">
             <button
               onClick={() => generateInstitutionalProfilePDF()}
-              className="inline-flex items-center gap-1.5 text-brand-green-700 dark:text-emerald-400 font-bold hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1.5 text-brand-green-700 dark:text-emerald-400 font-bold cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
               Print / Save PDF

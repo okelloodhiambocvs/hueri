@@ -27,8 +27,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.partnerships': 'Global Partnerships',
     'nav.experience': 'Experience',
     'nav.faq': 'FAQ',
-    'nav.contact': 'Contact & Enquiries',
-    'nav.request_proposal': 'REQUEST PROPOSAL',
+    'nav.contact': 'Contact',
+    'nav.request_proposal': "Let's Talk",
     'nav.partner_with_us': 'PARTNER WITH US',
 
     // Hero Section

@@ -214,7 +214,7 @@ export default function ProposalModal({
           <div className="space-y-6">
             
             {/* 4 Clear Sub-Categories / CTAs */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 border-b border-slate-200 dark:border-slate-800 pb-3">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 pb-1">
               <button
                 type="button"
                 onClick={() => setInquiryType('proposal')}
@@ -263,12 +263,6 @@ export default function ProposalModal({
 
             {/* Header Description */}
             <div className="space-y-1.5">
-              <span className="text-[10px] font-mono font-bold tracking-widest text-[#006B22] dark:text-[#4ADE80] uppercase block">
-                {inquiryType === 'proposal' && 'FORMAL TECHNICAL & COMMERCIAL PROPOSAL DESK'}
-                {inquiryType === 'tor' && 'TERMS OF REFERENCE (TOR) & EXPRESSION OF INTEREST'}
-                {inquiryType === 'partnership' && 'PAN-AFRICAN PARTNERSHIP & CONSORTIUM DESK'}
-                {inquiryType === 'general' && 'DIRECT CLIENT & INSTITUTIONAL ADVISORY ENQUIRY'}
-              </span>
               <h3 id="proposal-modal-title" className="font-heading font-extrabold text-xl sm:text-2xl text-stone-900 dark:text-white">
                 {inquiryType === 'proposal' && 'Request a Detailed Technical Proposal'}
                 {inquiryType === 'tor' && 'Submit Assignment Terms of Reference (TOR / RFP)'}
@@ -276,14 +270,14 @@ export default function ProposalModal({
                 {inquiryType === 'general' && 'Direct Enquiry to Advisory Team'}
               </h3>
               <p className="text-xs text-stone-600 dark:text-slate-300 font-light leading-relaxed">
-                Provide the details of your assignment below. Our registered Lead Experts will assess your scope and timeline against statutory and international guidelines.
+                Provide the details of your assignment below. Our team will review your scope and timeline promptly.
               </p>
             </div>
 
             {validationError && (
               <div className="p-3 bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 rounded-xl text-rose-700 dark:text-rose-300 text-xs font-mono flex items-center justify-between">
-                <span>⚠️ {validationError}</span>
-                <button onClick={() => setValidationError(null)} className="text-xs underline cursor-pointer">Dismiss</button>
+                <span>{validationError}</span>
+                <button onClick={() => setValidationError(null)} className="text-xs font-bold cursor-pointer">Dismiss</button>
               </div>
             )}
 

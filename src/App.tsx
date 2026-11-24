@@ -13,11 +13,17 @@ import LifecycleStandardsPage from './components/pages/LifecycleStandardsPage';
 import PartnershipsPage from './components/pages/PartnershipsPage';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
+import ServiceDetailPage from './components/pages/ServiceDetailPage';
 import ProposalModal from './components/ProposalModal';
 import LegalPoliciesModal from './components/LegalPoliciesModal';
 import QuickContactFloat from './components/QuickContactFloat';
 import AdminDrawer from './components/AdminDrawer';
 import CompanyProfileModal from './components/CompanyProfileModal';
+import {
+  getServiceDetailByIdOrSlug,
+  getServiceDetailPath,
+  resolveServiceSlugFromPath
+} from './utils/serviceRoutes';
 
 interface RouteInfo {
   page: string;
@@ -137,8 +143,8 @@ const routeMap: Record<string, RouteInfo> = {
     page: 'contact',
     sectionId: 'all',
     path: '/contact',
-    title: 'Official Consultations & Scoping Desk | HUERI Limited Kisumu & Nairobi',
-    desc: 'Contact HUERI Limited for Terms of Reference (TOR) submissions, statutory EIA proposals, tender teaming, or direct consultations in Kisumu.'
+    title: 'Contact | HUERI Limited',
+    desc: 'Contact HUERI Limited for project consultations, environmental impact assessments, and partnerships in Kisumu and across East Africa.'
   }
 };
 
@@ -148,6 +154,15 @@ function resolveCurrentRoute(): { page: string; sectionId: string; path: string 
   }
 
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
+  const serviceSlug = resolveServiceSlugFromPath(pathname);
+  if (serviceSlug) {
+    return {
+      page: 'service-detail',
+      sectionId: serviceSlug,
+      path: pathname
+    };
+  }
+
   if (routeMap[pathname]) {
     return {
       page: routeMap[pathname].page,
@@ -252,6 +267,18 @@ export default function App() {
 
   // Sync route and metadata on initial load and navigation
   useEffect(() => {
+    const serviceSlug = resolveServiceSlugFromPath(currentPath);
+    if (serviceSlug) {
+      const detail = getServiceDetailByIdOrSlug(serviceSlug);
+      updateDocumentMetadata({
+        page: 'service-detail',
+        sectionId: serviceSlug,
+        path: currentPath,
+        title: `${detail.title} | HUERI Limited`,
+        desc: detail.shortDescription
+      });
+      return;
+    }
     const route = routeMap[currentPath] || routeMap['/'];
     updateDocumentMetadata(route);
   }, [currentPath]);
@@ -277,7 +304,9 @@ export default function App() {
     let targetPath = explicitPath;
     if (!targetPath) {
       if (page === 'home') targetPath = '/';
-      else if (page === 'services') {
+      else if (page === 'service-detail') {
+        targetPath = getServiceDetailPath(sectionId || 'eia-esia');
+      } else if (page === 'services') {
         if (sectionId === 'service-pillar-1') targetPath = '/services/esia';
         else if (sectionId === 'service-pillar-2') targetPath = '/services/resettlement-action-plans';
         else if (sectionId === 'service-pillar-3') targetPath = '/services/environmental-audits';
@@ -303,6 +332,19 @@ export default function App() {
       } catch {
         window.location.hash = page;
       }
+    }
+
+    if (page === 'service-detail') {
+      const detail = getServiceDetailByIdOrSlug(sectionId || 'eia-esia');
+      updateDocumentMetadata({
+        page: 'service-detail',
+        sectionId: sectionId || 'eia-esia',
+        path: targetPath,
+        title: `${detail.title} | HUERI Limited`,
+        desc: detail.shortDescription
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
     }
 
     const route = routeMap[targetPath] || routeMap['/'];
@@ -393,7 +435,7 @@ export default function App() {
       />
 
       {/* Dedicated Multi-Page View Container */}
-      <main className="flex-grow">
+      <main className="flex-grow pt-[72px] sm:pt-[76px]">
         {currentPage === 'home' && (
           <HomePage 
             onNavigate={navigateToPage}
@@ -406,6 +448,15 @@ export default function App() {
         {currentPage === 'services' && (
           <ServicesPage 
             initialPillarId={activeSectionId}
+            onNavigate={navigateToPage}
+            onRequestProposal={handleOpenAdvisoryProposal}
+            onLeadSubmit={handleLeadSubmit}
+          />
+        )}
+
+        {currentPage === 'service-detail' && (
+          <ServiceDetailPage
+            serviceIdOrSlug={activeSectionId}
             onNavigate={navigateToPage}
             onRequestProposal={handleOpenAdvisoryProposal}
             onLeadSubmit={handleLeadSubmit}
