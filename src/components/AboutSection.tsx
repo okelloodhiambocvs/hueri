@@ -217,7 +217,7 @@ export default function AboutSection({
           </div>
 
           <RevealBlock direction="up" className="border-t border-slate-200 dark:border-slate-800 pt-8 space-y-6">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Core Values
             </h3>
 
@@ -481,7 +481,7 @@ export default function AboutSection({
 
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="space-y-2 text-left">
-              <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
                 Leadership &amp; Corporate Credentials
               </h3>
               <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl leading-relaxed">

@@ -113,7 +113,7 @@ export default function SectorsSection({
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <RevealBlock direction="left" className="max-w-2xl text-left space-y-1.5">
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Energy, Transport &amp; Water Infrastructure
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light">
@@ -175,7 +175,7 @@ export default function SectorsSection({
       <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <RevealBlock direction="left" className="max-w-2xl text-left space-y-1.5">
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               Urban Development, Agribusiness &amp; Extractives
             </h2>
             <p className="text-xs sm:text-sm text-emerald-50 font-light">
@@ -237,7 +237,7 @@ export default function SectorsSection({
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl text-left">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Operating in Multiple African Sectors?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">

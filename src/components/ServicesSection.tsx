@@ -119,7 +119,7 @@ export default function ServicesSection({
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <RevealBlock direction="left" className="text-left max-w-3xl space-y-2">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Advisory Services
             </h2>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed">
@@ -184,7 +184,7 @@ export default function ServicesSection({
       <section id="scoping-matrix" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <RevealBlock direction="left" className="space-y-2 text-left">
-            <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               African Project Safeguards &amp; Scoping Matrix
             </h3>
             <p className="text-sm sm:text-base text-emerald-50 font-light max-w-2xl leading-relaxed">

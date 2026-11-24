@@ -41,7 +41,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
       {/* 1. Section Header + Value Props — White Background */}
       <div className="bg-white dark:bg-[#041B44] py-10 sm:py-12 space-y-8 overflow-hidden">
         <RevealBlock direction="left" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-2">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
             International Partnerships &amp; Consortia Models
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-3xl leading-relaxed font-light">
@@ -70,7 +70,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 items-center gap-10">
             <RevealBlock direction="left" className="lg:col-span-7 space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
                 Combining Local Ground Mastery with Multilateral Bankability
               </h3>
               <p className="text-xs sm:text-sm text-emerald-50 font-light leading-relaxed">
@@ -112,7 +112,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="space-y-3 max-w-3xl">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-[#003B95] dark:text-white">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
                 In-Country Teaming with Local African Experts &amp; National Consultancies
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
@@ -140,7 +140,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
       {/* 4. Structured Partnership Models Grid — Logo Green Background */}
       <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
             Engagement &amp; Partnership Models
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

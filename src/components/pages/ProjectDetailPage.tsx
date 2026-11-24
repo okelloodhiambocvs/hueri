@@ -73,7 +73,7 @@ export default function ProjectDetailPage({
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-start">
           <RevealBlock direction="left" className="lg:col-span-8 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Assignment Scope &amp; Mandate
             </h2>
             <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
@@ -114,7 +114,7 @@ export default function ProjectDetailPage({
       <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <RevealBlock direction="left" className="max-w-2xl space-y-1.5">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               Technical Challenge, Approach &amp; Outcome
             </h2>
             <p className="text-xs sm:text-sm text-emerald-50 font-light">
@@ -160,7 +160,7 @@ export default function ProjectDetailPage({
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-6 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Key Deliverables
             </h2>
             <ul className="space-y-3">
@@ -174,7 +174,7 @@ export default function ProjectDetailPage({
           </div>
 
           <div className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Verification &amp; Record Summary
             </h2>
             {project.evidenceSummary && (
@@ -200,7 +200,7 @@ export default function ProjectDetailPage({
       <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               More Recent Work
             </h2>
             <button

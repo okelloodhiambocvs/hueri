@@ -8,8 +8,9 @@ import {
   splitServiceHeroTitle
 } from './serviceRoutes';
 
-test('serviceSummaries starts with Environmental Impact Assessment', () => {
+test('serviceSummaries starts with Environmental Impact Assessment followed by ESHSRIM Procedures Training', () => {
   assert.equal(serviceSummaries[0].title, 'Environmental Impact Assessment');
+  assert.equal(serviceSummaries[1].title, 'ESHSRIM Procedures Training');
   assert.equal(serviceSummaries.length, 9);
 });
 

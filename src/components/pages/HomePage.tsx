@@ -76,7 +76,7 @@ export default function HomePage({
       <section id="home-assignments" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 space-y-6 overflow-hidden scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <RevealBlock direction="left" className="space-y-1 text-left">
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               Our Recent Work
             </h2>
             <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl">
@@ -192,7 +192,7 @@ export default function HomePage({
       <section id="home-disciplines" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 space-y-6 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <RevealBlock direction="left" className="space-y-1 text-left">
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               Selected Advisory Disciplines
             </h2>
             <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl">
@@ -259,7 +259,7 @@ export default function HomePage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <RevealBlock direction="left" className="space-y-1.5 max-w-2xl text-left">
-              <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
                 Our Project Delivery Process
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">

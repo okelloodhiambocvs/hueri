@@ -27,6 +27,15 @@ export const serviceSummaries: ServiceCardSummary[] = [
     deliverablesSummary: 'Deliverables include EIA and ESIA study reports, strategic assessments, and construction management plans.'
   },
   {
+    id: 'eshsrim-training',
+    slug: 'eshsrim-procedures-training',
+    pillarId: 'service-pillar-5',
+    title: 'ESHSRIM Procedures Training',
+    imageKey: 'eshsrim-training',
+    snippet: 'Practical training on environmental, social, health, and safety risk procedures for teams and practitioners.',
+    deliverablesSummary: 'Deliverables include tailored procedures manuals, inspection toolkits, and participant certificates.'
+  },
+  {
     id: 'rap-livelihoods',
     slug: 'resettlement-action-plans',
     pillarId: 'service-pillar-2',
@@ -88,15 +97,6 @@ export const serviceSummaries: ServiceCardSummary[] = [
     imageKey: 'research-surveys',
     snippet: 'Aerial photogrammetry, elevation modeling, wayleave corridor mapping, and construction progress tracking.',
     deliverablesSummary: 'Deliverables include aerial orthomosaics, elevation models, and georeferenced corridor maps.'
-  },
-  {
-    id: 'eshsrim-training',
-    slug: 'eshsrim-procedures-training',
-    pillarId: 'service-pillar-5',
-    title: 'ESHSRIM Procedures Training',
-    imageKey: 'eshsrim-training',
-    snippet: 'Practical training on environmental, social, health, and safety risk procedures for teams and practitioners.',
-    deliverablesSummary: 'Deliverables include tailored procedures manuals, inspection toolkits, and participant certificates.'
   }
 ];
 

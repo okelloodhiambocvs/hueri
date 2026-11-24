@@ -6,10 +6,11 @@ import {
   resolveServiceSlugFromPath
 } from './serviceRoutes.ts';
 
-test('Our Services dropdown includes all 9 services starting with Environmental Impact Assessment', () => {
+test('Our Services dropdown includes all 9 services starting with Environmental Impact Assessment followed by ESHSRIM Procedures Training', () => {
   const items = getServiceDropdownItems();
   assert.equal(items.length, 9);
   assert.equal(items[0].label, 'Environmental Impact Assessment');
+  assert.equal(items[1].label, 'ESHSRIM Procedures Training');
 
   for (const item of items) {
     const slug = resolveServiceSlugFromPath(item.path);

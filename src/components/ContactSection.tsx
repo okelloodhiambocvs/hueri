@@ -147,7 +147,7 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         <RevealBlock direction="up" className="text-center max-w-3xl mx-auto space-y-2">
-          <h2 id="contact-heading" className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#003B95] dark:text-white tracking-tight leading-tight">
+          <h2 id="contact-heading" className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight leading-tight">
             Consult Our Advisory Team
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">

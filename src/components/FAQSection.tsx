@@ -74,7 +74,7 @@ export default function FAQSection({}: FAQSectionProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
         <div className="text-left max-w-3xl space-y-2">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
             Frequently Asked Questions
           </h2>
           <p className="text-xs sm:text-sm text-emerald-50 font-sans leading-relaxed font-light">

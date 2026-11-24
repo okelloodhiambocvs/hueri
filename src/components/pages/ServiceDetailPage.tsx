@@ -127,7 +127,7 @@ export default function ServiceDetailPage({
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-start">
           <RevealBlock direction="left" className="lg:col-span-8 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Service Scope &amp; Overview
             </h2>
             <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
@@ -164,7 +164,7 @@ export default function ServiceDetailPage({
         <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <RevealBlock direction="left">
-              <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
                 Step-by-Step Process
               </h2>
             </RevealBlock>
@@ -196,7 +196,7 @@ export default function ServiceDetailPage({
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8">
           <div className="lg:col-span-6 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Types of Delivery
             </h2>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -214,7 +214,7 @@ export default function ServiceDetailPage({
           </div>
 
           <div className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-5">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Key Deliverables &amp; Outcomes
             </h2>
             <div className="space-y-5">
@@ -258,7 +258,7 @@ export default function ServiceDetailPage({
       {service.caseExamples && service.caseExamples.length > 0 && (
         <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               Selected Experience
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -285,7 +285,7 @@ export default function ServiceDetailPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-5 max-w-4xl">
             <div className="space-y-1.5">
-              <h2 className="font-heading font-bold text-xl text-[#003B95] dark:text-white">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
                 Enquire About {service.title}
               </h2>
               <p className="text-sm text-slate-600 dark:text-slate-300 font-light">

@@ -126,7 +126,7 @@ export default function InternationalStandardsSection({}: InternationalStandards
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-6">
 
         <div className="text-left max-w-3xl space-y-2">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
             International Standards &amp; Statutory Frameworks
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-2xl leading-relaxed font-light">
