@@ -64,6 +64,7 @@ export const consolidatedPillars: ConsolidatedPillar[] = [
 
 export interface FeaturedAssignment {
   id: string;
+  slug: string;
   imageKey: string;
   title: string;
   client: string;
@@ -78,6 +79,7 @@ export interface FeaturedAssignment {
 export const homeFeaturedAssignments: FeaturedAssignment[] = [
   {
     id: 'p-wema-housing',
+    slug: 'multi-storey-residential-housing-esia',
     imageKey: 'p-wema-housing',
     title: 'Multi-Storey Residential Housing Development ESIA',
     client: 'Wema Magharibi Ltd',
@@ -91,6 +93,7 @@ export const homeFeaturedAssignments: FeaturedAssignment[] = [
   },
   {
     id: 'p-makasembo',
+    slug: 'makasembo-estate-housing-rap-eia',
     imageKey: 'p-makasembo',
     title: 'Makasembo Estate Multi-Storey Housing RAP & EIA',
     client: 'Local Authorities Pension Trust (LAPFUND)',
@@ -104,6 +107,7 @@ export const homeFeaturedAssignments: FeaturedAssignment[] = [
   },
   {
     id: 'p-structural-monitoring',
+    slug: 'high-rise-structural-ohs-oversight',
     imageKey: 'p-structural-monitoring',
     title: 'High-Rise Structural Concrete & OHS Safety Oversight',
     client: 'Regional Urban Developers Consortium',
@@ -117,6 +121,7 @@ export const homeFeaturedAssignments: FeaturedAssignment[] = [
   },
   {
     id: 'p-flloca',
+    slug: 'flloca-climate-resilient-infrastructure',
     imageKey: 'p-flloca',
     title: 'FLLoCA Climate-Resilient Infrastructure Assessments',
     client: 'County Government of Siaya',
@@ -130,6 +135,7 @@ export const homeFeaturedAssignments: FeaturedAssignment[] = [
   },
   {
     id: 'p-kisumu-climate',
+    slug: 'kisumu-county-climate-vulnerability-assessment',
     imageKey: 'p-kisumu-climate',
     title: 'Kisumu County Climate Change Vulnerability Assessment',
     client: 'County Government of Kisumu',
@@ -143,6 +149,7 @@ export const homeFeaturedAssignments: FeaturedAssignment[] = [
   },
   {
     id: 'p-wells-energy',
+    slug: 'wells-energy-petroleum-esia-audits',
     imageKey: 'p-wells-energy',
     title: 'ESIA & Statutory Environmental Audits for Petroleum Stations',
     client: 'Wells Energy Limited',
@@ -156,6 +163,7 @@ export const homeFeaturedAssignments: FeaturedAssignment[] = [
   },
   {
     id: 'p-kisip-ii',
+    slug: 'kisip-ii-informal-settlements-safeguards',
     imageKey: 'p-kisip-ii',
     title: 'Kenya Informal Settlements Improvement Project II (KISIP II)',
     client: 'County Government of Kisumu',

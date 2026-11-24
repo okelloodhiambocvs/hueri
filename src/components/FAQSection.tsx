@@ -70,21 +70,21 @@ export default function FAQSection({}: FAQSectionProps) {
   };
 
   return (
-    <section id="faq" className="py-10 sm:py-12 bg-slate-50/60 dark:bg-[#06183A] text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
+    <section id="faq" className="py-10 sm:py-12 bg-[#006B22] dark:bg-[#054A20] text-white transition-colors duration-300 font-sans">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
-        <div className="text-center max-w-3xl mx-auto space-y-2">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
+        <div className="text-left max-w-3xl space-y-2">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+          <p className="text-xs sm:text-sm text-emerald-50 font-sans leading-relaxed font-light">
             Answers regarding our advisory coverage, international lender standards, permitting, and partnerships.
           </p>
         </div>
 
         {/* Clean Filter Strip */}
-        <div className="py-2 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 dark:text-slate-200">
+        <div className="py-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-100">
             Filter FAQ Topics
           </span>
 
@@ -95,7 +95,7 @@ export default function FAQSection({}: FAQSectionProps) {
                 setActiveCategory(e.target.value);
                 setOpenId(null);
               }}
-              className="w-full sm:w-64 px-3 py-2 rounded-lg bg-white dark:bg-[#041B44] border border-slate-300 dark:border-slate-700 text-xs font-mono font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22] cursor-pointer"
+              className="w-full sm:w-64 px-3 py-2 rounded-lg bg-white dark:bg-[#041B44] border border-white/30 text-xs font-mono font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-white cursor-pointer"
             >
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -106,16 +106,16 @@ export default function FAQSection({}: FAQSectionProps) {
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           {filteredFaqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
-              <div key={faq.id} className="py-2">
+              <div key={faq.id} className="bg-white dark:bg-[#041B44] rounded-xl px-5 py-1 shadow-sm">
                 <button
                   onClick={() => toggleOpen(faq.id)}
                   className="w-full flex items-center justify-between py-4 text-left cursor-pointer transition-colors group"
                 >
-                  <span className="font-heading font-bold text-slate-900 dark:text-white group-hover:text-[#003B95] dark:group-hover:text-[#4ADE80] text-sm sm:text-base leading-snug pr-4">
+                  <span className="font-heading font-bold text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] text-sm sm:text-base leading-snug pr-4">
                     {faq.question}
                   </span>
                   <span className={`text-[11px] font-mono font-bold whitespace-nowrap uppercase tracking-wider ${
@@ -130,7 +130,7 @@ export default function FAQSection({}: FAQSectionProps) {
                 {isOpen && (
                   <div className="pb-5 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-sans leading-relaxed font-light space-y-1.5 animate-fadeIn">
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
-                      OFFICIAL HUERI ADVISORY POSITION
+                      Official HUERI Advisory Position
                     </span>
                     <p>{faq.answer}</p>
                   </div>
@@ -140,9 +140,9 @@ export default function FAQSection({}: FAQSectionProps) {
           })}
         </div>
 
-        <div className="text-center pt-2">
-          <p className="text-[11px] text-slate-500 dark:text-slate-400 font-sans font-light">
-            Have a project-specific inquiry not listed here? Connect with our Lead Experts via the proposal form above.
+        <div className="text-left pt-2">
+          <p className="text-[11px] text-emerald-50 font-sans font-light">
+            Have a project-specific inquiry not listed here? Connect with our Lead Experts via the inquiry form above.
           </p>
         </div>
 

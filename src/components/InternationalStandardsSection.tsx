@@ -122,19 +122,19 @@ export default function InternationalStandardsSection({}: InternationalStandards
   ];
 
   return (
-    <section className="py-10 sm:py-14 bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 transition-colors font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <section className="bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 transition-colors font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-6">
 
-        <div className="text-center max-w-3xl mx-auto space-y-2">
+        <div className="text-left max-w-3xl space-y-2">
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white tracking-tight">
             International Standards &amp; Statutory Frameworks
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-2xl leading-relaxed font-light">
             Bridging international multilateral financing requirements with African statutory compliance to ensure project compliance and sustainability alignment.
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 pb-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => setActiveTab('lenders')}
             className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
@@ -168,84 +168,87 @@ export default function InternationalStandardsSection({}: InternationalStandards
             Statutory &amp; Regional Laws
           </button>
         </div>
+      </div>
 
-        {activeTab === 'lenders' && (
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 animate-fadeIn">
-            {lenderStandards.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80]">
-                    {item.tag}
-                  </span>
+      <div className="bg-[#006B22] dark:bg-[#054A20] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {activeTab === 'lenders' && (
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 animate-fadeIn">
+              {lenderStandards.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-3 shadow-sm"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80]">
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#003B95] dark:text-white">
+                      {item.institution}
+                    </h3>
+                    <p className="text-[11px] font-mono font-semibold text-[#006B22] dark:text-[#4ADE80] mt-0.5">
+                      {item.framework}
+                    </p>
+                  </div>
+
+                  <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-1">
+                    {item.standards.map((std, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-[#006B22] dark:text-[#4ADE80] font-bold shrink-0">·</span>
+                        <span>{std}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+              ))}
+            </div>
+          )}
 
-                <div>
-                  <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#003B95] dark:text-white">
-                    {item.institution}
-                  </h3>
-                  <p className="text-[11px] font-mono font-semibold text-[#006B22] dark:text-[#4ADE80] mt-0.5">
-                    {item.framework}
+          {activeTab === 'voluntary' && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fadeIn">
+              {voluntaryFrameworks.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm"
+                >
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
+                    {item.category}
+                  </span>
+                  <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+                    {item.name}
+                  </h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+                    {item.description}
                   </p>
                 </div>
+              ))}
+            </div>
+          )}
 
-                <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-1">
-                  {item.standards.map((std, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#006B22] dark:text-[#4ADE80] font-bold shrink-0">·</span>
-                      <span>{std}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {activeTab === 'voluntary' && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fadeIn">
-            {voluntaryFrameworks.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-2"
-              >
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
-                  {item.category}
-                </span>
-                <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
-                  {item.name}
-                </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {activeTab === 'statutory' && (
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-6 animate-fadeIn">
-            {statutoryFrameworks.map((law, idx) => (
-              <div
-                key={idx}
-                className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-2"
-              >
-                <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80] block">
-                  {law.authority}
-                </span>
-                <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
-                  {law.name}
-                </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
-                  {law.scope}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-
+          {activeTab === 'statutory' && (
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-6 animate-fadeIn">
+              {statutoryFrameworks.map((law, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm"
+                >
+                  <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80] block">
+                    {law.authority}
+                  </span>
+                  <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+                    {law.name}
+                  </h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+                    {law.scope}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

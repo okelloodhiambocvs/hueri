@@ -138,7 +138,7 @@ export default function AboutSection({
   const marqueeServices = [...serviceSummaries, ...serviceSummaries];
 
   return (
-    <div className="space-y-12 sm:space-y-14 font-sans">
+    <div className="font-sans">
 
       {/* 1. Unified Full-Width Hero matching Home Landing Page Photo Size */}
       <PageHero
@@ -165,211 +165,221 @@ export default function AboutSection({
         </button>
       </PageHero>
 
-      {/* 2. Overview — Concise 2-3 Sentence Introduction Left Aligned */}
-      <section id="about-overview" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-3 scroll-mt-24">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-          Overview
-        </h2>
-        <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light max-w-3xl">
-          Hope Urban Environmental and Research Investments Limited (HUERI Limited) is a Kenyan environmental, social, health, safety, and sustainability consultancy headquartered in Kisumu. Incorporated in 2014 with professional roots dating back to 2007, we work alongside developers, public agencies, contractors, and international financiers to guide responsible infrastructure and investment delivery across Kenya and East Africa.
-        </p>
+      {/* 2. Overview — White Background */}
+      <section id="about-overview" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+            Overview
+          </h2>
+          <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light max-w-3xl">
+            Hope Urban Environmental and Research Investments Limited (HUERI Limited) is a Kenyan environmental, social, health, safety, and sustainability consultancy headquartered in Kisumu. Incorporated in 2014 with professional roots dating back to 2007, we work alongside developers, public agencies, contractors, and international financiers to guide responsible infrastructure and investment delivery across Kenya and East Africa.
+          </p>
+        </div>
       </section>
 
-      {/* 3. Vision, Mission & Core Values */}
-      <section id="about-vision-mission" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 scroll-mt-24">
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-          <div className="bg-slate-50 dark:bg-[#06183A] p-6 sm:p-8 rounded-xl space-y-2.5">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
-              Our Vision
-            </h3>
-            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
-              To be one of the leading Environmental and Research Consultancy Firms in the East African Region, expanding globally with a focus on promoting sustainable development.
-            </p>
+      {/* 3. Vision, Mission & Core Values — Logo Green Background */}
+      <section id="about-vision-mission" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-white dark:bg-[#041B44] p-6 sm:p-8 rounded-xl space-y-2.5 shadow-sm">
+              <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+                Our Vision
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+                To be one of the leading Environmental and Research Consultancy Firms in the East African Region, expanding globally with a focus on promoting sustainable development.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-[#041B44] p-6 sm:p-8 rounded-xl space-y-2.5 shadow-sm">
+              <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+                Our Mission
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+                To provide professional Environmental and Research Consultancy Services to our clients, promoting sustainable development.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-slate-50 dark:bg-[#06183A] p-6 sm:p-8 rounded-xl space-y-2.5">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
-              Our Mission
-            </h3>
-            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
-              To provide professional Environmental and Research Consultancy Services to our clients, promoting sustainable development.
-            </p>
+          <div className="space-y-6">
+            <div className="max-w-2xl text-left space-y-2">
+              <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
+                Core Values
+              </h3>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {coreValues.map((value) => (
+                <div
+                  key={value.title}
+                  className="bg-white dark:bg-[#041B44] p-6 rounded-xl space-y-2 shadow-sm"
+                >
+                  <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+                    {value.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                    {value.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="space-y-6">
-          <div className="max-w-2xl text-left space-y-2">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
-              Core Values
-            </h3>
+      {/* 4. The Problem — White Background */}
+      <section id="about-problem" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left max-w-3xl space-y-3 mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              The Problem
+            </h2>
+            <div className="space-y-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+              <p>
+                The fast-paced infrastructure, urban development, and energy expansion across Kenya and East Africa creates complex environmental, social, and regulatory pressures.
+              </p>
+              <p>
+                Project developers, public agencies, and investors frequently face costly delays, community disputes, or international financing freezes due to compliance bottlenecks and unaddressed safeguard risks.
+              </p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {coreValues.map((value) => (
-              <div
-                key={value.title}
-                className="bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-2"
-              >
-                <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
-                  {value.title}
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  {value.description}
-                </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {problemItems.map((item, idx) => (
+              <div key={idx} className="group flex flex-col space-y-3.5">
+                <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
+                    {item.title}
+                  </span>
+                  <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
+                    {item.subtitle}
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. The Problem */}
-      <section id="about-problem" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <div className="text-left max-w-3xl space-y-3 mb-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-            The Problem
-          </h2>
-          <div className="space-y-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-            <p>
-              The fast-paced infrastructure, urban development, and energy expansion across Kenya and East Africa creates complex environmental, social, and regulatory pressures.
-            </p>
-            <p>
-              Project developers, public agencies, and investors frequently face costly delays, community disputes, or international financing freezes due to compliance bottlenecks and unaddressed safeguard risks.
-            </p>
-          </div>
-        </div>
+      {/* 5. Our Approach — Logo Green Background */}
+      <section id="about-approach" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {problemItems.map((item, idx) => (
-            <div key={idx} className="group flex flex-col space-y-3.5">
-              <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+            <div className="lg:col-span-6 space-y-5">
+              <div className="space-y-2.5 text-left">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
+                  Our Approach
+                </h2>
+                <p className="text-sm sm:text-base text-emerald-50 leading-relaxed font-normal">
+                  At HUERI Limited, we believe in sustainable and ethical practices that prioritize the health of our communities and the planet. We work closely with project proponents, regulatory authorities, and local stakeholders to ensure infrastructure is not only legally compliant, but delivered in a way that respects the environment.
+                </p>
+              </div>
+
+              <div className="space-y-2.5 pt-1">
+                {approachPoints.map((point, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#A7F3D0] shrink-0 mt-1" />
+                    <span className="text-sm sm:text-base text-white font-normal leading-relaxed">
+                      {point}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-1">
+                <button
+                  onClick={() => onNavigate('services')}
+                  className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-white hover:text-emerald-200 cursor-pointer"
+                >
+                  <span>Explore our service portfolio</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-xl aspect-[4/3] sm:aspect-[16/11] shadow-md">
                 <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src={photoAssets.fieldScientists}
+                  alt="HUERI Environmental Scientists Conducting Field Research"
+                  className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
                 />
               </div>
-
-              <div className="space-y-1.5">
-                <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
-                  {item.title}
-                </span>
-                <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
-                  {item.subtitle}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 5. Our Approach — Clean Photo with NO text underneath */}
-      <section id="about-approach" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-          <div className="lg:col-span-6 space-y-5">
-            <div className="space-y-2.5">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-                Our Approach
-              </h2>
-              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                At HUERI Limited, we believe in sustainable and ethical practices that prioritize the health of our communities and the planet. We work closely with project proponents, regulatory authorities, and local stakeholders to ensure infrastructure is not only legally compliant, but delivered in a way that respects the environment.
-              </p>
             </div>
 
-            <div className="space-y-2.5 pt-1">
-              {approachPoints.map((point, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#006B22] dark:text-[#4ADE80] shrink-0 mt-1" />
-                  <span className="text-sm sm:text-base text-slate-800 dark:text-slate-200 font-normal leading-relaxed">
-                    {point}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-1">
-              <button
-                onClick={() => onNavigate('services')}
-                className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] cursor-pointer"
-              >
-                <span>Explore our service portfolio</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
-
-          <div className="lg:col-span-6">
-            <div className="overflow-hidden bg-slate-100 dark:bg-slate-900 aspect-[4/3] sm:aspect-[16/11]">
-              <img
-                src={photoAssets.fieldScientists}
-                alt="HUERI Environmental Scientists Conducting Field Research"
-                className="w-full h-full object-cover object-center"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* 6. Our Solution — Clean 3-Column Editorial Progression without Underlines */}
-      <section id="about-solution" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <div className="text-left max-w-3xl space-y-2.5 mb-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-            Our Solution
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-            A seamless, end-to-end environmental, social, and safety compliance pathway from project inception to operational licensing.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {solutionSteps.map((step) => (
-            <div key={step.number} className="group flex flex-col space-y-4">
-              <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
-                  Phase {step.number}
-                </span>
-                <h3 className="font-heading font-bold text-lg text-[#003B95] dark:text-white leading-snug">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  {step.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 7. Our Services — Linear Auto-Scrolling Links Strip Matching Problem Card Photo Sizing */}
-      <section id="about-services-strip" className="space-y-6 scroll-mt-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-1.5">
+      {/* 6. Our Solution — White Background */}
+      <section id="about-solution" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left max-w-3xl space-y-2.5 mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              Our Solution
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+              A seamless, end-to-end environmental, social, and safety compliance pathway from project inception to operational licensing.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {solutionSteps.map((step) => (
+              <div key={step.number} className="group flex flex-col space-y-4">
+                <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
+                    Phase {step.number}
+                  </span>
+                  <h3 className="font-heading font-bold text-lg text-[#003B95] dark:text-white leading-snug">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Our Services — Logo Green Background Linear Strip */}
+      <section id="about-services-strip" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 space-y-6 scroll-mt-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="space-y-1.5 text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
               Our Services
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light max-w-2xl">
+            <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl">
               Select any service below to open its full scope, step-by-step methodology, and key deliverables.
             </p>
           </div>
           <button
             type="button"
             onClick={() => onNavigate('services')}
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] cursor-pointer shrink-0"
+            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-white hover:text-emerald-200 cursor-pointer shrink-0"
           >
             <span>All Services</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -388,27 +398,26 @@ export default function AboutSection({
                   aria-hidden={isDuplicate}
                   tabIndex={isDuplicate ? -1 : 0}
                   onClick={() => onNavigate('service-detail', service.slug)}
-                  className="group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col space-y-3 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006B22]"
+                  className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
-                    <img
-                      src={image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      referrerPolicy="no-referrer"
-                    />
+                  <div>
+                    <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                      <img
+                        src={image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] transition-colors leading-snug">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] transition-colors leading-snug">
-                      {service.title}
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 font-light line-clamp-2 leading-relaxed">
-                      {service.snippet}
-                    </p>
-                    <span className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] pt-0.5">
-                      <span>View Service</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
+                  <div className="px-4 pb-4 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                    <span>Details</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </button>
               );
@@ -417,47 +426,49 @@ export default function AboutSection({
         </div>
       </section>
 
-      {/* 8. Why Choose Us */}
-      <section id="about-why-choose-us" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 scroll-mt-24">
-        <div className="text-left max-w-3xl space-y-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-            Why Choose Us
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-            Trusted by developers, county governments, contractors, and international financing partners for dependable environmental and social delivery.
-          </p>
-        </div>
+      {/* 8. Why Choose Us — White Background */}
+      <section id="about-why-choose-us" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-left max-w-3xl space-y-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              Why Choose Us
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+              Trusted by developers, county governments, contractors, and international financing partners for dependable environmental and social delivery.
+            </p>
+          </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {whyChooseUsItems.map((item) => (
-            <div
-              key={item.number}
-              className="bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-2.5"
-            >
-              <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
-                {item.number}
-              </span>
-              <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
-                {item.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                {item.description}
-              </p>
-            </div>
-          ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseUsItems.map((item) => (
+              <div
+                key={item.number}
+                className="bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-2.5"
+              >
+                <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
+                  {item.number}
+                </span>
+                <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* 9. Leadership & Corporate Credentials */}
-      <section id="about-leadership" className="bg-[#041B44] dark:bg-[#061E4A] text-white py-10 sm:py-12 scroll-mt-24">
+      {/* 9. Leadership & Corporate Credentials — Logo Green Background */}
+      <section id="about-leadership" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
                 Leadership &amp; Corporate Credentials
               </h3>
-              <p className="text-xs sm:text-sm text-blue-100 font-light max-w-2xl leading-relaxed">
+              <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl leading-relaxed">
                 Hope Urban Environmental and Research Investments Limited (HUERI Limited) was incorporated in 2014, building on collaborative initiatives dating to 2007. Led by Founder &amp; Managing Director Belinda Nyakinya.
               </p>
             </div>
@@ -466,14 +477,14 @@ export default function AboutSection({
               <button
                 onClick={handleDownloadProfile}
                 disabled={isDownloading}
-                className="px-5 py-2.5 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer flex items-center gap-2"
+                className="px-4 py-2 bg-[#003B95] hover:bg-[#002D73] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer flex items-center gap-2"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>{isDownloading ? 'Generating...' : 'Download Full PDF Profile'}</span>
               </button>
               <button
                 onClick={() => onRequestProposal()}
-                className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
+                className="px-4 py-2 bg-white/15 hover:bg-white/25 text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
               >
                 Let&apos;s Talk →
               </button>
@@ -482,37 +493,37 @@ export default function AboutSection({
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="space-y-1.5">
-              <span className="text-[#4ADE80] font-bold text-xs font-mono uppercase tracking-wider block">
+              <span className="text-[#A7F3D0] font-bold text-xs font-mono uppercase tracking-wider block">
                 Accredited Specialists
               </span>
-              <p className="text-xs text-blue-100 leading-relaxed font-light">
+              <p className="text-xs text-emerald-50 leading-relaxed font-light">
                 Licensed environmental and social lead experts delivering rigorous statutory assessments.
               </p>
             </div>
 
             <div className="space-y-1.5">
-              <span className="text-[#38BDF8] font-bold text-xs font-mono uppercase tracking-wider block">
+              <span className="text-white font-bold text-xs font-mono uppercase tracking-wider block">
                 Incorporated 2014
               </span>
-              <p className="text-xs text-blue-100 leading-relaxed font-light">
+              <p className="text-xs text-emerald-50 leading-relaxed font-light">
                 Over 12 years of registered Kenyan corporate track record.
               </p>
             </div>
 
             <div className="space-y-1.5">
-              <span className="text-[#4ADE80] font-bold text-xs font-mono uppercase tracking-wider block">
+              <span className="text-[#A7F3D0] font-bold text-xs font-mono uppercase tracking-wider block">
                 Lender Safeguards
               </span>
-              <p className="text-xs text-blue-100 leading-relaxed font-light">
+              <p className="text-xs text-emerald-50 leading-relaxed font-light">
                 World Bank ESF (ESS1-10), IFC Performance Standards &amp; AfDB ISS alignment.
               </p>
             </div>
 
             <div className="space-y-1.5">
-              <span className="text-[#38BDF8] font-bold text-xs font-mono uppercase tracking-wider block">
+              <span className="text-white font-bold text-xs font-mono uppercase tracking-wider block">
                 Multidisciplinary
               </span>
-              <p className="text-xs text-blue-100 leading-relaxed font-light">
+              <p className="text-xs text-emerald-50 leading-relaxed font-light">
                 Limnologists, socio-economists, OHS auditors, valuation experts &amp; drone GIS engineers.
               </p>
             </div>

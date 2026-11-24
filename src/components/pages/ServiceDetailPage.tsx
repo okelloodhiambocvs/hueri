@@ -122,10 +122,9 @@ export default function ServiceDetailPage({
         </button>
       </PageHero>
 
-      {/* Main Service Details Body */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-12">
-        {/* Service Scope & Overview */}
-        <section className="grid lg:grid-cols-12 gap-8 items-start">
+      {/* 1. Service Scope & Overview — White Background */}
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-8 space-y-4">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Service Scope &amp; Overview
@@ -156,19 +155,21 @@ export default function ServiceDetailPage({
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Technical Approach / Methodology */}
-        {service.methodology && service.methodology.length > 0 && (
-          <section className="space-y-5">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+      {/* 2. Step-by-Step Process — Logo Green Background */}
+      {service.methodology && service.methodology.length > 0 && (
+        <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+            <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
               Step-by-Step Process
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.methodology.map((step, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-2"
+                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm"
                 >
                   <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
                     {String(idx + 1).padStart(2, '0')}
@@ -179,11 +180,13 @@ export default function ServiceDetailPage({
                 </div>
               ))}
             </div>
-          </section>
-        )}
+          </div>
+        </section>
+      )}
 
-        {/* Types of Delivery & Client Deliverables */}
-        <section className="grid lg:grid-cols-12 gap-8">
+      {/* 3. Types of Delivery & Client Deliverables — White Background */}
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8">
           <div className="lg:col-span-6 space-y-4">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Types of Delivery
@@ -240,17 +243,19 @@ export default function ServiceDetailPage({
               )}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Representative Case Examples */}
-        {service.caseExamples && service.caseExamples.length > 0 && (
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+      {/* 4. Representative Case Examples — Logo Green Background */}
+      {service.caseExamples && service.caseExamples.length > 0 && (
+        <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
               Selected Experience
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {service.caseExamples.map((example, idx) => (
-                <div key={idx} className="bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-2">
+                <div key={idx} className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm">
                   <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
                     {example.client}
                   </h3>
@@ -263,120 +268,124 @@ export default function ServiceDetailPage({
                 </div>
               ))}
             </div>
-          </section>
-        )}
-
-        {/* Inline Inquiry Form */}
-        <section className="bg-slate-50 dark:bg-[#06183A] p-6 sm:p-8 rounded-xl space-y-5">
-          <div className="space-y-1.5">
-            <h2 className="font-heading font-bold text-xl text-[#003B95] dark:text-white">
-              Enquire About {service.title}
-            </h2>
-            <p className="text-sm text-slate-600 dark:text-slate-300 font-light">
-              Share your project location and timeline, and our advisory team will follow up directly.
-            </p>
           </div>
+        </section>
+      )}
 
-          {submitSuccess ? (
-            <div className="p-5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-center space-y-2">
-              <h3 className="font-heading font-bold text-emerald-800 dark:text-emerald-300 text-base">
-                Inquiry Received
-              </h3>
-              <p className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-400">
-                Thank you. Our team will review your project scope and respond shortly.
+      {/* 5. Inline Inquiry Form — White Background */}
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-50 dark:bg-[#06183A] p-6 sm:p-8 rounded-xl space-y-5">
+            <div className="space-y-1.5">
+              <h2 className="font-heading font-bold text-xl text-[#003B95] dark:text-white">
+                Enquire About {service.title}
+              </h2>
+              <p className="text-sm text-slate-600 dark:text-slate-300 font-light">
+                Share your project location and timeline, and our advisory team will follow up directly.
               </p>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.fullName}
-                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    placeholder="Your full name"
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="name@organization.com"
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
-                  />
-                </div>
-              </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
+            {submitSuccess ? (
+              <div className="p-5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-center space-y-2">
+                <h3 className="font-heading font-bold text-emerald-800 dark:text-emerald-300 text-base">
+                  Inquiry Received
+                </h3>
+                <p className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-400">
+                  Thank you. Our team will review your project scope and respond shortly.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                      placeholder="Your full name"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="name@organization.com"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="+254 700 000 000"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
+                      Organization
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      placeholder="Company or agency"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
+                    />
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
-                    Phone Number *
+                    Project Scope &amp; Location
                   </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+254 700 000 000"
+                  <textarea
+                    rows={3}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
                   />
                 </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
-                    Organization
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    placeholder="Company or agency"
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
-                  />
+
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => onNavigate('services')}
+                    className="px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-bold text-[#003B95] dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  >
+                    ← All Services
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-6 py-2.5 rounded-lg bg-[#006B22] hover:bg-[#00581C] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer disabled:opacity-50"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
+                  </button>
                 </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
-                  Project Scope &amp; Location
-                </label>
-                <textarea
-                  rows={3}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#041B44] text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]"
-                />
-              </div>
-
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-                <button
-                  type="button"
-                  onClick={() => onNavigate('services')}
-                  className="px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-bold text-[#003B95] dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-                >
-                  ← All Services
-                </button>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-6 py-2.5 rounded-lg bg-[#006B22] hover:bg-[#00581C] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer disabled:opacity-50"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
-                </button>
-              </div>
-            </form>
-          )}
-        </section>
-      </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

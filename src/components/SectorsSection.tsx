@@ -94,8 +94,11 @@ export default function SectorsSection({
     }
   ];
 
+  const firstGroup = sectors.slice(0, 3);
+  const secondGroup = sectors.slice(3, 6);
+
   return (
-    <div className="space-y-10 sm:space-y-12 font-sans">
+    <div className="font-sans">
 
       {/* Unified Full-Width Hero matching Home Landing Page Photo Size */}
       <PageHero
@@ -105,71 +108,146 @@ export default function SectorsSection({
         description="Tailored environmental, social, and health and safety advisory across the infrastructure, energy, industrial, and natural resource sectors driving sustainable growth."
       />
 
-      {/* Open Editorial Sectors Grid — Clean Photos, No Underlines */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
-          {sectors.map((sec) => (
-            <div
-              key={sec.id}
-              className="flex flex-col justify-between group"
-            >
-              <div className="space-y-4">
-                <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
-                  <img
-                    src={sec.image}
-                    alt={sec.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
+      {/* 1. Infrastructure, Energy & Water Sectors — White Background */}
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="max-w-2xl text-left space-y-1.5">
+            <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              Energy, Transport &amp; Water Infrastructure
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light">
+              Dedicated safeguard studies and compliance engineering for core public and private infrastructure investments.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+            {firstGroup.map((sec) => (
+              <div
+                key={sec.id}
+                className="flex flex-col justify-between group"
+              >
+                <div className="space-y-4">
+                  <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <img
+                      src={sec.image}
+                      alt={sec.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="font-heading font-bold text-lg sm:text-xl text-[#003B95] dark:text-white leading-snug">
+                      {sec.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      {sec.overview}
+                    </p>
+                  </div>
+
+                  <div className="pt-1 space-y-1.5">
+                    {sec.keySafeguards.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-200">
+                        <CheckCircle2 className="w-4 h-4 text-[#006B22] dark:text-[#4ADE80] shrink-0" />
+                        <span className="truncate leading-snug">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <h2 className="font-heading font-bold text-lg sm:text-xl text-[#003B95] dark:text-white leading-snug">
-                    {sec.title}
-                  </h2>
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                    {sec.overview}
-                  </p>
-                </div>
-
-                <div className="pt-1 space-y-1.5">
-                  {sec.keySafeguards.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-200">
-                      <CheckCircle2 className="w-4 h-4 text-[#006B22] dark:text-[#4ADE80] shrink-0" />
-                      <span className="truncate leading-snug">{item}</span>
-                    </div>
-                  ))}
+                <div className="pt-4 mt-4">
+                  <button
+                    onClick={() => onRequestProposal(sec.title)}
+                    className="w-full py-2.5 px-4 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <span>Let&apos;s Talk</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
-
-              <div className="pt-4 mt-4">
-                <button
-                  onClick={() => onRequestProposal(sec.title)}
-                  className="w-full py-2.5 px-4 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <span>Let&apos;s Talk</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Cross-Sector Advisory Band */}
-      <section className="bg-[#041B44] dark:bg-[#061E4A] text-white py-10 sm:py-12">
+      {/* 2. Built Environment, Agribusiness & Extractives — Logo Green Background */}
+      <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="max-w-2xl text-left space-y-1.5">
+            <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
+              Urban Development, Agribusiness &amp; Extractives
+            </h2>
+            <p className="text-xs sm:text-sm text-emerald-50 font-light">
+              Environmental permitting, occupational safety, and land stewardship for commercial and industrial operations.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+            {secondGroup.map((sec) => (
+              <div
+                key={sec.id}
+                className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <img
+                      src={sec.image}
+                      alt={sec.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+
+                  <div className="p-5 space-y-4">
+                    <div className="space-y-2">
+                      <h3 className="font-heading font-bold text-lg sm:text-xl text-[#003B95] dark:text-white leading-snug">
+                        {sec.title}
+                      </h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                        {sec.overview}
+                      </p>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      {sec.keySafeguards.map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-200">
+                          <CheckCircle2 className="w-4 h-4 text-[#006B22] dark:text-[#4ADE80] shrink-0" />
+                          <span className="truncate leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="px-5 pb-5">
+                  <button
+                    onClick={() => onRequestProposal(sec.title)}
+                    className="w-full py-2.5 px-4 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <span>Let&apos;s Talk</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Cross-Sector Advisory Band — White Background */}
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl text-center md:text-left">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
+          <div className="space-y-2 max-w-2xl text-left">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Operating in Multiple African Sectors?
             </h3>
-            <p className="text-xs sm:text-sm text-blue-100 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
               We deploy multidisciplinary teams capable of managing complex, cross-sector programs—from renewable energy integration to transport corridors and municipal water schemes.
             </p>
           </div>
           <button
             onClick={() => onRequestProposal('Cross-Sector Advisory')}
-            className="px-6 py-3 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors shrink-0 cursor-pointer"
+            className="px-5 py-2.5 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors shrink-0 cursor-pointer"
           >
             Consult With Our Experts →
           </button>

@@ -35,6 +35,7 @@ test('featured assignments omit KDSP II and include valid projects', () => {
     assert.ok(!/kdsp/i.test(item.id));
     assert.ok(!/kdsp/i.test(item.title));
     assert.ok(item.imageKey, `Missing imageKey for ${item.id}`);
+    assert.ok(item.slug, `Missing slug for ${item.id}`);
   }
 });
 

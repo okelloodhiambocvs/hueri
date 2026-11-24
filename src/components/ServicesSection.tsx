@@ -87,7 +87,7 @@ export default function ServicesSection({
   const scopingResult = calculateRequirements();
 
   return (
-    <div className="space-y-10 sm:space-y-12 font-sans">
+    <div className="font-sans">
 
       {/* 1. Unified Full-Width Hero matching Home Landing Page Photo Size */}
       <PageHero
@@ -114,91 +114,93 @@ export default function ServicesSection({
         </button>
       </PageHero>
 
-      {/* 2. Concise Services Portfolio Grid — Clean Snippets + Details Page Navigation */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-3xl mx-auto space-y-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white">
-            Advisory Services
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-            Explore our core environmental, social, health, safety, and sustainability services. Select Details on any service to view full scope, methodology, and delivery formats.
-          </p>
-        </div>
+      {/* 2. Advisory Services Portfolio Grid — White Background */}
+      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-left max-w-3xl space-y-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white">
+              Advisory Services
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+              Explore our core environmental, social, health, safety, and sustainability services. Select Details on any service to view full scope, methodology, and delivery formats.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
-          {serviceSummaries.map((service) => {
-            const serviceImg = photoAssets.services[service.imageKey] || photoAssets.eiaAssessment;
-            return (
-              <div
-                key={service.id}
-                id={service.pillarId}
-                className="flex flex-col justify-between group scroll-mt-28"
-              >
-                <div className="space-y-4">
-                  <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
-                    <img
-                      src={serviceImg}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      referrerPolicy="no-referrer"
-                    />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+            {serviceSummaries.map((service) => {
+              const serviceImg = photoAssets.services[service.imageKey] || photoAssets.eiaAssessment;
+              return (
+                <div
+                  key={service.id}
+                  id={service.pillarId}
+                  className="flex flex-col justify-between group scroll-mt-28"
+                >
+                  <div className="space-y-4">
+                    <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                      <img
+                        src={serviceImg}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <h3 className="font-heading font-bold text-lg sm:text-xl text-[#003B95] dark:text-white leading-snug">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                        {service.snippet}
+                      </p>
+                      <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                        {service.deliverablesSummary}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="font-heading font-bold text-lg sm:text-xl text-[#003B95] dark:text-white leading-snug">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                      {service.snippet}
-                    </p>
-                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                      {service.deliverablesSummary}
-                    </p>
+                  <div className="pt-4 mt-4 flex items-center gap-3">
+                    <button
+                      onClick={() => onRequestProposal(service.title)}
+                      className="flex-1 py-2.5 px-3.5 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer"
+                    >
+                      Let&apos;s Talk
+                    </button>
+                    <button
+                      onClick={() => onNavigate('service-detail', service.slug)}
+                      className="py-2.5 px-4 border border-slate-300 dark:border-slate-700 hover:border-[#003B95] dark:hover:border-[#38BDF8] text-[#003B95] dark:text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
+                    >
+                      Details →
+                    </button>
                   </div>
                 </div>
-
-                <div className="pt-4 mt-4 flex items-center gap-3">
-                  <button
-                    onClick={() => onRequestProposal(service.title)}
-                    className="flex-1 py-2.5 px-3.5 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer"
-                  >
-                    Let&apos;s Talk
-                  </button>
-                  <button
-                    onClick={() => onNavigate('service-detail', service.slug)}
-                    className="py-2.5 px-4 border border-slate-300 dark:border-slate-700 hover:border-[#003B95] dark:hover:border-[#38BDF8] text-[#003B95] dark:text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
-                  >
-                    Details →
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* 3. Interactive Planning Tool: Safeguards Matrix */}
-      <section id="scoping-matrix" className="bg-[#041B44] dark:bg-[#061E4A] text-white py-10 sm:py-12 scroll-mt-28">
+      {/* 3. Interactive Planning Tool: Safeguards Matrix — Logo Green Background */}
+      <section id="scoping-matrix" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="space-y-2">
+          <div className="space-y-2 text-left">
             <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
               African Project Safeguards &amp; Scoping Matrix
             </h3>
-            <p className="text-sm sm:text-base text-blue-100 font-light max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-base text-emerald-50 font-light max-w-2xl leading-relaxed">
               Configure your project parameters below to determine required deliverables and estimated timelines.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="space-y-2">
-              <label htmlFor="scope-sector-select" className="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80] block">
+              <label htmlFor="scope-sector-select" className="text-xs font-mono font-bold uppercase tracking-wider text-[#A7F3D0] block">
                 Select Sector
               </label>
               <select
                 id="scope-sector-select"
                 value={scopeSector}
                 onChange={(e) => setScopeSector(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-lg bg-[#06183A] border border-white/25 text-xs font-mono text-white focus:outline-none focus:ring-2 focus:ring-[#4ADE80] cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-lg bg-white text-slate-900 dark:bg-[#041B44] dark:text-white border border-white/30 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-white cursor-pointer"
               >
                 <option value="energy">Energy &amp; Clean Power (Solar/Wind/Grid)</option>
                 <option value="transport">Transport &amp; Corridors (Highways/Ports)</option>
@@ -209,14 +211,14 @@ export default function ServicesSection({
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="scope-phase-select" className="text-xs font-mono font-bold uppercase tracking-wider text-[#38BDF8] block">
+              <label htmlFor="scope-phase-select" className="text-xs font-mono font-bold uppercase tracking-wider text-[#A7F3D0] block">
                 Project Phase
               </label>
               <select
                 id="scope-phase-select"
                 value={scopePhase}
                 onChange={(e) => setScopePhase(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-lg bg-[#06183A] border border-white/25 text-xs font-mono text-white focus:outline-none focus:ring-2 focus:ring-[#38BDF8] cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-lg bg-white text-slate-900 dark:bg-[#041B44] dark:text-white border border-white/30 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-white cursor-pointer"
               >
                 <option value="planning">Feasibility &amp; Pre-Construction</option>
                 <option value="licensing">Permitting &amp; Approvals</option>
@@ -226,14 +228,14 @@ export default function ServicesSection({
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="scope-lender-select" className="text-xs font-mono font-bold uppercase tracking-wider text-[#4ADE80] block">
+              <label htmlFor="scope-lender-select" className="text-xs font-mono font-bold uppercase tracking-wider text-[#A7F3D0] block">
                 Financing &amp; Lender Framework
               </label>
               <select
                 id="scope-lender-select"
                 value={scopeLender}
                 onChange={(e) => setScopeLender(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-lg bg-[#06183A] border border-white/25 text-xs font-mono text-white focus:outline-none focus:ring-2 focus:ring-[#4ADE80] cursor-pointer"
+                className="w-full px-3.5 py-2.5 rounded-lg bg-white text-slate-900 dark:bg-[#041B44] dark:text-white border border-white/30 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-white cursor-pointer"
               >
                 <option value="nema-only">National Regulatory Guidelines</option>
                 <option value="nema-ifc">National + International Finance Corp (IFC PS1-8)</option>
@@ -246,31 +248,31 @@ export default function ServicesSection({
           <div className="pt-4 space-y-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
-                <span className="text-xs font-mono text-[#4ADE80] font-bold uppercase tracking-wider block">
-                  APPLICABLE BENCHMARK
+                <span className="text-xs font-mono text-[#A7F3D0] font-bold uppercase tracking-wider block">
+                  Applicable Benchmark
                 </span>
                 <h4 className="font-heading font-bold text-base sm:text-lg text-white">
                   {scopingResult.standards}
                 </h4>
               </div>
               <div className="sm:text-right">
-                <span className="text-xs font-mono text-blue-200 font-bold uppercase tracking-wider block">
-                  ESTIMATED TIMELINE
+                <span className="text-xs font-mono text-[#A7F3D0] font-bold uppercase tracking-wider block">
+                  Estimated Timeline
                 </span>
-                <span className="font-mono font-bold text-[#4ADE80] text-sm sm:text-base">
+                <span className="font-mono font-bold text-white text-sm sm:text-base">
                   {scopingResult.timeline}
                 </span>
               </div>
             </div>
 
             <div className="space-y-2.5">
-              <span className="text-xs font-mono text-blue-200 uppercase tracking-wider block font-bold">
+              <span className="text-xs font-mono text-emerald-100 uppercase tracking-wider block font-bold">
                 Recommended Deliverables:
               </span>
               <div className="grid sm:grid-cols-2 gap-3">
                 {scopingResult.deliverables.map((item, dIdx) => (
                   <div key={dIdx} className="flex items-center gap-2.5 text-sm text-white py-1">
-                    <span className="text-[#4ADE80] font-bold">✓</span>
+                    <span className="text-[#A7F3D0] font-bold">✓</span>
                     <span>{item}</span>
                   </div>
                 ))}
@@ -280,7 +282,7 @@ export default function ServicesSection({
         </div>
       </section>
 
-      {/* 4. Corporate Brochure Download Banner */}
+      {/* 4. Corporate Brochure Download Banner — White Background */}
       <BrochureBanner
         onGenerateBrochure={handleGenerateBrochure}
         isGeneratingPDF={isGeneratingPDF}

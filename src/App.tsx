@@ -14,6 +14,7 @@ import PartnershipsPage from './components/pages/PartnershipsPage';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
 import ServiceDetailPage from './components/pages/ServiceDetailPage';
+import ProjectDetailPage from './components/pages/ProjectDetailPage';
 import LegalPoliciesPage from './components/pages/LegalPoliciesPage';
 import ProposalModal from './components/ProposalModal';
 import QuickContactFloat from './components/QuickContactFloat';
@@ -24,6 +25,11 @@ import {
   getServiceDetailPath,
   resolveServiceSlugFromPath
 } from './utils/serviceRoutes';
+import {
+  getProjectDetailByIdOrSlug,
+  getProjectDetailPath,
+  resolveProjectSlugFromPath
+} from './utils/projectRoutes';
 
 interface RouteInfo {
   page: string;
@@ -177,6 +183,15 @@ function resolveCurrentRoute(): { page: string; sectionId: string; path: string 
     };
   }
 
+  const projectSlug = resolveProjectSlugFromPath(pathname);
+  if (projectSlug) {
+    return {
+      page: 'project-detail',
+      sectionId: projectSlug,
+      path: pathname
+    };
+  }
+
   if (routeMap[pathname]) {
     return {
       page: routeMap[pathname].page,
@@ -294,6 +309,18 @@ export default function App() {
       });
       return;
     }
+    const projectSlug = resolveProjectSlugFromPath(currentPath);
+    if (projectSlug) {
+      const detail = getProjectDetailByIdOrSlug(projectSlug);
+      updateDocumentMetadata({
+        page: 'project-detail',
+        sectionId: projectSlug,
+        path: currentPath,
+        title: `${detail.title} | HUERI Limited`,
+        desc: detail.assignmentScope
+      });
+      return;
+    }
     const route = routeMap[currentPath] || routeMap['/'];
     updateDocumentMetadata(route);
   }, [currentPath]);
@@ -321,6 +348,8 @@ export default function App() {
       if (page === 'home') targetPath = '/';
       else if (page === 'service-detail') {
         targetPath = getServiceDetailPath(sectionId || 'eia-esia');
+      } else if (page === 'project-detail') {
+        targetPath = getProjectDetailPath(sectionId || 'p-wema-housing');
       } else if (page === 'services') {
         if (sectionId === 'service-pillar-1') targetPath = '/services/esia';
         else if (sectionId === 'service-pillar-2') targetPath = '/services/resettlement-action-plans';
@@ -361,6 +390,19 @@ export default function App() {
         path: targetPath,
         title: `${detail.title} | HUERI Limited`,
         desc: detail.shortDescription
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (page === 'project-detail') {
+      const detail = getProjectDetailByIdOrSlug(sectionId || 'p-wema-housing');
+      updateDocumentMetadata({
+        page: 'project-detail',
+        sectionId: sectionId || 'p-wema-housing',
+        path: targetPath,
+        title: `${detail.title} | HUERI Limited`,
+        desc: detail.assignmentScope
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -479,6 +521,14 @@ export default function App() {
             onNavigate={navigateToPage}
             onRequestProposal={handleOpenAdvisoryProposal}
             onLeadSubmit={handleLeadSubmit}
+          />
+        )}
+
+        {currentPage === 'project-detail' && (
+          <ProjectDetailPage
+            projectIdOrSlug={activeSectionId}
+            onNavigate={navigateToPage}
+            onRequestProposal={handleOpenAdvisoryProposal}
           />
         )}
 

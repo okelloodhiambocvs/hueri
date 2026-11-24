@@ -89,9 +89,9 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 z-40 flex flex-col items-end">
       {isOpen && (
-        <div className="mb-3 bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 p-6 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-80 sm:w-96 font-sans relative animate-fadeIn transition-all">
+        <div className="mb-2.5 bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 p-6 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-80 sm:w-96 font-sans relative animate-fadeIn transition-all">
           <button
             type="button"
             onClick={() => setIsOpen(false)}
@@ -165,16 +165,16 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
         </div>
       )}
 
-      <div className="flex items-center gap-2.5">
+      <div className="flex items-center gap-2">
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Quick Inquiry"
           title="Quick Inquiry"
           aria-expanded={isOpen}
-          className="w-11 h-11 bg-[#003B95] hover:bg-[#002D73] text-white rounded-full shadow-xl flex items-center justify-center transition-colors cursor-pointer border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ADE80]"
+          className="w-9 h-9 bg-[#003B95] hover:bg-[#002D73] text-white rounded-full shadow-lg flex items-center justify-center transition-colors cursor-pointer border border-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ADE80]"
         >
-          {isOpen ? <X className="w-5 h-5" /> : <MessageSquare className="w-5 h-5" />}
+          {isOpen ? <X className="w-4 h-4" /> : <MessageSquare className="w-4 h-4" />}
         </button>
 
         <button
@@ -182,9 +182,9 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
           onClick={handleBackToTop}
           aria-label="Back to top"
           title="Back to top"
-          className="w-11 h-11 bg-[#006B22] hover:bg-[#00581C] text-white rounded-full shadow-xl flex items-center justify-center transition-colors cursor-pointer border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ADE80]"
+          className="w-9 h-9 bg-[#006B22] hover:bg-[#00581C] text-white rounded-full shadow-lg flex items-center justify-center transition-colors cursor-pointer border border-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ADE80]"
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-4 h-4" />
         </button>
       </div>
     </div>

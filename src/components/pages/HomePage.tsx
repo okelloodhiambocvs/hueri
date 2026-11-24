@@ -55,7 +55,7 @@ export default function HomePage({
   const marqueeDisciplines = [...homeAdvisoryDisciplines, ...homeAdvisoryDisciplines];
 
   return (
-    <div className="space-y-10 sm:space-y-12 font-sans bg-white dark:bg-[#041B44] transition-colors duration-300">
+    <div className="font-sans bg-white dark:bg-[#041B44] transition-colors duration-300">
 
       {/* 1. High-Impact Photographic Hero Banner */}
       <Hero
@@ -65,20 +65,20 @@ export default function HomePage({
         stats={stats}
       />
 
-      {/* 2. Grounded in African Realities (White Background First Section After Hero) */}
+      {/* 2. Grounded in African Realities — White Background */}
       <AboutHomeSection
         onNavigate={onNavigate}
         onRequestProposal={() => onRequestProposal()}
       />
 
-      {/* 3. Selected Environmental and Social Assignments — Linear Auto-Scrolling Strip */}
-      <section id="home-assignments" className="space-y-6 overflow-hidden">
+      {/* 3. Our Recent Work — Logo Green Background with Concise Cards + Details Button */}
+      <section id="home-assignments" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 space-y-6 overflow-hidden scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-1">
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-              Selected Environmental and Social Assignments
+          <div className="space-y-1 text-left">
+            <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
+              Our Recent Work
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light max-w-2xl">
+            <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl">
               Selected track record of EIA clearances, resettlement planning (RAP), climate vulnerability assessments, and compliance audits in Kenya.
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function HomePage({
           <button
             type="button"
             onClick={() => onNavigate('about', 'about-milestones')}
-            className="text-xs font-mono font-bold text-[#003B95] dark:text-[#38BDF8] hover:text-[#006B22] dark:hover:text-[#4ADE80] transition-colors uppercase tracking-wider cursor-pointer shrink-0"
+            className="text-xs font-mono font-bold text-white hover:text-emerald-200 transition-colors uppercase tracking-wider cursor-pointer shrink-0"
           >
             View Historic Milestones →
           </button>
@@ -98,12 +98,15 @@ export default function HomePage({
               const isDuplicate = index >= homeFeaturedAssignments.length;
               const projImage = photoAssets.projects[proj.imageKey] || photoAssets.siteStructuralDeck;
               return (
-                <article
+                <button
                   key={`${proj.id}-${index}`}
+                  type="button"
                   aria-hidden={isDuplicate}
-                  className="w-[270px] sm:w-[290px] shrink-0 flex flex-col justify-between group"
+                  tabIndex={isDuplicate ? -1 : 0}
+                  onClick={() => onNavigate('project-detail', proj.slug)}
+                  className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  <div className="space-y-3">
+                  <div>
                     <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
                       <img
                         src={projImage}
@@ -113,7 +116,7 @@ export default function HomePage({
                       />
                     </div>
 
-                    <div className="space-y-1.5">
+                    <div className="p-4 space-y-1.5">
                       <div className="flex items-center gap-2 text-[11px] font-mono text-slate-500 dark:text-slate-400">
                         <span className="truncate">{proj.location}</span>
                         <span aria-hidden="true">·</span>
@@ -127,25 +130,22 @@ export default function HomePage({
                       <h3 className="font-heading font-extrabold text-base text-[#003B95] dark:text-white leading-snug line-clamp-2">
                         {proj.title}
                       </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed line-clamp-3">
-                        {proj.outcome}
-                      </p>
                     </div>
                   </div>
 
-                  <div className="pt-2.5 mt-2 flex items-center justify-between text-[11px] font-mono text-[#006B22] dark:text-[#4ADE80] font-bold">
-                    <span className="truncate pr-2">{proj.evidenceSummary}</span>
-                    <span className="shrink-0 text-slate-500 dark:text-slate-400 font-normal">{proj.status}</span>
+                  <div className="px-4 pb-4 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                    <span>Details</span>
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
-                </article>
+                </button>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* 4. Integrated Advisory Practices — Left Aligned */}
-      <section id="home-practices" className="bg-slate-50 dark:bg-[#06183A] py-10 sm:py-12">
+      {/* 4. Integrated Advisory Practices — White Background */}
+      <section id="home-practices" className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-6 space-y-2 text-left">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
@@ -185,14 +185,14 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 5. Selected Advisory Disciplines — All Offered Services in Linear Motion */}
-      <section id="home-disciplines" className="space-y-6 overflow-hidden">
+      {/* 5. Selected Advisory Disciplines — Logo Green Background with Concise Cards + Details Button */}
+      <section id="home-disciplines" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 space-y-6 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-1">
-            <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+          <div className="space-y-1 text-left">
+            <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
               Selected Advisory Disciplines
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light max-w-2xl">
+            <p className="text-xs sm:text-sm text-emerald-50 font-light max-w-2xl">
               Explore all environmental assessments, resettlement frameworks, compliance audits, climate services, and ESG advisory we offer.
             </p>
           </div>
@@ -200,7 +200,7 @@ export default function HomePage({
           <button
             type="button"
             onClick={() => onNavigate('services')}
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] cursor-pointer shrink-0"
+            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-white hover:text-emerald-200 cursor-pointer shrink-0"
           >
             <span>All Services</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -219,9 +219,9 @@ export default function HomePage({
                   aria-hidden={isDuplicate}
                   tabIndex={isDuplicate ? -1 : 0}
                   onClick={() => onNavigate('service-detail', discipline.slug)}
-                  className="group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between space-y-3 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006B22]"
+                  className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  <div className="space-y-3">
+                  <div>
                     <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
                       <img
                         src={image}
@@ -231,17 +231,14 @@ export default function HomePage({
                       />
                     </div>
 
-                    <div className="space-y-1.5">
+                    <div className="p-4">
                       <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] transition-colors leading-snug">
                         {discipline.title}
                       </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 font-light line-clamp-2 leading-relaxed">
-                        {discipline.snippet}
-                      </p>
                     </div>
                   </div>
 
-                  <div className="pt-1 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                  <div className="px-4 pb-4 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
                     <span>Details</span>
                     <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -252,8 +249,8 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 6. Project Delivery Steps & Style (Replaces Serving Key African Sectors) */}
-      <section id="home-delivery-steps" className="bg-slate-50 dark:bg-[#06183A] py-10 sm:py-12">
+      {/* 6. Our Project Delivery Process — White Background */}
+      <section id="home-delivery-steps" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-1.5 max-w-2xl text-left">
@@ -277,7 +274,7 @@ export default function HomePage({
             {projectDeliverySteps.map((item, idx) => (
               <div
                 key={item.step}
-                className="relative bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-3 flex flex-col justify-between"
+                className="relative bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-3 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -307,50 +304,6 @@ export default function HomePage({
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Strategic Consortia & International Teaming (Moved After Delivery Steps) */}
-      <section id="home-consortia" className="bg-[#003B95] dark:bg-[#061E4A] text-white py-10 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 items-center gap-8">
-            <div className="lg:col-span-8 space-y-3">
-              <h3 className="font-heading font-black text-2xl sm:text-3xl text-white tracking-tight">
-                Partner with HUERI on African Infrastructure, Energy &amp; Safeguards Tenders
-              </h3>
-              <p className="text-xs sm:text-sm text-blue-100 font-sans font-light leading-relaxed max-w-3xl">
-                We regularly partner with international engineering firms, multilateral prime contractors, and regional developers as a trusted local delivery co-lead. We bring experienced lead experts, World Bank ESF / IFC PS proficiency, 47-county mobilization capacity, and established community networks.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-2 pt-1 text-xs text-blue-100">
-                <div className="flex items-center gap-2">
-                  <span className="text-[#4ADE80]">✓</span> Joint Venture &amp; Consortia Submissions
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#4ADE80]">✓</span> In-Country Safeguards Delivery Partner
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#4ADE80]">✓</span> Master Service Agreements (MSA)
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#4ADE80]">✓</span> Rapid Technical Proposal Backstopping
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-4 flex flex-col gap-3 justify-center lg:pl-8">
-              <button
-                onClick={() => onOpenPartnership ? onOpenPartnership('International Prime Contractor & Consortium Teaming') : onNavigate('partnerships')}
-                className="w-full py-3 px-5 rounded-lg bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider transition-colors text-center cursor-pointer"
-              >
-                Propose Joint Venture / Teaming →
-              </button>
-              <button
-                onClick={() => onNavigate('partnerships')}
-                className="w-full py-2.5 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase tracking-wider transition-colors text-center cursor-pointer"
-              >
-                Explore Partnership Models
-              </button>
-            </div>
           </div>
         </div>
       </section>
