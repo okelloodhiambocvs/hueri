@@ -54,29 +54,28 @@ export default function ServiceDetailModal({ service, onClose, onLeadSubmit }: S
 
       {/* Modal Dialog */}
       <div
-        className="bg-white dark:bg-[#071a38] text-gray-900 dark:text-slate-100 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative z-10 border border-gray-200 dark:border-slate-800 p-6 sm:p-10 font-sans animate-fadeIn"
+        className="bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative z-10 border border-slate-200 dark:border-slate-800 p-6 sm:p-10 font-sans animate-fadeIn"
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white text-xs font-mono font-bold transition-colors cursor-pointer"
+          className="absolute top-6 right-6 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-mono font-bold transition-colors cursor-pointer"
         >
           Close [ESC]
         </button>
 
         <div className="space-y-8">
-          {/* Header */}
-          <div className="border-b border-gray-100 dark:border-slate-800 pb-6 pr-16">
+          <div className="border-b border-slate-200 dark:border-slate-800 pb-6 pr-16">
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-xs font-mono font-bold tracking-widest text-brand-green-600 dark:text-brand-green-400 uppercase">
+              <span className="text-xs font-mono font-bold tracking-widest text-[#006B22] dark:text-[#4ADE80] uppercase">
                 PRACTICE AREA PORTFOLIO
               </span>
-              <span className="text-gray-300 dark:text-slate-700">•</span>
-              <span className="text-xs font-mono text-brand-blue-900 dark:text-blue-300 font-semibold">
+              <span className="text-slate-300 dark:text-slate-700">•</span>
+              <span className="text-xs font-mono text-[#003B95] dark:text-[#38BDF8] font-semibold">
                 {service.practiceCategory || 'HUERI Limited'}
               </span>
             </div>
 
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-gray-900 dark:text-white leading-tight">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white leading-tight">
               {service.title}
             </h2>
           </div>
@@ -262,7 +261,7 @@ export default function ServiceDetailModal({ service, onClose, onLeadSubmit }: S
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-6 py-2.5 rounded-xl bg-brand-green-600 hover:bg-brand-green-500 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer disabled:opacity-50"
+                    className="px-6 py-2.5 rounded-lg bg-[#006B22] hover:bg-[#00581C] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting ? 'Transmitting Scope...' : 'Submit Scoping Request'}
                   </button>

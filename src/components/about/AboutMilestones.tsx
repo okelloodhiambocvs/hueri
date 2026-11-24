@@ -23,68 +23,60 @@ import structuralDeckImg from '../../assets/images/site_structural_deck_concreti
 
 export const milestones = [
   {
-    year: "2007",
-    tag: "Origins",
-    title: "Scientific Origins & Winam Gulf Research Alliance",
-    description: "Founded as an informal assembly of passionate lakeside hydrologists, community advocates, and environmental scholars. Published inaugural community watershed resource maps in Kisumu.",
-    image: lakeResearchImg,
-    theme: "emerald"
+    year: '2007',
+    tag: 'Origins',
+    title: 'Scientific Origins & Winam Gulf Research Alliance',
+    description: 'Founded as an informal assembly of passionate lakeside hydrologists, community advocates, and environmental scholars. Published inaugural community watershed resource maps in Kisumu.',
+    image: lakeResearchImg
   },
   {
-    year: "2011",
-    tag: "Social Safeguards",
-    title: "Pioneering Social Safeguards & Feasibility Studies",
-    description: "Expanded scientific boundaries to include Resettlement Action Plans (RAP) and socio-economic profiling, bridging empirical soil mechanics with human rights.",
-    image: communityBarazaImg,
-    theme: "blue"
+    year: '2011',
+    tag: 'Social Safeguards',
+    title: 'Pioneering Social Safeguards & Feasibility Studies',
+    description: 'Expanded scientific boundaries to include Resettlement Action Plans (RAP) and socio-economic profiling, bridging empirical soil mechanics with human rights.',
+    image: communityBarazaImg
   },
   {
-    year: "2014",
-    tag: "Incorporation",
-    title: "Formal Incorporation & NEMA Firm Accreditation",
-    description: "Hope Urban Environmental and Research Investment Limited was officially incorporated in Kenya with headquarters in Milimani Estate, Kisumu.",
-    image: nemaAccreditationImg,
-    theme: "teal"
+    year: '2014',
+    tag: 'Incorporation',
+    title: 'Formal Incorporation & NEMA Firm Accreditation',
+    description: 'Hope Urban Environmental and Research Investment Limited was officially incorporated in Kenya with headquarters in Milimani Estate, Kisumu.',
+    image: nemaAccreditationImg
   },
   {
-    year: "2018",
-    tag: "Infrastructure",
-    title: "Strategic Partnerships & Regional Infrastructure Mandates",
-    description: "Formed key operational partnerships under AWEMAC and regional utilities for state-level building and municipal civil works programs.",
-    image: esmpInfrastructureImg,
-    theme: "amber"
+    year: '2018',
+    tag: 'Infrastructure',
+    title: 'Strategic Partnerships & Regional Infrastructure Mandates',
+    description: 'Formed key operational partnerships under AWEMAC and regional utilities for state-level building and municipal civil works programs.',
+    image: esmpInfrastructureImg
   },
   {
-    year: "2020",
-    tag: "Lakeside Policy",
-    title: "Lakeside Policy Architecture & Climate Risk Assessments",
-    description: "Executed landmark ESIAs and Resettlement Action Plans, including LAPFUND Makasembo Housing and Kisumu County Climate Change Vulnerability Assessment.",
-    image: climateVulnerabilityImg,
-    theme: "purple"
+    year: '2020',
+    tag: 'Lakeside Policy',
+    title: 'Lakeside Policy Architecture & Climate Risk Assessments',
+    description: 'Executed landmark ESIAs and Resettlement Action Plans, including LAPFUND Makasembo Housing and Kisumu County Climate Change Vulnerability Assessment.',
+    image: climateVulnerabilityImg
   },
   {
-    year: "2023",
-    tag: "Advisory Mandate",
-    title: "Sub-National Advisory Board & Green Infrastructure Guidelines",
-    description: "Appointed technical advisory body for multiple western Kenya municipal boards, formulating stormwater management drafts and greywater bio-filters.",
-    image: waterTreatmentImg,
-    theme: "rose"
+    year: '2023',
+    tag: 'Advisory Mandate',
+    title: 'Sub-National Advisory Board & Green Infrastructure Guidelines',
+    description: 'Appointed technical advisory body for multiple western Kenya municipal boards, formulating stormwater management drafts and greywater bio-filters.',
+    image: waterTreatmentImg
   },
   {
-    year: "2024–2025",
-    tag: "ESHSRIM Supervision",
-    title: "High-Rise Construction Safeguards & OHS Safety Oversight",
-    description: "Deployed resident environmental and occupational safety supervision teams, overseeing contractor C-ESMP compliance, concrete slab safety, and PPE enforcement across high-density urban residential blocks.",
-    image: structuralDeckImg,
-    theme: "amber"
+    year: '2024–2025',
+    tag: 'ESHSRIM Supervision',
+    title: 'High-Rise Construction Safeguards & OHS Safety Oversight',
+    description: 'Deployed resident environmental and occupational safety supervision teams, overseeing contractor C-ESMP compliance, concrete slab safety, and PPE enforcement across high-density urban residential blocks.',
+    image: structuralDeckImg
   },
   {
-    year: "Present",
-    tag: "Spatial AI",
-    title: "Spatial Intelligence, Drone Surveys & High-Dimension GIS",
-    description: "Integrating advanced GIS spatial modeling, thermal aerial drones, and interactive public ESG dashboards for regional compliance.",
-    image: droneMappingImg,
-    theme: "emerald"
+    year: 'Present',
+    tag: 'Spatial Intelligence',
+    title: 'Spatial Intelligence, Drone Surveys & High-Dimension GIS',
+    description: 'Integrating advanced GIS spatial modeling, thermal aerial drones, and interactive public ESG dashboards for regional compliance.',
+    image: droneMappingImg
   }
 ];
 
@@ -92,76 +84,54 @@ export default function AboutMilestones() {
   return (
     <div className="space-y-12">
       <div className="text-center max-w-2xl mx-auto space-y-2">
-        <span className="text-xs font-mono font-bold tracking-widest uppercase text-brand-green-700 dark:text-emerald-400 block">
+        <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#006B22] dark:text-[#4ADE80] block">
           INSTITUTIONAL EVOLUTION
         </span>
-        <h3 className="font-heading font-black text-2xl sm:text-3xl text-stone-900 dark:text-white">
+        <h3 className="font-heading font-black text-2xl sm:text-3xl text-[#003B95] dark:text-white">
           Our Historic Milestones (2007–Present)
         </h3>
-        <p className="text-xs sm:text-sm text-stone-600 dark:text-slate-300 font-light">
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light">
           From lakeside hydrological baseline research to a licensed national advisory institution executing across all 47 Kenyan counties.
         </p>
       </div>
 
-      <div className="relative">
-        {/* Timeline Center Line */}
-        <div className="absolute top-0 bottom-0 left-4 md:left-1/2 w-0.5 bg-[#E5DFD5] dark:bg-slate-800 -translate-x-1/2" />
-
-        <div className="space-y-12 sm:space-y-16">
-          {milestones.map((m, idx) => {
-            const isEven = idx % 2 === 0;
-            return (
-              <div key={m.year} className={`flex flex-col md:flex-row items-center ${isEven ? '' : 'md:flex-row-reverse'}`}>
-                
-                {/* Milestone Text Box */}
-                <div className="w-full md:w-1/2 px-4 md:px-8">
-                  <div
-                    className="bg-white dark:bg-[#071a38] p-6 sm:p-8 rounded-3xl border border-[#E5DFD5] dark:border-slate-800 shadow-md relative group hover:border-brand-green-600 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 space-y-3 cursor-pointer"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-heading font-black text-brand-green-700 dark:text-emerald-400">
-                        {m.year}
-                      </span>
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-600 dark:text-slate-300 bg-stone-100 dark:bg-slate-800 px-2.5 py-1 rounded-full border border-stone-200 dark:border-slate-700">
-                        {m.tag}
-                      </span>
-                    </div>
-
-                    <h5 className="font-heading font-bold text-base sm:text-lg text-stone-900 dark:text-white group-hover:text-brand-green-700 dark:group-hover:text-emerald-300 transition-colors leading-snug">
-                      {m.title}
-                    </h5>
-
-                    <p className="text-xs sm:text-sm text-stone-600 dark:text-slate-300 font-sans leading-relaxed font-light">
-                      {m.description}
-                    </p>
-                  </div>
+      <div className="divide-y divide-slate-200 dark:divide-slate-800 border-y border-slate-200 dark:border-slate-800">
+        {milestones.map((m, idx) => {
+          const isEven = idx % 2 === 0;
+          return (
+            <div key={m.year} className={`py-8 grid md:grid-cols-12 gap-8 items-center`}>
+              <div className={`md:col-span-6 space-y-3 ${isEven ? '' : 'md:order-2'}`}>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl font-heading font-black text-[#006B22] dark:text-[#4ADE80]">
+                    {m.year}
+                  </span>
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    · {m.tag}
+                  </span>
                 </div>
 
-                {/* Milestone Center Badge */}
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-10">
-                  <div className="h-6 w-6 rounded-full bg-brand-green-600 dark:bg-emerald-400 border-4 border-[#FAF8F5] dark:border-[#071a38] shadow-md" />
-                </div>
+                <h5 className="font-heading font-bold text-base sm:text-lg text-[#003B95] dark:text-white leading-snug">
+                  {m.title}
+                </h5>
 
-                {/* Milestone Photographic Showcase */}
-                <div className="w-full md:w-1/2 px-4 md:px-8 mt-4 md:mt-0">
-                  <div className="overflow-hidden rounded-3xl border border-[#E5DFD5] dark:border-slate-700 shadow-md group bg-slate-900 h-52 sm:h-60 relative">
-                    <img 
-                      src={m.image} 
-                      alt={m.title} 
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-100 contrast-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
-                    <div className="absolute bottom-3 left-4 text-white text-[11px] font-mono text-emerald-300 font-bold">
-                      {m.year} • Historical Record
-                    </div>
-                  </div>
-                </div>
-
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+                  {m.description}
+                </p>
               </div>
-            );
-          })}
-        </div>
+
+              <div className={`md:col-span-6 ${isEven ? '' : 'md:order-1'}`}>
+                <div className="overflow-hidden bg-slate-100 dark:bg-slate-900 h-52 sm:h-60">
+                  <img
+                    src={m.image}
+                    alt={m.title}
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

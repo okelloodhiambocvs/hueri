@@ -38,21 +38,21 @@ export default function CompanyProfileModal({ isOpen, onClose, onRequestProposal
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="p-5 sm:p-6 bg-[#FAF8F5] dark:bg-slate-800/80 border-b border-stone-200 dark:border-slate-800 flex items-center justify-between">
+        <div className="p-5 sm:p-6 bg-slate-50 dark:bg-[#041B44] border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-2xl bg-brand-green-700 text-white shadow-sm">
+            <div className="p-2.5 rounded-lg bg-[#003B95] text-white">
               <Building2 className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-brand-green-700 dark:text-emerald-400">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#006B22] dark:text-[#4ADE80]">
                   Institutional Capability Dossier
                 </span>
-                <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 font-bold">
-                  2026 Edition
+                <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-bold">
+                  · 2026 Edition
                 </span>
               </div>
-              <h2 className="text-lg sm:text-xl font-heading font-black text-stone-900 dark:text-white">
+              <h2 className="text-lg sm:text-xl font-heading font-black text-[#003B95] dark:text-white">
                 HUERI Limited • Corporate Capability Profile
               </h2>
             </div>

@@ -79,19 +79,19 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
   return (
     <div className="fixed bottom-6 left-6 z-40">
       {isOpen && (
-        <div className="mb-4 bg-white dark:bg-[#111a2e] text-gray-900 dark:text-slate-100 p-6 rounded-3xl shadow-2xl border border-gray-200 dark:border-slate-800 w-80 sm:w-96 font-sans relative animate-fadeIn transition-all">
+        <div className="mb-4 bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 p-6 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-80 sm:w-96 font-sans relative animate-fadeIn transition-all">
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-4 right-4 text-xs font-mono font-bold text-gray-400 hover:text-gray-600 dark:hover:text-white cursor-pointer"
+            className="absolute top-4 right-4 text-xs font-mono font-bold text-slate-400 hover:text-slate-600 dark:hover:text-white cursor-pointer"
           >
             ✕
           </button>
 
           <div className="mb-4">
-            <span className="text-[10px] font-mono font-bold tracking-widest text-brand-green-600 dark:text-brand-green-400 uppercase block">
+            <span className="text-[10px] font-mono font-bold tracking-widest text-[#006B22] dark:text-[#4ADE80] uppercase block">
               DIRECT ADVISORY CHANNEL
             </span>
-            <h4 className="font-heading font-extrabold text-lg text-gray-900 dark:text-white">
+            <h4 className="font-heading font-extrabold text-lg text-[#003B95] dark:text-white">
               Quick Expert Consultation
             </h4>
           </div>
@@ -137,14 +137,14 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-2.5 bg-brand-green-600 hover:bg-brand-green-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md text-center cursor-pointer disabled:opacity-50"
+                className="w-full py-2.5 bg-[#006B22] hover:bg-[#00581C] text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer disabled:opacity-50"
               >
                 {isSubmitting ? 'TRANSMITTING...' : 'TRANSMIT QUICK INQUIRY'}
               </button>
             </form>
           )}
 
-          <div className="mt-4 pt-3 border-t border-gray-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-gray-500 dark:text-slate-400 font-mono">
+          <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
             <span>+254 721 410139</span>
             <span>Kisumu, Kenya</span>
           </div>
@@ -153,9 +153,9 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-3 bg-brand-green-600 hover:bg-brand-green-500 text-white rounded-2xl shadow-2xl flex items-center justify-center font-heading font-bold text-xs uppercase tracking-wider transform hover:scale-105 transition-all cursor-pointer border border-white/20"
+        className="px-4 py-3 bg-[#003B95] hover:bg-[#002D73] text-white rounded-xl shadow-xl flex items-center justify-center font-heading font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer border border-white/20"
       >
-        <span>{isOpen ? '✕ CLOSE' : '💬 QUICK INQUIRY'}</span>
+        <span>{isOpen ? '✕ CLOSE' : 'QUICK INQUIRY'}</span>
       </button>
     </div>
   );

@@ -233,7 +233,7 @@ export default function App() {
   });
 
   const [isProposalOpen, setIsProposalOpen] = useState(false);
-  const [proposalTab, setProposalTab] = useState<'advisory' | 'partnership'>('advisory');
+  const [proposalTab, setProposalTab] = useState<'proposal' | 'tor' | 'partnership' | 'general'>('proposal');
   const [prefilledScope, setPrefilledScope] = useState<string | undefined>(undefined);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [activePolicyTab, setActivePolicyTab] = useState<string | null>(null);
@@ -351,7 +351,7 @@ export default function App() {
   }, []);
 
   const handleOpenAdvisoryProposal = (scope?: string) => {
-    setProposalTab('advisory');
+    setProposalTab('proposal');
     setPrefilledScope(scope);
     setIsProposalOpen(true);
   };
@@ -378,7 +378,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] dark:bg-[#071a38] text-stone-900 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-brand-green-600 selection:text-white flex flex-col justify-between">
+    <div className="min-h-screen bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-[#006B22] selection:text-white flex flex-col justify-between">
       
       {/* Header Navigation with Dropdowns & Important Links */}
       <Navbar 

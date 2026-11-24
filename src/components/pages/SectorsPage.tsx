@@ -16,7 +16,7 @@ export default function SectorsPage({
   onRequestProposal
 }: SectorsPageProps) {
   return (
-    <div className="pt-24 pb-16 min-h-screen font-sans bg-[#FAF8F5] dark:bg-[#051329]">
+    <div className="pt-24 pb-0 min-h-screen font-sans bg-white dark:bg-[#041B44]">
       {/* One Unified Page Overview of all Sectors We Serve */}
       <SectorsSection 
         onRequestProposal={onRequestProposal}

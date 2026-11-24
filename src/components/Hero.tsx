@@ -13,11 +13,11 @@ interface HeroProps {
   stats?: any;
 }
 
-export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership, stats }: HeroProps) {
+export default function Hero({ onRequestProposal }: HeroProps) {
   return (
     <section className="relative flex items-center justify-center text-white pt-36 pb-16 sm:pt-44 sm:pb-24 lg:pt-48 lg:pb-28 overflow-hidden font-sans">
       
-      {/* High-Clarity Photographic Hero Background (Active High-Rise Structural Concrete & Safeguards Oversight) */}
+      {/* High-Clarity Photographic Hero Background */}
       <div className="absolute inset-0 z-0">
         <img 
           src={photoAssets.siteStructuralDeck} 
@@ -25,23 +25,22 @@ export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership,
           className="w-full h-full object-cover object-center filter brightness-100 contrast-105 scale-105 transition-transform duration-1000"
           referrerPolicy="no-referrer"
         />
-        {/* Balanced Brand Clean Gradient Overlays for High Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07162C] via-[#07162C]/80 to-[#07162C]/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07162C]/90 via-[#07162C]/60 to-[#07162C]/90" />
+        {/* Balanced Brand Clean Gradient Overlays derived from official HUERI navy */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#041B44] via-[#041B44]/80 to-[#041B44]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#041B44]/90 via-[#041B44]/60 to-[#041B44]/90" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8 mt-4 sm:mt-6">
         
-        {/* Top Credential Badge Creating Generous Spacing from Fixed Header */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-mono tracking-wider uppercase backdrop-blur-md shadow-lg">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+        {/* Top Credential Line */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#041B44]/85 border border-[#4ADE80]/40 text-[#86EFAC] text-xs sm:text-sm font-mono tracking-wider uppercase backdrop-blur-md shadow-lg">
           <span>NEMA Registered Firm of Experts • Kisumu & Nairobi</span>
         </div>
 
         {/* Main Authoritative Headline */}
         <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-white leading-[1.15] drop-shadow-md max-w-4xl mx-auto">
           Your Trusted African Partner for <br className="hidden sm:inline" />
-          <span className="text-emerald-400">
+          <span className="text-[#4ADE80]">
             Environmental, Social & Safeguards
           </span> Advisory
         </h1>
@@ -51,27 +50,13 @@ export default function Hero({ onRequestProposal, onNavigate, onOpenPartnership,
           <strong className="font-semibold text-white">HUERI Limited</strong> is an established Kenyan environmental, social, climate, and safety consultancy firm headquartered in Kisumu, Kenya. We collaborate with engineering primes, multilateral financiers (World Bank, IFC, AfDB), EPC contractors, and county governments as an on-the-ground technical delivery partner—securing statutory NEMA approvals, orchestrating land resettlement (RAP), and supervising active site safeguards compliance.
         </p>
 
-        {/* Dynamic Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-          <button
-            onClick={() => onOpenPartnership ? onOpenPartnership("Strategic Consortium Teaming & In-Country Co-Delivery") : onNavigate('partnerships')}
-            className="w-full sm:w-auto px-7 py-3 text-xs font-heading font-bold uppercase tracking-wider text-white bg-brand-green-600 hover:bg-brand-green-500 active:bg-brand-green-700 rounded-xl shadow-lg shadow-brand-green-600/30 hover:-translate-y-0.5 transition-all text-center cursor-pointer border border-emerald-400/40"
-          >
-            Propose Partnership / Teaming →
-          </button>
-
+        {/* Single Small CTA Button */}
+        <div className="flex items-center justify-center pt-2">
           <button
             onClick={onRequestProposal}
-            className="w-full sm:w-auto px-6 py-3 text-xs font-heading font-bold uppercase tracking-wider text-white bg-white/15 hover:bg-white/30 backdrop-blur-md rounded-xl border border-white/30 shadow-sm hover:-translate-y-0.5 transition-all text-center cursor-pointer"
+            className="px-5 py-2.5 text-xs font-heading font-bold tracking-wider text-white bg-[#006B22] hover:bg-[#00581C] rounded-lg shadow-md transition-colors text-center cursor-pointer whitespace-nowrap"
           >
-            Request Advisory Proposal
-          </button>
-
-          <button
-            onClick={() => onNavigate('partnerships')}
-            className="w-full sm:w-auto px-6 py-3 text-xs font-heading font-bold uppercase tracking-wider text-emerald-300 bg-brand-blue-900/80 hover:bg-brand-blue-900 hover:text-white backdrop-blur-md rounded-xl border border-emerald-400/40 shadow-sm hover:-translate-y-0.5 transition-all text-center cursor-pointer"
-          >
-            Partnership Models
+            Grab a coffee
           </button>
         </div>
 

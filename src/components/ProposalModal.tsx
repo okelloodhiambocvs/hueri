@@ -180,31 +180,31 @@ export default function ProposalModal({
 
       {/* Modal Container */}
       <div
-        className="bg-white dark:bg-[#07162C] text-stone-900 dark:text-slate-100 rounded-3xl max-w-3xl w-full p-6 sm:p-10 shadow-2xl relative z-10 border border-stone-200 dark:border-slate-800 font-sans animate-fadeIn my-6 max-h-[92vh] overflow-y-auto"
+        className="bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 rounded-2xl max-w-3xl w-full p-6 sm:p-10 shadow-2xl relative z-10 border border-slate-200 dark:border-slate-800 font-sans animate-fadeIn my-6 max-h-[92vh] overflow-y-auto"
       >
         <button
           onClick={onClose}
           aria-label="Close proposal form"
-          className="absolute top-5 right-5 px-3.5 py-1.5 rounded-full bg-stone-100 dark:bg-slate-800 text-stone-600 hover:text-stone-900 dark:text-slate-300 dark:hover:text-white transition-colors cursor-pointer text-xs font-mono font-bold border border-stone-200 dark:border-slate-700 focus-visible:ring-2 focus-visible:ring-emerald-400"
+          className="absolute top-5 right-5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors cursor-pointer text-xs font-mono font-bold border border-slate-200 dark:border-slate-700"
         >
           ✕ CLOSE
         </button>
 
         {isSuccess ? (
           <div className="text-center py-10 space-y-5">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 font-mono text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block text-[#006B22] dark:text-[#4ADE80] font-mono text-xs font-bold uppercase tracking-wider">
               Enquiry Transmitted Successfully
             </span>
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-stone-900 dark:text-white">
+            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#003B95] dark:text-white">
               Thank You for Contacting HUERI
             </h3>
-            <p className="text-xs sm:text-sm text-stone-600 dark:text-slate-300 font-sans max-w-md mx-auto leading-relaxed font-light">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-md mx-auto leading-relaxed font-light">
               Your submission has been securely received by our technical and advisory desk. Managing Director Belinda Nyakinya and our Lead Environmental Specialists will review your parameters and follow up via your preferred communication method.
             </p>
             <div className="pt-2">
               <button
                 onClick={onClose}
-                className="px-8 py-3.5 bg-emerald-600 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-emerald-700 transition-all cursor-pointer shadow-lg focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="px-8 py-3.5 bg-[#006B22] hover:bg-[#00581C] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
               >
                 RETURN TO WEBSITE
               </button>
@@ -214,14 +214,14 @@ export default function ProposalModal({
           <div className="space-y-6">
             
             {/* 4 Clear Sub-Categories / CTAs */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 bg-stone-100 dark:bg-slate-900 p-1.5 rounded-2xl border border-stone-200 dark:border-slate-800">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 border-b border-slate-200 dark:border-slate-800 pb-3">
               <button
                 type="button"
                 onClick={() => setInquiryType('proposal')}
-                className={`py-2.5 px-2 rounded-xl text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-all cursor-pointer truncate focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                className={`py-2 px-2 rounded-lg text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-colors cursor-pointer truncate ${
                   inquiryType === 'proposal'
-                    ? 'bg-white dark:bg-[#07162C] text-emerald-700 dark:text-emerald-400 shadow-sm border border-stone-200 dark:border-slate-700 font-extrabold'
-                    : 'text-stone-500 dark:text-slate-400 hover:text-stone-900 dark:hover:text-white'
+                    ? 'bg-[#003B95] text-white font-extrabold'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#003B95] dark:hover:text-white'
                 }`}
               >
                 Technical Proposal
@@ -229,10 +229,10 @@ export default function ProposalModal({
               <button
                 type="button"
                 onClick={() => setInquiryType('tor')}
-                className={`py-2.5 px-2 rounded-xl text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-all cursor-pointer truncate focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                className={`py-2 px-2 rounded-lg text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-colors cursor-pointer truncate ${
                   inquiryType === 'tor'
-                    ? 'bg-white dark:bg-[#07162C] text-emerald-700 dark:text-emerald-400 shadow-sm border border-stone-200 dark:border-slate-700 font-extrabold'
-                    : 'text-stone-500 dark:text-slate-400 hover:text-stone-900 dark:hover:text-white'
+                    ? 'bg-[#003B95] text-white font-extrabold'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#003B95] dark:hover:text-white'
                 }`}
               >
                 Submit TOR / RFP
@@ -240,10 +240,10 @@ export default function ProposalModal({
               <button
                 type="button"
                 onClick={() => setInquiryType('partnership')}
-                className={`py-2.5 px-2 rounded-xl text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-all cursor-pointer truncate focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                className={`py-2 px-2 rounded-lg text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-colors cursor-pointer truncate ${
                   inquiryType === 'partnership'
-                    ? 'bg-white dark:bg-[#07162C] text-emerald-700 dark:text-emerald-400 shadow-sm border border-stone-200 dark:border-slate-700 font-extrabold'
-                    : 'text-stone-500 dark:text-slate-400 hover:text-stone-900 dark:hover:text-white'
+                    ? 'bg-[#003B95] text-white font-extrabold'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#003B95] dark:hover:text-white'
                 }`}
               >
                 Consortium Desk
@@ -251,10 +251,10 @@ export default function ProposalModal({
               <button
                 type="button"
                 onClick={() => setInquiryType('general')}
-                className={`py-2.5 px-2 rounded-xl text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-all cursor-pointer truncate focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                className={`py-2 px-2 rounded-lg text-[11px] font-heading font-bold uppercase tracking-wider text-center transition-colors cursor-pointer truncate ${
                   inquiryType === 'general'
-                    ? 'bg-white dark:bg-[#07162C] text-emerald-700 dark:text-emerald-400 shadow-sm border border-stone-200 dark:border-slate-700 font-extrabold'
-                    : 'text-stone-500 dark:text-slate-400 hover:text-stone-900 dark:hover:text-white'
+                    ? 'bg-[#003B95] text-white font-extrabold'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#003B95] dark:hover:text-white'
                 }`}
               >
                 General Enquiry
@@ -263,7 +263,7 @@ export default function ProposalModal({
 
             {/* Header Description */}
             <div className="space-y-1.5">
-              <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase block">
+              <span className="text-[10px] font-mono font-bold tracking-widest text-[#006B22] dark:text-[#4ADE80] uppercase block">
                 {inquiryType === 'proposal' && 'FORMAL TECHNICAL & COMMERCIAL PROPOSAL DESK'}
                 {inquiryType === 'tor' && 'TERMS OF REFERENCE (TOR) & EXPRESSION OF INTEREST'}
                 {inquiryType === 'partnership' && 'PAN-AFRICAN PARTNERSHIP & CONSORTIUM DESK'}
@@ -509,7 +509,7 @@ export default function ProposalModal({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-2xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 text-center cursor-pointer disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-emerald-400"
+                  className="w-full py-4 bg-[#006B22] hover:bg-[#00581C] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer disabled:opacity-50"
                 >
                   {isSubmitting ? 'PURIFYING & TRANSMITTING ENQUIRY...' : 'TRANSMIT OFFICIAL ENQUIRY TO LEAD CONSULTANTS'}
                 </button>
