@@ -142,7 +142,7 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
     'w-full px-3.5 py-2.5 bg-white dark:bg-[#06183A] border border-slate-300 dark:border-slate-700 rounded-lg text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]';
 
   return (
-    <section id="contact" className="py-10 sm:py-12 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans" aria-labelledby="contact-heading">
+    <section id="contact" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans" aria-labelledby="contact-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         <div className="text-center max-w-3xl mx-auto space-y-2">

@@ -6,7 +6,7 @@
 import React from 'react';
 import {
   ArrowRight,
-  MessageSquare,
+  MessagesSquare,
   Compass,
   Users,
   ClipboardCheck,
@@ -33,7 +33,7 @@ interface HomePageProps {
 const renderDeliveryIcon = (icon: DeliveryStepIcon) => {
   switch (icon) {
     case 'discussion':
-      return <MessageSquare className="w-5 h-5" />;
+      return <MessagesSquare className="w-5 h-5" />;
     case 'scoping':
       return <Compass className="w-5 h-5" />;
     case 'fieldwork':
@@ -104,10 +104,10 @@ export default function HomePage({
                   aria-hidden={isDuplicate}
                   tabIndex={isDuplicate ? -1 : 0}
                   onClick={() => onNavigate('project-detail', proj.slug)}
-                  className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <div>
-                    <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <div className="h-44 w-full overflow-hidden bg-[#00551B]">
                       <img
                         src={projImage}
                         alt={proj.title}
@@ -116,24 +116,24 @@ export default function HomePage({
                       />
                     </div>
 
-                    <div className="p-4 space-y-1.5">
-                      <div className="flex items-center gap-2 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                    <div className="pt-3.5 pb-2 space-y-1.5">
+                      <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-100">
                         <span className="truncate">{proj.location}</span>
                         <span aria-hidden="true">·</span>
-                        <span className="font-bold text-[#003B95] dark:text-[#38BDF8] shrink-0">{proj.year}</span>
+                        <span className="font-bold text-[#A7F3D0] shrink-0">{proj.year}</span>
                       </div>
 
-                      <span className="text-[11px] font-mono text-[#006B22] dark:text-[#4ADE80] font-bold block truncate">
+                      <span className="text-[11px] font-mono text-[#A7F3D0] font-bold block truncate">
                         Client: {proj.client}
                       </span>
 
-                      <h3 className="font-heading font-extrabold text-base text-[#003B95] dark:text-white leading-snug line-clamp-2">
+                      <h3 className="font-heading font-extrabold text-base text-white group-hover:text-emerald-100 leading-snug line-clamp-2 transition-colors">
                         {proj.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="px-4 pb-4 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                  <div className="pt-2 flex items-center justify-between text-xs font-mono font-bold text-[#A7F3D0] group-hover:text-white transition-colors">
                     <span>Details</span>
                     <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -219,10 +219,10 @@ export default function HomePage({
                   aria-hidden={isDuplicate}
                   tabIndex={isDuplicate ? -1 : 0}
                   onClick={() => onNavigate('service-detail', discipline.slug)}
-                  className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <div>
-                    <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <div className="h-44 w-full overflow-hidden bg-[#00551B]">
                       <img
                         src={image}
                         alt={discipline.title}
@@ -231,14 +231,14 @@ export default function HomePage({
                       />
                     </div>
 
-                    <div className="p-4">
-                      <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] transition-colors leading-snug">
+                    <div className="pt-3.5 pb-2">
+                      <h3 className="font-heading font-bold text-base text-white group-hover:text-emerald-100 transition-colors leading-snug">
                         {discipline.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="px-4 pb-4 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                  <div className="pt-2 flex items-center justify-between text-xs font-mono font-bold text-[#A7F3D0] group-hover:text-white transition-colors">
                     <span>Details</span>
                     <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -270,38 +270,33 @@ export default function HomePage({
             </button>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-5">
             {projectDeliverySteps.map((item, idx) => (
               <div
                 key={item.step}
-                className="relative bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl space-y-3 flex flex-col justify-between"
+                className="flex flex-col space-y-3"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-lg bg-[#003B95]/10 dark:bg-[#38BDF8]/15 text-[#003B95] dark:text-[#38BDF8] flex items-center justify-center">
-                      {renderDeliveryIcon(item.icon)}
-                    </div>
-                    <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
-                      Step {item.step}
-                    </span>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-10 h-10 rounded-full bg-[#006B22] text-white flex items-center justify-center shrink-0">
+                    {renderDeliveryIcon(item.icon)}
                   </div>
-
-                  <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-                    {item.description}
-                  </p>
+                  <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] shrink-0">
+                    Step {item.step}
+                  </span>
+                  {idx < projectDeliverySteps.length - 1 && (
+                    <div className="hidden lg:flex items-center flex-1 text-[#006B22]/60 dark:text-[#4ADE80]/60 pl-1" aria-hidden="true">
+                      <span className="h-px flex-1 bg-[#006B22]/30 dark:bg-[#4ADE80]/30" />
+                      <ArrowRight className="w-4 h-4 -ml-1 shrink-0 text-[#006B22] dark:text-[#4ADE80]" />
+                    </div>
+                  )}
                 </div>
 
-                {idx < projectDeliverySteps.length - 1 && (
-                  <div
-                    className="hidden lg:flex items-center justify-end text-[#006B22] dark:text-[#4ADE80] pt-1"
-                    aria-hidden="true"
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                )}
+                <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug pt-1">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>

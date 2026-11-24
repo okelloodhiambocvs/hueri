@@ -106,30 +106,30 @@ export default function FAQSection({}: FAQSectionProps) {
           </div>
         </div>
 
-        <div className="space-y-3">
+        <div className="divide-y divide-white/20 border-t border-b border-white/20">
           {filteredFaqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
-              <div key={faq.id} className="bg-white dark:bg-[#041B44] rounded-xl px-5 py-1 shadow-sm">
+              <div key={faq.id} className="py-1">
                 <button
                   onClick={() => toggleOpen(faq.id)}
                   className="w-full flex items-center justify-between py-4 text-left cursor-pointer transition-colors group"
                 >
-                  <span className="font-heading font-bold text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] text-sm sm:text-base leading-snug pr-4">
+                  <span className="font-heading font-bold text-white group-hover:text-emerald-100 text-sm sm:text-base leading-snug pr-4">
                     {faq.question}
                   </span>
                   <span className={`text-[11px] font-mono font-bold whitespace-nowrap uppercase tracking-wider ${
                     isOpen
-                      ? 'text-[#006B22] dark:text-[#4ADE80]'
-                      : 'text-slate-500 dark:text-slate-400'
+                      ? 'text-[#A7F3D0]'
+                      : 'text-emerald-100/80'
                   }`}>
                     {isOpen ? '− Collapse' : '+ Expand'}
                   </span>
                 </button>
 
                 {isOpen && (
-                  <div className="pb-5 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-sans leading-relaxed font-light space-y-1.5 animate-fadeIn">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
+                  <div className="pb-5 text-emerald-50 text-xs sm:text-sm font-sans leading-relaxed font-light space-y-1.5 animate-fadeIn">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#A7F3D0] block">
                       Official HUERI Advisory Position
                     </span>
                     <p>{faq.answer}</p>

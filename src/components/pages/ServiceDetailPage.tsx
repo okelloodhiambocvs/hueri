@@ -139,7 +139,7 @@ export default function ServiceDetailPage({
             )}
           </div>
 
-          <div className="lg:col-span-4 bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-4">
+          <div className="lg:col-span-4 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-4">
             <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
               Start an Assignment
             </h3>
@@ -161,20 +161,25 @@ export default function ServiceDetailPage({
       {/* 2. Step-by-Step Process — Logo Green Background */}
       {service.methodology && service.methodology.length > 0 && (
         <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
               Step-by-Step Process
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7">
               {service.methodology.map((step, idx) => (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm"
+                  className="border-t border-white/25 pt-4 space-y-2"
                 >
-                  <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <p className="text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold text-[#A7F3D0]">
+                      Step {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    {idx < service.methodology.length - 1 && (
+                      <ArrowRight className="w-3.5 h-3.5 text-[#A7F3D0]/80" aria-hidden="true" />
+                    )}
+                  </div>
+                  <p className="text-sm text-emerald-50 leading-relaxed font-light">
                     {step}
                   </p>
                 </div>
@@ -191,9 +196,9 @@ export default function ServiceDetailPage({
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Types of Delivery
             </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-6">
               {deliveryTypes.map((item, idx) => (
-                <div key={idx} className="bg-slate-50 dark:bg-[#06183A] p-4 rounded-xl space-y-1.5">
+                <div key={idx} className="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-1.5">
                   <h3 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
                     {item.title}
                   </h3>
@@ -205,11 +210,11 @@ export default function ServiceDetailPage({
             </div>
           </div>
 
-          <div className="lg:col-span-6 space-y-4">
+          <div className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-5">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Key Deliverables &amp; Outcomes
             </h2>
-            <div className="bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-5">
+            <div className="space-y-5">
               {service.deliverables && service.deliverables.length > 0 && (
                 <div className="space-y-2.5">
                   <h3 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
@@ -249,20 +254,20 @@ export default function ServiceDetailPage({
       {/* 4. Representative Case Examples — Logo Green Background */}
       {service.caseExamples && service.caseExamples.length > 0 && (
         <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
               Selected Experience
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               {service.caseExamples.map((example, idx) => (
-                <div key={idx} className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm">
-                  <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+                <div key={idx} className="border-t border-white/25 pt-4 space-y-2">
+                  <h3 className="font-heading font-bold text-base text-white">
                     {example.client}
                   </h3>
-                  <p className="text-sm text-slate-700 dark:text-slate-200 font-light">
+                  <p className="text-sm text-emerald-50 font-light">
                     {example.description}
                   </p>
-                  <p className="text-xs font-mono text-[#006B22] dark:text-[#4ADE80] font-semibold">
+                  <p className="text-xs font-mono text-[#A7F3D0] font-semibold">
                     Outcome: {example.outcome}
                   </p>
                 </div>
@@ -275,7 +280,7 @@ export default function ServiceDetailPage({
       {/* 5. Inline Inquiry Form — White Background */}
       <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-50 dark:bg-[#06183A] p-6 sm:p-8 rounded-xl space-y-5">
+          <div className="space-y-5 max-w-4xl">
             <div className="space-y-1.5">
               <h2 className="font-heading font-bold text-xl text-[#003B95] dark:text-white">
                 Enquire About {service.title}

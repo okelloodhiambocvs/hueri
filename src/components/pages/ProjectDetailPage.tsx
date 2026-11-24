@@ -83,7 +83,7 @@ export default function ProjectDetailPage({
             </p>
           </div>
 
-          <div className="lg:col-span-4 bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-3">
+          <div className="lg:col-span-4 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-3">
             <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
               Assignment Profile
             </h3>
@@ -111,7 +111,7 @@ export default function ProjectDetailPage({
 
       {/* 2. Challenge, Approach & Outcome (Logo Green Background) */}
       <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="max-w-2xl space-y-1.5">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-white">
               Technical Challenge, Approach &amp; Outcome
@@ -121,33 +121,33 @@ export default function ProjectDetailPage({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-[#041B44] text-slate-800 dark:text-slate-200 p-6 rounded-xl space-y-2">
-              <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">01</span>
-              <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="border-t border-white/25 pt-4 space-y-2">
+              <span className="text-xs font-mono font-bold text-[#A7F3D0] block">01</span>
+              <h3 className="font-heading font-bold text-base text-white">
                 Assignment Challenge
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed font-light">
                 {project.challenge}
               </p>
             </div>
 
-            <div className="bg-white dark:bg-[#041B44] text-slate-800 dark:text-slate-200 p-6 rounded-xl space-y-2">
-              <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">02</span>
-              <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+            <div className="border-t border-white/25 pt-4 space-y-2">
+              <span className="text-xs font-mono font-bold text-[#A7F3D0] block">02</span>
+              <h3 className="font-heading font-bold text-base text-white">
                 HUERI Approach
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed font-light">
                 {project.solution}
               </p>
             </div>
 
-            <div className="bg-white dark:bg-[#041B44] text-slate-800 dark:text-slate-200 p-6 rounded-xl space-y-2">
-              <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">03</span>
-              <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+            <div className="border-t border-white/25 pt-4 space-y-2">
+              <span className="text-xs font-mono font-bold text-[#A7F3D0] block">03</span>
+              <h3 className="font-heading font-bold text-base text-white">
                 Delivered Outcome
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed font-light">
                 {project.outcome}
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function ProjectDetailPage({
             </ul>
           </div>
 
-          <div className="lg:col-span-6 bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-4">
+          <div className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-4">
             <h2 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
               Verification &amp; Record Summary
             </h2>
@@ -211,7 +211,7 @@ export default function ProjectDetailPage({
             </button>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {otherProjects.map((item) => {
               const img = photoAssets.projects[item.imageKey] || photoAssets.siteStructuralDeck;
               return (
@@ -219,10 +219,10 @@ export default function ProjectDetailPage({
                   key={item.id}
                   type="button"
                   onClick={() => onNavigate('project-detail', item.slug)}
-                  className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden text-left flex flex-col justify-between group cursor-pointer shadow-sm"
+                  className="text-left flex flex-col justify-between group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <div>
-                    <div className="h-40 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <div className="h-44 w-full overflow-hidden bg-[#00551B]">
                       <img
                         src={img}
                         alt={item.title}
@@ -230,23 +230,23 @@ export default function ProjectDetailPage({
                         referrerPolicy="no-referrer"
                       />
                     </div>
-                    <div className="p-4 space-y-1.5">
-                      <div className="flex items-center gap-2 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                    <div className="pt-3.5 pb-2 space-y-1.5">
+                      <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-100">
                         <span className="truncate">{item.location}</span>
                         <span aria-hidden="true">·</span>
-                        <span className="font-bold text-[#003B95] dark:text-[#38BDF8] shrink-0">{item.year}</span>
+                        <span className="font-bold text-[#A7F3D0] shrink-0">{item.year}</span>
                       </div>
-                      <span className="text-[11px] font-mono text-[#006B22] dark:text-[#4ADE80] font-bold block truncate">
+                      <span className="text-[11px] font-mono text-[#A7F3D0] font-bold block truncate">
                         Client: {item.client}
                       </span>
-                      <h3 className="font-heading font-bold text-sm text-[#003B95] dark:text-white leading-snug line-clamp-2">
+                      <h3 className="font-heading font-bold text-base text-white group-hover:text-emerald-100 leading-snug line-clamp-2 transition-colors">
                         {item.title}
                       </h3>
                     </div>
                   </div>
-                  <div className="px-4 pb-4 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                  <div className="pt-2 flex items-center justify-between text-xs font-mono font-bold text-[#A7F3D0] group-hover:text-white transition-colors">
                     <span>Details</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </button>
               );

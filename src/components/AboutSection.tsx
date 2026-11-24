@@ -11,7 +11,11 @@ import PageHero from './PageHero';
 import {
   Download,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
+  Leaf,
+  Award,
+  Users,
+  Lightbulb
 } from 'lucide-react';
 
 interface AboutSectionProps {
@@ -36,18 +40,22 @@ export default function AboutSection({
 
   const coreValues = [
     {
+      icon: Leaf,
       title: 'Commitment to Sustainable Development',
       description: 'HUERI is committed to promoting sustainable development in the East African region and globally. This core value underscores the organization\'s mission to provide professional environmental and research consultancy services that prioritize long-term environmental and social sustainability.'
     },
     {
+      icon: Award,
       title: 'Excellence and Professionalism',
       description: 'HUERI places a strong emphasis on excellence and professionalism in all its services. The organization\'s pool of consultants and associates, with their strong academic credentials and extensive experience, strive to provide high-quality, reliable, and ethical consultancy services to clients.'
     },
     {
+      icon: Users,
       title: 'Centric Approach',
       description: 'HUERI values active engagement with stakeholders and local communities. The organization recognizes the importance of understanding and involving stakeholders in the decision-making process to ensure that projects align with local needs and environmental considerations.'
     },
     {
+      icon: Lightbulb,
       title: 'Innovation and Adaptability',
       description: 'HUERI emphasizes innovation and adaptability to address the evolving challenges in the field of environmental consultancy. The organization aims to continually improve its services, embrace new technologies, and adapt to changing regulations to remain at the forefront of the industry.'
     }
@@ -179,22 +187,22 @@ export default function AboutSection({
 
       {/* 3. Vision, Mission & Core Values — Logo Green Background */}
       <section id="about-vision-mission" className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-            <div className="bg-white dark:bg-[#041B44] p-6 sm:p-8 rounded-xl space-y-2.5 shadow-sm">
-              <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
+            <div className="space-y-2.5 border-t border-white/25 pt-5">
+              <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
                 Our Vision
               </h3>
-              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-emerald-50 leading-relaxed font-light">
                 To be one of the leading Environmental and Research Consultancy Firms in the East African Region, expanding globally with a focus on promoting sustainable development.
               </p>
             </div>
 
-            <div className="bg-white dark:bg-[#041B44] p-6 sm:p-8 rounded-xl space-y-2.5 shadow-sm">
-              <h3 className="text-xl sm:text-2xl font-heading font-black text-[#003B95] dark:text-white">
+            <div className="space-y-2.5 border-t border-white/25 pt-5">
+              <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
                 Our Mission
               </h3>
-              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-emerald-50 leading-relaxed font-light">
                 To provide professional Environmental and Research Consultancy Services to our clients, promoting sustainable development.
               </p>
             </div>
@@ -207,20 +215,26 @@ export default function AboutSection({
               </h3>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {coreValues.map((value) => (
-                <div
-                  key={value.title}
-                  className="bg-white dark:bg-[#041B44] p-6 rounded-xl space-y-2 shadow-sm"
-                >
-                  <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
-                    {value.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                    {value.description}
-                  </p>
-                </div>
-              ))}
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+              {coreValues.map((value) => {
+                const Icon = value.icon;
+                return (
+                  <div
+                    key={value.title}
+                    className="flex items-start gap-4 border-t border-white/20 pt-5"
+                  >
+                    <Icon className="w-6 h-6 text-[#A7F3D0] shrink-0 mt-0.5" aria-hidden="true" />
+                    <div className="space-y-1.5">
+                      <h4 className="font-heading font-bold text-base text-white">
+                        {value.title}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed font-light">
+                        {value.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -398,10 +412,10 @@ export default function AboutSection({
                   aria-hidden={isDuplicate}
                   tabIndex={isDuplicate ? -1 : 0}
                   onClick={() => onNavigate('service-detail', service.slug)}
-                  className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="group w-[270px] sm:w-[290px] shrink-0 text-left flex flex-col justify-between cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <div>
-                    <div className="h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <div className="h-44 w-full overflow-hidden bg-[#00551B]">
                       <img
                         src={image}
                         alt={service.title}
@@ -409,15 +423,15 @@ export default function AboutSection({
                         referrerPolicy="no-referrer"
                       />
                     </div>
-                    <div className="p-4">
-                      <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white group-hover:text-[#006B22] dark:group-hover:text-[#4ADE80] transition-colors leading-snug">
+                    <div className="pt-3.5 pb-2">
+                      <h3 className="font-heading font-bold text-base text-white group-hover:text-emerald-100 transition-colors leading-snug">
                         {service.title}
                       </h3>
                     </div>
                   </div>
-                  <div className="px-4 pb-4 flex items-center justify-between text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
+                  <div className="pt-2 flex items-center justify-between text-xs font-mono font-bold text-[#A7F3D0] group-hover:text-white transition-colors">
                     <span>Details</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </button>
               );
@@ -438,11 +452,11 @@ export default function AboutSection({
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUsItems.map((item) => (
               <div
                 key={item.number}
-                className="bg-slate-50 dark:bg-[#06183A] p-6 rounded-xl space-y-2.5"
+                className="border-t border-slate-200 dark:border-slate-800 pt-5 space-y-2.5"
               >
                 <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
                   {item.number}

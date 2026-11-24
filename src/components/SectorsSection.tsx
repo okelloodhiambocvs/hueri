@@ -186,10 +186,10 @@ export default function SectorsSection({
             {secondGroup.map((sec) => (
               <div
                 key={sec.id}
-                className="bg-white dark:bg-[#041B44] rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group"
+                className="flex flex-col justify-between group"
               >
-                <div>
-                  <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                <div className="space-y-4">
+                  <div className="h-52 w-full overflow-hidden bg-[#00551B]">
                     <img
                       src={sec.image}
                       alt={sec.title}
@@ -198,31 +198,29 @@ export default function SectorsSection({
                     />
                   </div>
 
-                  <div className="p-5 space-y-4">
-                    <div className="space-y-2">
-                      <h3 className="font-heading font-bold text-lg sm:text-xl text-[#003B95] dark:text-white leading-snug">
-                        {sec.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                        {sec.overview}
-                      </p>
-                    </div>
+                  <div className="space-y-2">
+                    <h3 className="font-heading font-bold text-lg sm:text-xl text-white leading-snug">
+                      {sec.title}
+                    </h3>
+                    <p className="text-sm text-emerald-50 leading-relaxed font-light">
+                      {sec.overview}
+                    </p>
+                  </div>
 
-                    <div className="space-y-1.5">
-                      {sec.keySafeguards.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-200">
-                          <CheckCircle2 className="w-4 h-4 text-[#006B22] dark:text-[#4ADE80] shrink-0" />
-                          <span className="truncate leading-snug">{item}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="pt-1 space-y-1.5">
+                    {sec.keySafeguards.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5 text-sm text-white">
+                        <CheckCircle2 className="w-4 h-4 text-[#A7F3D0] shrink-0" />
+                        <span className="truncate leading-snug">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="px-5 pb-5">
+                <div className="pt-4 mt-4">
                   <button
                     onClick={() => onRequestProposal(sec.title)}
-                    className="w-full py-2.5 px-4 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-2.5 px-4 bg-white hover:bg-emerald-50 text-[#003B95] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Let&apos;s Talk</span>
                     <ArrowRight className="w-3.5 h-3.5" />

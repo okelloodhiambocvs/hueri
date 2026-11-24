@@ -49,9 +49,9 @@ export default function RoadmapPhaseDetails({ activeStage }: RoadmapPhaseDetails
         </div>
 
         {/* Right Deliverables Column */}
-        <div className="lg:col-span-5 bg-white dark:bg-[#041B44] p-6 rounded-xl space-y-4 shadow-sm">
+        <div className="lg:col-span-5 lg:border-l lg:border-white/25 lg:pl-8 space-y-4">
           <div>
-            <h4 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
+            <h4 className="font-heading font-bold text-sm text-white">
               Stage Deliverables &amp; Outputs
             </h4>
           </div>
@@ -59,8 +59,8 @@ export default function RoadmapPhaseDetails({ activeStage }: RoadmapPhaseDetails
           <div className="space-y-2.5">
             {activeStage.deliverables.map((deliv, idx) => (
               <div key={idx} className="flex items-start">
-                <span className="text-[#006B22] dark:text-[#4ADE80] font-bold shrink-0 mr-2.5">✓</span>
-                <span className="text-xs text-slate-800 dark:text-slate-200 font-sans">
+                <span className="text-[#A7F3D0] font-bold shrink-0 mr-2.5">✓</span>
+                <span className="text-xs text-emerald-50 font-sans">
                   {deliv}
                 </span>
               </div>

@@ -26,7 +26,7 @@ export default function AboutHomeSection({ onNavigate }: AboutHomeSectionProps) 
             </p>
           </div>
 
-          <div className="lg:col-span-4 bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl flex items-center justify-between gap-4">
+          <div className="lg:col-span-4 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 flex items-center justify-between gap-4">
             <div className="space-y-1">
               <p className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
                 Kisumu HQ · Est. 2014

@@ -170,34 +170,34 @@ export default function InternationalStandardsSection({}: InternationalStandards
         </div>
       </div>
 
-      <div className="bg-[#006B22] dark:bg-[#054A20] py-10 sm:py-12">
+      <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {activeTab === 'lenders' && (
             <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 animate-fadeIn">
               {lenderStandards.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-3 shadow-sm"
+                  className="border-t border-white/25 pt-5 space-y-3"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80]">
+                    <span className="text-[10px] font-mono font-bold uppercase text-[#A7F3D0]">
                       {item.tag}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#003B95] dark:text-white">
+                    <h3 className="font-heading font-extrabold text-base sm:text-lg text-white">
                       {item.institution}
                     </h3>
-                    <p className="text-[11px] font-mono font-semibold text-[#006B22] dark:text-[#4ADE80] mt-0.5">
+                    <p className="text-[11px] font-mono font-semibold text-[#A7F3D0] mt-0.5">
                       {item.framework}
                     </p>
                   </div>
 
-                  <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-1">
+                  <ul className="space-y-1.5 text-xs text-emerald-50 pt-1">
                     {item.standards.map((std, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-[#006B22] dark:text-[#4ADE80] font-bold shrink-0">·</span>
+                        <span className="text-[#A7F3D0] font-bold shrink-0">·</span>
                         <span>{std}</span>
                       </li>
                     ))}
@@ -208,19 +208,19 @@ export default function InternationalStandardsSection({}: InternationalStandards
           )}
 
           {activeTab === 'voluntary' && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 animate-fadeIn">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 animate-fadeIn">
               {voluntaryFrameworks.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm"
+                  className="border-t border-white/25 pt-5 space-y-2"
                 >
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#A7F3D0] block">
                     {item.category}
                   </span>
-                  <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+                  <h4 className="font-heading font-bold text-base text-white">
                     {item.name}
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+                  <p className="text-xs text-emerald-50 font-sans leading-relaxed font-light">
                     {item.description}
                   </p>
                 </div>
@@ -229,19 +229,19 @@ export default function InternationalStandardsSection({}: InternationalStandards
           )}
 
           {activeTab === 'statutory' && (
-            <div className="grid md:grid-cols-2 gap-x-10 gap-y-6 animate-fadeIn">
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 animate-fadeIn">
               {statutoryFrameworks.map((law, idx) => (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-[#041B44] p-5 rounded-xl space-y-2 shadow-sm"
+                  className="border-t border-white/25 pt-5 space-y-2"
                 >
-                  <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80] block">
+                  <span className="text-[10px] font-mono font-bold uppercase text-[#A7F3D0] block">
                     {law.authority}
                   </span>
-                  <h4 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
+                  <h4 className="font-heading font-bold text-base text-white">
                     {law.name}
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+                  <p className="text-xs text-emerald-50 font-sans leading-relaxed font-light">
                     {law.scope}
                   </p>
                 </div>

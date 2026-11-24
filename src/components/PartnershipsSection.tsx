@@ -51,7 +51,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {valueProps.map((val, idx) => (
-              <div key={idx} className="space-y-2 bg-slate-50 dark:bg-[#06183A] p-5 rounded-xl">
+              <div key={idx} className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4">
                 <h4 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
                   {val.title}
                 </h4>
@@ -109,7 +109,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
       {/* 3. Pan-African In-Country Partnering Framework — White Background */}
       <div className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-50 dark:bg-[#06183A] rounded-xl p-6 sm:p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="space-y-3 max-w-3xl">
               <h3 className="font-heading font-black text-xl sm:text-2xl text-[#003B95] dark:text-white">
                 In-Country Teaming with Local African Experts &amp; National Consultancies
@@ -138,30 +138,30 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
 
       {/* 4. Structured Partnership Models Grid — Logo Green Background */}
       <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
             Engagement &amp; Partnership Models
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {models.map((model) => (
               <div
                 key={model.id}
-                className="bg-white dark:bg-[#041B44] p-6 rounded-xl shadow-sm flex flex-col justify-between space-y-4"
+                className="border-t border-white/25 pt-5 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-2.5">
-                  <h4 className="font-heading font-extrabold text-base text-[#003B95] dark:text-white leading-snug">
+                  <h4 className="font-heading font-extrabold text-base text-white leading-snug">
                     {model.title}
                   </h4>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+                  <p className="text-xs text-emerald-50 font-sans leading-relaxed font-light">
                     {model.description}
                   </p>
 
                   <div className="pt-1">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-0.5">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-200 block mb-0.5">
                       Typical Target Partners
                     </span>
-                    <p className="text-xs font-mono font-semibold text-[#003B95] dark:text-[#38BDF8]">
+                    <p className="text-xs font-mono font-semibold text-[#A7F3D0]">
                       {model.targetPartners}
                     </p>
                   </div>
@@ -170,8 +170,8 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                 <div className="space-y-3 pt-1">
                   <div className="space-y-1">
                     {model.benefits.map((b, i) => (
-                      <div key={i} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-1.5">
-                        <span className="text-[#006B22] dark:text-[#4ADE80] font-bold shrink-0">·</span>
+                      <div key={i} className="text-xs text-emerald-50 flex items-start gap-1.5">
+                        <span className="text-[#A7F3D0] font-bold shrink-0">·</span>
                         <span>{b}</span>
                       </div>
                     ))}
@@ -179,7 +179,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
 
                   <button
                     onClick={() => onOpenPartnershipInquiry(model.title)}
-                    className="w-full py-2 px-3 bg-[#003B95] hover:bg-[#002D73] text-white font-mono font-bold text-[11px] uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer"
+                    className="w-full py-2 px-3 bg-white hover:bg-emerald-50 text-[#003B95] font-mono font-bold text-[11px] uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer"
                   >
                     Propose Partnership
                   </button>
