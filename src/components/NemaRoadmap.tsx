@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import RoadmapPhaseDetails from './roadmap/RoadmapPhaseDetails';
+import InteractiveBand from './InteractiveBand';
 import { LifecycleStage } from '../types';
 
 interface NemaRoadmapProps {
@@ -243,7 +244,7 @@ export default function NemaRoadmap({}: NemaRoadmapProps) {
   const activeStage = lifecycleStages.find(s => s.stageNumber === activeStageNumber) || lifecycleStages[0];
 
   return (
-    <section id="roadmap" className="py-10 sm:py-14 bg-white dark:bg-[#041B44] transition-colors">
+    <InteractiveBand id="roadmap" tone="white" fromTone="hero" className="py-10 sm:py-14 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         <div className="text-center max-w-3xl mx-auto space-y-2">
@@ -259,6 +260,7 @@ export default function NemaRoadmap({}: NemaRoadmapProps) {
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => setActiveCategoryFilter(cat)}
               className={`px-3 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                 activeCategoryFilter === cat
@@ -271,13 +273,13 @@ export default function NemaRoadmap({}: NemaRoadmapProps) {
           ))}
         </div>
 
-        {/* Clean Flat Stage Selector Row */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
           {filteredStages.map((stage) => {
             const isSelected = activeStageNumber === stage.stageNumber;
             return (
               <button
                 key={stage.stageNumber}
+                type="button"
                 onClick={() => setActiveStageNumber(stage.stageNumber)}
                 className={`p-3 rounded-lg text-left transition-colors flex flex-col justify-between cursor-pointer ${
                   isSelected
@@ -306,6 +308,6 @@ export default function NemaRoadmap({}: NemaRoadmapProps) {
         <RoadmapPhaseDetails activeStage={activeStage} />
 
       </div>
-    </section>
+    </InteractiveBand>
   );
 }

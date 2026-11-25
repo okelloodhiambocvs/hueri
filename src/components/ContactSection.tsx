@@ -6,10 +6,11 @@
 import React, { useState } from 'react';
 import OfficeInfoCard from './contact/OfficeInfoCard';
 import { RevealBlock } from './MotionReveal';
-import { sanitizeString, sanitizeText, sanitizeEmail, sanitizePhone, isValidEmail, isValidPhone } from '../utils/security';
+import InteractiveBand from './InteractiveBand';
+import { submitLeadInquiry } from '../utils/apiClient';
 
 interface ContactSectionProps {
-  onLeadSubmit: (leadData: any) => void;
+  onLeadSubmit: (leadData: unknown) => void;
 }
 
 export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
@@ -33,96 +34,55 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setValidationError(null);
-
-    const purifiedFullName = sanitizeString(formData.fullName, 100);
-    const purifiedEmail = sanitizeEmail(formData.email);
-    const purifiedPhone = sanitizePhone(formData.phone);
-    const purifiedOrg = sanitizeString(formData.organization, 150);
-    const purifiedCountry = sanitizeString(formData.country, 80);
-    const purifiedLocation = sanitizeString(formData.projectLocation, 150);
-    const purifiedService = sanitizeString(formData.serviceNeeded, 150);
-    const purifiedAssignment = sanitizeString(formData.assignmentNature, 200);
-    const purifiedRef = sanitizeString(formData.procurementRef, 100);
-    const purifiedMethod = sanitizeString(formData.preferredResponseMethod, 50);
-    const purifiedMessage = sanitizeText(formData.message, 4000);
-
-    if (!purifiedFullName || purifiedFullName.length < 2) {
-      setValidationError('Please enter your full name (minimum 2 characters).');
-      return;
-    }
-
-    if (!isValidEmail(purifiedEmail)) {
-      setValidationError('Please provide a valid email address.');
-      return;
-    }
-
-    if (purifiedPhone && !isValidPhone(purifiedPhone)) {
-      setValidationError('Please provide a valid telephone number format.');
-      return;
-    }
-
-    if (!formData.privacyConsent) {
-      setValidationError('Please acknowledge the Privacy Policy consent checkbox.');
-      return;
-    }
-
-    const payload = {
-      fullName: purifiedFullName,
-      email: purifiedEmail,
-      phone: purifiedPhone,
-      organization: purifiedOrg,
-      company: purifiedOrg,
-      country: purifiedCountry,
-      projectLocation: purifiedLocation,
-      serviceNeeded: purifiedService,
-      assignmentNature: purifiedAssignment,
-      procurementRef: purifiedRef,
-      preferredResponseMethod: purifiedMethod,
-      inquiryType: 'Technical Advisory Request',
-      message: purifiedMessage,
-      privacyConsent: true,
-      website_hp: formData.website_hp
-    };
-
     setIsSubmitting(true);
-    fetch('/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(res => res.json())
-      .then(data => {
-        setIsSubmitting(false);
-        if (data.success) {
-          setSubmitSuccess(true);
-          onLeadSubmit(payload);
-          setFormData({
-            fullName: '',
-            email: '',
-            phone: '',
-            organization: '',
-            country: 'Kenya',
-            projectLocation: '',
-            serviceNeeded: 'Environmental & Social Impact Assessment (ESIA)',
-            assignmentNature: '',
-            procurementRef: '',
-            preferredResponseMethod: 'Email',
-            message: '',
-            privacyConsent: false,
-            website_hp: ''
-          });
-        } else {
-          setValidationError(data.error || 'Failed to transmit enquiry. Please check your details.');
-        }
-      })
-      .catch(err => {
-        setIsSubmitting(false);
-        setValidationError('Network issue encountered. Please retry or email info@hueriafrica.com directly.');
-        console.error('Enquiry delivery failed:', err);
-      });
+
+    const result = await submitLeadInquiry({
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      organization: formData.organization,
+      company: formData.organization,
+      country: formData.country,
+      projectLocation: formData.projectLocation,
+      serviceNeeded: formData.serviceNeeded,
+      assignmentNature: formData.assignmentNature,
+      procurementRef: formData.procurementRef,
+      preferredResponseMethod: formData.preferredResponseMethod,
+      inquiryType: 'Technical Advisory Request',
+      message: formData.message,
+      privacyConsent: formData.privacyConsent,
+      requireConsent: true,
+      requireMessage: true,
+      website_hp: formData.website_hp
+    });
+
+    setIsSubmitting(false);
+
+    if (!result.success) {
+      setValidationError(result.error || 'Failed to transmit enquiry. Please check your details.');
+      return;
+    }
+
+    setSubmitSuccess(true);
+    onLeadSubmit(result.lead || formData);
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      organization: '',
+      country: 'Kenya',
+      projectLocation: '',
+      serviceNeeded: 'Environmental & Social Impact Assessment (ESIA)',
+      assignmentNature: '',
+      procurementRef: '',
+      preferredResponseMethod: 'Email',
+      message: '',
+      privacyConsent: false,
+      website_hp: ''
+    });
   };
 
   const serviceCategories = [
@@ -143,7 +103,7 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
     'w-full px-3.5 py-2.5 bg-white dark:bg-[#06183A] border border-slate-300 dark:border-slate-700 rounded-lg text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#006B22]';
 
   return (
-    <section id="contact" className="bg-white dark:bg-[#041B44] py-10 sm:py-12 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans overflow-hidden" aria-labelledby="contact-heading">
+    <InteractiveBand id="contact" tone="white" fromTone="hero" ariaLabelledBy="contact-heading" className="py-10 sm:py-12 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
         <RevealBlock direction="up" className="text-center max-w-3xl mx-auto space-y-2">
@@ -384,6 +344,6 @@ export default function ContactSection({ onLeadSubmit }: ContactSectionProps) {
         </div>
 
       </div>
-    </section>
+    </InteractiveBand>
   );
 }

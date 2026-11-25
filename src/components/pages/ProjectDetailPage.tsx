@@ -6,6 +6,7 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight, CheckCircle2, FileCheck2 } from 'lucide-react';
 import PageHero from '../PageHero';
+import InteractiveBand from '../InteractiveBand';
 import { RevealBlock } from '../MotionReveal';
 import photoAssets from '../../utils/photoAssets';
 import {
@@ -69,8 +70,7 @@ export default function ProjectDetailPage({
         </button>
       </PageHero>
 
-      {/* 1. Assignment Overview & Metadata (White Background) */}
-      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
+      <InteractiveBand tone="white" fromTone="hero" className="py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-start">
           <RevealBlock direction="left" className="lg:col-span-8 space-y-4">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
@@ -108,10 +108,9 @@ export default function ProjectDetailPage({
             </dl>
           </RevealBlock>
         </div>
-      </section>
+      </InteractiveBand>
 
-      {/* 2. Challenge, Approach & Outcome (Logo Green Background) */}
-      <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
+      <InteractiveBand tone="green" fromTone="white" className="py-10 sm:py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <RevealBlock direction="left" className="max-w-2xl space-y-1.5">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
@@ -154,10 +153,9 @@ export default function ProjectDetailPage({
             </div>
           </RevealBlock>
         </div>
-      </section>
+      </InteractiveBand>
 
-      {/* 3. Key Deliverables & Evidence (White Background) */}
-      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+      <InteractiveBand tone="white" fromTone="green" className="py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-6 space-y-4">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
@@ -194,10 +192,9 @@ export default function ProjectDetailPage({
             )}
           </div>
         </div>
-      </section>
+      </InteractiveBand>
 
-      {/* 4. Explore More Recent Work (Logo Green Background) */}
-      <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+      <InteractiveBand tone="green" fromTone="white" className="py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
@@ -254,7 +251,7 @@ export default function ProjectDetailPage({
             })}
           </div>
         </div>
-      </section>
+      </InteractiveBand>
     </div>
   );
 }

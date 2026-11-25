@@ -4,14 +4,14 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { sanitizeString, sanitizeText, sanitizeEmail, sanitizePhone, isValidEmail, isValidPhone } from '../utils/security';
+import { submitLeadInquiry } from '../utils/apiClient';
 
 interface ProposalModalProps {
   isOpen: boolean;
   onClose: () => void;
   initialTab?: 'proposal' | 'tor' | 'partnership' | 'general';
   prefilledScope?: string;
-  onLeadSubmit: (leadData: any) => void;
+  onLeadSubmit: (leadData: unknown) => void;
 }
 
 export default function ProposalModal({ 
@@ -21,8 +21,6 @@ export default function ProposalModal({
   prefilledScope,
   onLeadSubmit 
 }: ProposalModalProps) {
-  if (!isOpen) return null;
-
   const [inquiryType, setInquiryType] = useState<'proposal' | 'tor' | 'partnership' | 'general'>(initialTab);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -39,7 +37,7 @@ export default function ProposalModal({
     preferredResponseMethod: 'Email',
     message: '',
     privacyConsent: false,
-    website_hp: '' // Honeypot
+    website_hp: ''
   });
 
   const [validationError, setValidationError] = useState<string | null>(null);
@@ -58,6 +56,8 @@ export default function ProposalModal({
     }
   }, [initialTab]);
 
+  if (!isOpen) return null;
+
   const serviceOptions = [
     'Environmental & Social Impact Assessment (ESIA)',
     'Strategic Environmental Assessment (SEA)',
@@ -73,46 +73,9 @@ export default function ProposalModal({
     'Joint Venture & Consortium Teaming'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setValidationError(null);
-
-    // 1. Frontend Input Purification
-    const purifiedFullName = sanitizeString(formData.fullName, 100);
-    const purifiedOrg = sanitizeString(formData.organization, 150);
-    const purifiedEmail = sanitizeEmail(formData.email);
-    const purifiedPhone = sanitizePhone(formData.phone);
-    const purifiedCountry = sanitizeString(formData.country, 80);
-    const purifiedLocation = sanitizeString(formData.projectLocation, 150);
-    const purifiedService = sanitizeString(formData.serviceNeeded, 150);
-    const purifiedAssignment = sanitizeString(formData.assignmentNature, 200);
-    const purifiedRef = sanitizeString(formData.procurementRef, 100);
-    const purifiedStartDate = sanitizeString(formData.startDate, 50);
-    const purifiedDeadline = sanitizeString(formData.proposalDeadline, 50);
-    const purifiedMethod = sanitizeString(formData.preferredResponseMethod, 50);
-    const purifiedMessage = sanitizeText(formData.message, 4000);
-
-    // 2. Strict Validation
-    if (!purifiedFullName || purifiedFullName.length < 2) {
-      setValidationError("Please enter your full name (minimum 2 characters).");
-      return;
-    }
-
-    if (!isValidEmail(purifiedEmail)) {
-      setValidationError("Please provide a valid email address.");
-      return;
-    }
-
-    if (purifiedPhone && !isValidPhone(purifiedPhone)) {
-      setValidationError("Please provide a valid telephone number format.");
-      return;
-    }
-
-    if (!formData.privacyConsent) {
-      setValidationError("Please acknowledge the Privacy Policy consent checkbox before submitting.");
-      return;
-    }
-
     setIsSubmitting(true);
 
     const typeLabels: Record<string, string> = {
@@ -122,46 +85,37 @@ export default function ProposalModal({
       general: 'General Enquiry'
     };
 
-    const payload = {
-      fullName: purifiedFullName,
-      organization: purifiedOrg,
-      company: purifiedOrg,
-      email: purifiedEmail,
-      phone: purifiedPhone,
-      country: purifiedCountry,
-      projectLocation: purifiedLocation,
-      serviceNeeded: purifiedService,
-      assignmentNature: purifiedAssignment,
-      procurementRef: purifiedRef,
-      startDate: purifiedStartDate,
-      proposalDeadline: purifiedDeadline,
-      preferredResponseMethod: purifiedMethod,
+    const result = await submitLeadInquiry({
+      fullName: formData.fullName,
+      organization: formData.organization,
+      company: formData.organization,
+      email: formData.email,
+      phone: formData.phone,
+      country: formData.country,
+      projectLocation: formData.projectLocation,
+      serviceNeeded: formData.serviceNeeded,
+      assignmentNature: formData.assignmentNature,
+      procurementRef: formData.procurementRef,
+      startDate: formData.startDate,
+      proposalDeadline: formData.proposalDeadline,
+      preferredResponseMethod: formData.preferredResponseMethod,
       inquiryType: typeLabels[inquiryType] || 'Proposal Request',
-      message: purifiedMessage,
-      privacyConsent: true,
+      message: formData.message,
+      privacyConsent: formData.privacyConsent,
+      requireConsent: true,
+      requireMessage: true,
       website_hp: formData.website_hp
-    };
+    });
 
-    fetch('/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(res => res.json())
-      .then(data => {
-        setIsSubmitting(false);
-        if (data.success) {
-          onLeadSubmit(payload);
-          setIsSuccess(true);
-        } else {
-          setValidationError(data.error || "Submission failed. Please verify your entries.");
-        }
-      })
-      .catch(err => {
-        setIsSubmitting(false);
-        setValidationError("Network communication error. Please retry or contact info@hueriafrica.com directly.");
-        console.error('Submission error:', err);
-      });
+    setIsSubmitting(false);
+
+    if (!result.success) {
+      setValidationError(result.error || 'Submission failed. Please verify your entries.');
+      return;
+    }
+
+    onLeadSubmit(result.lead || formData);
+    setIsSuccess(true);
   };
 
   return (
@@ -505,7 +459,7 @@ export default function ProposalModal({
                   disabled={isSubmitting}
                   className="w-full py-4 bg-[#006B22] hover:bg-[#00581C] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer disabled:opacity-50"
                 >
-                  {isSubmitting ? 'PURIFYING & TRANSMITTING ENQUIRY...' : 'TRANSMIT OFFICIAL ENQUIRY TO LEAD CONSULTANTS'}
+                  {isSubmitting ? 'SUBMITTING ENQUIRY...' : 'TRANSMIT OFFICIAL ENQUIRY TO LEAD CONSULTANTS'}
                 </button>
               </div>
 

@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { initialPartnershipModels } from '../server/seedData';
 import { PartnershipModel } from '../types';
 import photoAssets from '../utils/photoAssets';
+import InteractiveBand from './InteractiveBand';
 import { RevealBlock } from './MotionReveal';
 
 interface PartnershipsSectionProps {
@@ -26,8 +27,8 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
       desc: 'World Bank ESF, IFC PS, AfDB ISS, and Equator Principles fluent deliverables ready for multilateral review.'
     },
     {
-      title: 'Rapid Multi-County & Regional Mobilisation',
-      desc: 'Licensed lead experts, technical specialists, and encrypted mobile GIS field teams across Kenya and East Africa.'
+      title: 'Rapid Multi-County & Pan-African Mobilisation',
+      desc: 'Licensed lead experts, technical specialists, and encrypted mobile GIS field teams across Kenya, Africa, and global consortia.'
     },
     {
       title: 'Strict Governance & Integrity',
@@ -36,45 +37,53 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
   ];
 
   return (
-    <section id="partnerships" className="text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
+    <div id="partnerships" className="font-sans">
+      <InteractiveBand id="partnerships-overview" tone="white" fromTone="hero" className="py-10 sm:py-12 overflow-hidden scroll-mt-24">
+        <div className="space-y-8">
+          <RevealBlock direction="left" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              International Partnerships &amp; Consortia Models
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-3xl leading-relaxed font-light">
+              Collaborating with global engineering firms, international consulting platforms, and development finance institutions requiring trusted, on-the-ground Kenyan and pan-African safeguards execution.
+            </p>
+          </RevealBlock>
 
-      {/* 1. Section Header + Value Props — White Background */}
-      <div className="bg-white dark:bg-[#041B44] py-10 sm:py-12 space-y-8 overflow-hidden">
-        <RevealBlock direction="left" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-            International Partnerships &amp; Consortia Models
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-3xl leading-relaxed font-light">
-            Collaborating with global engineering firms, international consulting platforms, and development finance institutions requiring trusted, on-the-ground African safeguards execution.
-          </p>
-        </RevealBlock>
+          <RevealBlock direction="up" delayMs={80} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {valueProps.map((val, idx) => (
+                <div key={idx} className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4">
+                  <h3 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
+                    {val.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
+                    {val.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </RevealBlock>
+        </div>
+      </InteractiveBand>
 
-        <RevealBlock direction="up" delayMs={80} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {valueProps.map((val, idx) => (
-              <div key={idx} className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4">
-                <h4 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
-                  {val.title}
-                </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-light">
-                  {val.desc}
-                </p>
-              </div>
-            ))}
+      <InteractiveBand id="partnerships-feature" tone="green" fromTone="white" className="overflow-hidden scroll-mt-24">
+        <div className="grid lg:grid-cols-12 items-stretch">
+          <div className="lg:col-span-6 min-h-[320px] sm:min-h-[380px] lg:min-h-[440px] overflow-hidden group">
+            <img
+              src={photoAssets.infrastructure}
+              alt="International infrastructure safeguards partnership across Kenya and Africa"
+              className="w-full h-full object-cover object-center rounded-none block transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              referrerPolicy="no-referrer"
+            />
           </div>
-        </RevealBlock>
-      </div>
 
-      {/* 2. Full-Width Feature Split Band — Logo Green Background */}
-      <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 items-center gap-10">
-            <RevealBlock direction="left" className="lg:col-span-7 space-y-4">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
+          <div className="lg:col-span-6 py-10 sm:py-14 px-4 sm:px-6 lg:pr-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pl-10 flex flex-col justify-center">
+            <RevealBlock direction="right" className="space-y-5 max-w-xl">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
                 Combining Local Ground Mastery with Multilateral Bankability
-              </h3>
-              <p className="text-xs sm:text-sm text-emerald-50 font-light leading-relaxed">
-                International consortia and engineering prime contractors rely on HUERI to execute in-situ stakeholder engagements, statutory licensing, environmental monitoring, and Resettlement Action Plans without project disruption or legal exposure.
+              </h2>
+              <p className="text-sm sm:text-base text-emerald-50 font-normal leading-relaxed">
+                International consortia and engineering prime contractors rely on HUERI to execute in-situ stakeholder engagements, statutory licensing, environmental monitoring, and Resettlement Action Plans across Kenya, Africa, and global assignments.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-6 pt-2 text-xs font-mono">
@@ -88,33 +97,21 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                 </div>
                 <div>
                   <span className="text-emerald-100 block text-[10px] uppercase">Jurisdictions</span>
-                  <span className="font-bold text-white">Kenya &amp; East Africa</span>
+                  <span className="font-bold text-white">Kenya, Africa &amp; Global</span>
                 </div>
-              </div>
-            </RevealBlock>
-
-            <RevealBlock direction="right" delayMs={80} className="lg:col-span-5">
-              <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-900 shadow-md">
-                <img
-                  src={photoAssets.infrastructure}
-                  alt="International infrastructure safeguards partnership"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
               </div>
             </RevealBlock>
           </div>
         </div>
-      </div>
+      </InteractiveBand>
 
-      {/* 3. Pan-African In-Country Partnering Framework — White Background */}
-      <div className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+      <InteractiveBand id="partnerships-teaming" tone="white" fromTone="green" className="py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="space-y-3 max-w-3xl">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
                 In-Country Teaming with Local African Experts &amp; National Consultancies
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
                 While our direct core track record is rooted in Kenya, HUERI operates on a deliberate <strong className="font-semibold text-slate-900 dark:text-slate-100">Pan-African Partnering Philosophy</strong>. Whenever project opportunities arise across other African countries, our organization is structured to collaborate directly with registered in-country environmental practitioners, local engineering firms, and national lead consultants.
               </p>
@@ -127,6 +124,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
             </div>
             <div className="shrink-0 w-full lg:w-auto">
               <button
+                type="button"
                 onClick={() => onOpenPartnershipInquiry('Pan-African In-Country Co-Delivery & Expert Alliance')}
                 className="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider transition-colors text-center cursor-pointer"
               >
@@ -135,14 +133,13 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
             </div>
           </div>
         </div>
-      </div>
+      </InteractiveBand>
 
-      {/* 4. Structured Partnership Models Grid — Logo Green Background */}
-      <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+      <InteractiveBand id="partnerships-models" tone="green" fromTone="white" className="py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
             Engagement &amp; Partnership Models
-          </h3>
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {models.map((model) => (
               <div
@@ -150,9 +147,9 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                 className="border-t border-white/25 pt-5 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-2.5">
-                  <h4 className="font-heading font-extrabold text-base text-white leading-snug">
+                  <h3 className="font-heading font-extrabold text-base text-white leading-snug">
                     {model.title}
-                  </h4>
+                  </h3>
 
                   <p className="text-xs text-emerald-50 font-sans leading-relaxed font-light">
                     {model.description}
@@ -179,6 +176,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
                   </div>
 
                   <button
+                    type="button"
                     onClick={() => onOpenPartnershipInquiry(model.title)}
                     className="w-full py-2 px-3 bg-white hover:bg-emerald-50 text-[#003B95] font-mono font-bold text-[11px] uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer"
                   >
@@ -189,8 +187,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
             ))}
           </div>
         </div>
-      </div>
-
-    </section>
+      </InteractiveBand>
+    </div>
   );
 }

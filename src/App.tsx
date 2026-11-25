@@ -21,6 +21,9 @@ import ProposalModal from './components/ProposalModal';
 import QuickContactFloat from './components/QuickContactFloat';
 import AdminDrawer from './components/AdminDrawer';
 import CompanyProfileModal from './components/CompanyProfileModal';
+import SectionJourneyNav from './components/SectionJourneyNav';
+import { fetchPublicStats } from './utils/apiClient';
+import { SurfaceTone } from './utils/sectionTransitions';
 import {
   getServiceDetailByIdOrSlug,
   getServiceDetailPath,
@@ -38,6 +41,7 @@ interface RouteInfo {
   path: string;
   title: string;
   desc: string;
+  keywords?: string;
 }
 
 const routeMap: Record<string, RouteInfo> = {
@@ -45,134 +49,134 @@ const routeMap: Record<string, RouteInfo> = {
     page: 'home',
     sectionId: 'all',
     path: '/',
-    title: 'HUERI Limited | Environmental & Social Consultants Kenya',
-    desc: 'Hope Urban Environmental and Research Investments Limited (HUERI Limited) is an established Kenya-based environmental, social, health, safety, and sustainability consultancy. We deliver ESIA, statutory environmental audits, resettlement action plans (RAP), and safeguard compliance in Kenya, with capacity to support assignments across Africa through qualified partnerships.'
+    title: 'HUERI Limited | Environmental Consultants Kenya & Africa',
+    desc: 'Kenya-based environmental, social, and ESG consultancy delivering ESIA, RAP, and statutory audits across Africa and global partnerships.'
   },
   '/about': {
     page: 'about',
     sectionId: 'all',
     path: '/about',
-    title: 'About Us & Corporate Governance | HUERI Limited',
-    desc: 'Discover HUERI Limited\'s institutional profile, history since 2014, and environmental leadership led by Managing Director Belinda Nyakinya and certified NEMA Lead Experts.'
+    title: 'About HUERI Limited | African Environmental Advisory',
+    desc: 'Rooted in Kenya since 2014, HUERI Limited delivers ESIA, RAP, and international safeguards across Africa and global partnerships.'
   },
   '/team': {
     page: 'about',
     sectionId: 'about-director',
     path: '/team',
-    title: 'Executive Leadership & Safeguards Team | HUERI Limited',
-    desc: 'Meet the executive leadership and certified NEMA Lead Experts of HUERI Limited led by Managing Director Belinda Nyakinya.'
+    title: 'Executive Leadership & Experts | HUERI Limited Africa',
+    desc: 'Meet HUERI Limited\'s certified NEMA Lead Experts and safeguards specialists led by Managing Director Belinda Nyakinya across Africa.'
   },
   '/services': {
     page: 'services',
     sectionId: 'all',
     path: '/services',
-    title: 'Environmental Practice Disciplines & Advisory Services | HUERI Limited',
-    desc: 'Explore HUERI Limited\'s statutory and institutional advisory disciplines: ESIA licencing, SEA, Resettlement Action Plans (RAP), DOSHS audits, Hydrogeological surveys, and Climate adaptation.'
+    title: 'Environmental & ESG Services | HUERI Limited Africa',
+    desc: 'Explore ESIA licensing, RAP, annual environmental audits, OHS, climate resilience, and World Bank / IFC lender due diligence across Africa.'
   },
   '/services/esia': {
     page: 'services',
     sectionId: 'service-pillar-1',
     path: '/services/esia',
-    title: 'Statutory ESIA & Environmental Licencing | HUERI Limited Kenya',
-    desc: 'Comprehensive NEMA Environmental and Social Impact Assessments (ESIA), Strategic Environmental Assessments (SEA), and construction environmental management plans (C-ESMP).'
+    title: 'Statutory ESIA & Licensing | HUERI Limited Kenya & Africa',
+    desc: 'Comprehensive Environmental & Social Impact Assessments (ESIA), SEA, and C-ESMP compliance plans for projects across Kenya and Africa.'
   },
   '/services/resettlement-action-plans': {
     page: 'services',
     sectionId: 'service-pillar-2',
     path: '/services/resettlement-action-plans',
-    title: 'Resettlement Action Plans (RAP) & Livelihood Restoration | HUERI Limited',
-    desc: 'Expert Resettlement Action Plans (RAP), socio-economic census, asset valuation, livelihood restoration, and community baraza consultations.'
+    title: 'Resettlement Action Plans (RAP) | HUERI Limited Africa',
+    desc: 'Resettlement Action Plans, socio-economic censuses, asset valuation, livelihood restoration, and stakeholder barazas across Kenya and Africa.'
   },
   '/services/climate-resilience': {
     page: 'services',
     sectionId: 'service-pillar-3',
     path: '/services/climate-resilience',
-    title: 'Climate Resilience, Ecology & Natural Resources | HUERI Limited',
-    desc: 'Climate vulnerability profiling, GHG footprinting, hydrological risk modeling, biodiversity baselines, and nature-based solutions.'
+    title: 'Climate Resilience & Ecology | HUERI Limited Africa',
+    desc: 'Climate vulnerability profiling, GHG accounting, hydrological risk modeling, biodiversity baselines, and resilience planning across Africa.'
   },
   '/services/environmental-audits': {
     page: 'services',
     sectionId: 'service-pillar-4',
     path: '/services/environmental-audits',
-    title: 'Statutory Environmental Audits & Compliance | HUERI Limited Kenya',
-    desc: 'Annual statutory NEMA environmental compliance audits, EMCA Cap 387 compliance monitoring, and corrective action plans for operating facilities.'
+    title: 'Environmental Compliance Audits | HUERI Limited Africa',
+    desc: 'Annual statutory NEMA environmental audits, EMCA compliance monitoring, and corrective action plans for facilities in Kenya and Africa.'
   },
   '/services/ohs': {
     page: 'services',
     sectionId: 'service-pillar-4',
     path: '/services/ohs',
-    title: 'Occupational Health & Safety (OHS) Compliance Audits | HUERI Limited',
-    desc: 'DOSHS statutory workplace safety compliance audits, hazard identification and risk assessments (HIRA), and OSHA 2007 advisory.'
+    title: 'Occupational Health & Safety Audits | HUERI Limited',
+    desc: 'DOSHS workplace safety audits, hazard identification and risk assessments, and OSHA compliance oversight across Kenya and Africa.'
   },
   '/services/esdd-esg': {
     page: 'services',
     sectionId: 'service-pillar-5',
     path: '/services/esdd-esg',
-    title: 'ESG Advisory & Lender Due Diligence (ESDD) | HUERI Limited',
-    desc: 'Environmental and Social Due Diligence (ESDD), World Bank ESF (ESS1-ESS10), IFC Performance Standards (PS1-PS8), and AfDB Integrated Safeguards.'
+    title: 'ESG & Lender Due Diligence (ESDD) | HUERI Limited',
+    desc: 'Independent ESDD, World Bank ESF, IFC Performance Standards, and AfDB Integrated Safeguards advisory for projects across Africa.'
   },
   '/services/eshsrim-training': {
     page: 'services',
     sectionId: 'service-pillar-6',
     path: '/services/eshsrim-training',
-    title: 'ESHSRIM Procedures Training & Capacity Building | HUERI Limited',
-    desc: 'Environmental, Social, Health and Safety Risks and Impacts Management (ESHSRIM) procedures training, compliance toolkits, and certification.'
+    title: 'ESHSRIM Procedures Training | HUERI Limited Africa',
+    desc: 'Practical ESHSRIM procedures training, site inspection toolkits, and safeguards capacity building for teams across Kenya and Africa.'
   },
   '/sectors': {
     page: 'sectors',
     sectionId: 'all',
     path: '/sectors',
-    title: 'Infrastructure, Energy & Industrial Sectors | HUERI Limited',
-    desc: 'Cross-sector environmental advisory across Renewable Energy, Water Resources, Transport Corridors, Urban Masterplans, and Extractive Mining in East Africa.'
+    title: 'Infrastructure & Energy Sectors | HUERI Limited Africa',
+    desc: 'Environmental and social advisory across renewable energy, water, transport corridors, urban housing, and mining in Kenya and Africa.'
   },
   '/lifecycle': {
     page: 'lifecycle',
     sectionId: 'all',
     path: '/lifecycle',
-    title: 'Project Lifecycle & International Safeguard Standards | HUERI Limited',
-    desc: 'End-to-end statutory NEMA roadmap, World Bank Environmental and Social Framework (ESF ESS1-10), IFC Performance Standards (PS1-8), and Equator Principles.'
+    title: 'Project Lifecycle & Safeguards | HUERI Limited Africa',
+    desc: '12-stage project safeguards roadmap aligning Kenyan permitting with World Bank ESF, IFC Performance Standards, and AfDB benchmarks.'
   },
   '/partnerships': {
     page: 'partnerships',
     sectionId: 'all',
     path: '/partnerships',
-    title: 'Global Consortium & Pan-African Teaming Models | HUERI Limited',
-    desc: 'Partner with HUERI for African tender consortiums, subconsultancy, Joint Ventures, Master Service Agreements (MSA), and registered in-country technical delivery.'
+    title: 'African & Global Partnerships | HUERI Limited',
+    desc: 'Partner with HUERI Limited for African tender consortia, joint ventures, subconsultancy, and in-country safeguards delivery.'
   },
   '/projects': {
     page: 'about',
     sectionId: 'about-field',
     path: '/projects',
-    title: 'Selected Assignments & Track Record | HUERI Limited Kenya',
-    desc: 'Proven track record of environmental, social, and statutory advisory assignments delivered across Kenya and the wider region.'
+    title: 'Track Record & Assignments | HUERI Limited Africa',
+    desc: 'Proven portfolio of ESIA clearances, RAP dossiers, climate assessments, and safety audits delivered across Kenya and Africa.'
   },
   '/contact': {
     page: 'contact',
     sectionId: 'all',
     path: '/contact',
-    title: 'Contact | HUERI Limited',
-    desc: 'Contact HUERI Limited for project consultations, environmental impact assessments, and partnerships in Kisumu and across East Africa.'
+    title: 'Contact HUERI Limited | Kenya & Pan-African Advisory',
+    desc: 'Contact HUERI Limited in Kisumu, Kenya for ESIA proposals, environmental audits, pan-African consortia, and global partnerships.'
   },
   '/privacy-policy': {
     page: 'privacy',
     sectionId: 'all',
     path: '/privacy-policy',
-    title: 'Privacy Policy | HUERI Limited',
-    desc: 'Data protection and privacy practices of HUERI Limited under the Kenya Data Protection Act, 2019.'
+    title: 'Privacy Policy | HUERI Limited Kenya & Africa',
+    desc: 'Review HUERI Limited\'s data protection and privacy practices under the Kenya Data Protection Act, 2019 and international standards.'
   },
   '/terms-and-conditions': {
     page: 'terms',
     sectionId: 'all',
     path: '/terms-and-conditions',
-    title: 'Terms and Conditions | HUERI Limited',
-    desc: 'Terms of use and professional engagement standards for HUERI Limited.'
+    title: 'Terms & Conditions | HUERI Limited Kenya & Africa',
+    desc: 'Read the terms of use, professional advisory standards, and governance commitments of HUERI Limited across Africa and globally.'
   },
   '/faq': {
     page: 'faq',
     sectionId: 'all',
     path: '/faq',
-    title: 'Frequently Asked Questions | HUERI Limited',
-    desc: 'Answers regarding HUERI Limited licensing credentials, lender safeguards, ESIA turnaround timelines, and partnerships.'
+    title: 'Frequently Asked Questions | HUERI Limited Africa',
+    desc: 'Answers on HUERI Limited\'s NEMA licensing, World Bank and IFC standards, ESIA timelines, and pan-African partnership models.'
   }
 };
 
@@ -226,8 +230,92 @@ function resolveCurrentRoute(): { page: string; sectionId: string; path: string 
   return { page: 'home', sectionId: 'all', path: '/' };
 }
 
+function clampMetaDescription(text: string, maxLength = 158): string {
+  const clean = (text || '').replace(/\s+/g, ' ').trim();
+  if (clean.length <= maxLength) return clean;
+  return `${clean.slice(0, maxLength - 1).trimEnd()}…`;
+}
+
+function formatSeoTitle(rawTitle: string, brandSuffix = 'HUERI Limited', maxLength = 64): string {
+  const clean = (rawTitle || '').replace(/\s+/g, ' ').trim();
+  const full = `${clean} | ${brandSuffix}`;
+  if (full.length <= maxLength) return full;
+  const maxBase = maxLength - (` | ${brandSuffix}`).length;
+  const shortened = clean.slice(0, Math.max(20, maxBase - 1)).replace(/\s+\S*$/, '').trimEnd();
+  return `${shortened || clean.slice(0, maxBase)} | ${brandSuffix}`;
+}
+
+function updateBreadcrumbSchema(routeInfo: RouteInfo, canonicalUrl: string) {
+  const scriptId = 'dynamic-breadcrumb-ld';
+  let scriptEl = document.getElementById(scriptId) as HTMLScriptElement | null;
+
+  if (routeInfo.path === '/') {
+    if (scriptEl) scriptEl.remove();
+    return;
+  }
+
+  const label = routeInfo.title.split('|')[0].trim();
+  const items: Array<{ '@type': string; position: number; name: string; item: string }> = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.hueriafrica.com/'
+    }
+  ];
+
+  if (routeInfo.path.startsWith('/services/') && routeInfo.path !== '/services') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Services',
+      item: 'https://www.hueriafrica.com/services'
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: label,
+      item: canonicalUrl
+    });
+  } else if (routeInfo.path.startsWith('/projects/')) {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Projects',
+      item: 'https://www.hueriafrica.com/projects'
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: label,
+      item: canonicalUrl
+    });
+  } else {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: label,
+      item: canonicalUrl
+    });
+  }
+
+  if (!scriptEl) {
+    scriptEl = document.createElement('script');
+    scriptEl.id = scriptId;
+    scriptEl.type = 'application/ld+json';
+    document.head.appendChild(scriptEl);
+  }
+
+  scriptEl.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items
+  });
+}
+
 function updateDocumentMetadata(routeInfo: RouteInfo) {
   const canonicalUrl = `https://www.hueriafrica.com${routeInfo.path === '/' ? '/' : routeInfo.path}`;
+  const description = clampMetaDescription(routeInfo.desc);
 
   // 1. Page Title
   document.title = routeInfo.title;
@@ -241,12 +329,17 @@ function updateDocumentMetadata(routeInfo: RouteInfo) {
   }
   canonicalEl.setAttribute('href', canonicalUrl);
 
-  // 3. Meta Description & Title
+  // 3. Meta Description, Title & Keywords
   const metaTitle = document.querySelector('meta[name="title"]');
   if (metaTitle) metaTitle.setAttribute('content', routeInfo.title);
 
   const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.setAttribute('content', routeInfo.desc);
+  if (metaDesc) metaDesc.setAttribute('content', description);
+
+  if (routeInfo.keywords) {
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) metaKeywords.setAttribute('content', routeInfo.keywords);
+  }
 
   // 4. Open Graph Tags
   const ogUrl = document.querySelector('meta[property="og:url"]');
@@ -256,7 +349,10 @@ function updateDocumentMetadata(routeInfo: RouteInfo) {
   if (ogTitle) ogTitle.setAttribute('content', routeInfo.title);
 
   const ogDesc = document.querySelector('meta[property="og:description"]');
-  if (ogDesc) ogDesc.setAttribute('content', routeInfo.desc);
+  if (ogDesc) ogDesc.setAttribute('content', description);
+
+  const ogAlt = document.querySelector('meta[property="og:image:alt"]');
+  if (ogAlt) ogAlt.setAttribute('content', `${routeInfo.title} — Environmental & Safeguards Advisory across Kenya and Africa`);
 
   // 5. Twitter Card Tags
   const twUrl = document.querySelector('meta[name="twitter:url"]');
@@ -266,7 +362,10 @@ function updateDocumentMetadata(routeInfo: RouteInfo) {
   if (twTitle) twTitle.setAttribute('content', routeInfo.title);
 
   const twDesc = document.querySelector('meta[name="twitter:description"]');
-  if (twDesc) twDesc.setAttribute('content', routeInfo.desc);
+  if (twDesc) twDesc.setAttribute('content', description);
+
+  // 6. BreadcrumbList Schema
+  updateBreadcrumbSchema(routeInfo, canonicalUrl);
 }
 
 export default function App() {
@@ -292,6 +391,7 @@ export default function App() {
   const [prefilledScope, setPrefilledScope] = useState<string | undefined>(undefined);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [isCompanyProfileOpen, setIsCompanyProfileOpen] = useState(false);
+  const [lifecycleTab, setLifecycleTab] = useState<'lifecycle' | 'standards'>('lifecycle');
 
   // Sync dark class on html root and persist preference
   useEffect(() => {
@@ -313,8 +413,9 @@ export default function App() {
         page: 'service-detail',
         sectionId: serviceSlug,
         path: currentPath,
-        title: `${detail.title} | HUERI Limited`,
-        desc: detail.shortDescription
+        title: formatSeoTitle(detail.title),
+        desc: `${detail.shortDescription} Delivered in Kenya and across Africa.`,
+        keywords: `${detail.title}, HUERI Limited, Environmental Consultants Kenya, Pan-African ESG Advisory, World Bank ESF, IFC Performance Standards`
       });
       return;
     }
@@ -325,8 +426,9 @@ export default function App() {
         page: 'project-detail',
         sectionId: projectSlug,
         path: currentPath,
-        title: `${detail.title} | HUERI Limited`,
-        desc: detail.assignmentScope
+        title: formatSeoTitle(detail.title),
+        desc: detail.assignmentScope,
+        keywords: `${detail.title}, ${detail.location}, HUERI Limited Projects, Environmental & Social Safeguards Africa`
       });
       return;
     }
@@ -362,8 +464,8 @@ export default function App() {
       } else if (page === 'services') {
         if (sectionId === 'service-pillar-1') targetPath = '/services/esia';
         else if (sectionId === 'service-pillar-2') targetPath = '/services/resettlement-action-plans';
-        else if (sectionId === 'service-pillar-3') targetPath = '/services/environmental-audits';
-        else if (sectionId === 'service-pillar-4') targetPath = '/services/climate-resilience';
+        else if (sectionId === 'service-pillar-3') targetPath = '/services/climate-resilience';
+        else if (sectionId === 'service-pillar-4') targetPath = '/services/environmental-audits';
         else if (sectionId === 'service-pillar-5') targetPath = '/services/esdd-esg';
         else targetPath = '/services';
       } else if (page === 'about') {
@@ -397,8 +499,9 @@ export default function App() {
         page: 'service-detail',
         sectionId: sectionId || 'eia-esia',
         path: targetPath,
-        title: `${detail.title} | HUERI Limited`,
-        desc: detail.shortDescription
+        title: formatSeoTitle(detail.title),
+        desc: `${detail.shortDescription} Delivered in Kenya and across Africa.`,
+        keywords: `${detail.title}, HUERI Limited, Environmental Consultants Kenya, Pan-African ESG Advisory, World Bank ESF, IFC Performance Standards`
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -410,8 +513,9 @@ export default function App() {
         page: 'project-detail',
         sectionId: sectionId || 'p-wema-housing',
         path: targetPath,
-        title: `${detail.title} | HUERI Limited`,
-        desc: detail.assignmentScope
+        title: formatSeoTitle(detail.title),
+        desc: detail.assignmentScope,
+        keywords: `${detail.title}, ${detail.location}, HUERI Limited Projects, Environmental & Social Safeguards Africa`
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -438,28 +542,16 @@ export default function App() {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
-  const fetchStats = () => {
-    try {
-      fetch('/api/stats')
-        .then(res => {
-          if (!res.ok) return null;
-          return res.json();
-        })
-        .then(data => {
-          if (data && typeof data === 'object') {
-            setStats(prev => ({ ...prev, ...data }));
-          }
-        })
-        .catch(() => {
-          // Graceful fallback to default initial stats
-        });
-    } catch {
-      // ignore
-    }
+  const loadStats = () => {
+    fetchPublicStats().then((data) => {
+      if (data) {
+        setStats(prev => ({ ...prev, ...data }));
+      }
+    });
   };
 
   useEffect(() => {
-    fetchStats();
+    loadStats();
   }, []);
 
   const handleOpenAdvisoryProposal = (scope?: string) => {
@@ -474,25 +566,27 @@ export default function App() {
     setIsProposalOpen(true);
   };
 
-  const handleLeadSubmit = (leadData: { fullName: string; email: string; phone: string; company: string; serviceNeeded: string; message: string }) => {
-    fetch('/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(leadData)
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          fetchStats();
-        }
-      })
-      .catch(err => console.error('Lead submission error:', err));
+  const handleLeadRecorded = () => {
+    loadStats();
+  };
+
+  const getFooterFromTone = (): SurfaceTone => {
+    switch (currentPage) {
+      case 'about':
+      case 'services':
+      case 'project-detail':
+      case 'partnerships':
+      case 'faq':
+        return 'green';
+      case 'lifecycle':
+        return lifecycleTab === 'standards' ? 'green' : 'white';
+      default:
+        return 'white';
+    }
   };
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-[#006B22] selection:text-white flex flex-col justify-between">
-      
-      {/* Header Navigation with Dropdowns & Important Links */}
       <Navbar 
         currentPage={currentPage}
         onNavigate={navigateToPage}
@@ -504,115 +598,118 @@ export default function App() {
         onToggleTheme={toggleTheme} 
       />
 
-      {/* Dedicated Multi-Page View Container */}
+      <SectionJourneyNav currentPage={currentPage} />
+
       <main className="flex-grow pt-[72px] sm:pt-[76px]">
-        {currentPage === 'home' && (
-          <HomePage 
-            onNavigate={navigateToPage}
-            onRequestProposal={handleOpenAdvisoryProposal}
-            onOpenPartnership={handleOpenPartnershipModal}
-            stats={stats}
-          />
-        )}
+        <div key={`${currentPage}-${activeSectionId}`} className="animate-page-enter">
+          {currentPage === 'home' && (
+            <HomePage 
+              onNavigate={navigateToPage}
+              onRequestProposal={handleOpenAdvisoryProposal}
+              onOpenPartnership={handleOpenPartnershipModal}
+              stats={stats}
+            />
+          )}
 
-        {currentPage === 'services' && (
-          <ServicesPage 
-            initialPillarId={activeSectionId}
-            onNavigate={navigateToPage}
-            onRequestProposal={handleOpenAdvisoryProposal}
-            onLeadSubmit={handleLeadSubmit}
-          />
-        )}
+          {currentPage === 'services' && (
+            <ServicesPage 
+              initialPillarId={activeSectionId}
+              onNavigate={navigateToPage}
+              onRequestProposal={handleOpenAdvisoryProposal}
+              onLeadSubmit={handleLeadRecorded}
+            />
+          )}
 
-        {currentPage === 'service-detail' && (
-          <ServiceDetailPage
-            serviceIdOrSlug={activeSectionId}
-            onNavigate={navigateToPage}
-            onRequestProposal={handleOpenAdvisoryProposal}
-            onLeadSubmit={handleLeadSubmit}
-          />
-        )}
+          {currentPage === 'service-detail' && (
+            <ServiceDetailPage
+              serviceIdOrSlug={activeSectionId}
+              onNavigate={navigateToPage}
+              onRequestProposal={handleOpenAdvisoryProposal}
+              onLeadSubmit={handleLeadRecorded}
+            />
+          )}
 
-        {currentPage === 'project-detail' && (
-          <ProjectDetailPage
-            projectIdOrSlug={activeSectionId}
-            onNavigate={navigateToPage}
-            onRequestProposal={handleOpenAdvisoryProposal}
-          />
-        )}
+          {currentPage === 'project-detail' && (
+            <ProjectDetailPage
+              projectIdOrSlug={activeSectionId}
+              onNavigate={navigateToPage}
+              onRequestProposal={handleOpenAdvisoryProposal}
+            />
+          )}
 
-        {currentPage === 'sectors' && (
-          <SectorsPage 
-            initialSectorId={activeSectionId}
-            onNavigate={navigateToPage}
-            onRequestProposal={handleOpenAdvisoryProposal}
-          />
-        )}
+          {currentPage === 'sectors' && (
+            <SectorsPage 
+              initialSectorId={activeSectionId}
+              onNavigate={navigateToPage}
+              onRequestProposal={handleOpenAdvisoryProposal}
+            />
+          )}
 
-        {currentPage === 'lifecycle' && (
-          <LifecycleStandardsPage 
-            onNavigate={navigateToPage}
-            onRequestProposal={handleOpenAdvisoryProposal}
-          />
-        )}
+          {currentPage === 'lifecycle' && (
+            <LifecycleStandardsPage 
+              onNavigate={navigateToPage}
+              onRequestProposal={handleOpenAdvisoryProposal}
+              onTabChange={setLifecycleTab}
+            />
+          )}
 
-        {currentPage === 'partnerships' && (
-          <PartnershipsPage 
-            onNavigate={navigateToPage}
-            onOpenPartnershipInquiry={handleOpenPartnershipModal}
-          />
-        )}
+          {currentPage === 'partnerships' && (
+            <PartnershipsPage 
+              onNavigate={navigateToPage}
+              onOpenPartnershipInquiry={handleOpenPartnershipModal}
+            />
+          )}
 
-        {currentPage === 'about' && (
-          <AboutPage 
-            initialSection={activeSectionId}
-            onNavigate={navigateToPage}
-            onRequestProposal={() => handleOpenAdvisoryProposal()}
-          />
-        )}
+          {currentPage === 'about' && (
+            <AboutPage 
+              initialSection={activeSectionId}
+              onNavigate={navigateToPage}
+              onRequestProposal={() => handleOpenAdvisoryProposal()}
+            />
+          )}
 
-        {currentPage === 'contact' && (
-          <ContactPage 
-            onNavigate={navigateToPage}
-            onLeadSubmit={handleLeadSubmit}
-          />
-        )}
+          {currentPage === 'contact' && (
+            <ContactPage 
+              onNavigate={navigateToPage}
+              onLeadSubmit={handleLeadRecorded}
+            />
+          )}
 
-        {currentPage === 'faq' && (
-          <FAQPage onNavigate={navigateToPage} />
-        )}
+          {currentPage === 'faq' && (
+            <FAQPage onNavigate={navigateToPage} />
+          )}
 
-        {(currentPage === 'privacy' || currentPage === 'terms') && (
-          <LegalPoliciesPage
-            initialPolicy={currentPage === 'terms' ? 'terms' : 'privacy'}
-            onNavigate={navigateToPage}
-          />
-        )}
+          {(currentPage === 'privacy' || currentPage === 'terms') && (
+            <LegalPoliciesPage
+              initialPolicy={currentPage === 'terms' ? 'terms' : 'privacy'}
+              onNavigate={navigateToPage}
+            />
+          )}
+        </div>
       </main>
 
-      {/* Footer with Balanced Links */}
       <Footer 
         onNavigate={navigateToPage}
         onOpenPolicy={(tab) => navigateToPage(tab === 'terms' ? 'terms' : 'privacy')}
         onRequestProposal={() => handleOpenAdvisoryProposal()}
         onOpenPartnership={() => handleOpenPartnershipModal()}
+        fromTone={getFooterFromTone()}
       />
 
-      {/* Floating Elements & Modals */}
-      <QuickContactFloat onLeadSubmit={handleLeadSubmit} />
+      <QuickContactFloat onLeadSubmit={handleLeadRecorded} />
 
       <ProposalModal 
         isOpen={isProposalOpen}
         initialTab={proposalTab}
         prefilledScope={prefilledScope}
         onClose={() => setIsProposalOpen(false)}
-        onLeadSubmit={handleLeadSubmit}
+        onLeadSubmit={handleLeadRecorded}
       />
 
       <AdminDrawer 
         isOpen={isAdminOpen}
         onClose={() => setIsAdminOpen(false)}
-        onUpdateStats={fetchStats}
+        onUpdateStats={loadStats}
       />
 
       <CompanyProfileModal

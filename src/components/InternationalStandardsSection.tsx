@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import InteractiveBand from './InteractiveBand';
 
 interface InternationalStandardsProps {
   onRequestProposal?: () => void;
@@ -122,55 +123,59 @@ export default function InternationalStandardsSection({}: InternationalStandards
   ];
 
   return (
-    <section className="bg-white dark:bg-[#041B44] text-slate-900 dark:text-slate-100 transition-colors font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-6">
+    <div className="font-sans">
+      <InteractiveBand tone="white" fromTone="hero" className="py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="text-left max-w-3xl space-y-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+              International Standards &amp; Statutory Frameworks
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-2xl leading-relaxed font-light">
+              Bridging international multilateral financing requirements with African statutory compliance to ensure project compliance and sustainability alignment.
+            </p>
+          </div>
 
-        <div className="text-left max-w-3xl space-y-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
-            International Standards &amp; Statutory Frameworks
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans max-w-2xl leading-relaxed font-light">
-            Bridging international multilateral financing requirements with African statutory compliance to ensure project compliance and sustainability alignment.
-          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setActiveTab('lenders')}
+              className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
+                activeTab === 'lenders'
+                  ? 'bg-[#003B95] text-white'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
+            >
+              Multilateral Lenders (DFIs)
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab('voluntary')}
+              className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
+                activeTab === 'voluntary'
+                  ? 'bg-[#003B95] text-white'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
+            >
+              Voluntary, ESG &amp; ISO
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab('statutory')}
+              className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
+                activeTab === 'statutory'
+                  ? 'bg-[#003B95] text-white'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
+            >
+              Statutory &amp; Regional Laws
+            </button>
+          </div>
         </div>
+      </InteractiveBand>
 
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            onClick={() => setActiveTab('lenders')}
-            className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
-              activeTab === 'lenders'
-                ? 'bg-[#003B95] text-white'
-                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-            }`}
-          >
-            Multilateral Lenders (DFIs)
-          </button>
-
-          <button
-            onClick={() => setActiveTab('voluntary')}
-            className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
-              activeTab === 'voluntary'
-                ? 'bg-[#003B95] text-white'
-                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-            }`}
-          >
-            Voluntary, ESG &amp; ISO
-          </button>
-
-          <button
-            onClick={() => setActiveTab('statutory')}
-            className={`px-3.5 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer ${
-              activeTab === 'statutory'
-                ? 'bg-[#003B95] text-white'
-                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-            }`}
-          >
-            Statutory &amp; Regional Laws
-          </button>
-        </div>
-      </div>
-
-      <div className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12">
+      <InteractiveBand tone="green" fromTone="white" className="py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {activeTab === 'lenders' && (
             <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 animate-fadeIn">
@@ -217,9 +222,9 @@ export default function InternationalStandardsSection({}: InternationalStandards
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#A7F3D0] block">
                     {item.category}
                   </span>
-                  <h4 className="font-heading font-bold text-base text-white">
+                  <h3 className="font-heading font-bold text-base text-white">
                     {item.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-emerald-50 font-sans leading-relaxed font-light">
                     {item.description}
                   </p>
@@ -238,9 +243,9 @@ export default function InternationalStandardsSection({}: InternationalStandards
                   <span className="text-[10px] font-mono font-bold uppercase text-[#A7F3D0] block">
                     {law.authority}
                   </span>
-                  <h4 className="font-heading font-bold text-base text-white">
+                  <h3 className="font-heading font-bold text-base text-white">
                     {law.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-emerald-50 font-sans leading-relaxed font-light">
                     {law.scope}
                   </p>
@@ -249,7 +254,7 @@ export default function InternationalStandardsSection({}: InternationalStandards
             </div>
           )}
         </div>
-      </div>
-    </section>
+      </InteractiveBand>
+    </div>
   );
 }

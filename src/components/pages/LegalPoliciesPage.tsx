@@ -6,6 +6,7 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import PageHero from '../PageHero';
+import InteractiveBand from '../InteractiveBand';
 import photoAssets from '../../utils/photoAssets';
 import PrivacyPolicyTab from '../policies/PrivacyPolicyTab';
 import TermsPolicyTab from '../policies/TermsPolicyTab';
@@ -65,9 +66,11 @@ export default function LegalPoliciesPage({
         </button>
       </PageHero>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8 text-slate-800 dark:text-slate-200">
-        {isPrivacy ? <PrivacyPolicyTab /> : <TermsPolicyTab />}
-      </section>
+      <InteractiveBand id="legal-policy-body" tone="white" fromTone="hero" className="py-10 sm:py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-slate-800 dark:text-slate-200">
+          {isPrivacy ? <PrivacyPolicyTab /> : <TermsPolicyTab />}
+        </div>
+      </InteractiveBand>
     </div>
   );
 }

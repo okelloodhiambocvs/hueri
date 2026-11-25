@@ -12,12 +12,19 @@ import photoAssets from '../../utils/photoAssets';
 interface LifecycleStandardsPageProps {
   onNavigate: (page: string) => void;
   onRequestProposal: (scope?: string) => void;
+  onTabChange?: (tab: 'lifecycle' | 'standards') => void;
 }
 
 export default function LifecycleStandardsPage({
-  onRequestProposal
+  onRequestProposal,
+  onTabChange
 }: LifecycleStandardsPageProps) {
   const [activeSubTab, setActiveSubTab] = useState<'lifecycle' | 'standards'>('lifecycle');
+
+  const selectSubTab = (tab: 'lifecycle' | 'standards') => {
+    setActiveSubTab(tab);
+    onTabChange?.(tab);
+  };
 
   return (
     <div className="pb-0 min-h-screen bg-white dark:bg-[#041B44]">
@@ -28,7 +35,8 @@ export default function LifecycleStandardsPage({
         description="Step-by-step regulatory pathways from screening to permitting, alongside global performance benchmarks (World Bank ESF, IFC Performance Standards, AfDB ISS)."
       >
         <button
-          onClick={() => setActiveSubTab('lifecycle')}
+          type="button"
+          onClick={() => selectSubTab('lifecycle')}
           className={`px-3.5 py-2 rounded-lg font-mono font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer ${
             activeSubTab === 'lifecycle'
               ? 'bg-[#006B22] text-white'
@@ -38,7 +46,8 @@ export default function LifecycleStandardsPage({
           Permitting Roadmap
         </button>
         <button
-          onClick={() => setActiveSubTab('standards')}
+          type="button"
+          onClick={() => selectSubTab('standards')}
           className={`px-3.5 py-2 rounded-lg font-mono font-bold text-[10px] uppercase tracking-wider transition-colors cursor-pointer ${
             activeSubTab === 'standards'
               ? 'bg-[#006B22] text-white'

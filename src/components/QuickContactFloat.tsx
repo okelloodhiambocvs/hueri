@@ -5,17 +5,10 @@
 
 import React, { useState } from 'react';
 import { MessageSquare, ArrowUp, X } from 'lucide-react';
-import { sanitizeString, sanitizeText, sanitizeEmail, isValidEmail } from '../utils/security';
+import { submitLeadInquiry } from '../utils/apiClient';
 
 interface QuickContactFloatProps {
-  onLeadSubmit: (leadData: {
-    fullName: string;
-    email: string;
-    phone: string;
-    company: string;
-    serviceNeeded: string;
-    message: string;
-  }) => void;
+  onLeadSubmit: (leadData: unknown) => void;
 }
 
 export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatProps) {
@@ -31,61 +24,38 @@ export default function QuickContactFloat({ onLeadSubmit }: QuickContactFloatPro
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg(null);
-
-    const purifiedName = sanitizeString(name, 100);
-    const purifiedEmail = sanitizeEmail(email);
-    const purifiedMsg = sanitizeText(msg, 2000);
-
-    if (!purifiedName || purifiedName.length < 2) {
-      setErrorMsg('Please enter your name.');
-      return;
-    }
-
-    if (!isValidEmail(purifiedEmail)) {
-      setErrorMsg('Please enter a valid email address.');
-      return;
-    }
-
     setIsSubmitting(true);
 
-    const payload = {
-      fullName: purifiedName,
-      email: purifiedEmail,
+    const result = await submitLeadInquiry({
+      fullName: name,
+      email,
       phone: '',
       company: '',
+      organization: '',
       serviceNeeded: 'Quick Advisory Inquiry',
-      message: purifiedMsg
-    };
+      inquiryType: 'Quick Advisory Inquiry',
+      message: msg
+    });
 
-    fetch('/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setIsSubmitting(false);
-        if (data.success) {
-          onLeadSubmit(payload);
-          setSent(true);
-          setTimeout(() => {
-            setSent(false);
-            setIsOpen(false);
-            setName('');
-            setEmail('');
-            setMsg('');
-          }, 2500);
-        } else {
-          setErrorMsg(data.error || 'Submission failed.');
-        }
-      })
-      .catch(() => {
-        setIsSubmitting(false);
-        setErrorMsg('Network error. Please try again.');
-      });
+    setIsSubmitting(false);
+
+    if (!result.success) {
+      setErrorMsg(result.error || 'Submission failed.');
+      return;
+    }
+
+    onLeadSubmit(result.lead || { fullName: name, email, message: msg });
+    setSent(true);
+    setTimeout(() => {
+      setSent(false);
+      setIsOpen(false);
+      setName('');
+      setEmail('');
+      setMsg('');
+    }, 2500);
   };
 
   return (

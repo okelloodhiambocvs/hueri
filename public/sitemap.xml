@@ -7,7 +7,7 @@
   <!-- Home Page -->
   <url>
     <loc>https://www.hueriafrica.com/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -15,14 +15,14 @@
   <!-- About Us & Leadership -->
   <url>
     <loc>https://www.hueriafrica.com/about</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://www.hueriafrica.com/team</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -30,57 +30,106 @@
   <!-- Environmental Advisory Services -->
   <url>
     <loc>https://www.hueriafrica.com/services</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
-  <!-- Service Subpages -->
+  <!-- Service Pillars & Detail Pages -->
   <url>
     <loc>https://www.hueriafrica.com/services/esia</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://www.hueriafrica.com/services/environmental-audits</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://www.hueriafrica.com/services/resettlement-action-plans</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://www.hueriafrica.com/services/ohs</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://www.hueriafrica.com/services/climate-resilience</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://www.hueriafrica.com/services/esdd-esg</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/eshsrim-training</loc>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.hueriafrica.com/services/eshsrim-training</loc>
-    <lastmod>2026-08-27</lastmod>
+    <loc>https://www.hueriafrica.com/services/details/environmental-impact-assessment</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/eshsrim-procedures-training</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/resettlement-action-plans</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/environmental-compliance-audits</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/occupational-health-safety</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/climate-change-ecology</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/water-resources-catchment</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/esg-lender-due-diligence</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/services/details/drone-mapping-corridor-gis</loc>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -88,7 +137,7 @@
   <!-- Industry Sectors -->
   <url>
     <loc>https://www.hueriafrica.com/sectors</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -96,33 +145,93 @@
   <!-- Project Lifecycle & Standards -->
   <url>
     <loc>https://www.hueriafrica.com/lifecycle</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- African Delivery & Partnerships -->
+  <!-- Pan-African & Global Partnerships -->
   <url>
     <loc>https://www.hueriafrica.com/partnerships</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Selected Assignments & Track Record -->
+  <!-- Selected Assignments & Project Details -->
   <url>
     <loc>https://www.hueriafrica.com/projects</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
+  <url>
+    <loc>https://www.hueriafrica.com/projects/details/multi-storey-residential-housing-esia</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/projects/details/makasembo-estate-housing-rap-eia</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/projects/details/high-rise-structural-ohs-oversight</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/projects/details/flloca-climate-resilient-infrastructure</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/projects/details/kisumu-county-climate-vulnerability-assessment</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/projects/details/wells-energy-petroleum-esia-audits</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/projects/details/kisip-ii-informal-settlements-safeguards</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
-  <!-- Official Consultations & Proposal Desk -->
+  <!-- Official Consultations, FAQ & Policies -->
   <url>
     <loc>https://www.hueriafrica.com/contact</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/faq</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/privacy-policy</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.hueriafrica.com/terms-and-conditions</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
 
 </urlset>

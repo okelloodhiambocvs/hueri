@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// Local Generated High-Resolution Assets
+// Local Generated High-Resolution Documentary Assets
 // @ts-ignore
 import africanRenewableEnergy from '../assets/images/african_renewable_energy_1787057938577.jpg';
 // @ts-ignore
@@ -11,9 +11,9 @@ import fieldScientists from '../assets/images/field_environmental_scientists_178
 // @ts-ignore
 import sustainableInfrastructure from '../assets/images/sustainable_infrastructure_1787057966650.jpg';
 // @ts-ignore
-import urbanPlanningGis from '../assets/images/urban_planning_gis_1787057983635.jpg';
+import urbanPlanningGis from '../assets/images/african_urban_gis_office_1795601165610.jpg';
 // @ts-ignore
-import eiaSiteAssessment from '../assets/images/environmental_impact_assessment_1786291217494.jpg';
+import eiaSiteAssessment from '../assets/images/african_eia_ecological_survey_1795601149802.jpg';
 // @ts-ignore
 import lakeVictoriaSafeguards from '../assets/images/lake_victoria_safeguards_1780517260368.png';
 // @ts-ignore
@@ -21,9 +21,9 @@ import milestoneClimate from '../assets/images/milestone_climate_vulnerability_1
 // @ts-ignore
 import milestoneBaraza from '../assets/images/milestone_community_baraza_1786291258542.jpg';
 // @ts-ignore
-import milestoneDrone from '../assets/images/milestone_drone_mapping_1786291244152.jpg';
+import milestoneDrone from '../assets/images/african_drone_gis_survey_1795601151935.jpg';
 // @ts-ignore
-import milestoneInfrastructure from '../assets/images/milestone_infrastructure_esmp_1786291836420.jpg';
+import milestoneInfrastructure from '../assets/images/african_infrastructure_esmp_field_1795601153669.jpg';
 // @ts-ignore
 import milestoneLakeResearch from '../assets/images/milestone_lake_research_1786291274897.jpg';
 // @ts-ignore
@@ -35,26 +35,24 @@ import miningReclamation from '../assets/images/african_mining_reclamation_17870
 // @ts-ignore
 import waterWetlandCatchment from '../assets/images/water_wetland_catchment_1787058044057.jpg';
 // @ts-ignore
-import africanPartnerships from '../assets/images/african_partnerships_consortium_1787059146480.jpg';
+import africanPartnerships from '../assets/images/african_consortium_site_review_1795601152251.jpg';
 // @ts-ignore
-import kisumuHeadquarters from '../assets/images/kisumu_advisory_headquarters_1787059161420.jpg';
+import kisumuHeadquarters from '../assets/images/kisumu_advisory_boardroom_team_1795601151268.jpg';
 // @ts-ignore
-import lifecycleAudit from '../assets/images/lifecycle_standards_audit_1787059174057.jpg';
+import lifecycleAudit from '../assets/images/african_water_compliance_audit_1795601151941.jpg';
 // @ts-ignore
-import siteConstructionMonitoring from '../assets/images/site_construction_monitoring_1787862948843.jpg';
+import siteConstructionMonitoring from '../assets/images/kenyan_ohs_safety_inspection_1795601149272.jpg';
 // @ts-ignore
 import eshsrimTraining from '../assets/images/eshsrim_training_procedures_1787862969944.jpg';
 // @ts-ignore
 import siteConcreteReinforcement from '../assets/images/site_concrete_reinforcement_1787862986718.jpg';
 // @ts-ignore
-import siteStructuralDeck from '../assets/images/site_structural_deck_concreting_1788000135472.jpg';
-// @ts-ignore
-import siteWorkerLeveling from '../assets/images/site_worker_rebar_leveling_1788000151125.jpg';
+import siteStructuralDeck from '../assets/images/kenyan_urban_construction_hero_1795601148520.jpg';
 
 export const photoAssets = {
   // Brand & Unique Landing Page Heroes
   homeHero: siteStructuralDeck,
-  aboutHero: fieldScientists,
+  aboutHero: kisumuHeadquarters,
   servicesHero: africanRenewableEnergy,
   sectorsHero: sustainableInfrastructure,
   contactHero: kisumuHeadquarters,
@@ -80,12 +78,12 @@ export const photoAssets = {
   eshsrimTraining: eshsrimTraining,
   siteConcreteReinforcement: siteConcreteReinforcement,
   siteStructuralDeck: siteStructuralDeck,
-  siteWorkerLeveling: siteWorkerLeveling,
+  siteWorkerLeveling: siteConstructionMonitoring,
 
   // Leadership & Team
   leadership: {
-    directorPortrait: fieldScientists,
-    team: fieldScientists
+    directorPortrait: eiaSiteAssessment,
+    team: kisumuHeadquarters
   },
 
   // Milestones & Project Evidence
@@ -99,7 +97,7 @@ export const photoAssets = {
     waterTreatment: milestoneWaterTreatment,
     constructionMonitoring: siteStructuralDeck,
     eshsrimTrainingSession: eshsrimTraining,
-    concreteReinforcementSafety: siteWorkerLeveling
+    concreteReinforcementSafety: siteConstructionMonitoring
   },
 
   // Service Mapping
@@ -114,7 +112,7 @@ export const photoAssets = {
     'esg-sustainability': africanPartnerships,
     'research-surveys': milestoneDrone,
     'waste-pollution': milestoneWaterTreatment,
-    'implementation-supervision': siteWorkerLeveling,
+    'implementation-supervision': siteConcreteReinforcement,
     'eshsrim-training': eshsrimTraining
   } as Record<string, string>,
 
@@ -142,7 +140,7 @@ export const photoAssets = {
     'p-wema-housing': siteStructuralDeck,
     'p-kisip-ii': milestoneBaraza,
     'p-kcsap': waterWetlandCatchment,
-    'p-structural-monitoring': siteWorkerLeveling,
+    'p-structural-monitoring': siteConstructionMonitoring,
     'p-eshsrim-training': eshsrimTraining
   } as Record<string, string>
 };

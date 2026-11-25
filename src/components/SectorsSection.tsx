@@ -6,6 +6,7 @@
 import React from 'react';
 import photoAssets from '../utils/photoAssets';
 import PageHero from './PageHero';
+import InteractiveBand from './InteractiveBand';
 import { RevealBlock } from './MotionReveal';
 import {
   ArrowRight,
@@ -19,7 +20,6 @@ interface SectorsSectionProps {
 export default function SectorsSection({
   onRequestProposal
 }: SectorsSectionProps) {
-
   const sectors = [
     {
       id: 'energy-power',
@@ -37,7 +37,7 @@ export default function SectorsSection({
       id: 'transport-logistics',
       title: 'Transport & Infrastructure Corridors',
       image: photoAssets.infrastructure,
-      overview: 'Delivering end-to-end safeguards for major transport arteries, highway expansions, rural access roads, bridges, and port facilities across East Africa.',
+      overview: 'Delivering end-to-end safeguards for major transport arteries, highway expansions, rural access roads, bridges, and port facilities across Kenya and Africa.',
       keySafeguards: [
         'Corridor Resettlement Action Plans (RAP)',
         'Borrow Pit & Quarry Restoration Plans',
@@ -100,8 +100,6 @@ export default function SectorsSection({
 
   return (
     <div className="font-sans">
-
-      {/* Unified Full-Width Hero matching Home Landing Page Photo Size */}
       <PageHero
         image={photoAssets.sectorsHero}
         imageAlt="Key African Infrastructure and Industrial Sectors"
@@ -109,8 +107,7 @@ export default function SectorsSection({
         description="Tailored environmental, social, and health and safety advisory across the infrastructure, energy, industrial, and natural resource sectors driving sustainable growth."
       />
 
-      {/* 1. Infrastructure, Energy & Water Sectors — White Background */}
-      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12 overflow-hidden">
+      <InteractiveBand id="sectors-core" tone="white" fromTone="hero" className="py-10 sm:py-12 overflow-hidden scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <RevealBlock direction="left" className="max-w-2xl text-left space-y-1.5">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
@@ -131,7 +128,7 @@ export default function SectorsSection({
                   <div className="h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
                     <img
                       src={sec.image}
-                      alt={sec.title}
+                      alt={`${sec.title} environmental and social safeguards across Kenya and Africa`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
@@ -158,6 +155,7 @@ export default function SectorsSection({
 
                 <div className="pt-4 mt-4">
                   <button
+                    type="button"
                     onClick={() => onRequestProposal(sec.title)}
                     className="w-full py-2.5 px-4 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
@@ -169,10 +167,9 @@ export default function SectorsSection({
             ))}
           </RevealBlock>
         </div>
-      </section>
+      </InteractiveBand>
 
-      {/* 2. Built Environment, Agribusiness & Extractives — Logo Green Background */}
-      <section className="bg-[#006B22] dark:bg-[#054A20] text-white py-10 sm:py-12 overflow-hidden">
+      <InteractiveBand id="sectors-industrial" tone="green" fromTone="white" className="py-10 sm:py-12 overflow-hidden scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <RevealBlock direction="left" className="max-w-2xl text-left space-y-1.5">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-white tracking-tight">
@@ -193,7 +190,7 @@ export default function SectorsSection({
                   <div className="h-52 w-full overflow-hidden bg-[#00551B]">
                     <img
                       src={sec.image}
-                      alt={sec.title}
+                      alt={`${sec.title} environmental compliance and OHS advisory across Africa`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
@@ -220,6 +217,7 @@ export default function SectorsSection({
 
                 <div className="pt-4 mt-4">
                   <button
+                    type="button"
                     onClick={() => onRequestProposal(sec.title)}
                     className="w-full py-2.5 px-4 bg-white hover:bg-emerald-50 text-[#003B95] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
@@ -231,28 +229,27 @@ export default function SectorsSection({
             ))}
           </RevealBlock>
         </div>
-      </section>
+      </InteractiveBand>
 
-      {/* 3. Cross-Sector Advisory Band — White Background */}
-      <section className="bg-white dark:bg-[#041B44] py-10 sm:py-12">
+      <InteractiveBand id="sectors-cross" tone="white" fromTone="green" className="py-10 sm:py-12 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl text-left">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Operating in Multiple African Sectors?
-            </h3>
+            </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
               We deploy multidisciplinary teams capable of managing complex, cross-sector programs—from renewable energy integration to transport corridors and municipal water schemes.
             </p>
           </div>
           <button
+            type="button"
             onClick={() => onRequestProposal('Cross-Sector Advisory')}
             className="px-5 py-2.5 bg-[#006B22] hover:bg-[#00581C] text-white font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors shrink-0 cursor-pointer"
           >
             Consult With Our Experts →
           </button>
         </div>
-      </section>
-
+      </InteractiveBand>
     </div>
   );
 }

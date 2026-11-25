@@ -5,28 +5,31 @@
 
 import React from 'react';
 import Logo from './Logo';
+import InteractiveBand from './InteractiveBand';
+import { SurfaceTone } from '../utils/sectionTransitions';
 
 interface FooterProps {
   onNavigate?: (page: string, sectionId?: string) => void;
   onOpenPolicy: (tab: string) => void;
   onRequestProposal?: () => void;
   onOpenPartnership?: (modelTitle?: string) => void;
+  fromTone?: SurfaceTone;
 }
 
 export default function Footer({
   onNavigate = () => {},
-  onOpenPartnership
+  onOpenPartnership,
+  fromTone = 'white'
 }: FooterProps) {
   return (
     <footer className="font-sans" role="contentinfo">
-      {/* Global Partner & Consortium Footer Band Shown on Every Page */}
-      <section id="global-consortia-footer" className="bg-[#003B95] dark:bg-[#061E4A] text-white py-8 sm:py-10">
+      <InteractiveBand id="global-consortia-footer" tone="blue" fromTone={fromTone} className="py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 items-center gap-6">
             <div className="lg:col-span-8 space-y-2.5">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-white tracking-tight">
+              <h2 className="font-heading font-black text-xl sm:text-2xl text-white tracking-tight">
                 Partner with HUERI on African Infrastructure, Energy &amp; Safeguards Tenders
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-blue-100 font-sans font-light leading-relaxed max-w-3xl">
                 We regularly partner with international engineering firms, multilateral prime contractors, and regional developers as a trusted local delivery co-lead. We bring experienced lead experts, World Bank ESF / IFC PS proficiency, 47-county mobilization capacity, and established community networks.
               </p>
@@ -68,9 +71,8 @@ export default function Footer({
             </div>
           </div>
         </div>
-      </section>
+      </InteractiveBand>
 
-      {/* Compact Bottom Copyright & Legal Bar */}
       <div className="bg-[#041B44] text-white border-t border-[#0A2E6E] py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-300">
           <button

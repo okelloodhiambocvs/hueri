@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import InteractiveBand from './InteractiveBand';
 
 interface FAQItem {
   id: string;
@@ -70,7 +71,7 @@ export default function FAQSection({}: FAQSectionProps) {
   };
 
   return (
-    <section id="faq" className="py-10 sm:py-12 bg-[#006B22] dark:bg-[#054A20] text-white transition-colors duration-300 font-sans">
+    <InteractiveBand id="faq" tone="green" fromTone="hero" className="py-10 sm:py-12 font-sans">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
         <div className="text-left max-w-3xl space-y-2">
@@ -82,7 +83,6 @@ export default function FAQSection({}: FAQSectionProps) {
           </p>
         </div>
 
-        {/* Clean Filter Strip */}
         <div className="py-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-100">
             Filter FAQ Topics
@@ -112,6 +112,7 @@ export default function FAQSection({}: FAQSectionProps) {
             return (
               <div key={faq.id} className="py-1">
                 <button
+                  type="button"
                   onClick={() => toggleOpen(faq.id)}
                   className="w-full flex items-center justify-between py-4 text-left cursor-pointer transition-colors group"
                 >
@@ -147,6 +148,6 @@ export default function FAQSection({}: FAQSectionProps) {
         </div>
 
       </div>
-    </section>
+    </InteractiveBand>
   );
 }
