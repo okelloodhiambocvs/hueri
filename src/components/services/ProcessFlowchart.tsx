@@ -44,7 +44,7 @@ const FLOWCHART_ICONS: Record<FlowchartIconKey, React.ComponentType<{ className?
   award: Award
 };
 
-function HorizontalArrowConnector({
+export function HorizontalArrowConnector({
   isTraversed,
   isGreen
 }: {
@@ -85,7 +85,7 @@ function HorizontalArrowConnector({
   );
 }
 
-function VerticalArrowConnector({
+export function VerticalArrowConnector({
   isTraversed,
   isGreen
 }: {
@@ -120,7 +120,7 @@ function VerticalArrowConnector({
   );
 }
 
-function RowReturnConnector({
+export function RowReturnConnector({
   isTraversed,
   isGreen
 }: {

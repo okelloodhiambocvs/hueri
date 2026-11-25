@@ -193,6 +193,31 @@ export interface ProjectDeliveryStep {
   icon: DeliveryStepIcon;
 }
 
+export interface DeliveryFlowNode extends ProjectDeliveryStep {
+  index: number;
+  isFinal: boolean;
+  illustrationAlt: string;
+}
+
+const DELIVERY_ILLUSTRATION_ALTS: Record<DeliveryStepIcon, string> = {
+  discussion: '3D cartoon environmental consultant welcoming an initial client project discussion',
+  scoping: '3D cartoon specialist reviewing site blueprints and survey compass for scoping',
+  fieldwork: '3D cartoon field engineer in safety helmet and green vest holding a GIS baseline tablet',
+  drafting: '3D cartoon environmental analyst reviewing ecological assessment charts on a clipboard',
+  delivery: '3D cartoon senior environmental advisor presenting the approved clearance report dossier'
+};
+
+export function buildDeliveryFlowNodes(
+  steps: ProjectDeliveryStep[] = projectDeliverySteps
+): DeliveryFlowNode[] {
+  return steps.map((item, index) => ({
+    ...item,
+    index,
+    isFinal: index === steps.length - 1,
+    illustrationAlt: DELIVERY_ILLUSTRATION_ALTS[item.icon]
+  }));
+}
+
 export const projectDeliverySteps: ProjectDeliveryStep[] = [
   {
     step: '01',

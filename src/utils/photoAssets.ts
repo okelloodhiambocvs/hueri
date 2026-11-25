@@ -48,6 +48,16 @@ import eshsrimTraining from '../assets/images/eshsrim_training_procedures_178786
 import siteConcreteReinforcement from '../assets/images/site_concrete_reinforcement_1787862986718.jpg';
 // @ts-ignore
 import siteStructuralDeck from '../assets/images/kenyan_urban_construction_hero_1795601148520.jpg';
+// @ts-ignore
+import deliveryStepDiscussion from '../assets/images/delivery_step_discussion_clean_1795608720470.jpg';
+// @ts-ignore
+import deliveryStepScoping from '../assets/images/delivery_step_scoping_1795608703254.jpg';
+// @ts-ignore
+import deliveryStepFieldwork from '../assets/images/delivery_step_fieldwork_1795608703018.jpg';
+// @ts-ignore
+import deliveryStepDrafting from '../assets/images/delivery_step_drafting_clean_1795608721371.jpg';
+// @ts-ignore
+import deliveryStepDelivery from '../assets/images/delivery_step_delivery_clean_1795608723290.jpg';
 
 export const photoAssets = {
   // Brand & Unique Landing Page Heroes
@@ -142,6 +152,15 @@ export const photoAssets = {
     'p-kcsap': waterWetlandCatchment,
     'p-structural-monitoring': siteConstructionMonitoring,
     'p-eshsrim-training': eshsrimTraining
+  } as Record<string, string>,
+
+  // Illustrated 3D Cartoon Delivery Process Icons (Plain Pure-White Background)
+  deliverySteps: {
+    discussion: deliveryStepDiscussion,
+    scoping: deliveryStepScoping,
+    fieldwork: deliveryStepFieldwork,
+    drafting: deliveryStepDrafting,
+    delivery: deliveryStepDelivery
   } as Record<string, string>
 };
 

@@ -6,8 +6,10 @@ import {
   homeFeaturedAssignments,
   homeAdvisoryDisciplines,
   consolidatedPillars,
-  projectDeliverySteps
+  projectDeliverySteps,
+  buildDeliveryFlowNodes
 } from './homeContent';
+import { partitionFlowchartRows } from './processFlowchart';
 import { serviceSummaries } from './serviceRoutes';
 
 test('homepage renders sections in requested order with delivery steps before consortia', () => {
@@ -49,4 +51,18 @@ test('project delivery steps progress from initial discussion to final report de
   assert.equal(projectDeliverySteps.length, 5);
   assert.match(projectDeliverySteps[0].title, /discussion/i);
   assert.match(projectDeliverySteps[projectDeliverySteps.length - 1].title, /final report delivery/i);
+});
+
+test('delivery flowchart nodes split 3-over-2 with distinct cartoon illustrations and final flag', () => {
+  const nodes = buildDeliveryFlowNodes();
+  assert.equal(nodes.length, 5);
+  assert.equal(nodes[0].isFinal, false);
+  assert.equal(nodes[4].isFinal, true);
+  assert.equal(new Set(nodes.map((node) => node.icon)).size, 5);
+  for (const node of nodes) {
+    assert.ok(node.illustrationAlt.length > 20);
+  }
+  const { topRow, bottomRow } = partitionFlowchartRows(nodes);
+  assert.equal(topRow.length, 3);
+  assert.equal(bottomRow.length, 2);
 });

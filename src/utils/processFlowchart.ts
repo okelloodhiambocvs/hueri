@@ -109,9 +109,9 @@ export function buildProcessFlowNodes(steps: string[]): ProcessFlowNode[] {
   });
 }
 
-export function partitionFlowchartRows(nodes: ProcessFlowNode[]): {
-  topRow: ProcessFlowNode[];
-  bottomRow: ProcessFlowNode[];
+export function partitionFlowchartRows<T>(nodes: T[]): {
+  topRow: T[];
+  bottomRow: T[];
 } {
   if (nodes.length <= 3) {
     return { topRow: nodes, bottomRow: [] };

@@ -4,25 +4,17 @@
  */
 
 import React from 'react';
-import {
-  ArrowRight,
-  MessagesSquare,
-  Compass,
-  Users,
-  ClipboardCheck,
-  FileCheck2
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Hero from '../Hero';
 import AboutHomeSection from '../AboutHomeSection';
+import DeliveryProcessFlowchart from '../home/DeliveryProcessFlowchart';
 import InteractiveBand from '../InteractiveBand';
 import { RevealBlock } from '../MotionReveal';
 import photoAssets from '../../utils/photoAssets';
 import {
   consolidatedPillars,
   homeFeaturedAssignments,
-  homeAdvisoryDisciplines,
-  projectDeliverySteps,
-  DeliveryStepIcon
+  homeAdvisoryDisciplines
 } from '../../utils/homeContent';
 
 interface HomePageProps {
@@ -31,21 +23,6 @@ interface HomePageProps {
   onOpenPartnership: (model?: string) => void;
   stats?: unknown;
 }
-
-const renderDeliveryIcon = (icon: DeliveryStepIcon) => {
-  switch (icon) {
-    case 'discussion':
-      return <MessagesSquare className="w-5 h-5" />;
-    case 'scoping':
-      return <Compass className="w-5 h-5" />;
-    case 'fieldwork':
-      return <Users className="w-5 h-5" />;
-    case 'drafting':
-      return <ClipboardCheck className="w-5 h-5" />;
-    case 'delivery':
-      return <FileCheck2 className="w-5 h-5" />;
-  }
-};
 
 export default function HomePage({
   onNavigate,
@@ -275,38 +252,9 @@ export default function HomePage({
             </RevealBlock>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-5">
-            {projectDeliverySteps.map((item, idx) => (
-              <div key={item.step}>
-                <RevealBlock
-                  direction="up"
-                  delayMs={idx * 75}
-                  className="flex flex-col space-y-3"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-10 h-10 rounded-full bg-[#006B22] text-white flex items-center justify-center shrink-0">
-                      {renderDeliveryIcon(item.icon)}
-                    </div>
-                    <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] shrink-0">
-                      Step {item.step}
-                    </span>
-                    {idx < projectDeliverySteps.length - 1 && (
-                      <div className="hidden lg:flex items-center justify-end flex-1 text-[#006B22]/70 dark:text-[#4ADE80]/70 pl-1" aria-hidden="true">
-                        <ArrowRight className="w-4 h-4 shrink-0 text-[#006B22] dark:text-[#4ADE80]" />
-                      </div>
-                    )}
-                  </div>
-
-                  <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white leading-snug pt-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-                    {item.description}
-                  </p>
-                </RevealBlock>
-              </div>
-            ))}
-          </div>
+          <RevealBlock direction="up" delayMs={80}>
+            <DeliveryProcessFlowchart />
+          </RevealBlock>
         </div>
       </InteractiveBand>
     </div>
