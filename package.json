@@ -7,7 +7,7 @@
     "dev": "tsx server.ts",
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
-    "test": "vitest run tests && tsx --test src/utils/homeContent.test.ts src/utils/projectRoutes.test.ts src/utils/serviceRoutes.test.ts src/utils/navDropdowns.test.ts src/utils/sectionTransitions.test.ts src/utils/serviceScoping.test.ts src/utils/apiClient.test.ts",
+    "test": "vitest run tests && tsx --test src/utils/homeContent.test.ts src/utils/projectRoutes.test.ts src/utils/serviceRoutes.test.ts src/utils/navDropdowns.test.ts src/utils/sectionTransitions.test.ts src/utils/serviceScoping.test.ts src/utils/apiClient.test.ts src/utils/processFlowchart.test.ts",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

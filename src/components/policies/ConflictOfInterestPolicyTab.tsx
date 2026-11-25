@@ -13,28 +13,28 @@ export default function ConflictOfInterestPolicyTab() {
       </div>
 
       <div className="space-y-4 text-xs sm:text-sm">
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           1. Principle of Impartiality
         </h5>
         <p>
           HUERI Limited requires all directors, consultants, and specialist associates to act with undivided loyalty to objective scientific and professional standards. Our advice must remain free from commercial, personal, or institutional bias.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           2. Mandatory Disclosure Protocol
         </h5>
         <p>
           Prior to commencing any assignment, team members must declare any personal, financial, familial, or prior advisory relationships with the project proponent, competing developers, or regulatory bodies that could give rise to an actual or perceived conflict of interest.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           3. Separation of Advisory and Auditing Roles
         </h5>
         <p>
           To preserve audit objectivity, HUERI Limited does not conduct statutory annual compliance audits on projects or facilities where our personnel have a direct commercial stake or where we have direct operational implementation responsibility.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           4. Mitigation & Recusal
         </h5>
         <p>

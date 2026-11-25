@@ -41,18 +41,12 @@ export function SectionSeamTransition({ fromTone, toTone, isActive }: SectionSea
       <svg
         viewBox="0 0 1440 56"
         preserveAspectRatio="none"
-        className={`absolute inset-0 w-full h-full fill-current transition-transform duration-700 ease-out ${
-          isActive ? 'scale-y-100' : 'scale-y-90'
+        className={`block absolute inset-x-0 -bottom-px w-full h-[calc(100%+1px)] origin-bottom fill-current transition-transform duration-700 ease-out ${
+          isActive ? 'scale-y-100' : 'scale-y-95'
         } ${incomingFillClasses[toTone]}`}
       >
         <path d="M0,36 C360,6 920,52 1440,12 L1440,56 L0,56 Z" />
       </svg>
-
-      <div
-        className={`band-seam-line absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r ${seam.sweepGradientClass} ${
-          isActive ? 'scale-x-100 opacity-100' : 'scale-x-[0.22] opacity-40'
-        }`}
-      />
     </div>
   );
 }

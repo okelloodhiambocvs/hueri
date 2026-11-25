@@ -13,14 +13,14 @@ export default function SafeguardingPolicyTab() {
       </div>
 
       <div className="space-y-4 text-xs sm:text-sm">
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           1. Core Commitment & Scope
         </h5>
         <p>
           HUERI Limited is dedicated to creating safe, respectful, and dignified environments for our employees, associate consultants, host communities, and Project Affected Persons (PAPs). This policy applies to all directors, staff, field survey enumerators, subcontractors, and associate network members.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           2. Prohibited Behaviors
         </h5>
         <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-slate-300">
@@ -30,14 +30,14 @@ export default function SafeguardingPolicyTab() {
           <li><strong>Child Protection Violations:</strong> Any exploitation or endangerment of children under 18 years of age.</li>
         </ul>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           3. Mandatory Code of Conduct
         </h5>
         <p>
           All field personnel, census enumerators, and consultants deployed on HUERI assignments must sign and adhere to our strict Code of Conduct prior to field deployment, particularly when working in community contexts and vulnerable settlements.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           4. Confidential Reporting & Survivor Support
         </h5>
         <p>

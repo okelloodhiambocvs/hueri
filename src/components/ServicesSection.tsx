@@ -278,7 +278,7 @@ export default function ServicesSection({
             </div>
           </div>
 
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+          <div className="pt-4 space-y-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
                 <span className="text-xs font-mono text-[#006B22] dark:text-[#4ADE80] font-bold uppercase tracking-wider block">

@@ -103,7 +103,7 @@ export default function AboutMilestones() {
         </p>
       </div>
 
-      <div className="divide-y divide-slate-200 dark:divide-slate-800 border-y border-slate-200 dark:border-slate-800">
+      <div className="space-y-4">
         {milestones.map((m, idx) => {
           const isEven = idx % 2 === 0;
           return (

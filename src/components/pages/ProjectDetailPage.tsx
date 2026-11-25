@@ -84,7 +84,7 @@ export default function ProjectDetailPage({
             </p>
           </RevealBlock>
 
-          <RevealBlock direction="right" delayMs={80} className="lg:col-span-4 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-3">
+          <RevealBlock direction="right" delayMs={80} className="lg:col-span-4 lg:pl-6 space-y-3">
             <h3 className="font-heading font-bold text-base text-[#003B95] dark:text-white">
               Assignment Profile
             </h3>
@@ -122,7 +122,7 @@ export default function ProjectDetailPage({
           </RevealBlock>
 
           <RevealBlock direction="up" delayMs={80} className="grid md:grid-cols-3 gap-8">
-            <div className="border-t border-white/25 pt-4 space-y-2">
+            <div className="pt-2 space-y-2">
               <span className="text-xs font-mono font-bold text-[#A7F3D0] block">01</span>
               <h3 className="font-heading font-bold text-base text-white">
                 Assignment Challenge
@@ -132,7 +132,7 @@ export default function ProjectDetailPage({
               </p>
             </div>
 
-            <div className="border-t border-white/25 pt-4 space-y-2">
+            <div className="pt-2 space-y-2">
               <span className="text-xs font-mono font-bold text-[#A7F3D0] block">02</span>
               <h3 className="font-heading font-bold text-base text-white">
                 HUERI Approach
@@ -142,7 +142,7 @@ export default function ProjectDetailPage({
               </p>
             </div>
 
-            <div className="border-t border-white/25 pt-4 space-y-2">
+            <div className="pt-2 space-y-2">
               <span className="text-xs font-mono font-bold text-[#A7F3D0] block">03</span>
               <h3 className="font-heading font-bold text-base text-white">
                 Delivered Outcome
@@ -171,7 +171,7 @@ export default function ProjectDetailPage({
             </ul>
           </div>
 
-          <div className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-4">
+          <div className="lg:col-span-6 lg:pl-6 space-y-4">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
               Verification &amp; Record Summary
             </h2>

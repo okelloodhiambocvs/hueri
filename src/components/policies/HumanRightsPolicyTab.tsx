@@ -13,28 +13,28 @@ export default function HumanRightsPolicyTab() {
       </div>
 
       <div className="space-y-4 text-xs sm:text-sm">
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           1. Fair Labor & Non-Discrimination
         </h5>
         <p>
           Every person engaged by HUERI Limited is entitled to fair remuneration, reasonable working hours, clear contractual terms, and protection from discrimination based on gender, age, ethnicity, disability, religion, or social origin.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           2. Occupational Health & Safety (OSHA 2007)
         </h5>
         <p>
           Under OSHA 2007 and World Bank Group EHS guidelines, HUERI Limited enforces comprehensive safety protocols for field teams, environmental surveyors, and drillers, including mandatory PPE, hazard risk assessments, and emergency preparedness.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           3. Prohibition of Forced & Child Labor
         </h5>
         <p>
           HUERI Limited strictly prohibits all forms of child labor, forced labor, and human trafficking across our direct operations and supplier/contractor ecosystems, in compliance with ILO Conventions 138 and 182.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           4. Dignified Resettlement & Land Rights Safeguards
         </h5>
         <p>

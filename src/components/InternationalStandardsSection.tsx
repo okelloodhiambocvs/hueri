@@ -182,7 +182,7 @@ export default function InternationalStandardsSection({}: InternationalStandards
               {lenderStandards.map((item, idx) => (
                 <div
                   key={idx}
-                  className="border-t border-white/25 pt-5 space-y-3"
+                  className="pt-2 space-y-3"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-mono font-bold uppercase text-[#A7F3D0]">
@@ -217,7 +217,7 @@ export default function InternationalStandardsSection({}: InternationalStandards
               {voluntaryFrameworks.map((item, idx) => (
                 <div
                   key={idx}
-                  className="border-t border-white/25 pt-5 space-y-2"
+                  className="pt-2 space-y-2"
                 >
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#A7F3D0] block">
                     {item.category}
@@ -238,7 +238,7 @@ export default function InternationalStandardsSection({}: InternationalStandards
               {statutoryFrameworks.map((law, idx) => (
                 <div
                   key={idx}
-                  className="border-t border-white/25 pt-5 space-y-2"
+                  className="pt-2 space-y-2"
                 >
                   <span className="text-[10px] font-mono font-bold uppercase text-[#A7F3D0] block">
                     {law.authority}

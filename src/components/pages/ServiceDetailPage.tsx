@@ -10,6 +10,7 @@ import photoAssets from '../../utils/photoAssets';
 import PageHero from '../PageHero';
 import InteractiveBand from '../InteractiveBand';
 import SplitShowcaseSection from '../SplitShowcaseSection';
+import ProcessFlowchart from '../services/ProcessFlowchart';
 import { RevealBlock } from '../MotionReveal';
 
 interface ServiceDetailPageProps {
@@ -178,25 +179,12 @@ export default function ServiceDetailPage({
                 Step-by-Step Process
               </h2>
             </RevealBlock>
-            <RevealBlock direction="up" delayMs={80} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7">
-              {service.methodology.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="border-t border-white/25 pt-4 space-y-2"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono font-bold text-[#A7F3D0] tabular-nums">
-                      Step {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    {idx < service.methodology.length - 1 && (
-                      <ArrowRight className="w-3.5 h-3.5 text-[#A7F3D0]/80" aria-hidden="true" />
-                    )}
-                  </div>
-                  <p className="text-sm text-emerald-50 leading-relaxed font-light">
-                    {step}
-                  </p>
-                </div>
-              ))}
+            <RevealBlock direction="up" delayMs={80}>
+              <ProcessFlowchart
+                steps={service.methodology}
+                tone="green"
+                serviceTitle={service.title}
+              />
             </RevealBlock>
           </div>
         </InteractiveBand>
@@ -215,7 +203,7 @@ export default function ServiceDetailPage({
         highlights={service.deliverables}
       >
         {service.benefits && service.benefits.length > 0 && (
-          <div className="border-t border-slate-200 dark:border-slate-800 pt-4 space-y-2">
+          <div className="pt-2 space-y-2">
             <h3 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
               Value to Your Project
             </h3>
@@ -239,7 +227,7 @@ export default function ServiceDetailPage({
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {deliveryTypes.map((item, idx) => (
-                <div key={idx} className="border-t border-white/25 pt-4 space-y-1.5">
+                <div key={idx} className="pt-2 space-y-1.5">
                   <h3 className="font-heading font-bold text-sm text-white">
                     {item.title}
                   </h3>
@@ -252,13 +240,13 @@ export default function ServiceDetailPage({
           </div>
 
           {hasCaseExamples && (
-            <div className="border-t border-white/20 pt-8 space-y-5">
+            <div className="pt-6 space-y-5">
               <h2 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
                 Selected Experience
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {service.caseExamples!.map((example, idx) => (
-                  <div key={idx} className="border-t border-white/25 pt-4 space-y-2">
+                  <div key={idx} className="pt-2 space-y-2">
                     <h3 className="font-heading font-bold text-base text-white">
                       {example.client}
                     </h3>

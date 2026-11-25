@@ -43,7 +43,7 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
 
   return (
     <div className="space-y-8 font-sans">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2">
         <div className="space-y-1.5">
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
             Leadership &amp; Multidisciplinary Specialists
@@ -57,8 +57,7 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
         </span>
       </div>
 
-      {/* Associate Delivery Model Strip */}
-      <div className="border-y border-amber-300/70 dark:border-amber-700/50 py-4 space-y-1 text-xs text-slate-700 dark:text-slate-200">
+      <div className="rounded-xl bg-amber-50/70 dark:bg-amber-950/20 p-4 space-y-1 text-xs text-slate-700 dark:text-slate-200">
         <div className="flex items-center gap-2 font-bold font-heading text-sm text-[#003B95] dark:text-amber-300">
           <Shield className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
           <span>Multidisciplinary Capability &amp; Associate Delivery Model</span>
@@ -68,8 +67,7 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
         </p>
       </div>
 
-      {/* Category Filter Strip */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin border-b border-slate-200 dark:border-slate-800">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin">
         {categories.map((c) => (
           <button
             key={c.id}
@@ -88,8 +86,7 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
       {/* Main Split Grid */}
       <div className="grid lg:grid-cols-12 gap-8 items-start">
 
-        {/* Left Column: Open Hairline List */}
-        <div className="lg:col-span-5 divide-y divide-slate-200 dark:divide-slate-800 border-y border-slate-200 dark:border-slate-800">
+        <div className="lg:col-span-5 space-y-2">
           {filteredTeam.map((member) => {
             const isSelected = selectedMember === member.id;
             return (
@@ -97,9 +94,9 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
                 key={member.id}
                 type="button"
                 onClick={() => setSelectedMember(member.id)}
-                className={`w-full text-left py-4 px-3 transition-colors cursor-pointer flex flex-col justify-between ${
+                className={`w-full text-left py-4 px-4 rounded-xl transition-colors cursor-pointer flex flex-col justify-between ${
                   isSelected
-                    ? 'bg-[#003B95]/5 dark:bg-white/5 border-l-2 border-[#006B22] dark:border-[#4ADE80]'
+                    ? 'bg-[#003B95]/8 dark:bg-white/10'
                     : 'hover:bg-slate-50 dark:hover:bg-white/5'
                 }`}
               >
@@ -137,10 +134,9 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
           })}
         </div>
 
-        {/* Right Column: Detailed Profile Dossier */}
-        <div className="lg:col-span-7 sticky top-24 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-8 space-y-6">
+        <div className="lg:col-span-7 sticky top-24 lg:pl-6 space-y-6">
 
-          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-2">
             <div className="space-y-1.5">
               <div className="flex items-center gap-3 text-[10px] font-mono font-bold uppercase tracking-wider">
                 <span className="text-[#006B22] dark:text-[#4ADE80]">
@@ -185,7 +181,7 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6 pt-2 border-t border-slate-200 dark:border-slate-800">
+          <div className="grid sm:grid-cols-2 gap-6 pt-2">
             <div className="space-y-2">
               <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                 <GraduationCap className="w-3.5 h-3.5 text-[#006B22] dark:text-[#4ADE80]" />
@@ -219,7 +215,7 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
             </div>
           </div>
 
-          <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+          <div className="space-y-2 pt-2">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
               <Briefcase className="w-3.5 h-3.5 text-[#006B22] dark:text-[#4ADE80]" />
               Core Technical Expertise
@@ -234,13 +230,13 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
             </div>
           </div>
 
-          <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+          <div className="space-y-2 pt-2">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Selected Advisory Assignments &amp; Roles
             </h4>
-            <ul className="divide-y divide-slate-100 dark:divide-slate-800 text-xs text-slate-600 dark:text-slate-300 font-light">
+            <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300 font-light">
               {activeMember.selectedExperience.map((se, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 py-2">
+                <li key={idx} className="flex items-start gap-2.5 py-1">
                   <span className="font-mono text-[#006B22] dark:text-[#4ADE80] font-bold text-[10px] mt-0.5">0{idx + 1}</span>
                   <span>{se}</span>
                 </li>
@@ -248,7 +244,7 @@ export default function AboutLeadership({ onRequestProposal }: AboutLeadershipPr
             </ul>
           </div>
 
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-4">
               {activeMember.email && (
                 <a

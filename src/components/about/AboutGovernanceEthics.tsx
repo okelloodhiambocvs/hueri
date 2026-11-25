@@ -16,7 +16,7 @@ import {
 export default function AboutGovernanceEthics() {
   return (
     <div className="space-y-12 font-sans">
-      <div className="border-b border-slate-200 dark:border-slate-800 pb-5 space-y-1.5">
+      <div className="pb-2 space-y-1.5">
         <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#006B22] dark:text-[#4ADE80] block">
           INSTITUTIONAL INTEGRITY &amp; GOVERNANCE
         </span>
@@ -37,9 +37,9 @@ export default function AboutGovernanceEthics() {
           </h3>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-slate-200 dark:border-slate-800 pt-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pt-2">
           {initialGovernanceTiers.map((tier) => (
-            <div key={tier.id} className="border-t-2 border-[#003B95] dark:border-[#38BDF8] pt-4 space-y-2.5">
+            <div key={tier.id} className="pt-2 space-y-2.5">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono font-bold uppercase text-[#006B22] dark:text-[#4ADE80]">
                   {tier.level}
@@ -70,8 +70,7 @@ export default function AboutGovernanceEthics() {
         </div>
       </div>
 
-      {/* Geographic Footprint & Operating Regions */}
-      <div className="border-y border-slate-200 dark:border-slate-800 py-8 space-y-6">
+      <div className="py-4 space-y-6">
         <div className="flex items-center gap-2">
           <Globe2 className="w-5 h-5 text-[#006B22] dark:text-[#4ADE80]" />
           <h3 className="font-heading font-bold text-lg text-[#003B95] dark:text-white">

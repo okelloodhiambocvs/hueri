@@ -13,28 +13,28 @@ export default function AntiBriberyPolicyTab() {
       </div>
 
       <div className="space-y-4 text-xs sm:text-sm">
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           1. Zero-Tolerance Principle
         </h5>
         <p>
           HUERI Limited conducts all consulting activities with professional integrity, honesty, and transparency. We strictly prohibit the offering, giving, soliciting, or receiving of any bribe, kickback, improper inducement, or facilitation payment to or from public officials, regulatory staff, commercial clients, or third parties.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           2. Regulatory Submissions & Expert Independence
         </h5>
         <p>
           As registered Lead Experts and a licensed NEMA firm, all assessments, baseline scientific analyses, and audit reports reflect independent, objective findings. Under no circumstances will findings be suppressed, altered, or fabricated in exchange for commercial or personal gain.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           3. Gifts, Hospitality & Conflict Prevention
         </h5>
         <p>
           Staff and consultants are forbidden from accepting or offering gifts or hospitality that could compromise, or be perceived to compromise, objective professional judgment.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           4. Whistleblowing & Reporting
         </h5>
         <p>

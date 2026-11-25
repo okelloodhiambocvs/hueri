@@ -35,7 +35,7 @@ export default function AboutQualityAssurance() {
 
   return (
     <div className="space-y-10 font-sans">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2">
         <div className="space-y-1.5">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#006B22] dark:text-[#4ADE80] block">
             RIGOUR &amp; METHODOLOGICAL DEFICIT PREVENTION
@@ -62,10 +62,10 @@ export default function AboutQualityAssurance() {
               key={qa.id}
               type="button"
               onClick={() => setActivePillar(qa.id)}
-              className={`border-t-2 pt-4 pb-2 text-left transition-colors cursor-pointer flex flex-col justify-between ${
+              className={`rounded-xl p-4 text-left transition-colors cursor-pointer flex flex-col justify-between ${
                 isSelected
-                  ? 'border-[#006B22] dark:border-[#4ADE80]'
-                  : 'border-slate-200 dark:border-slate-800 hover:border-[#003B95]'
+                  ? 'bg-emerald-50/80 dark:bg-[#062456]'
+                  : 'bg-slate-50/80 dark:bg-[#06183A]/60 hover:bg-slate-100 dark:hover:bg-[#06183A]'
               }`}
             >
               <div className="space-y-2">
@@ -91,9 +91,8 @@ export default function AboutQualityAssurance() {
         })}
       </div>
 
-      {/* Detailed QA Focus Panel — Open Editorial Layout */}
-      <div className="border-t-2 border-[#003B95] dark:border-[#38BDF8] pt-8 space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+      <div className="rounded-2xl bg-slate-50/70 dark:bg-[#06183A]/70 p-6 sm:p-8 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
           <div className="space-y-1">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#006B22] dark:text-[#4ADE80] block">
               QA Pillar {selectedQA.pillarNumber} Details
@@ -114,7 +113,7 @@ export default function AboutQualityAssurance() {
           </h4>
           <div className="grid md:grid-cols-3 gap-6">
             {selectedQA.details.map((item, idx) => (
-              <div key={idx} className="border-t border-slate-200 dark:border-slate-800 pt-3 space-y-1.5">
+              <div key={idx} className="pt-2 space-y-1.5">
                 <div className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80]">
                   Stage 0{idx + 1}
                 </div>
@@ -126,7 +125,7 @@ export default function AboutQualityAssurance() {
           </div>
         </div>
 
-        <div className="pt-2 space-y-3 border-t border-slate-200 dark:border-slate-800">
+        <div className="pt-2 space-y-3">
           <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 pt-3">
             Mandatory Verification Controls
           </h4>
@@ -141,7 +140,7 @@ export default function AboutQualityAssurance() {
         </div>
       </div>
 
-      <div className="border-t border-slate-200 dark:border-slate-800 pt-5 space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+      <div className="pt-2 space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
         <h4 className="font-heading font-bold text-[#003B95] dark:text-white text-sm">
           Alignment with Multilateral Lender Safeguards
         </h4>

@@ -73,7 +73,7 @@ export default function Footer({
         </div>
       </InteractiveBand>
 
-      <div className="bg-[#041B44] text-white border-t border-[#0A2E6E] py-5">
+      <div className="bg-[#041B44] text-white py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-300">
           <button
             type="button"

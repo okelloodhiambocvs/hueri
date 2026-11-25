@@ -39,7 +39,7 @@ export default function AboutHomeSection({ onNavigate }: AboutHomeSectionProps) 
               </p>
             </div>
 
-            <div className="border-t border-slate-200 dark:border-slate-800 pt-5 flex flex-wrap items-center justify-between gap-4">
+            <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
               <div className="space-y-0.5">
                 <p className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
                   Kisumu HQ · Est. 2014

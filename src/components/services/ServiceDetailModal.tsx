@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { Service } from '../../types';
+import ProcessFlowchart from './ProcessFlowchart';
 
 interface ServiceDetailModalProps {
   service: Service | null;
@@ -64,7 +65,7 @@ export default function ServiceDetailModal({ service, onClose, onLeadSubmit }: S
         </button>
 
         <div className="space-y-8">
-          <div className="border-b border-slate-200 dark:border-slate-800 pb-6 pr-16">
+          <div className="pb-4 pr-16">
             <div className="flex items-center gap-2 mb-1.5">
               <span className="text-xs font-mono font-bold tracking-widest text-[#006B22] dark:text-[#4ADE80] uppercase">
                 PRACTICE AREA PORTFOLIO
@@ -107,22 +108,16 @@ export default function ServiceDetailModal({ service, onClose, onLeadSubmit }: S
             </div>
           )}
 
-          {/* Structured Step-by-Step Methodology */}
           {service.methodology && service.methodology.length > 0 && (
             <div className="space-y-3">
               <h3 className="text-xs font-bold uppercase tracking-wider text-brand-green-600 dark:text-brand-green-400 font-mono">
-                TECHNICAL APPROACH & METHODOLOGY
+                TECHNICAL APPROACH &amp; METHODOLOGY
               </h3>
-              <ul className="space-y-2.5">
-                {service.methodology.map((step, i) => (
-                  <li key={i} className="flex items-start space-x-3 text-xs sm:text-sm text-gray-600 dark:text-slate-300">
-                    <span className="h-5 w-5 rounded-full bg-brand-green-50 dark:bg-brand-green-950 text-brand-green-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 border border-brand-green-200 dark:border-brand-green-900">
-                      {i + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ul>
+              <ProcessFlowchart
+                steps={service.methodology}
+                tone="white"
+                serviceTitle={service.title}
+              />
             </div>
           )}
 
@@ -162,7 +157,7 @@ export default function ServiceDetailModal({ service, onClose, onLeadSubmit }: S
           </div>
 
           {/* Advisory Scoping Form */}
-          <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-800">
+          <div className="mt-6 pt-4">
             <h3 className="font-heading font-bold text-lg text-gray-900 dark:text-white mb-2">
               Request Advisory Scoping for this Practice
             </h3>

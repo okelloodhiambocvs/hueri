@@ -11,7 +11,7 @@ import { generateInstitutionalProfilePDF } from '../../utils/companyProfileGener
 export default function AboutCredentials() {
   return (
     <div className="space-y-10 font-sans">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2">
         <div className="space-y-1.5">
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#003B95] dark:text-white tracking-tight">
             Corporate Credentials &amp; Statutory Registrations
@@ -30,8 +30,7 @@ export default function AboutCredentials() {
         </button>
       </div>
 
-      {/* Verification Notice — Open Border Strip */}
-      <div className="border-y border-amber-300/70 dark:border-amber-700/50 py-4 space-y-1.5 text-xs text-slate-700 dark:text-slate-200">
+      <div className="rounded-xl bg-amber-50/70 dark:bg-amber-950/20 p-4 space-y-1.5 text-xs text-slate-700 dark:text-slate-200">
         <div className="flex items-center gap-2 font-bold font-heading text-sm text-[#003B95] dark:text-amber-300">
           <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
           <span>Statutory Document Verification Notice</span>
@@ -46,7 +45,7 @@ export default function AboutCredentials() {
         {initialCredentials.map((cred, idx) => (
           <div
             key={idx}
-            className="border-t-2 border-[#003B95] dark:border-[#38BDF8] pt-5 pb-4 space-y-3 flex flex-col justify-between"
+            className="pt-2 pb-4 space-y-3 flex flex-col justify-between"
           >
             <div className="space-y-2.5">
               <div className="flex items-center justify-between gap-2">
@@ -81,7 +80,7 @@ export default function AboutCredentials() {
                 </p>
               </div>
 
-              <div className="py-1.5 border-y border-slate-100 dark:border-slate-800 font-mono text-xs text-[#006B22] dark:text-[#4ADE80] font-bold break-all">
+              <div className="py-1 font-mono text-xs text-[#006B22] dark:text-[#4ADE80] font-bold break-all">
                 Ref: {cred.reference}
               </div>
 
@@ -90,7 +89,7 @@ export default function AboutCredentials() {
               </p>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
+            <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
               <span>Validity: {cred.validity}</span>
               <span className="font-bold text-[#006B22] dark:text-[#4ADE80]">{cred.status}</span>
             </div>
@@ -98,8 +97,7 @@ export default function AboutCredentials() {
         ))}
       </div>
 
-      {/* Compliance Architecture Footnote — Open Strip */}
-      <div className="border-t border-slate-200 dark:border-slate-800 pt-6 space-y-3 text-xs text-slate-700 dark:text-slate-300">
+      <div className="pt-4 space-y-3 text-xs text-slate-700 dark:text-slate-300">
         <h4 className="font-heading font-bold text-[#003B95] dark:text-white text-sm flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-[#006B22] dark:text-[#4ADE80]" />
           Proponent &amp; Tender Document Request Protocol

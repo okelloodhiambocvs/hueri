@@ -52,7 +52,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
           <RevealBlock direction="up" delayMs={80} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {valueProps.map((val, idx) => (
-                <div key={idx} className="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4">
+                <div key={idx} className="space-y-2 pt-2">
                   <h3 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
                     {val.title}
                   </h3>
@@ -144,7 +144,7 @@ export default function PartnershipsSection({ onOpenPartnershipInquiry }: Partne
             {models.map((model) => (
               <div
                 key={model.id}
-                className="border-t border-white/25 pt-5 flex flex-col justify-between space-y-4"
+                className="pt-2 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-2.5">
                   <h3 className="font-heading font-extrabold text-base text-white leading-snug">

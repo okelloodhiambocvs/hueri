@@ -213,7 +213,7 @@ export default function AboutSection({
               </p>
             </RevealBlock>
 
-            <RevealBlock direction="right" className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-10 space-y-6">
+            <RevealBlock direction="right" className="lg:col-span-6 lg:pl-6 space-y-6">
               <div className="flex items-start gap-3.5">
                 <Compass className="w-5 h-5 text-[#006B22] dark:text-[#4ADE80] shrink-0 mt-1" aria-hidden="true" />
                 <div className="space-y-1">
@@ -226,7 +226,7 @@ export default function AboutSection({
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5 border-t border-slate-200 dark:border-slate-800 pt-5">
+              <div className="flex items-start gap-3.5 pt-2">
                 <Target className="w-5 h-5 text-[#006B22] dark:text-[#4ADE80] shrink-0 mt-1" aria-hidden="true" />
                 <div className="space-y-1">
                   <h3 className="text-lg sm:text-xl font-heading font-black text-[#003B95] dark:text-white">
@@ -255,7 +255,7 @@ export default function AboutSection({
                 return (
                   <div
                     key={value.title}
-                    className="space-y-2.5 border-t-2 border-white/25 pt-4"
+                    className="space-y-2.5 pt-2"
                   >
                     <div className="flex items-start gap-2.5 lg:min-h-[2.75rem]">
                       <Icon className="w-5 h-5 text-[#A7F3D0] shrink-0 mt-0.5" aria-hidden="true" />
@@ -291,7 +291,7 @@ export default function AboutSection({
               </div>
             </RevealBlock>
 
-            <RevealBlock direction="right" className="lg:col-span-6 lg:border-l lg:border-slate-200 dark:lg:border-slate-800 lg:pl-10 space-y-4">
+            <RevealBlock direction="right" className="lg:col-span-6 lg:pl-6 space-y-4">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#006B22] dark:text-[#4ADE80] block">
                 Infrastructure Delivery Pressures
               </span>
@@ -510,7 +510,7 @@ export default function AboutSection({
             {whyChooseUsItems.map((item) => (
               <div
                 key={item.number}
-                className="border-t border-slate-200 dark:border-slate-800 pt-5 space-y-2.5"
+                className="pt-2 space-y-2.5"
               >
                 <span className="text-xs font-mono font-bold text-[#006B22] dark:text-[#4ADE80] block">
                   {item.number}

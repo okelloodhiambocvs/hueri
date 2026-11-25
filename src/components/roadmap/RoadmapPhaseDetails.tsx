@@ -49,7 +49,7 @@ export default function RoadmapPhaseDetails({ activeStage }: RoadmapPhaseDetails
         </div>
 
         {/* Right Deliverables Column */}
-        <div className="lg:col-span-5 lg:border-l lg:border-white/25 lg:pl-8 space-y-4">
+        <div className="lg:col-span-5 lg:pl-6 space-y-4">
           <div>
             <h4 className="font-heading font-bold text-sm text-white">
               Stage Deliverables &amp; Outputs

@@ -27,7 +27,6 @@ const railToneClasses: Record<SurfaceTone, string> = {
 
 export default function SectionJourneyNav({ currentPage }: SectionJourneyNavProps) {
   const anchors: SectionAnchor[] = getPageSectionAnchors(currentPage);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [activeId, setActiveId] = useState<string>(anchors[0]?.id || '');
   const [activeTone, setActiveTone] = useState<SurfaceTone>('white');
 
@@ -38,9 +37,6 @@ export default function SectionJourneyNav({ currentPage }: SectionJourneyNavProp
 
   useEffect(() => {
     const updateScrollState = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = docHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / docHeight)) : 0;
-      setScrollProgress(ratio);
 
       const viewportFocusY = window.innerHeight * 0.42;
       const bands = Array.from(document.querySelectorAll<HTMLElement>('[data-surface-tone]'));
@@ -88,16 +84,6 @@ export default function SectionJourneyNav({ currentPage }: SectionJourneyNavProp
 
   return (
     <>
-      <div
-        className="fixed top-[68px] sm:top-[72px] left-0 right-0 z-40 h-[3px] bg-slate-200/35 dark:bg-slate-800/40 pointer-events-none"
-        aria-hidden="true"
-      >
-        <div
-          className={`h-full w-full origin-left transition-colors duration-500 ${progressBarColors[activeTone]}`}
-          style={{ transform: `scaleX(${scrollProgress})` }}
-        />
-      </div>
-
       {anchors.length > 1 && (
         <nav
           aria-label="Page section navigation"

@@ -106,11 +106,11 @@ export default function FAQSection({}: FAQSectionProps) {
           </div>
         </div>
 
-        <div className="divide-y divide-white/20 border-t border-b border-white/20">
+        <div className="space-y-3">
           {filteredFaqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
-              <div key={faq.id} className="py-1">
+              <div key={faq.id} className="rounded-xl bg-white/10 px-5 py-1">
                 <button
                   type="button"
                   onClick={() => toggleOpen(faq.id)}

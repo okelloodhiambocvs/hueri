@@ -13,14 +13,14 @@ export default function GrievancePolicyTab() {
       </div>
 
       <div className="space-y-4 text-xs sm:text-sm">
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           1. Purpose and Scope
         </h5>
         <p>
           HUERI Limited is committed to maintaining open, respectful, and transparent communication. Our Grievance Redress Mechanism allows any stakeholder, community member, or partner to raise concerns regarding our consulting activities, field surveys, data collection, or professional conduct.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           2. Grievance Lodging Channels
         </h5>
         <p>
@@ -33,7 +33,7 @@ export default function GrievancePolicyTab() {
           <li><strong>Field-Level GRM:</strong> Project-specific grievance desks established during Resettlement Action Plans (RAP) and public barazas.</li>
         </ul>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           3. Process & Response Timelines
         </h5>
         <ol className="list-decimal pl-5 space-y-1 text-gray-700 dark:text-slate-300">
@@ -43,7 +43,7 @@ export default function GrievancePolicyTab() {
           <li><strong>Closure & Monitoring:</strong> Confirmation of resolution with complainant and entry into the continuous improvement register.</li>
         </ol>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           4. Non-Retaliation Guarantee
         </h5>
         <p>

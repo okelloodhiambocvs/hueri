@@ -291,9 +291,8 @@ export default function HomePage({
                       Step {item.step}
                     </span>
                     {idx < projectDeliverySteps.length - 1 && (
-                      <div className="hidden lg:flex items-center flex-1 text-[#006B22]/60 dark:text-[#4ADE80]/60 pl-1" aria-hidden="true">
-                        <span className="h-px flex-1 bg-[#006B22]/30 dark:bg-[#4ADE80]/30" />
-                        <ArrowRight className="w-4 h-4 -ml-1 shrink-0 text-[#006B22] dark:text-[#4ADE80]" />
+                      <div className="hidden lg:flex items-center justify-end flex-1 text-[#006B22]/70 dark:text-[#4ADE80]/70 pl-1" aria-hidden="true">
+                        <ArrowRight className="w-4 h-4 shrink-0 text-[#006B22] dark:text-[#4ADE80]" />
                       </div>
                     )}
                   </div>

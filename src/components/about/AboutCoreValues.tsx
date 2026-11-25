@@ -60,11 +60,11 @@ export default function AboutCoreValues() {
         </h3>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 border-t border-slate-200 dark:border-slate-800 pt-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 pt-2">
         {coreValues.map((value, idx) => (
           <div
             key={idx}
-            className={`border-t-2 ${value.accent} pt-4 space-y-2`}
+            className="pt-2 space-y-2"
           >
             <h4 className="font-heading font-bold text-sm text-[#003B95] dark:text-white">
               {value.title}

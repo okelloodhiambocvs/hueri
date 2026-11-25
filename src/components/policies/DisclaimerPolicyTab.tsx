@@ -13,21 +13,21 @@ export default function DisclaimerPolicyTab() {
       </div>
 
       <div className="space-y-4 text-xs sm:text-sm">
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           1. Regulatory Authority Decisions
         </h5>
         <p>
           HUERI Limited conducts environmental impact assessments, social safeguards planning, and statutory audits with high professional rigor in accordance with EMCA Cap 387, DOSHS regulations, and international standards. However, statutory decisions—including the granting of NEMA licenses, EPRA approvals, water abstraction permits (WRA), or municipal development clearances—are the sovereign responsibility of the respective statutory bodies and regulatory authorities.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           2. No Guarantee of Sovereign Approvals or Financing Outcomes
         </h5>
         <p>
           HUERI Limited does not guarantee the approval of licenses, permits, financing disbursements, or third-party bankability determinations that are outside our direct control. Our commitment is to deliver high-quality, evidence-based technical documentation that accurately represents project baselines, assesses risks, and provides practical mitigation frameworks.
         </p>
 
-        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white border-b pb-2 border-gray-100 dark:border-slate-800">
+        <h5 className="font-heading font-extrabold text-base text-gray-900 dark:text-white pt-1">
           3. Reliance on Baseline & Proponent Data
         </h5>
         <p>
