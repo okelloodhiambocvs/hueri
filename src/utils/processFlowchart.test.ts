@@ -19,7 +19,9 @@ test('splitStepText extracts concise stage titles and descriptions', () => {
   );
 });
 
-test('buildProcessFlowNodes assigns distinct domain icons across every service methodology', () => {
+test('buildProcessFlowNodes assigns all 5 distinct cartoon illustrations in chronological delivery order across every service', () => {
+  const expectedOrder = ['discussion', 'scoping', 'fieldwork', 'drafting', 'delivery'];
+
   for (const summary of serviceSummaries) {
     const detail = getServiceDetailByIdOrSlug(summary.slug);
     const nodes = buildProcessFlowNodes(detail.methodology);
@@ -27,13 +29,15 @@ test('buildProcessFlowNodes assigns distinct domain icons across every service m
     assert.equal(nodes.length, detail.methodology.length);
     assert.equal(nodes[0].stepNumber, '01');
     assert.equal(nodes[nodes.length - 1].isFinal, true);
-
-    const uniqueIcons = new Set(nodes.map((node) => node.iconKey));
-    assert.equal(
-      uniqueIcons.size,
-      nodes.length,
-      `${summary.title} should assign a unique icon to every process stage`
+    assert.deepEqual(
+      nodes.map((node) => node.iconKey),
+      expectedOrder.slice(0, nodes.length),
+      `${summary.title} should follow consistent delivery cartoon progression`
     );
+
+    for (const node of nodes) {
+      assert.ok(node.illustrationAlt.length > 20, `Missing alt text for ${node.title}`);
+    }
   }
 });
 

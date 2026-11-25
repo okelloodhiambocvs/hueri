@@ -1,23 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Award,
-  BarChart3,
   CheckCircle2,
   ChevronLeft,
-  ChevronRight,
-  Compass,
-  FileCheck2,
-  HardHat,
-  Layers,
-  Microscope,
-  Scale,
-  SearchCheck,
-  ShieldCheck,
-  Users,
-  Wrench
+  ChevronRight
 } from 'lucide-react';
+import photoAssets from '../../utils/photoAssets';
 import {
-  FlowchartIconKey,
   ProcessFlowNode,
   buildProcessFlowNodes,
   partitionFlowchartRows
@@ -29,21 +17,6 @@ interface ProcessFlowchartProps {
   serviceTitle?: string;
 }
 
-const FLOWCHART_ICONS: Record<FlowchartIconKey, React.ComponentType<{ className?: string }>> = {
-  compass: Compass,
-  search: SearchCheck,
-  layers: Layers,
-  microscope: Microscope,
-  'bar-chart': BarChart3,
-  scale: Scale,
-  users: Users,
-  'hard-hat': HardHat,
-  'shield-check': ShieldCheck,
-  wrench: Wrench,
-  'file-check': FileCheck2,
-  award: Award
-};
-
 export function HorizontalArrowConnector({
   isTraversed,
   isGreen
@@ -54,7 +27,7 @@ export function HorizontalArrowConnector({
   const strokeColor = isGreen
     ? isTraversed
       ? '#A7F3D0'
-      : 'rgba(255, 255, 255, 0.42)'
+      : 'rgba(255, 255, 255, 0.52)'
     : isTraversed
       ? '#006B22'
       : 'rgba(15, 23, 42, 0.25)';
@@ -95,7 +68,7 @@ export function VerticalArrowConnector({
   const strokeColor = isGreen
     ? isTraversed
       ? '#A7F3D0'
-      : 'rgba(255, 255, 255, 0.42)'
+      : 'rgba(255, 255, 255, 0.52)'
     : isTraversed
       ? '#006B22'
       : 'rgba(15, 23, 42, 0.25)';
@@ -130,7 +103,7 @@ export function RowReturnConnector({
   const strokeColor = isGreen
     ? isTraversed
       ? '#A7F3D0'
-      : 'rgba(255, 255, 255, 0.42)'
+      : 'rgba(255, 255, 255, 0.52)'
     : isTraversed
       ? '#006B22'
       : 'rgba(15, 23, 42, 0.28)';
@@ -178,80 +151,68 @@ function FlowchartNodeCard({
   isGreen: boolean;
   onSelect: (index: number) => void;
 }) {
-  const Icon = FLOWCHART_ICONS[node.iconKey];
+  const illustrationSrc =
+    photoAssets.deliverySteps[node.iconKey] || photoAssets.deliverySteps.discussion;
 
   const cardSurface = isGreen
     ? isActive
-      ? 'bg-[#004A17] border-[#A7F3D0] shadow-lg'
+      ? 'bg-white border-white ring-2 ring-[#A7F3D0] shadow-xl'
       : isCompleted
-        ? 'bg-white/15 border-[#A7F3D0]/55 hover:bg-white/20'
-        : 'bg-white/10 border-white/20 hover:bg-white/15 hover:border-white/40'
+        ? 'bg-white border-[#A7F3D0]/85 hover:border-white shadow-md'
+        : 'bg-white border-white/85 hover:border-white shadow-md'
     : isActive
-      ? 'bg-emerald-50/90 dark:bg-[#062456] border-[#006B22] dark:border-[#4ADE80] shadow-md'
-      : 'bg-slate-50 dark:bg-[#06183A] border-slate-200 dark:border-slate-800 hover:border-[#006B22]/50';
-
-  const iconTileClasses = isGreen
-    ? isActive
-      ? 'bg-[#A7F3D0] text-[#004A17]'
-      : 'bg-white/15 text-[#A7F3D0]'
-    : isActive
-      ? 'bg-[#006B22] text-white dark:bg-[#4ADE80] dark:text-[#041B44]'
-      : 'bg-emerald-100/80 dark:bg-emerald-950/60 text-[#006B22] dark:text-[#4ADE80]';
-
-  const stepLabelColor = isGreen
-    ? 'text-[#A7F3D0]'
-    : 'text-[#006B22] dark:text-[#4ADE80]';
-
-  const titleColor = isGreen ? 'text-white' : 'text-[#003B95] dark:text-white';
-  const bodyColor = isGreen ? 'text-emerald-50' : 'text-slate-600 dark:text-slate-300';
+      ? 'bg-white border-[#006B22] ring-2 ring-[#006B22]/15 shadow-md'
+      : isCompleted
+        ? 'bg-white border-[#006B22]/45 hover:border-[#006B22]'
+        : 'bg-white border-slate-200/90 hover:border-[#006B22]/55';
 
   return (
     <button
       type="button"
       onClick={() => onSelect(node.index)}
       aria-pressed={isActive}
-      className={`group flex-1 w-full rounded-xl border p-5 text-left transition-all duration-200 cursor-pointer flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A7F3D0] ${cardSurface}`}
+      className={`group flex-1 w-full rounded-xl border p-4 text-left transition-all duration-200 cursor-pointer flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A7F3D0] ${cardSurface}`}
     >
-      <div className="space-y-3.5">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <span
-              className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-200 ${iconTileClasses}`}
-              aria-hidden="true"
-            >
-              <Icon className="w-5 h-5" />
-            </span>
-            <div>
-              <span className={`text-xs font-mono font-bold uppercase tracking-wider tabular-nums block ${stepLabelColor}`}>
+      <div className="space-y-3">
+        <div className="w-full flex items-center justify-center bg-white">
+          <img
+            src={illustrationSrc}
+            alt={node.illustrationAlt}
+            className="w-28 h-28 sm:w-32 sm:h-32 object-contain mx-auto mix-blend-multiply dark:mix-blend-normal transition-transform duration-300 group-hover:scale-[1.03] select-none"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 text-xs font-mono tabular-nums">
+              <span className="font-bold uppercase tracking-wider text-[#006B22]">
                 Stage {node.stepNumber}
               </span>
-              <span
-                className={`text-[11px] font-mono ${
-                  isGreen ? 'text-emerald-100/80' : 'text-slate-500 dark:text-slate-400'
-                }`}
-              >
+              <span aria-hidden="true" className="text-slate-300">
+                ·
+              </span>
+              <span className="text-slate-500">
                 {node.isFinal ? 'Final Sign-Off' : 'Feeds Next Stage'}
               </span>
             </div>
+
+            {node.isFinal && (
+              <CheckCircle2
+                className="w-4 h-4 shrink-0 text-[#006B22]"
+                aria-hidden="true"
+              />
+            )}
           </div>
 
-          {node.isFinal && (
-            <CheckCircle2
-              className={`w-4 h-4 shrink-0 ${
-                isGreen ? 'text-[#A7F3D0]' : 'text-[#006B22] dark:text-[#4ADE80]'
-              }`}
-              aria-hidden="true"
-            />
-          )}
+          <h3 className="font-heading font-extrabold text-base leading-snug text-[#003B95]">
+            {node.title}
+          </h3>
+
+          <p className="text-xs sm:text-sm leading-relaxed font-light text-slate-600">
+            {node.description}
+          </p>
         </div>
-
-        <h3 className={`font-heading font-extrabold text-base leading-snug ${titleColor}`}>
-          {node.title}
-        </h3>
-
-        <p className={`text-xs sm:text-sm leading-relaxed font-light ${bodyColor}`}>
-          {node.description}
-        </p>
       </div>
     </button>
   );
@@ -277,7 +238,8 @@ export default function ProcessFlowchart({
   const { topRow, bottomRow } = partitionFlowchartRows(nodes);
   const activeNode = nodes[activeIndex] || nodes[0];
   const nextNode = activeIndex < nodes.length - 1 ? nodes[activeIndex + 1] : null;
-  const ActiveIcon = FLOWCHART_ICONS[activeNode.iconKey];
+  const activeIllustration =
+    photoAssets.deliverySteps[activeNode.iconKey] || photoAssets.deliverySteps.discussion;
 
   return (
     <div
@@ -286,17 +248,15 @@ export default function ProcessFlowchart({
       data-active-step={activeNode.stepNumber}
     >
       <div className="flex flex-wrap items-center justify-between gap-4 pb-2">
-        <div className="flex items-center gap-3">
-          <span
-            className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-              isGreen
-                ? 'bg-white/15 text-[#A7F3D0]'
-                : 'bg-emerald-100 dark:bg-emerald-950/60 text-[#006B22] dark:text-[#4ADE80]'
-            }`}
-            aria-hidden="true"
-          >
-            <ActiveIcon className="w-4 h-4" />
-          </span>
+        <div className="flex items-center gap-3.5">
+          {!isGreen && (
+            <img
+              src={activeIllustration}
+              alt={activeNode.illustrationAlt}
+              className="w-12 h-12 object-contain shrink-0 bg-white mix-blend-multiply dark:mix-blend-normal dark:rounded-lg select-none"
+              referrerPolicy="no-referrer"
+            />
+          )}
           <div className="text-left">
             <p
               className={`text-xs font-mono font-bold tabular-nums uppercase tracking-wider ${
@@ -306,7 +266,7 @@ export default function ProcessFlowchart({
               Stage {activeNode.stepNumber} of {String(nodes.length).padStart(2, '0')} · {activeNode.title}
             </p>
             <p
-              className={`text-xs ${
+              className={`text-xs sm:text-sm ${
                 isGreen ? 'text-emerald-100/90' : 'text-slate-600 dark:text-slate-300'
               }`}
             >

@@ -1,16 +1,9 @@
 export type FlowchartIconKey =
-  | 'compass'
-  | 'search'
-  | 'layers'
-  | 'microscope'
-  | 'bar-chart'
-  | 'scale'
-  | 'users'
-  | 'hard-hat'
-  | 'shield-check'
-  | 'wrench'
-  | 'file-check'
-  | 'award';
+  | 'discussion'
+  | 'scoping'
+  | 'fieldwork'
+  | 'drafting'
+  | 'delivery';
 
 export interface ProcessFlowNode {
   index: number;
@@ -18,59 +11,44 @@ export interface ProcessFlowNode {
   title: string;
   description: string;
   iconKey: FlowchartIconKey;
+  illustrationAlt: string;
   isFinal: boolean;
 }
 
-const ICON_RULES: Array<{ pattern: RegExp; icon: FlowchartIconKey }> = [
-  { pattern: /\b(inception|scoping|cadastral|boundary|catchment|flight|planning)\b/i, icon: 'compass' },
-  { pattern: /\b(curriculum|modular|baseline investigations|geophysical|photogrammetric|esms|formulation)\b/i, icon: 'layers' },
-  { pattern: /\b(laboratory|water quality|aquatic|biodiversity|sampling|testing)\b/i, icon: 'microscope' },
-  { pattern: /\b(significance|matrix|matrices|ghg|accounting|materiality|gap analysis|non-conformance)\b/i, icon: 'bar-chart' },
-  { pattern: /\b(valuation|inventory|crosswalk|statutory audits|supply chain|overlays)\b/i, icon: 'scale' },
-  { pattern: /\b(census|public participation|stakeholder|community|grievance|gender|baraza)\b/i, icon: 'users' },
-  { pattern: /\b(hira|hazard|inspection|supervision|simulations|construction)\b/i, icon: 'hard-hat' },
-  { pattern: /\b(mitigation hierarchy|emergency|preparedness|human rights|c-esmp verification)\b/i, icon: 'shield-check' },
-  { pattern: /\b(restoration|nature-based|treatment system|toolkits|auditing & supervision)\b/i, icon: 'wrench' },
-  { pattern: /\b(certification|competency|progress monitoring|implementation monitoring)\b/i, icon: 'award' },
-  { pattern: /\b(esmp|cap|permitting|reporting|statutory annual audits|plan)\b/i, icon: 'file-check' },
-  { pattern: /\b(review|audit|assessment|acquisition|delineation|survey|research|data collection|screening)\b/i, icon: 'search' }
-];
+const FLOWCHART_ILLUSTRATION_ALTS: Record<FlowchartIconKey, string> = {
+  discussion: '3D cartoon environmental consultant holding a project brief folder',
+  scoping: '3D cartoon specialist reviewing technical site blueprints and compass',
+  fieldwork: '3D cartoon field engineer in safety helmet and vest with GIS tablet',
+  drafting: '3D cartoon environmental analyst reviewing technical assessment charts',
+  delivery: '3D cartoon senior advisor presenting an approved clearance dossier'
+};
 
-const FALLBACK_ICON_CYCLE: FlowchartIconKey[] = [
-  'compass',
-  'layers',
-  'bar-chart',
-  'shield-check',
-  'file-check',
-  'search',
-  'scale',
-  'users',
-  'microscope',
-  'wrench',
-  'hard-hat',
-  'award'
+const CHRONOLOGICAL_STAGE_ICONS: FlowchartIconKey[] = [
+  'discussion',
+  'scoping',
+  'fieldwork',
+  'drafting',
+  'delivery'
 ];
 
 export function selectProcessIconKey(
-  stepTitle: string,
-  stepDescription: string,
+  _stepTitle: string,
+  _stepDescription: string,
   index: number,
   usedIcons: Set<FlowchartIconKey>
 ): FlowchartIconKey {
-  const combined = `${stepTitle} ${stepDescription}`;
-  for (const rule of ICON_RULES) {
-    if (rule.pattern.test(combined) && !usedIcons.has(rule.icon)) {
-      return rule.icon;
-    }
+  const chronologicalKey = CHRONOLOGICAL_STAGE_ICONS[index % CHRONOLOGICAL_STAGE_ICONS.length];
+  if (!usedIcons.has(chronologicalKey)) {
+    return chronologicalKey;
   }
 
-  for (const candidate of FALLBACK_ICON_CYCLE) {
+  for (const candidate of CHRONOLOGICAL_STAGE_ICONS) {
     if (!usedIcons.has(candidate)) {
       return candidate;
     }
   }
 
-  return FALLBACK_ICON_CYCLE[index % FALLBACK_ICON_CYCLE.length];
+  return chronologicalKey;
 }
 
 export function splitStepText(rawStep: string, index: number): { title: string; description: string } {
@@ -104,6 +82,7 @@ export function buildProcessFlowNodes(steps: string[]): ProcessFlowNode[] {
       title,
       description,
       iconKey,
+      illustrationAlt: FLOWCHART_ILLUSTRATION_ALTS[iconKey],
       isFinal: index === cleanSteps.length - 1
     };
   });
